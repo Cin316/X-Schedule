@@ -13,18 +13,7 @@
 		E138A8171A8E8B1E00549F84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E138A8151A8E8B1E00549F84 /* Main.storyboard */; };
 		E138A8191A8E8B1E00549F84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E138A8181A8E8B1E00549F84 /* Images.xcassets */; };
 		E138A81C1A8E8B1E00549F84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E138A81A1A8E8B1E00549F84 /* LaunchScreen.xib */; };
-		E138A8281A8E8B1F00549F84 /* X_ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138A8271A8E8B1F00549F84 /* X_ScheduleTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E138A8221A8E8B1E00549F84 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E138A8021A8E8B1E00549F84 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E138A8091A8E8B1E00549F84;
-			remoteInfo = "X Schedule";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E138A80A1A8E8B1E00549F84 /* X Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "X Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,20 +24,10 @@
 		E138A8161A8E8B1E00549F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E138A8181A8E8B1E00549F84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E138A81B1A8E8B1E00549F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E138A8211A8E8B1E00549F84 /* X ScheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "X ScheduleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E138A8261A8E8B1F00549F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E138A8271A8E8B1F00549F84 /* X_ScheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = X_ScheduleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E138A8071A8E8B1E00549F84 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E138A81E1A8E8B1E00549F84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				E138A80C1A8E8B1E00549F84 /* X Schedule */,
-				E138A8241A8E8B1F00549F84 /* X ScheduleTests */,
 				E138A80B1A8E8B1E00549F84 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				E138A80A1A8E8B1E00549F84 /* X Schedule.app */,
-				E138A8211A8E8B1E00549F84 /* X ScheduleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,23 +75,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E138A8241A8E8B1F00549F84 /* X ScheduleTests */ = {
-			isa = PBXGroup;
-			children = (
-				E138A8271A8E8B1F00549F84 /* X_ScheduleTests.swift */,
-				E138A8251A8E8B1F00549F84 /* Supporting Files */,
-			);
-			path = "X ScheduleTests";
-			sourceTree = "<group>";
-		};
-		E138A8251A8E8B1F00549F84 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E138A8261A8E8B1F00549F84 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,24 +95,6 @@
 			productReference = E138A80A1A8E8B1E00549F84 /* X Schedule.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E138A8201A8E8B1E00549F84 /* X ScheduleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E138A82E1A8E8B1F00549F84 /* Build configuration list for PBXNativeTarget "X ScheduleTests" */;
-			buildPhases = (
-				E138A81D1A8E8B1E00549F84 /* Sources */,
-				E138A81E1A8E8B1E00549F84 /* Frameworks */,
-				E138A81F1A8E8B1E00549F84 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E138A8231A8E8B1E00549F84 /* PBXTargetDependency */,
-			);
-			name = "X ScheduleTests";
-			productName = "X ScheduleTests";
-			productReference = E138A8211A8E8B1E00549F84 /* X ScheduleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,10 +106,6 @@
 				TargetAttributes = {
 					E138A8091A8E8B1E00549F84 = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					E138A8201A8E8B1E00549F84 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = E138A8091A8E8B1E00549F84;
 					};
 				};
 			};
@@ -185,7 +123,6 @@
 			projectRoot = "";
 			targets = (
 				E138A8091A8E8B1E00549F84 /* X Schedule */,
-				E138A8201A8E8B1E00549F84 /* X ScheduleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -198,13 +135,6 @@
 				E138A8171A8E8B1E00549F84 /* Main.storyboard in Resources */,
 				E138A81C1A8E8B1E00549F84 /* LaunchScreen.xib in Resources */,
 				E138A8191A8E8B1E00549F84 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E138A81F1A8E8B1E00549F84 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,23 +151,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E138A81D1A8E8B1E00549F84 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E138A8281A8E8B1F00549F84 /* X_ScheduleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E138A8231A8E8B1E00549F84 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E138A8091A8E8B1E00549F84 /* X Schedule */;
-			targetProxy = E138A8221A8E8B1E00549F84 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E138A8151A8E8B1E00549F84 /* Main.storyboard */ = {
@@ -293,7 +207,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -330,7 +244,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -342,9 +256,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "X Schedule/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -352,43 +269,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "X Schedule/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		E138A82F1A8E8B1F00549F84 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "X ScheduleTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/X Schedule.app/X Schedule";
-			};
-			name = Debug;
-		};
-		E138A8301A8E8B1F00549F84 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "X ScheduleTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/X Schedule.app/X Schedule";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -409,14 +295,6 @@
 			buildConfigurations = (
 				E138A82C1A8E8B1F00549F84 /* Debug */,
 				E138A82D1A8E8B1F00549F84 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		E138A82E1A8E8B1F00549F84 /* Build configuration list for PBXNativeTarget "X ScheduleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E138A82F1A8E8B1F00549F84 /* Debug */,
-				E138A8301A8E8B1F00549F84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
