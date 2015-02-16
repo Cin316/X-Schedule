@@ -10,6 +10,8 @@ import UIKit
 
 class DataViewController: UIViewController {
     
+    @IBOutlet weak var displayBox: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
