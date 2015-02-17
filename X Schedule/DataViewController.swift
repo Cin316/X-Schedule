@@ -10,11 +10,22 @@ import UIKit
 
 class DataViewController: UIViewController {
     
-    @IBOutlet weak var displayBox: UILabel!
+    @IBOutlet weak var displayBox: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        displayBox.text = "This works"
+        // Download today's schedule from the St. X website.
+        ScheduleDownloader.downloadSchedule(
+            { (output: String) in
+                //Execute UI code in main thread.
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.displayBox.text = output
+                }
+            }
+        )
+        
     }
     
     override func didReceiveMemoryWarning() {
