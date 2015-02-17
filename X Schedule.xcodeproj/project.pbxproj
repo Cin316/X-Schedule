@@ -14,6 +14,7 @@
 		E138A8191A8E8B1E00549F84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E138A8181A8E8B1E00549F84 /* Images.xcassets */; };
 		E138A81C1A8E8B1E00549F84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E138A81A1A8E8B1E00549F84 /* LaunchScreen.xib */; };
 		E138A8321A8E970E00549F84 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138A8311A8E970E00549F84 /* DataViewController.swift */; };
+		E1EFEEAD1A93918E003D3C57 /* ScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E138A8181A8E8B1E00549F84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E138A81B1A8E8B1E00549F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E138A8311A8E970E00549F84 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				E138A8111A8E8B1E00549F84 /* FirstViewController.swift */,
 				E138A8131A8E8B1E00549F84 /* SecondViewController.swift */,
 				E138A8311A8E970E00549F84 /* DataViewController.swift */,
+				E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */,
 				E138A8151A8E8B1E00549F84 /* Main.storyboard */,
 				E138A8181A8E8B1E00549F84 /* Images.xcassets */,
 				E138A81A1A8E8B1E00549F84 /* LaunchScreen.xib */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1EFEEAD1A93918E003D3C57 /* ScheduleDownloader.swift in Sources */,
 				E138A8321A8E970E00549F84 /* DataViewController.swift in Sources */,
 				E138A8141A8E8B1E00549F84 /* SecondViewController.swift in Sources */,
 				E138A8101A8E8B1E00549F84 /* AppDelegate.swift in Sources */,
