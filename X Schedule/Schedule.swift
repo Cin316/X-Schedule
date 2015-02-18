@@ -10,9 +10,14 @@ import Foundation
 
 class Schedule {
     var items: [ScheduleItem] = []
+    var title: String = ""
     
     init(items: [ScheduleItem]) {
         self.items = items
+    }
+    init(items: [ScheduleItem], title: String) {
+        self.items = items
+        self.title = title
     }
 }
 
