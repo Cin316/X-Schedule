@@ -10,8 +10,6 @@ import UIKit
 
 class DataViewController: UIViewController {
     
-    @IBOutlet weak var displayBox: UITextView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,22 +21,14 @@ class DataViewController: UIViewController {
                 dispatch_async(dispatch_get_main_queue()) {
                     var parser = ScheduleParser()
                     var schedule = parser.parseForSchedule(output)
-                    self.displaySchedule(schedule)
+                    if let tableController = self.childViewControllers[0] as? ScheduleTableController {
+                        tableController.schedule = schedule
+                        let tableView = (tableController.view as? UITableView)!
+                        tableView.reloadData()
+                    }
                 }
             }
         )
-    }
-    
-    func displaySchedule (schedule: Schedule) {
-        var outputString = ""
-        var dateFormat = NSDateFormatter()
-        dateFormat.dateFormat = "h:mm"
-        for item in schedule.items {
-            var startString = dateFormat.stringFromDate(item.startTime)
-            var endString = dateFormat.stringFromDate(item.endTime)
-            outputString += "\(item.blockName): \(startString) - \(endString)\n"
-        }
-        self.displayBox.text = outputString
     }
     
     override func didReceiveMemoryWarning() {
