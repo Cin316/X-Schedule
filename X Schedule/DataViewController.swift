@@ -17,18 +17,16 @@ class DataViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Download today's schedule from the St. X website.
-        /*ScheduleDownloader.downloadSchedule(
+        ScheduleDownloader.downloadSchedule(
             { (output: String) in
-                //Execute UI code in main thread.
+                //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.displayBox.text = output
+                    var parser = ScheduleParser()
+                    var schedule = parser.parseForSchedule(output)
+                    self.displaySchedule(schedule)
                 }
             }
-        )*/
-        
-        var items: [ScheduleItem] = []
-        var schedule = Schedule(items: items)
-        displaySchedule(schedule)
+        )
     }
     
     func displaySchedule (schedule: Schedule) {
