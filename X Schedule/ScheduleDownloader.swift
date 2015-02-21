@@ -10,7 +10,7 @@ import Foundation
 
 class ScheduleDownloader {
     
-    class func downloadSchedule(completionHandler: String -> Void) {
+    class func downloadSchedule(date: NSDate, completionHandler: String -> Void) {
         // Download today's schedule from the St. X website.
         // Setup for request.
         var url = NSURL(string:"http://www.stxavier.org/cf_calendar/export.cfm")!
@@ -22,10 +22,10 @@ class ScheduleDownloader {
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         
         //Get today's date and format it correctly for request.
-        var currentDate = NSDate()
+        var downloadDate = date
         var dateFormat = NSDateFormatter()
         dateFormat.dateFormat = "MM/dd/yyyy"
-        let formattedDate = dateFormat.stringFromDate(currentDate)
+        let formattedDate = dateFormat.stringFromDate(downloadDate)
         let escapedDate = formattedDate.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
         
         //Create NSData object to send in body of POST request.
@@ -42,6 +42,11 @@ class ScheduleDownloader {
         )
         //Start POST request.
         postSession.resume()
+    }
+    
+    class func downloadSchedule(completionHandler: String -> Void) {
+        var currentDate = NSDate()
+        downloadSchedule(currentDate, completionHandler: completionHandler)
     }
     
 }
