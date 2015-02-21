@@ -15,17 +15,30 @@ class DataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        displayBox.text = "This works"
+        
         // Download today's schedule from the St. X website.
         ScheduleDownloader.downloadSchedule(
             { (output: String) in
-                //Execute UI code in main thread.
+                //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.displayBox.text = output
+                    var parser = ScheduleParser()
+                    var schedule = parser.parseForSchedule(output)
+                    self.displaySchedule(schedule)
                 }
             }
         )
-        
+    }
+    
+    func displaySchedule (schedule: Schedule) {
+        var outputString = ""
+        var dateFormat = NSDateFormatter()
+        dateFormat.dateFormat = "h:mm"
+        for item in schedule.items {
+            var startString = dateFormat.stringFromDate(item.startTime)
+            var endString = dateFormat.stringFromDate(item.endTime)
+            outputString += "\(item.blockName): \(startString) - \(endString)\n"
+        }
+        self.displayBox.text = outputString
     }
     
     override func didReceiveMemoryWarning() {
