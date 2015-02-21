@@ -17,6 +17,7 @@
 		E1EFEEAD1A93918E003D3C57 /* ScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */; };
 		E1EFEEAF1A942DDA003D3C57 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAE1A942DDA003D3C57 /* Schedule.swift */; };
 		E1EFEEB11A950851003D3C57 /* ScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEB01A950851003D3C57 /* ScheduleParser.swift */; };
+		E1EFEEB31A98EABA003D3C57 /* ScheduleTableItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1EFEEB21A98EABA003D3C57 /* ScheduleTableItem.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDownloader.swift; sourceTree = "<group>"; };
 		E1EFEEAE1A942DDA003D3C57 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E1EFEEB01A950851003D3C57 /* ScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParser.swift; sourceTree = "<group>"; };
+		E1EFEEB21A98EABA003D3C57 /* ScheduleTableItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleTableItem.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */,
 				E1EFEEAE1A942DDA003D3C57 /* Schedule.swift */,
 				E138A8151A8E8B1E00549F84 /* Main.storyboard */,
+				E1EFEEB21A98EABA003D3C57 /* ScheduleTableItem.xib */,
 				E138A8181A8E8B1E00549F84 /* Images.xcassets */,
 				E138A81A1A8E8B1E00549F84 /* LaunchScreen.xib */,
 				E138A80D1A8E8B1E00549F84 /* Supporting Files */,
@@ -146,6 +149,7 @@
 			files = (
 				E138A8171A8E8B1E00549F84 /* Main.storyboard in Resources */,
 				E138A81C1A8E8B1E00549F84 /* LaunchScreen.xib in Resources */,
+				E1EFEEB31A98EABA003D3C57 /* ScheduleTableItem.xib in Resources */,
 				E138A8191A8E8B1E00549F84 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
