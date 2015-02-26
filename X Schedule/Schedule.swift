@@ -11,6 +11,7 @@ import Foundation
 class Schedule {
     var items: [ScheduleItem] = []
     var title: String = ""
+    var date: NSDate = NSDate()
     
     init(items: [ScheduleItem]) {
         self.items = items
