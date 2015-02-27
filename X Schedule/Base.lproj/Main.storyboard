@@ -27,10 +27,12 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7z-aj-o82">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7z-aj-o82">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="iXb-3t-nz6"/>
+                                    <constraint firstAttribute="height" constant="50" id="iXb-3t-nz6">
+                                        <variation key="widthClass=compact" constant="73"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -83,14 +85,18 @@
                         <constraints>
                             <constraint firstItem="64X-Ui-5fQ" firstAttribute="leading" secondItem="ohP-oA-heh" secondAttribute="leadingMargin" id="AFb-Hn-omw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K7z-aj-o82" secondAttribute="trailing" constant="30" id="Oxj-mC-i9O"/>
-                            <constraint firstItem="sMG-so-slP" firstAttribute="centerY" secondItem="K7z-aj-o82" secondAttribute="centerY" id="Sfc-dB-8W2"/>
+                            <constraint firstItem="sMG-so-slP" firstAttribute="centerY" secondItem="K7z-aj-o82" secondAttribute="centerY" id="Sfc-dB-8W2">
+                                <variation key="widthClass=compact" constant="-11.5"/>
+                            </constraint>
                             <constraint firstItem="vcx-Nt-lHH" firstAttribute="leading" secondItem="ohP-oA-heh" secondAttribute="leadingMargin" id="Wyn-0E-tAL"/>
                             <constraint firstItem="Jco-4z-jy7" firstAttribute="trailing" secondItem="ohP-oA-heh" secondAttribute="trailingMargin" id="c7M-zD-VHg"/>
                             <constraint firstItem="SHt-LO-oNQ" firstAttribute="top" secondItem="vcx-Nt-lHH" secondAttribute="bottom" constant="17" id="ciq-Kg-EdY"/>
                             <constraint firstItem="vcx-Nt-lHH" firstAttribute="top" secondItem="wfv-Qt-cKq" secondAttribute="bottom" constant="98" id="cmf-zg-waV"/>
                             <constraint firstItem="K7z-aj-o82" firstAttribute="leading" secondItem="ohP-oA-heh" secondAttribute="leadingMargin" constant="30" id="dHa-uC-BEN"/>
                             <constraint firstItem="64X-Ui-5fQ" firstAttribute="top" secondItem="wfv-Qt-cKq" secondAttribute="bottom" constant="3" id="kLX-hq-fyd"/>
-                            <constraint firstItem="K7z-aj-o82" firstAttribute="centerY" secondItem="Jco-4z-jy7" secondAttribute="centerY" id="lrN-Sl-5iQ"/>
+                            <constraint firstItem="K7z-aj-o82" firstAttribute="centerY" secondItem="Jco-4z-jy7" secondAttribute="centerY" id="lrN-Sl-5iQ">
+                                <variation key="widthClass=compact" constant="11.5"/>
+                            </constraint>
                             <constraint firstItem="64X-Ui-5fQ" firstAttribute="trailing" secondItem="ohP-oA-heh" secondAttribute="trailingMargin" id="mPn-af-3Tc"/>
                             <constraint firstAttribute="centerX" secondItem="K7z-aj-o82" secondAttribute="centerX" id="oDS-bw-WiF"/>
                             <constraint firstItem="sMG-so-slP" firstAttribute="leading" secondItem="ohP-oA-heh" secondAttribute="leadingMargin" id="tR0-EF-3ag"/>
