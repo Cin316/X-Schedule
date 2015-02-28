@@ -12,6 +12,7 @@ class ScheduleParser: NSObject, NSXMLParserDelegate {
     
     var descriptionString = ""
     var titleString = ""
+    var dateString = ""
     var currentElement = ""
     
     func parseForSchedule(string: String) -> Schedule {
@@ -26,9 +27,23 @@ class ScheduleParser: NSObject, NSXMLParserDelegate {
         
         //Parse XML.
         xmlParser.parse()
+        
         //Put title into Schedule.
         titleString = titleString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         schedule.title = titleString
+        
+        
+        //Trim whitespace.
+        dateString = dateString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        
+        //Get and parse date.
+        var dayFormatter = NSDateFormatter()
+        dayFormatter.dateFormat = "yyyyMMdd"
+        var dayDate: NSDate? = dayFormatter.dateFromString(dateString)
+        
+        if let realDayDate = dayDate {
+            schedule.date = realDayDate
+        }
         
         //Parse description.
         //Trim whitespace.
@@ -122,6 +137,8 @@ class ScheduleParser: NSObject, NSXMLParserDelegate {
             titleString += string
         case "description":
             descriptionString += string
+        case "dtstart":
+            dateString += string
         default:
             break;
         }
