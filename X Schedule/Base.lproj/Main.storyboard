@@ -84,10 +84,12 @@
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.76486730575561523" green="0.87423521280288696" blue="0.99826288223266602" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vcx-Nt-lHH" firstAttribute="centerY" secondItem="TZG-lt-W8K" secondAttribute="centerY" constant="0.5" id="6sx-v3-ktA"/>
+                            <constraint firstItem="SHt-LO-oNQ" firstAttribute="top" secondItem="vcx-Nt-lHH" secondAttribute="bottom" constant="14" id="7Ka-FZ-Rup"/>
                             <constraint firstItem="64X-Ui-5fQ" firstAttribute="leading" secondItem="ohP-oA-heh" secondAttribute="leadingMargin" id="AFb-Hn-omw"/>
+                            <constraint firstItem="SHt-LO-oNQ" firstAttribute="top" secondItem="vcx-Nt-lHH" secondAttribute="bottom" constant="8" id="Fmm-yT-hlT"/>
                             <constraint firstItem="TZG-lt-W8K" firstAttribute="leading" secondItem="vcx-Nt-lHH" secondAttribute="trailing" constant="-202" id="GX6-dj-a9S"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K7z-aj-o82" secondAttribute="trailing" constant="30" id="Oxj-mC-i9O"/>
                             <constraint firstItem="sMG-so-slP" firstAttribute="centerY" secondItem="K7z-aj-o82" secondAttribute="centerY" id="Sfc-dB-8W2">
@@ -123,22 +125,24 @@
                                 <exclude reference="AFb-Hn-omw"/>
                                 <exclude reference="kLX-hq-fyd"/>
                                 <exclude reference="mPn-af-3Tc"/>
+                                <exclude reference="Sfc-dB-8W2"/>
+                                <exclude reference="tR0-EF-3ag"/>
                                 <exclude reference="Oxj-mC-i9O"/>
                                 <exclude reference="dHa-uC-BEN"/>
                                 <exclude reference="lrN-Sl-5iQ"/>
                                 <exclude reference="oDS-bw-WiF"/>
                                 <exclude reference="xx3-uU-Rnv"/>
-                                <exclude reference="ciq-Kg-EdY"/>
-                                <exclude reference="GX6-dj-a9S"/>
-                                <exclude reference="yNA-bO-hEx"/>
-                                <exclude reference="c7M-zD-VHg"/>
-                                <exclude reference="Sfc-dB-8W2"/>
-                                <exclude reference="tR0-EF-3ag"/>
                                 <exclude reference="6sx-v3-ktA"/>
                                 <exclude reference="Wyn-0E-tAL"/>
                                 <exclude reference="cmf-zg-waV"/>
                                 <exclude reference="rGg-a4-H3A"/>
                                 <exclude reference="yJQ-Ku-QtQ"/>
+                                <exclude reference="GX6-dj-a9S"/>
+                                <exclude reference="yNA-bO-hEx"/>
+                                <exclude reference="c7M-zD-VHg"/>
+                                <exclude reference="7Ka-FZ-Rup"/>
+                                <exclude reference="Fmm-yT-hlT"/>
+                                <exclude reference="ciq-Kg-EdY"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -154,22 +158,24 @@
                                 <include reference="AFb-Hn-omw"/>
                                 <include reference="kLX-hq-fyd"/>
                                 <include reference="mPn-af-3Tc"/>
+                                <include reference="Sfc-dB-8W2"/>
+                                <include reference="tR0-EF-3ag"/>
                                 <include reference="Oxj-mC-i9O"/>
                                 <include reference="dHa-uC-BEN"/>
                                 <include reference="lrN-Sl-5iQ"/>
                                 <include reference="oDS-bw-WiF"/>
                                 <include reference="xx3-uU-Rnv"/>
-                                <include reference="ciq-Kg-EdY"/>
-                                <exclude reference="GX6-dj-a9S"/>
-                                <include reference="yNA-bO-hEx"/>
-                                <include reference="c7M-zD-VHg"/>
-                                <include reference="Sfc-dB-8W2"/>
-                                <include reference="tR0-EF-3ag"/>
                                 <exclude reference="6sx-v3-ktA"/>
                                 <include reference="Wyn-0E-tAL"/>
                                 <include reference="cmf-zg-waV"/>
                                 <include reference="rGg-a4-H3A"/>
                                 <include reference="yJQ-Ku-QtQ"/>
+                                <exclude reference="GX6-dj-a9S"/>
+                                <include reference="yNA-bO-hEx"/>
+                                <include reference="c7M-zD-VHg"/>
+                                <include reference="7Ka-FZ-Rup"/>
+                                <exclude reference="Fmm-yT-hlT"/>
+                                <exclude reference="ciq-Kg-EdY"/>
                             </mask>
                         </variation>
                     </view>
@@ -191,8 +197,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="U1X-SY-klC">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <color key="backgroundColor" red="0.813995361328125" green="0.89592456817626953" blue="0.99735766649246216" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScheduleTableCell" rowHeight="30" id="SjG-QM-bfL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
@@ -222,6 +228,8 @@
                                         <constraint firstAttribute="centerY" secondItem="Qt8-IP-8tC" secondAttribute="centerY" id="wuf-Xg-j5V"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.88160133361816406" green="0.93318617343902588" blue="0.99637198448181152" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -323,6 +331,7 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Gma-nl-gFO" kind="relationship" relationship="viewControllers" id="Lma-0B-drd"/>
