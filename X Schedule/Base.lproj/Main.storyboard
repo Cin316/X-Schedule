@@ -117,22 +117,22 @@
                                 <exclude reference="AFb-Hn-omw"/>
                                 <exclude reference="kLX-hq-fyd"/>
                                 <exclude reference="mPn-af-3Tc"/>
-                                <exclude reference="Sfc-dB-8W2"/>
-                                <exclude reference="tR0-EF-3ag"/>
                                 <exclude reference="Oxj-mC-i9O"/>
                                 <exclude reference="dHa-uC-BEN"/>
                                 <exclude reference="lrN-Sl-5iQ"/>
                                 <exclude reference="oDS-bw-WiF"/>
                                 <exclude reference="xx3-uU-Rnv"/>
+                                <exclude reference="ciq-Kg-EdY"/>
+                                <exclude reference="GX6-dj-a9S"/>
+                                <exclude reference="yNA-bO-hEx"/>
+                                <exclude reference="c7M-zD-VHg"/>
+                                <exclude reference="Sfc-dB-8W2"/>
+                                <exclude reference="tR0-EF-3ag"/>
                                 <exclude reference="6sx-v3-ktA"/>
                                 <exclude reference="Wyn-0E-tAL"/>
                                 <exclude reference="cmf-zg-waV"/>
                                 <exclude reference="rGg-a4-H3A"/>
                                 <exclude reference="yJQ-Ku-QtQ"/>
-                                <exclude reference="GX6-dj-a9S"/>
-                                <exclude reference="yNA-bO-hEx"/>
-                                <exclude reference="c7M-zD-VHg"/>
-                                <exclude reference="ciq-Kg-EdY"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -148,30 +148,30 @@
                                 <include reference="AFb-Hn-omw"/>
                                 <include reference="kLX-hq-fyd"/>
                                 <include reference="mPn-af-3Tc"/>
-                                <include reference="Sfc-dB-8W2"/>
-                                <include reference="tR0-EF-3ag"/>
                                 <include reference="Oxj-mC-i9O"/>
                                 <include reference="dHa-uC-BEN"/>
                                 <include reference="lrN-Sl-5iQ"/>
                                 <include reference="oDS-bw-WiF"/>
                                 <include reference="xx3-uU-Rnv"/>
+                                <include reference="ciq-Kg-EdY"/>
+                                <exclude reference="GX6-dj-a9S"/>
+                                <include reference="yNA-bO-hEx"/>
+                                <include reference="c7M-zD-VHg"/>
+                                <include reference="Sfc-dB-8W2"/>
+                                <include reference="tR0-EF-3ag"/>
                                 <exclude reference="6sx-v3-ktA"/>
                                 <include reference="Wyn-0E-tAL"/>
                                 <include reference="cmf-zg-waV"/>
                                 <include reference="rGg-a4-H3A"/>
                                 <include reference="yJQ-Ku-QtQ"/>
-                                <exclude reference="GX6-dj-a9S"/>
-                                <include reference="yNA-bO-hEx"/>
-                                <include reference="c7M-zD-VHg"/>
-                                <include reference="ciq-Kg-EdY"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="featured" id="aZ8-LO-cXk"/>
                     <connections>
+                        <outlet property="dateLabel" destination="64X-Ui-5fQ" id="1av-P3-1MU"/>
                         <outlet property="loadingIndicator" destination="TZG-lt-W8K" id="pRi-JT-jqn"/>
-                        <outlet property="scheduleDate" destination="64X-Ui-5fQ" id="Emc-8g-lew"/>
-                        <outlet property="scheduleTitle" destination="K7z-aj-o82" id="7xI-7B-R4S"/>
+                        <outlet property="titelLabel" destination="K7z-aj-o82" id="ExN-VH-aeG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFg-y3-82a" userLabel="First Responder" sceneMemberID="firstResponder"/>
