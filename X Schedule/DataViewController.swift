@@ -13,9 +13,14 @@ class DataViewController: UIViewController {
     @IBOutlet weak var scheduleDate: UILabel!
     @IBOutlet weak var scheduleTitle: UILabel!
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Start loading indicator before download.
+        loadingIndicator.startAnimating()
         
         // Download today's schedule from the St. X website.
         ScheduleDownloader.downloadSchedule(
@@ -37,6 +42,9 @@ class DataViewController: UIViewController {
                     var dateFormatter = NSDateFormatter()
                     dateFormatter.dateFormat = "EEEE, MMMM d"
                     self.scheduleDate.text = dateFormatter.stringFromDate(schedule.date)
+                    
+                    //Stop loading indicator after everything is complete.
+                    self.loadingIndicator.stopAnimating()
 
                 }
             }
