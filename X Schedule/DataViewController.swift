@@ -47,7 +47,7 @@ class DataViewController: UIViewController {
                     //Display correctly formatted date.
                     var dateFormatter = NSDateFormatter()
                     dateFormatter.dateFormat = "EEEE, MMMM d"
-                    self.dateLabel.text = dateFormatter.stringFromDate(schedule.date)
+                    self.dateLabel.text = dateFormatter.stringFromDate(self.scheduleDate)
                     
                     //Stop loading indicator after everything is complete.
                     self.loadingIndicator.stopAnimating()
@@ -62,6 +62,14 @@ class DataViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onBackButtonPress(sender: AnyObject) {
+        scheduleDate = scheduleDate.dateByAddingTimeInterval(-24*60*60)
+        refreshSchedule()
+    }
+    @IBAction func onForwardButtonPress(sender: AnyObject) {
+        scheduleDate = scheduleDate.dateByAddingTimeInterval(24*60*60)
+        refreshSchedule()
+    }
     
 }
 
