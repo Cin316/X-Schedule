@@ -13,7 +13,7 @@ class DataViewController: UIViewController {
     var scheduleDate: NSDate = NSDate()
     
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var titelLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
@@ -43,11 +43,17 @@ class DataViewController: UIViewController {
                         tableView.reloadData()
                     }
                     //Display title.
-                    self.titelLabel.text = schedule.title
+                    self.titleLabel.text = schedule.title
                     //Display correctly formatted date.
                     var dateFormatter = NSDateFormatter()
                     dateFormatter.dateFormat = "EEEE, MMMM d"
                     self.dateLabel.text = dateFormatter.stringFromDate(self.scheduleDate)
+                    
+                    //Add default weekend title.
+                    var weekday = NSCalendar.currentCalendar().component(.CalendarUnitWeekday, fromDate: self.scheduleDate)
+                    if ((weekday==1 || weekday==7) && schedule.title==""){
+                        self.titleLabel.text = "Weekend"
+                    }
                     
                     //Stop loading indicator after everything is complete.
                     self.loadingIndicator.stopAnimating()
