@@ -17,6 +17,8 @@ class DataViewController: UIViewController {
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var emptyLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -55,6 +57,13 @@ class DataViewController: UIViewController {
                         self.titleLabel.text = "Weekend"
                     }
                     
+                    //Empty label
+                    if (schedule.items.isEmpty) {
+                        self.emptyLabel.text = "No classes"
+                    } else {
+                        self.emptyLabel.text = ""
+                    }
+
                     //Stop loading indicator after everything is complete.
                     self.loadingIndicator.stopAnimating()
                     
