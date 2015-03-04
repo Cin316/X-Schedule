@@ -19,10 +19,15 @@ To download and compile X Schedule, you will need:
 - git
 
 Clone the repository from GitHub.
+
 ```git clone http://github.com/Cin316/X-Schedule.git```
+
 Navigate to the Xcode project file and open it.
-```cd "X Schedule"```
-```open "X Schedule.xcodeproj"```
+
+```
+cd "X Schedule"
+open "X Schedule.xcodeproj"
+```
 
 You should now be able to compile and run X Schedule through Xcode.
 
