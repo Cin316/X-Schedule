@@ -14,6 +14,9 @@
 		E138A8191A8E8B1E00549F84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E138A8181A8E8B1E00549F84 /* Images.xcassets */; };
 		E138A81C1A8E8B1E00549F84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E138A81A1A8E8B1E00549F84 /* LaunchScreen.xib */; };
 		E138A8321A8E970E00549F84 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138A8311A8E970E00549F84 /* DataViewController.swift */; };
+		E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */; };
+		E1E3EE4A1AA8F24F00A00603 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1E3EE491AA8F24F00A00603 /* LICENSE.txt */; };
+		E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18039831AABF260006513B2 /* AboutViewController.swift */; };
 		E1EFEEAD1A93918E003D3C57 /* ScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */; };
 		E1EFEEAF1A942DDA003D3C57 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAE1A942DDA003D3C57 /* Schedule.swift */; };
 		E1EFEEB11A950851003D3C57 /* ScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEB01A950851003D3C57 /* ScheduleParser.swift */; };
@@ -30,6 +33,9 @@
 		E138A8181A8E8B1E00549F84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E138A81B1A8E8B1E00549F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E138A8311A8E970E00549F84 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		E18039831AABF260006513B2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		E1E3EE491AA8F24F00A00603 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDownloader.swift; sourceTree = "<group>"; };
 		E1EFEEAE1A942DDA003D3C57 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E1EFEEB01A950851003D3C57 /* ScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParser.swift; sourceTree = "<group>"; };
@@ -69,12 +75,15 @@
 				E138A80F1A8E8B1E00549F84 /* AppDelegate.swift */,
 				E138A8111A8E8B1E00549F84 /* FirstViewController.swift */,
 				E138A8131A8E8B1E00549F84 /* SecondViewController.swift */,
+				E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */,
 				E138A8311A8E970E00549F84 /* DataViewController.swift */,
 				E1EFEEB01A950851003D3C57 /* ScheduleParser.swift */,
 				E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */,
 				E1EFEEAE1A942DDA003D3C57 /* Schedule.swift */,
 				E138A8151A8E8B1E00549F84 /* Main.storyboard */,
+				E18039831AABF260006513B2 /* AboutViewController.swift */,
 				E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */,
+				E1E3EE491AA8F24F00A00603 /* LICENSE.txt */,
 				E138A8181A8E8B1E00549F84 /* Images.xcassets */,
 				E138A81A1A8E8B1E00549F84 /* LaunchScreen.xib */,
 				E138A80D1A8E8B1E00549F84 /* Supporting Files */,
@@ -147,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E3EE4A1AA8F24F00A00603 /* LICENSE.txt in Resources */,
 				E138A8171A8E8B1E00549F84 /* Main.storyboard in Resources */,
 				E138A81C1A8E8B1E00549F84 /* LaunchScreen.xib in Resources */,
 				E138A8191A8E8B1E00549F84 /* Images.xcassets in Resources */,
@@ -160,7 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */,
 				E1EFEEAF1A942DDA003D3C57 /* Schedule.swift in Sources */,
+				E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */,
 				E1EFEEB51A991766003D3C57 /* ScheduleTableController.swift in Sources */,
 				E1EFEEAD1A93918E003D3C57 /* ScheduleDownloader.swift in Sources */,
 				E138A8321A8E970E00549F84 /* DataViewController.swift in Sources */,
