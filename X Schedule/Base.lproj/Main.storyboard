@@ -17,21 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jco-4z-jy7">
-                                <rect key="frame" x="562" y="39" width="22" height="22"/>
-                                <connections>
-                                    <action selector="onForwardButtonPress:" destination="Gma-nl-gFO" eventType="touchUpInside" id="C5L-Rj-aCe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMG-so-slP">
-                                <rect key="frame" x="16" y="39" width="22" height="22"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onBackButtonPress:" destination="Gma-nl-gFO" eventType="touchUpInside" id="fti-xO-lKU"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7z-aj-o82">
                                 <rect key="frame" x="46" y="37" width="508" height="26"/>
                                 <constraints>
@@ -98,6 +83,22 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jco-4z-jy7">
+                                <rect key="frame" x="540" y="28" width="44" height="44"/>
+                                <state key="normal" image="forwardButton"/>
+                                <connections>
+                                    <action selector="onForwardButtonPress:" destination="Gma-nl-gFO" eventType="touchUpInside" id="C5L-Rj-aCe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMG-so-slP">
+                                <rect key="frame" x="16" y="28" width="44" height="44"/>
+                                <state key="normal" image="backButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBackButtonPress:" destination="Gma-nl-gFO" eventType="touchUpInside" id="fti-xO-lKU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.76486730575561523" green="0.87423521280288696" blue="0.99826288223266602" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -106,21 +107,25 @@
                             <constraint firstItem="64X-Ui-5fQ" firstAttribute="leading" secondItem="ohP-oA-heh" secondAttribute="leadingMargin" id="AFb-Hn-omw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K7z-aj-o82" secondAttribute="trailing" constant="30" id="Oxj-mC-i9O"/>
                             <constraint firstItem="sMG-so-slP" firstAttribute="centerY" secondItem="K7z-aj-o82" secondAttribute="centerY" id="Sfc-dB-8W2">
-                                <variation key="widthClass=compact" constant="-11.5"/>
+                                <variation key="widthClass=compact" constant="-4.5"/>
                             </constraint>
                             <constraint firstItem="vcx-Nt-lHH" firstAttribute="leading" secondItem="ohP-oA-heh" secondAttribute="leadingMargin" id="Wyn-0E-tAL"/>
-                            <constraint firstItem="Jco-4z-jy7" firstAttribute="trailing" secondItem="ohP-oA-heh" secondAttribute="trailingMargin" id="c7M-zD-VHg"/>
+                            <constraint firstItem="Jco-4z-jy7" firstAttribute="trailing" secondItem="ohP-oA-heh" secondAttribute="trailingMargin" id="c7M-zD-VHg">
+                                <variation key="widthClass=compact" constant="16"/>
+                            </constraint>
                             <constraint firstItem="vcx-Nt-lHH" firstAttribute="top" secondItem="wfv-Qt-cKq" secondAttribute="bottom" constant="98" id="cmf-zg-waV"/>
                             <constraint firstItem="K7z-aj-o82" firstAttribute="leading" secondItem="ohP-oA-heh" secondAttribute="leadingMargin" constant="30" id="dHa-uC-BEN"/>
                             <constraint firstItem="vcx-Nt-lHH" firstAttribute="centerY" secondItem="3Le-KT-W9Q" secondAttribute="centerY" constant="136" id="i56-n5-ZIr"/>
                             <constraint firstItem="64X-Ui-5fQ" firstAttribute="top" secondItem="wfv-Qt-cKq" secondAttribute="bottom" constant="-2" id="kLX-hq-fyd"/>
                             <constraint firstItem="K7z-aj-o82" firstAttribute="centerY" secondItem="Jco-4z-jy7" secondAttribute="centerY" id="lrN-Sl-5iQ">
-                                <variation key="widthClass=compact" constant="11.5"/>
+                                <variation key="widthClass=compact" constant="4.5"/>
                             </constraint>
                             <constraint firstItem="64X-Ui-5fQ" firstAttribute="trailing" secondItem="ohP-oA-heh" secondAttribute="trailingMargin" id="mPn-af-3Tc"/>
                             <constraint firstAttribute="centerX" secondItem="K7z-aj-o82" secondAttribute="centerX" id="oDS-bw-WiF"/>
                             <constraint firstItem="vcx-Nt-lHH" firstAttribute="centerX" secondItem="TZG-lt-W8K" secondAttribute="centerX" constant="-0.5" id="rGg-a4-H3A"/>
-                            <constraint firstItem="sMG-so-slP" firstAttribute="leading" secondItem="ohP-oA-heh" secondAttribute="leadingMargin" id="tR0-EF-3ag"/>
+                            <constraint firstItem="sMG-so-slP" firstAttribute="leading" secondItem="ohP-oA-heh" secondAttribute="leadingMargin" id="tR0-EF-3ag">
+                                <variation key="widthClass=compact" constant="-16"/>
+                            </constraint>
                             <constraint firstItem="vcx-Nt-lHH" firstAttribute="centerX" secondItem="3Le-KT-W9Q" secondAttribute="centerX" id="vae-xG-7nw"/>
                             <constraint firstItem="K7z-aj-o82" firstAttribute="top" secondItem="wfv-Qt-cKq" secondAttribute="bottom" constant="17" id="xx3-uU-Rnv"/>
                             <constraint firstItem="vcx-Nt-lHH" firstAttribute="trailing" secondItem="ohP-oA-heh" secondAttribute="trailingMargin" id="yJQ-Ku-QtQ"/>
@@ -448,6 +453,8 @@
     </scenes>
     <resources>
         <image name="GitHub" width="40" height="33"/>
+        <image name="backButton" width="44" height="44"/>
         <image name="first" width="30" height="30"/>
+        <image name="forwardButton" width="44" height="44"/>
     </resources>
 </document>
