@@ -271,7 +271,7 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsTabFilled" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -460,8 +460,8 @@
     <resources>
         <image name="GitHub" width="40" height="33"/>
         <image name="backButton" width="44" height="44"/>
-        <image name="first" width="30" height="30"/>
         <image name="forwardButton" width="44" height="44"/>
         <image name="scheduleTabFilled" width="25" height="25"/>
+        <image name="settingsTabFilled" width="25" height="25"/>
     </resources>
 </document>
