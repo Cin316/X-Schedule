@@ -49,6 +49,6 @@ The authors and content of this app are not affiliated with or endorsed by St. X
 
 This is licensed under the MIT License.  The text of the license is located in `LICENSE.txt`.
 
-The images in this project are licensed under the Creative Commons Attribution License unless otherwise noted.  The text of the license is located at `http://creativecommons.org/licenses/by/4.0/`.
+The images in this project are licensed under the Creative Commons Attribution License unless otherwise noted.  The text of the license is located at http://creativecommons.org/licenses/by/4.0/.
 
-The GitHub logo and icons located in `X Schedule/Images.xcassets/GitHub,imageset` are (c) 2015 GitHub, Inc and are not licensed under CC-BY 4.0.
+The GitHub logo and icons located in `X Schedule/Images.xcassets/GitHub.imageset` are (c) 2015 GitHub, Inc and are not licensed under CC-BY 4.0.
