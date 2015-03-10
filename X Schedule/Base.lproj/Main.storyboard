@@ -290,7 +290,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzP-zV-1pO">
-                                <rect key="frame" x="0.0" y="44" width="600" height="507"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -301,7 +301,7 @@
                         <constraints>
                             <constraint firstItem="DzP-zV-1pO" firstAttribute="leading" secondItem="roZ-Bu-rTH" secondAttribute="leadingMargin" constant="-16" id="3w7-xq-Rdw"/>
                             <constraint firstItem="QX3-Ta-afe" firstAttribute="top" secondItem="DzP-zV-1pO" secondAttribute="bottom" id="GsY-T1-FcA"/>
-                            <constraint firstItem="DzP-zV-1pO" firstAttribute="top" secondItem="xk4-hc-ewq" secondAttribute="bottom" constant="-20" id="nlM-KF-4q4"/>
+                            <constraint firstItem="DzP-zV-1pO" firstAttribute="top" secondItem="xk4-hc-ewq" secondAttribute="bottom" constant="-64" id="nlM-KF-4q4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DzP-zV-1pO" secondAttribute="trailing" constant="-16" id="sH9-at-8FO"/>
                         </constraints>
                     </view>
@@ -312,6 +312,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5B-ug-dHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2207" y="-279"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="okb-JM-lK7">
+            <objects>
+                <viewController id="e5N-BL-TLa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qey-IC-SVJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="n4y-h3-UJd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lhG-fa-zU3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ge-V1-fqI">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">The images in this project are licensed under the Creative Commons Attribution License 4.0 unless otherwise noted. The text of the license is located at http://creativecommons.org/licenses/by/4.0/.
+
+The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC-BY 4.0.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Ge-V1-fqI" firstAttribute="leading" secondItem="lhG-fa-zU3" secondAttribute="leadingMargin" constant="-16" id="0gk-Dm-MDw"/>
+                            <constraint firstItem="n4y-h3-UJd" firstAttribute="top" secondItem="1Ge-V1-fqI" secondAttribute="bottom" constant="-69" id="4lE-hJ-N4B"/>
+                            <constraint firstItem="n4y-h3-UJd" firstAttribute="top" secondItem="1Ge-V1-fqI" secondAttribute="bottom" id="5tC-1t-CjX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Ge-V1-fqI" secondAttribute="trailing" constant="-16" id="Abi-lc-ZF5"/>
+                            <constraint firstItem="1Ge-V1-fqI" firstAttribute="top" secondItem="qey-IC-SVJ" secondAttribute="bottom" constant="-64" id="Mtm-Da-wSf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4lE-hJ-N4B"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QFn-zS-hzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2207" y="371"/>
         </scene>
         <!--About-->
         <scene sceneID="FBn-X6-YqM">
@@ -342,6 +384,24 @@
                                             <segue destination="7qX-e8-8SR" kind="show" id="v3A-cj-duQ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="FcF-1m-Op6" style="IBUITableViewCellStyleDefault" id="kYM-bb-31N">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="kYM-bb-31N" id="gUU-Xo-y8M">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Image Licensing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FcF-1m-Op6">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="e5N-BL-TLa" kind="show" id="Xvs-5A-U5Y"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="Vb5-rm-BeN" detailTextLabel="Yia-Hx-e8b" style="IBUITableViewCellStyleValue1" id="V23-Bd-1Iz">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="V23-Bd-1Iz" id="g9h-Wv-jEh">
@@ -367,7 +427,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Links" footerTitle="X Schedule is not endorsed by or affiliated with St. Xavier High School." id="mwb-ib-Edy">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="05Z-n8-llP" imageView="qdv-qR-WN4" style="IBUITableViewCellStyleDefault" id="ToM-ob-dHZ">
+                                    <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="05Z-n8-llP" imageView="qdv-qR-WN4" style="IBUITableViewCellStyleDefault" id="ToM-ob-dHZ">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="ToM-ob-dHZ" id="Fid-oG-SnE">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -385,7 +445,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="8dw-by-yk1" style="IBUITableViewCellStyleDefault" id="Xho-8t-700">
+                                    <tableViewCell tag="201" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="8dw-by-yk1" style="IBUITableViewCellStyleDefault" id="Xho-8t-700">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="Xho-8t-700" id="5Lb-aY-RQr">
                                             <autoresizingMask key="autoresizingMask"/>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutViewController: UITableViewController {
+class AboutViewController: UITableViewController, UITableViewDelegate {
     
     @IBOutlet weak var versionLabel: UILabel!
     
@@ -16,7 +16,7 @@ class AboutViewController: UITableViewController {
         super.viewDidLoad()
         
         if let version = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as? String {
-            versionLabel.text = version;
+            versionLabel.text = version
         }
     }
     
@@ -25,5 +25,18 @@ class AboutViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var selectedCell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
+        if let cell = selectedCell {
+            if (cell.tag == 200) { //GitHub link
+                var url: NSURL = NSURL(string: "http://github.com/Cin316/X-Schedule")!
+                UIApplication.sharedApplication().openURL(url)
+            } else if (cell.tag == 201) { //St. X link
+                var url: NSURL = NSURL(string: "http://www.stxavier.org/")!
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
     
 }
