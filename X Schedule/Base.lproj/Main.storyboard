@@ -83,13 +83,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jco-4z-jy7">
-                                <rect key="frame" x="540" y="28" width="44" height="44"/>
-                                <state key="normal" image="forwardButton"/>
-                                <connections>
-                                    <action selector="onForwardButtonPress:" destination="Gma-nl-gFO" eventType="touchUpInside" id="C5L-Rj-aCe"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMG-so-slP">
                                 <rect key="frame" x="16" y="28" width="44" height="44"/>
                                 <state key="normal" image="backButton">
@@ -97,6 +90,13 @@
                                 </state>
                                 <connections>
                                     <action selector="onBackButtonPress:" destination="Gma-nl-gFO" eventType="touchUpInside" id="fti-xO-lKU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jco-4z-jy7">
+                                <rect key="frame" x="540" y="28" width="44" height="44"/>
+                                <state key="normal" image="forwardButton"/>
+                                <connections>
+                                    <action selector="onForwardButtonPress:" destination="Gma-nl-gFO" eventType="touchUpInside" id="C5L-Rj-aCe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -311,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5B-ug-dHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2207" y="-279"/>
+            <point key="canvasLocation" x="2232" y="-278"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="okb-JM-lK7">
@@ -353,7 +353,79 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFn-zS-hzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2207" y="371"/>
+            <point key="canvasLocation" x="2232" y="371"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vg9-J5-sj7">
+            <objects>
+                <viewController id="ll0-xW-i7f" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EDi-G8-ekn"/>
+                        <viewControllerLayoutGuide type="bottom" id="yBU-SF-Kgp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E94-8B-n7t">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clV-qp-RFO">
+                                <rect key="frame" x="188" y="267" width="224" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="gvr-zF-sj0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="39"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scheduleTab" translatesAutoresizingMaskIntoConstraints="NO" id="CGr-J2-22j">
+                                <rect key="frame" x="210" y="79" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="03d-bi-RMJ"/>
+                                    <constraint firstAttribute="height" constant="180" id="ahz-cr-wUj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2015 Nicholas Reichert.  Available under the MIT License." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytx-K1-59s">
+                                <rect key="frame" x="157" y="487" width="286" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="5Yo-4T-hAw"/>
+                                    <constraint firstAttribute="width" constant="286" id="MTk-F4-Bml"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Nicholas Reichert." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtB-eS-AGY">
+                                <rect key="frame" x="162" y="322" width="276" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ac0-15-gfO"/>
+                                    <constraint firstAttribute="width" constant="276" id="etZ-qU-KoZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="clV-qp-RFO" secondAttribute="centerX" id="7R9-vT-6Ps"/>
+                            <constraint firstItem="TtB-eS-AGY" firstAttribute="top" secondItem="clV-qp-RFO" secondAttribute="bottom" constant="-9" id="BPB-uu-JzH"/>
+                            <constraint firstAttribute="centerX" secondItem="TtB-eS-AGY" secondAttribute="centerX" id="Gaa-PD-hwJ"/>
+                            <constraint firstItem="clV-qp-RFO" firstAttribute="top" secondItem="CGr-J2-22j" secondAttribute="bottom" constant="8" id="W68-or-b6h"/>
+                            <constraint firstItem="TtB-eS-AGY" firstAttribute="top" secondItem="clV-qp-RFO" secondAttribute="bottom" constant="8" id="WlB-jB-kVe"/>
+                            <constraint firstItem="CGr-J2-22j" firstAttribute="top" secondItem="EDi-G8-ekn" secondAttribute="bottom" constant="15" id="YGK-b0-bMj"/>
+                            <constraint firstAttribute="centerX" secondItem="CGr-J2-22j" secondAttribute="centerX" id="a6O-fP-c63"/>
+                            <constraint firstAttribute="centerX" secondItem="Ytx-K1-59s" secondAttribute="centerX" id="kMI-dL-ddp"/>
+                            <constraint firstItem="yBU-SF-Kgp" firstAttribute="top" secondItem="Ytx-K1-59s" secondAttribute="bottom" constant="8" id="oRa-Xu-kk3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BPB-uu-JzH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZW-1b-J3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2232" y="1117"/>
         </scene>
         <!--About-->
         <scene sceneID="FBn-X6-YqM">
@@ -422,6 +494,24 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gev-rg-wcK" style="IBUITableViewCellStyleDefault" id="mxC-Ly-p2f">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="mxC-Ly-p2f" id="qsd-Lp-tce">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gev-rg-wcK">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="ll0-xW-i7f" kind="show" id="r1F-Rt-LL7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -521,6 +611,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
         <image name="GitHub" width="40" height="33"/>
         <image name="backButton" width="44" height="44"/>
         <image name="forwardButton" width="44" height="44"/>
+        <image name="scheduleTab" width="25" height="25"/>
         <image name="scheduleTabFilled" width="25" height="25"/>
         <image name="settingsTabFilled" width="25" height="25"/>
     </resources>
