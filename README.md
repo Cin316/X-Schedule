@@ -4,7 +4,8 @@ X Schedule is an iOS app that fetches the bell schedule for St. Xavier High Scho
 
 #Screenshots
 
-To be added.
+![Screenshot](/Screenshots/screenshot1.png?raw=true “Schedule View”)
+![Screenshot](/Screenshots/screenshot2.png?raw=true “About Tab”)
 
 #Download and Installation
 
