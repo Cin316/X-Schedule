@@ -358,7 +358,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
         <!--Donors View-->
         <scene sceneID="6y4-A3-LfN">
             <objects>
-                <viewController title="Donors View" id="TaS-PC-bZ7" sceneMemberID="viewController">
+                <viewController title="Donors View" id="TaS-PC-bZ7" customClass="DonorsViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mj1-Ja-ihE"/>
                         <viewControllerLayoutGuide type="bottom" id="7I0-Lt-bTk"/>
@@ -373,7 +373,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Donors" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-Cc-F8L">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Donors" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-Cc-F8L">
                                 <rect key="frame" x="0.0" y="110" width="600" height="441"/>
                                 <color key="backgroundColor" red="0.77647058823529413" green="0.8666666666666667" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -397,6 +397,9 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="mainTextView" destination="OGA-Cc-F8L" id="syE-hf-Ouc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d42-Kr-7p4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
