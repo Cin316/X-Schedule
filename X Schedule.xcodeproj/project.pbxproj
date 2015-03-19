@@ -15,6 +15,7 @@
 		E138A8321A8E970E00549F84 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138A8311A8E970E00549F84 /* DataViewController.swift */; };
 		E16DCB6B1AB3BDE50045F5A0 /* DonorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16DCB6A1AB3BDE50045F5A0 /* DonorsViewController.swift */; };
 		E16DCB6D1AB3BF610045F5A0 /* donors.txt in Resources */ = {isa = PBXBuildFile; fileRef = E16DCB6C1AB3BF610045F5A0 /* donors.txt */; };
+		E1DDEAF81AB7C35200B6F37F /* ScheduleSwitcherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */; };
 		E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */; };
 		E1E3EE4A1AA8F24F00A00603 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1E3EE491AA8F24F00A00603 /* LICENSE.txt */; };
 		E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18039831AABF260006513B2 /* AboutViewController.swift */; };
@@ -36,6 +37,7 @@
 		E16DCB6A1AB3BDE50045F5A0 /* DonorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DonorsViewController.swift; path = ../DonorsViewController.swift; sourceTree = "<group>"; };
 		E16DCB6C1AB3BF610045F5A0 /* donors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = donors.txt; sourceTree = SOURCE_ROOT; };
 		E18039831AABF260006513B2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleSwitcherViewController.swift; sourceTree = "<group>"; };
 		E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		E1E3EE491AA8F24F00A00603 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDownloader.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */,
 				E1EFEEAE1A942DDA003D3C57 /* Schedule.swift */,
 				E138A8151A8E8B1E00549F84 /* Main.storyboard */,
+				E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */,
 				E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */,
 				E18039831AABF260006513B2 /* AboutViewController.swift */,
 				E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */,
@@ -177,6 +180,7 @@
 				E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */,
 				E1EFEEAF1A942DDA003D3C57 /* Schedule.swift in Sources */,
 				E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */,
+				E1DDEAF81AB7C35200B6F37F /* ScheduleSwitcherViewController.swift in Sources */,
 				E1EFEEB51A991766003D3C57 /* ScheduleTableController.swift in Sources */,
 				E1EFEEAD1A93918E003D3C57 /* ScheduleDownloader.swift in Sources */,
 				E138A8321A8E970E00549F84 /* DataViewController.swift in Sources */,
