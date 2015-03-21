@@ -277,6 +277,40 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
+        <!--Widget Instructions-->
+        <scene sceneID="8sK-YA-4W3">
+            <objects>
+                <viewController title="Widget Instructions" id="2CV-zD-Avh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XLW-YO-AA4"/>
+                        <viewControllerLayoutGuide type="bottom" id="qRh-1P-bRX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ppv-g4-8LU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Go6-Ue-hvp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DwR-4q-8oO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2232" y="-293"/>
+        </scene>
         <!--Legal View Controller-->
         <scene sceneID="gFe-Tx-z5y">
             <objects>
@@ -311,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5B-ug-dHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="-278"/>
+            <point key="canvasLocation" x="2232" y="372"/>
         </scene>
         <!--Image Licensing-->
         <scene sceneID="okb-JM-lK7">
@@ -353,7 +387,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFn-zS-hzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="371"/>
+            <point key="canvasLocation" x="2232" y="1021"/>
         </scene>
         <!--Donors View-->
         <scene sceneID="6y4-A3-LfN">
@@ -403,7 +437,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d42-Kr-7p4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="1796"/>
+            <point key="canvasLocation" x="2232" y="2446"/>
         </scene>
         <!--About-->
         <scene sceneID="Vg9-J5-sj7">
@@ -481,7 +515,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZW-1b-J3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="1117"/>
+            <point key="canvasLocation" x="2232" y="1767"/>
         </scene>
         <!--About Menu-->
         <scene sceneID="FBn-X6-YqM">
@@ -508,6 +542,9 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="2CV-zD-Avh" kind="show" id="rGW-Zl-ssz"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gev-rg-wcK" style="IBUITableViewCellStyleDefault" id="mxC-Ly-p2f">
                                         <autoresizingMask key="autoresizingMask"/>
