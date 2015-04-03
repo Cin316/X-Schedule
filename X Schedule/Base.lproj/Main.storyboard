@@ -90,7 +90,7 @@
                                 <rect key="frame" x="282" y="307" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMG-so-slP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMG-so-slP">
                                 <rect key="frame" x="16" y="31" width="44" height="44"/>
                                 <state key="normal" image="backButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -401,8 +401,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="bA9-gW-icy" kind="show" identifier="displayScheduleiPhone" id="0aj-7L-0Dv"/>
-                        <segue destination="Gma-nl-gFO" kind="show" identifier="displayScheduleiPadPortrait" id="FMJ-m7-yaz"/>
+                        <segue destination="bA9-gW-icy" kind="custom" identifier="displayScheduleiPhone" customClass="NoAnimationSegue" customModule="X_Schedule" customModuleProvider="target" id="0aj-7L-0Dv"/>
+                        <segue destination="Gma-nl-gFO" kind="custom" identifier="displayScheduleiPadPortrait" customClass="NoAnimationSegue" customModule="X_Schedule" customModuleProvider="target" id="FMJ-m7-yaz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8da-lE-KhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -824,8 +824,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wednesday Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8S-w1-vTy">
-                                <rect key="frame" x="46" y="37" width="508" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8S-w1-vTy">
+                                <rect key="frame" x="46" y="37" width="508" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="Ubl-D6-EOG"/>
                                     <constraint firstAttribute="width" constant="316" id="gXp-VG-eNp"/>
@@ -856,7 +856,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 </variation>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dkd-YP-ooV">
-                                <rect key="frame" x="16" y="118" width="568" height="419"/>
+                                <rect key="frame" x="16" y="118" width="568" height="468"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -897,8 +897,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <rect key="frame" x="282" y="307" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh0-JI-FfB">
-                                <rect key="frame" x="16" y="31" width="44" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh0-JI-FfB">
+                                <rect key="frame" x="16" y="28" width="44" height="44"/>
                                 <state key="normal" image="backButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -906,8 +906,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     <action selector="onBackButtonPress:" destination="bA9-gW-icy" eventType="touchUpInside" id="uRT-Ap-i2j"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUx-ad-0kf">
-                                <rect key="frame" x="540" y="31" width="44" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUx-ad-0kf">
+                                <rect key="frame" x="540" y="28" width="44" height="44"/>
                                 <state key="normal" image="forwardButton"/>
                                 <connections>
                                     <action selector="onForwardButtonPress:" destination="bA9-gW-icy" eventType="touchUpInside" id="mDd-yz-pnv"/>
@@ -1045,7 +1045,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
             <objects>
                 <tableViewController id="xPD-YH-zR3" customClass="ScheduleTableController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="EL4-Bd-hbP">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="419"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="468"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>

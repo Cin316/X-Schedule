@@ -10,13 +10,14 @@ import UIKit
 
 class ScheduleSwitcherViewController: UINavigationController {
     
-    var currentOrientation: UIDeviceOrientation = UIDevice.currentDevice().orientation;
+    var currentOrientation: UIDeviceOrientation = UIDevice.currentDevice().orientation
+    var scheduleDate: NSDate = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Correct tab bar title.
-        self.title = "Schedule" // TODO Fix tab bar title.
+        self.title = "Schedule"
         self.tabBarController!.title = "Schedule"
         
         //Get current orientation and store it.
@@ -45,10 +46,21 @@ class ScheduleSwitcherViewController: UINavigationController {
     }
     
     func switchToOrientationView() {
-        // TODO Add check to avoid creating a new view every time.
+        //Take date from current view controller and store it.
+        if let top = self.topViewController {
+            if let topData = top as? DataViewController {
+                self.scheduleDate = topData.scheduleDate
+            }
+        }
+        
         if (UIDevice.currentDevice().userInterfaceIdiom == .Phone) { //If on iPhone...
-            //Do nothing, because there is only one orientation.
-            self.performSegueWithIdentifier("displayScheduleiPhone", sender: self)
+            //Check if there is a view already.
+            if (self.topViewController != nil) {
+                //Do nothing, because there is only one orientation.
+            } else {
+                //Add a new iPhone view controller.
+                self.performSegueWithIdentifier("displayScheduleiPhone", sender: self)
+            }
         } else if (UIDevice.currentDevice().userInterfaceIdiom == .Pad) { //If on iPad...
             //Check orientation.
             if (UIDeviceOrientationIsLandscape(currentOrientation)) { //If orientation is landscape...
@@ -58,5 +70,22 @@ class ScheduleSwitcherViewController: UINavigationController {
                 self.performSegueWithIdentifier("displayScheduleiPadPortrait", sender: self)
             }
         }
+        
+        //Store date in new view controller if necessary.
+        if let top = self.topViewController {
+            if let topData = top as? DataViewController {
+                topData.scheduleDate = self.scheduleDate
+            }
+        }
     }
+}
+
+class NoAnimationSegue: UIStoryboardSegue {
+    override func perform() {
+        let source = sourceViewController as UINavigationController //This will crash if not used with a UINaviagtionController.
+        let destination = destinationViewController as UIViewController
+        //Transition with no animation.  Sets new view as root view controller.
+        source.setViewControllers([destination], animated: false)
+    }
+    
 }
