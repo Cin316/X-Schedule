@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -1154,10 +1155,10 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
             </objects>
             <point key="canvasLocation" x="2382" y="-1000.875"/>
         </scene>
-        <!--iPhone Data View Controller-->
+        <!--iPad Landscape Data View Controller-->
         <scene sceneID="yZr-oW-LOj">
             <objects>
-                <viewController title="iPhone Data View Controller" id="58n-Ck-sFa" customClass="DataViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="iPad Landscape Data View Controller" id="58n-Ck-sFa" customClass="DataViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B3v-Dh-h5k"/>
                         <viewControllerLayoutGuide type="bottom" id="VXr-kc-eM7"/>
@@ -1341,7 +1342,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     <segue destination="iXd-71-7Tc" kind="embed" id="vuT-py-pOR"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGU-HT-3br">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGU-HT-3br">
                                 <rect key="frame" x="190" y="159" width="220" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="3ZQ-pD-NJn"/>
@@ -1354,20 +1355,20 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Wd4-sh-vVF"/>
                                         <exclude reference="Wbl-St-N97"/>
+                                        <exclude reference="Wd4-sh-vVF"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="Wd4-sh-vVF"/>
-                                        <include reference="Wbl-St-N97"/>
-                                        <exclude reference="Rhf-FL-sV5"/>
                                         <exclude reference="3ZQ-pD-NJn"/>
+                                        <exclude reference="Rhf-FL-sV5"/>
+                                        <include reference="Wbl-St-N97"/>
+                                        <include reference="Wd4-sh-vVF"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZv-Ja-fE6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZv-Ja-fE6">
                                 <rect key="frame" x="190" y="159" width="220" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="BYu-KT-DWI"/>
@@ -1380,20 +1381,20 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="cmY-DB-c30"/>
                                         <exclude reference="I7Y-Sl-IVX"/>
+                                        <exclude reference="cmY-DB-c30"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="cmY-DB-c30"/>
-                                        <include reference="I7Y-Sl-IVX"/>
-                                        <exclude reference="muC-Gz-mXi"/>
                                         <exclude reference="BYu-KT-DWI"/>
+                                        <include reference="I7Y-Sl-IVX"/>
+                                        <include reference="cmY-DB-c30"/>
+                                        <exclude reference="muC-Gz-mXi"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaf-ZM-fAu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xaf-ZM-fAu">
                                 <rect key="frame" x="190" y="159" width="220" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="LRZ-PB-YIk"/>
@@ -1412,14 +1413,14 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
+                                        <exclude reference="LRZ-PB-YIk"/>
                                         <include reference="RPE-kH-h2g"/>
                                         <include reference="ZFZ-7v-5j8"/>
-                                        <exclude reference="LRZ-PB-YIk"/>
                                         <exclude reference="uTK-s5-biz"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-vJ-MC2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-vJ-MC2">
                                 <rect key="frame" x="190" y="159" width="220" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="5Nf-6J-ZuT"/>
@@ -1440,12 +1441,12 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     <mask key="constraints">
                                         <include reference="5Nf-6J-ZuT"/>
                                         <include reference="Arf-hK-V43"/>
-                                        <exclude reference="wjo-XW-QaG"/>
                                         <exclude reference="fPo-Le-WqB"/>
+                                        <exclude reference="wjo-XW-QaG"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXj-UI-QZh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXj-UI-QZh">
                                 <rect key="frame" x="16" y="18" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="Crr-dd-ZtJ">
@@ -1459,9 +1460,9 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="Crr-dd-ZtJ"/>
                                         <exclude reference="JQI-Zp-8fw"/>
                                         <exclude reference="aNL-Qm-21e"/>
-                                        <exclude reference="Crr-dd-ZtJ"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -1471,12 +1472,12 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <exclude reference="JQI-Zp-8fw"/>
                                         <include reference="Crr-dd-ZtJ"/>
+                                        <exclude reference="JQI-Zp-8fw"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIy-07-0c0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIy-07-0c0">
                                 <rect key="frame" x="16" y="18" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="2v2-Eb-qhv">
@@ -1490,9 +1491,9 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="2v2-Eb-qhv"/>
                                         <exclude reference="J5t-lm-cl5"/>
                                         <exclude reference="sbA-Wn-odX"/>
-                                        <exclude reference="2v2-Eb-qhv"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -1502,12 +1503,12 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <exclude reference="J5t-lm-cl5"/>
                                         <include reference="2v2-Eb-qhv"/>
+                                        <exclude reference="J5t-lm-cl5"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1B-o5-XT9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1B-o5-XT9">
                                 <rect key="frame" x="16" y="18" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="3or-gf-pqJ"/>
@@ -1521,9 +1522,9 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="n1K-qO-CTX"/>
                                         <exclude reference="3or-gf-pqJ"/>
                                         <exclude reference="Sdm-mR-40x"/>
+                                        <exclude reference="n1K-qO-CTX"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -1533,12 +1534,12 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <exclude reference="n1K-qO-CTX"/>
                                         <include reference="Sdm-mR-40x"/>
+                                        <exclude reference="n1K-qO-CTX"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-k9-cQb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-k9-cQb">
                                 <rect key="frame" x="16" y="18" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="HIy-I3-TZa">
@@ -1552,9 +1553,9 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="HIy-I3-TZa"/>
                                         <exclude reference="Lok-gq-U8I"/>
                                         <exclude reference="mRN-Mr-XpU"/>
-                                        <exclude reference="HIy-I3-TZa"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -1564,8 +1565,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <exclude reference="Lok-gq-U8I"/>
                                         <include reference="HIy-I3-TZa"/>
+                                        <exclude reference="Lok-gq-U8I"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -1693,6 +1694,29 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="vuj-k9-cQb"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="6EH-gD-G52"/>
+                                <exclude reference="uzb-XW-klj"/>
+                                <exclude reference="MsE-74-iGM"/>
+                                <exclude reference="WnA-mX-bWk"/>
+                                <exclude reference="Ugi-yJ-60s"/>
+                                <exclude reference="S5i-vW-2u4"/>
+                                <exclude reference="VCx-zF-PUR"/>
+                                <exclude reference="ank-qu-X0g"/>
+                                <exclude reference="BYi-4o-vXx"/>
+                                <exclude reference="1nT-NB-K40"/>
+                                <exclude reference="HQ9-9l-irx"/>
+                                <exclude reference="rcW-AJ-0dR"/>
+                                <exclude reference="zbT-8t-oAe"/>
+                                <exclude reference="ag2-jw-EUf"/>
+                                <exclude reference="gnt-Ci-3Tw"/>
+                                <exclude reference="wWp-oG-FZW"/>
+                                <exclude reference="BU6-ke-WHN"/>
+                                <exclude reference="EHv-Ma-vc6"/>
+                                <exclude reference="JqU-8a-F0d"/>
+                                <exclude reference="MRb-Aq-0m6"/>
+                                <exclude reference="jhE-ew-BhD"/>
+                                <exclude reference="kcf-13-Qgq"/>
+                                <exclude reference="x6F-1O-T8g"/>
                                 <exclude reference="1FU-xC-ZnY"/>
                                 <exclude reference="C7b-2a-naa"/>
                                 <exclude reference="FOI-Fy-XC6"/>
@@ -1704,43 +1728,12 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="pTC-4t-Prq"/>
                                 <exclude reference="vfi-2V-0Tb"/>
                                 <exclude reference="yH9-GR-Ky9"/>
-                                <exclude reference="BYi-4o-vXx"/>
-                                <exclude reference="1nT-NB-K40"/>
-                                <exclude reference="HQ9-9l-irx"/>
-                                <exclude reference="rcW-AJ-0dR"/>
-                                <exclude reference="Ugi-yJ-60s"/>
-                                <exclude reference="BU6-ke-WHN"/>
-                                <exclude reference="EHv-Ma-vc6"/>
-                                <exclude reference="JqU-8a-F0d"/>
-                                <exclude reference="MRb-Aq-0m6"/>
-                                <exclude reference="jhE-ew-BhD"/>
-                                <exclude reference="kcf-13-Qgq"/>
-                                <exclude reference="x6F-1O-T8g"/>
-                                <exclude reference="S5i-vW-2u4"/>
-                                <exclude reference="VCx-zF-PUR"/>
-                                <exclude reference="ank-qu-X0g"/>
                                 <exclude reference="6lz-UA-gx9"/>
                                 <exclude reference="NFQ-aN-3bd"/>
                                 <exclude reference="Tec-bW-W3c"/>
                                 <exclude reference="aex-sF-At3"/>
                                 <exclude reference="gHZ-0O-Inh"/>
                                 <exclude reference="kLR-vp-Vvl"/>
-                                <exclude reference="ag2-jw-EUf"/>
-                                <exclude reference="gnt-Ci-3Tw"/>
-                                <exclude reference="wWp-oG-FZW"/>
-                                <exclude reference="zbT-8t-oAe"/>
-                                <exclude reference="6EH-gD-G52"/>
-                                <exclude reference="uzb-XW-klj"/>
-                                <exclude reference="1qF-JK-jVL"/>
-                                <exclude reference="61G-Cx-LO6"/>
-                                <exclude reference="aEY-e9-2ox"/>
-                                <exclude reference="c1p-iV-pQj"/>
-                                <exclude reference="yVL-rY-MMW"/>
-                                <exclude reference="MsE-74-iGM"/>
-                                <exclude reference="ERO-7o-kwV"/>
-                                <exclude reference="LKS-LA-o1M"/>
-                                <exclude reference="ghr-Z1-TJn"/>
-                                <exclude reference="r6p-db-6VZ"/>
                                 <exclude reference="Fd4-aK-Wh3"/>
                                 <exclude reference="I9d-qd-IM4"/>
                                 <exclude reference="LgU-Kr-rL9"/>
@@ -1749,7 +1742,15 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="ehj-p1-ovT"/>
                                 <exclude reference="pEI-ae-fXx"/>
                                 <exclude reference="tnS-Ts-EuT"/>
-                                <exclude reference="WnA-mX-bWk"/>
+                                <exclude reference="1qF-JK-jVL"/>
+                                <exclude reference="61G-Cx-LO6"/>
+                                <exclude reference="aEY-e9-2ox"/>
+                                <exclude reference="c1p-iV-pQj"/>
+                                <exclude reference="yVL-rY-MMW"/>
+                                <exclude reference="ERO-7o-kwV"/>
+                                <exclude reference="LKS-LA-o1M"/>
+                                <exclude reference="ghr-Z1-TJn"/>
+                                <exclude reference="r6p-db-6VZ"/>
                                 <exclude reference="BUK-7g-wdX"/>
                                 <exclude reference="Jci-c6-sjn"/>
                                 <exclude reference="dzb-n7-ynV"/>
@@ -1759,12 +1760,12 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
+                                <include reference="P7i-fv-Phq"/>
                                 <include reference="7We-le-MJZ"/>
                                 <include reference="1nT-NB-K40"/>
                                 <include reference="BRn-Tj-AJ8"/>
                                 <include reference="QOd-6c-fDE"/>
                                 <include reference="vao-gB-fgA"/>
-                                <include reference="P7i-fv-Phq"/>
                                 <include reference="vps-Me-gHb"/>
                                 <include reference="r6p-db-6VZ"/>
                                 <include reference="vRM-3O-h5H"/>
@@ -1787,6 +1788,35 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <include reference="vuj-k9-cQb"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="6EH-gD-G52"/>
+                                <include reference="uzb-XW-klj"/>
+                                <include reference="MsE-74-iGM"/>
+                                <include reference="WnA-mX-bWk"/>
+                                <include reference="Ugi-yJ-60s"/>
+                                <exclude reference="P7i-fv-Phq"/>
+                                <include reference="S5i-vW-2u4"/>
+                                <include reference="VCx-zF-PUR"/>
+                                <include reference="ank-qu-X0g"/>
+                                <exclude reference="7We-le-MJZ"/>
+                                <include reference="BYi-4o-vXx"/>
+                                <exclude reference="BRn-Tj-AJ8"/>
+                                <exclude reference="HQ9-9l-irx"/>
+                                <exclude reference="QOd-6c-fDE"/>
+                                <include reference="rcW-AJ-0dR"/>
+                                <exclude reference="vao-gB-fgA"/>
+                                <exclude reference="KNX-e7-Fk4"/>
+                                <include reference="zbT-8t-oAe"/>
+                                <include reference="ag2-jw-EUf"/>
+                                <include reference="gnt-Ci-3Tw"/>
+                                <exclude reference="vps-Me-gHb"/>
+                                <include reference="wWp-oG-FZW"/>
+                                <include reference="BU6-ke-WHN"/>
+                                <include reference="EHv-Ma-vc6"/>
+                                <include reference="JqU-8a-F0d"/>
+                                <include reference="MRb-Aq-0m6"/>
+                                <include reference="jhE-ew-BhD"/>
+                                <include reference="kcf-13-Qgq"/>
+                                <include reference="x6F-1O-T8g"/>
                                 <include reference="1FU-xC-ZnY"/>
                                 <include reference="C7b-2a-naa"/>
                                 <include reference="FOI-Fy-XC6"/>
@@ -1798,49 +1828,12 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <include reference="pTC-4t-Prq"/>
                                 <include reference="vfi-2V-0Tb"/>
                                 <include reference="yH9-GR-Ky9"/>
-                                <exclude reference="7We-le-MJZ"/>
-                                <include reference="BYi-4o-vXx"/>
-                                <exclude reference="BRn-Tj-AJ8"/>
-                                <exclude reference="HQ9-9l-irx"/>
-                                <exclude reference="QOd-6c-fDE"/>
-                                <include reference="rcW-AJ-0dR"/>
-                                <exclude reference="vao-gB-fgA"/>
-                                <include reference="Ugi-yJ-60s"/>
-                                <include reference="BU6-ke-WHN"/>
-                                <include reference="EHv-Ma-vc6"/>
-                                <include reference="JqU-8a-F0d"/>
-                                <include reference="MRb-Aq-0m6"/>
-                                <include reference="jhE-ew-BhD"/>
-                                <include reference="kcf-13-Qgq"/>
-                                <include reference="x6F-1O-T8g"/>
-                                <exclude reference="P7i-fv-Phq"/>
-                                <include reference="S5i-vW-2u4"/>
-                                <include reference="VCx-zF-PUR"/>
-                                <include reference="ank-qu-X0g"/>
                                 <include reference="6lz-UA-gx9"/>
                                 <include reference="NFQ-aN-3bd"/>
                                 <include reference="Tec-bW-W3c"/>
                                 <exclude reference="aex-sF-At3"/>
                                 <include reference="gHZ-0O-Inh"/>
                                 <include reference="kLR-vp-Vvl"/>
-                                <include reference="ag2-jw-EUf"/>
-                                <include reference="gnt-Ci-3Tw"/>
-                                <exclude reference="vps-Me-gHb"/>
-                                <include reference="wWp-oG-FZW"/>
-                                <exclude reference="KNX-e7-Fk4"/>
-                                <include reference="zbT-8t-oAe"/>
-                                <include reference="6EH-gD-G52"/>
-                                <include reference="uzb-XW-klj"/>
-                                <include reference="1qF-JK-jVL"/>
-                                <include reference="61G-Cx-LO6"/>
-                                <include reference="aEY-e9-2ox"/>
-                                <include reference="c1p-iV-pQj"/>
-                                <exclude reference="yVL-rY-MMW"/>
-                                <include reference="MsE-74-iGM"/>
-                                <include reference="ERO-7o-kwV"/>
-                                <include reference="LKS-LA-o1M"/>
-                                <exclude reference="ghr-Z1-TJn"/>
-                                <exclude reference="vRM-3O-h5H"/>
                                 <include reference="Fd4-aK-Wh3"/>
                                 <include reference="I9d-qd-IM4"/>
                                 <include reference="LgU-Kr-rL9"/>
@@ -1849,7 +1842,15 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="ehj-p1-ovT"/>
                                 <include reference="pEI-ae-fXx"/>
                                 <include reference="tnS-Ts-EuT"/>
-                                <include reference="WnA-mX-bWk"/>
+                                <include reference="1qF-JK-jVL"/>
+                                <include reference="61G-Cx-LO6"/>
+                                <include reference="aEY-e9-2ox"/>
+                                <include reference="c1p-iV-pQj"/>
+                                <exclude reference="yVL-rY-MMW"/>
+                                <include reference="ERO-7o-kwV"/>
+                                <include reference="LKS-LA-o1M"/>
+                                <exclude reference="ghr-Z1-TJn"/>
+                                <exclude reference="vRM-3O-h5H"/>
                                 <include reference="BUK-7g-wdX"/>
                                 <include reference="Jci-c6-sjn"/>
                                 <include reference="dzb-n7-ynV"/>
@@ -1875,7 +1876,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
             <objects>
                 <tableViewController id="iXd-71-7Tc" customClass="ScheduleTableController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="cRv-xb-esa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="468"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
@@ -1886,7 +1887,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WeL-lC-waT" id="6el-TQ-bYs">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLEX 1" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M13-QE-CZJ">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FLEX 1" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M13-QE-CZJ">
                                             <rect key="frame" x="8" y="5" width="266" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="56" id="cY3-Vn-SQT"/>
@@ -1899,14 +1900,13 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                                     <exclude reference="cY3-Vn-SQT"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
-                                                <rect key="frame" x="8" y="6" width="56" height="21"/>
+                                            <variation key="heightClass=regular-widthClass=regular">
                                                 <mask key="constraints">
                                                     <exclude reference="cY3-Vn-SQT"/>
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 12:00" lineBreakMode="tailTruncation" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQf-Cw-F1U">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" misplaced="YES" text="10:00 - 12:00" lineBreakMode="tailTruncation" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQf-Cw-F1U">
                                             <rect key="frame" x="294" y="2" width="266" height="25"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1919,9 +1919,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                             </variation>
                                             <variation key="widthClass=regular" misplaced="YES">
                                                 <rect key="frame" x="130" y="3" width="102" height="25"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
-                                                <rect key="frame" x="72" y="2" width="55" height="25"/>
                                             </variation>
                                         </label>
                                     </subviews>
