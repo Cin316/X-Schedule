@@ -49,8 +49,8 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcx-Nt-lHH">
-                                <rect key="frame" x="16" y="118" width="568" height="419"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcx-Nt-lHH">
+                                <rect key="frame" x="16" y="118" width="568" height="468"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -238,7 +238,7 @@
             <objects>
                 <tableViewController id="qEg-fp-2sb" customClass="ScheduleTableController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="U1X-SY-klC">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="419"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="468"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.813995361328125" green="0.89592456817626953" blue="0.99735766649246216" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
@@ -1158,7 +1158,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
         <!--iPad Landscape Data View Controller-->
         <scene sceneID="yZr-oW-LOj">
             <objects>
-                <viewController title="iPad Landscape Data View Controller" id="58n-Ck-sFa" customClass="DataViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="iPad Landscape Data View Controller" id="58n-Ck-sFa" customClass="WeekDataViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B3v-Dh-h5k"/>
                         <viewControllerLayoutGuide type="bottom" id="VXr-kc-eM7"/>
@@ -1198,19 +1198,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     </mask>
                                 </variation>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lY-C3-7zR">
-                                <rect key="frame" x="16" y="118" width="568" height="468"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="iXd-71-7Tc" kind="embed" id="wRA-yG-nIp"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IR1-su-jnB">
+                            <containerView opaque="NO" tag="301" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IR1-su-jnB">
                                 <rect key="frame" x="16" y="118" width="568" height="468"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1222,7 +1210,19 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     <segue destination="iXd-71-7Tc" kind="embed" id="auY-8h-LaY"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrD-Vb-kp5">
+                            <containerView opaque="NO" tag="302" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lY-C3-7zR">
+                                <rect key="frame" x="16" y="118" width="568" height="468"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="iXd-71-7Tc" kind="embed" id="wRA-yG-nIp"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" tag="303" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrD-Vb-kp5">
                                 <rect key="frame" x="16" y="118" width="568" height="468"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1234,7 +1234,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     <segue destination="iXd-71-7Tc" kind="embed" id="4fg-3X-5CA"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxm-VN-jc3">
+                            <containerView opaque="NO" tag="304" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxm-VN-jc3">
                                 <rect key="frame" x="16" y="118" width="568" height="468"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1246,8 +1246,19 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     <segue destination="iXd-71-7Tc" kind="embed" id="Zgh-38-0Mi"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEM-Nx-vI8">
-                                <rect key="frame" x="16" y="18" width="568" height="21"/>
+                            <containerView opaque="NO" tag="305" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bck-KM-c7x">
+                                <rect key="frame" x="16" y="118" width="568" height="468"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="iXd-71-7Tc" kind="embed" id="vuT-py-pOR"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEM-Nx-vI8">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="NhU-9m-HaB"/>
                                     <constraint firstAttribute="height" constant="21" id="ewI-4K-3Ia"/>
@@ -1277,7 +1288,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     </mask>
                                 </variation>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LiP-m0-IIA">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LiP-m0-IIA">
                                 <rect key="frame" x="282" y="307" width="37" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="7vk-OH-nBy"/>
@@ -1297,14 +1308,14 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     </mask>
                                 </variation>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-RZ-oVs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-RZ-oVs">
                                 <rect key="frame" x="540" y="28" width="44" height="44"/>
                                 <state key="normal" image="forwardButton"/>
                                 <connections>
-                                    <action selector="onForwardButtonPress:" destination="58n-Ck-sFa" eventType="touchUpInside" id="kZ6-xJ-wpG"/>
+                                    <action selector="onForwardButtonPress:" destination="58n-Ck-sFa" eventType="touchUpInside" id="i3i-Pp-C4G"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKh-pn-kCv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKh-pn-kCv">
                                 <rect key="frame" x="190" y="159" width="220" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="4Kk-vy-6HI"/>
@@ -1330,18 +1341,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     </mask>
                                 </variation>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bck-KM-c7x">
-                                <rect key="frame" x="16" y="118" width="568" height="468"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="iXd-71-7Tc" kind="embed" id="vuT-py-pOR"/>
-                                </connections>
-                            </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGU-HT-3br">
                                 <rect key="frame" x="190" y="159" width="220" height="65"/>
                                 <constraints>
@@ -1355,6 +1354,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="3ZQ-pD-NJn"/>
+                                        <exclude reference="Rhf-FL-sV5"/>
                                         <exclude reference="Wbl-St-N97"/>
                                         <exclude reference="Wd4-sh-vVF"/>
                                     </mask>
@@ -1381,8 +1382,10 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="BYu-KT-DWI"/>
                                         <exclude reference="I7Y-Sl-IVX"/>
                                         <exclude reference="cmY-DB-c30"/>
+                                        <exclude reference="muC-Gz-mXi"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -1407,8 +1410,10 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="LRZ-PB-YIk"/>
                                         <exclude reference="RPE-kH-h2g"/>
                                         <exclude reference="ZFZ-7v-5j8"/>
+                                        <exclude reference="uTK-s5-biz"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -1425,8 +1430,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="5Nf-6J-ZuT"/>
                                     <constraint firstAttribute="height" constant="30" id="Arf-hK-V43"/>
-                                    <constraint firstAttribute="height" constant="65" id="fPo-Le-WqB"/>
-                                    <constraint firstAttribute="width" constant="220" id="wjo-XW-QaG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1441,12 +1444,10 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     <mask key="constraints">
                                         <include reference="5Nf-6J-ZuT"/>
                                         <include reference="Arf-hK-V43"/>
-                                        <exclude reference="fPo-Le-WqB"/>
-                                        <exclude reference="wjo-XW-QaG"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXj-UI-QZh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXj-UI-QZh">
                                 <rect key="frame" x="16" y="18" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="Crr-dd-ZtJ">
@@ -1477,7 +1478,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIy-07-0c0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIy-07-0c0">
                                 <rect key="frame" x="16" y="18" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="2v2-Eb-qhv">
@@ -1508,7 +1509,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1B-o5-XT9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1B-o5-XT9">
                                 <rect key="frame" x="16" y="18" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="3or-gf-pqJ"/>
@@ -1539,7 +1540,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday Extended Homeroom Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-k9-cQb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-k9-cQb">
                                 <rect key="frame" x="16" y="18" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="HIy-I3-TZa">
@@ -1570,13 +1571,13 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hat-cx-nw1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hat-cx-nw1">
                                 <rect key="frame" x="16" y="28" width="44" height="44"/>
                                 <state key="normal" image="backButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onBackButtonPress:" destination="58n-Ck-sFa" eventType="touchUpInside" id="UBX-D3-yPb"/>
+                                    <action selector="onBackButtonPress:" destination="58n-Ck-sFa" eventType="touchUpInside" id="sYG-TE-ES4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1589,6 +1590,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <variation key="heightClass=regular-widthClass=regular" constant="-90"/>
                             </constraint>
                             <constraint firstItem="yXj-UI-QZh" firstAttribute="width" secondItem="sxm-VN-jc3" secondAttribute="width" id="6EH-gD-G52"/>
+                            <constraint firstItem="hat-cx-nw1" firstAttribute="top" secondItem="B3v-Dh-h5k" secondAttribute="bottom" constant="8" id="6QO-dh-HdC"/>
                             <constraint firstItem="UrD-Vb-kp5" firstAttribute="leading" secondItem="7lY-C3-7zR" secondAttribute="trailing" constant="21" id="6lz-UA-gx9">
                                 <variation key="heightClass=regular-widthClass=regular" constant="23"/>
                             </constraint>
@@ -1602,6 +1604,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                             <constraint firstItem="IR1-su-jnB" firstAttribute="top" secondItem="nZv-Ja-fE6" secondAttribute="bottom" constant="-86" id="C7b-2a-naa">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-90"/>
                             </constraint>
+                            <constraint firstItem="TLK-RZ-oVs" firstAttribute="top" secondItem="B3v-Dh-h5k" secondAttribute="bottom" constant="8" id="CfS-SO-ghh"/>
                             <constraint firstItem="7lY-C3-7zR" firstAttribute="top" secondItem="u1B-o5-XT9" secondAttribute="bottom" constant="8" id="EHv-Ma-vc6"/>
                             <constraint firstItem="TLK-RZ-oVs" firstAttribute="centerY" secondItem="yfE-Vt-axm" secondAttribute="centerY" constant="0.5" id="ERO-7o-kwV"/>
                             <constraint firstItem="IR1-su-jnB" firstAttribute="top" secondItem="B3v-Dh-h5k" secondAttribute="bottom" constant="168" id="FOI-Fy-XC6"/>
@@ -1619,6 +1622,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                             <constraint firstItem="TLK-RZ-oVs" firstAttribute="leading" secondItem="yfE-Vt-axm" secondAttribute="trailing" constant="8" id="LKS-LA-o1M"/>
                             <constraint firstItem="bck-KM-c7x" firstAttribute="centerX" secondItem="UIy-07-0c0" secondAttribute="centerX" id="LgU-Kr-rL9"/>
                             <constraint firstItem="7lY-C3-7zR" firstAttribute="centerX" secondItem="dGU-HT-3br" secondAttribute="centerX" id="MRb-Aq-0m6"/>
+                            <constraint firstAttribute="centerX" secondItem="LiP-m0-IIA" secondAttribute="centerX" constant="-0.5" id="MeY-H2-x1s"/>
                             <constraint firstItem="Xaf-ZM-fAu" firstAttribute="centerX" secondItem="sxm-VN-jc3" secondAttribute="centerX" id="MsE-74-iGM"/>
                             <constraint firstItem="UrD-Vb-kp5" firstAttribute="top" secondItem="RKh-pn-kCv" secondAttribute="bottom" constant="-86" id="NFQ-aN-3bd">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-90"/>
@@ -1652,7 +1656,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                             <constraint firstItem="7lY-C3-7zR" firstAttribute="top" secondItem="dGU-HT-3br" secondAttribute="bottom" constant="-86" id="jhE-ew-BhD">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-90"/>
                             </constraint>
-                            <constraint firstAttribute="centerX" secondItem="UrD-Vb-kp5" secondAttribute="centerX" constant="-0.5" id="kLR-vp-Vvl"/>
+                            <constraint firstAttribute="centerX" secondItem="RKh-pn-kCv" secondAttribute="centerX" id="kU3-Yg-Wof"/>
                             <constraint firstItem="7lY-C3-7zR" firstAttribute="leading" secondItem="IR1-su-jnB" secondAttribute="trailing" constant="26" id="kcf-13-Qgq">
                                 <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                             </constraint>
@@ -1679,8 +1683,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="7lY-C3-7zR"/>
                                 <exclude reference="IR1-su-jnB"/>
+                                <exclude reference="7lY-C3-7zR"/>
                                 <exclude reference="UrD-Vb-kp5"/>
                                 <exclude reference="sxm-VN-jc3"/>
                                 <exclude reference="bck-KM-c7x"/>
@@ -1733,7 +1737,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="Tec-bW-W3c"/>
                                 <exclude reference="aex-sF-At3"/>
                                 <exclude reference="gHZ-0O-Inh"/>
-                                <exclude reference="kLR-vp-Vvl"/>
                                 <exclude reference="Fd4-aK-Wh3"/>
                                 <exclude reference="I9d-qd-IM4"/>
                                 <exclude reference="LgU-Kr-rL9"/>
@@ -1773,8 +1776,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
-                                <include reference="7lY-C3-7zR"/>
                                 <include reference="IR1-su-jnB"/>
+                                <include reference="7lY-C3-7zR"/>
                                 <include reference="UrD-Vb-kp5"/>
                                 <include reference="sxm-VN-jc3"/>
                                 <include reference="bck-KM-c7x"/>
@@ -1833,7 +1836,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <include reference="Tec-bW-W3c"/>
                                 <exclude reference="aex-sF-At3"/>
                                 <include reference="gHZ-0O-Inh"/>
-                                <include reference="kLR-vp-Vvl"/>
                                 <include reference="Fd4-aK-Wh3"/>
                                 <include reference="I9d-qd-IM4"/>
                                 <include reference="LgU-Kr-rL9"/>
@@ -1861,10 +1863,18 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                     </view>
                     <navigationItem key="navigationItem" id="tMd-Do-uW4"/>
                     <connections>
-                        <outlet property="dateLabel" destination="cEM-Nx-vI8" id="YYh-ob-v6i"/>
-                        <outlet property="emptyLabel" destination="RKh-pn-kCv" id="wU3-tl-gd4"/>
-                        <outlet property="loadingIndicator" destination="LiP-m0-IIA" id="mU7-Xf-w8V"/>
-                        <outlet property="titleLabel" destination="yfE-Vt-axm" id="aih-jj-k6r"/>
+                        <outlet property="blankLabel1" destination="nZv-Ja-fE6" id="Fjc-w2-eRM"/>
+                        <outlet property="blankLabel2" destination="dGU-HT-3br" id="wxd-j9-Fd7"/>
+                        <outlet property="blankLabel3" destination="RKh-pn-kCv" id="279-Br-pTH"/>
+                        <outlet property="blankLabel4" destination="Xaf-ZM-fAu" id="72x-wn-jZ3"/>
+                        <outlet property="blankLabel5" destination="hIb-vJ-MC2" id="Y98-ml-rzN"/>
+                        <outlet property="dateLabel" destination="yfE-Vt-axm" id="f4I-FP-xXk"/>
+                        <outlet property="loadingIndicator" destination="LiP-m0-IIA" id="bsI-ak-Qcn"/>
+                        <outlet property="titleLabel1" destination="vuj-k9-cQb" id="imq-Wf-RZM"/>
+                        <outlet property="titleLabel2" destination="u1B-o5-XT9" id="b5k-6k-EIT"/>
+                        <outlet property="titleLabel3" destination="cEM-Nx-vI8" id="G9u-V7-yUr"/>
+                        <outlet property="titleLabel4" destination="yXj-UI-QZh" id="3Xa-w0-Rox"/>
+                        <outlet property="titleLabel5" destination="UIy-07-0c0" id="adW-Rx-pm0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AU2-fi-FtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1887,8 +1897,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WeL-lC-waT" id="6el-TQ-bYs">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FLEX 1" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M13-QE-CZJ">
-                                            <rect key="frame" x="8" y="5" width="266" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLEX 1" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M13-QE-CZJ">
+                                            <rect key="frame" x="8" y="5" width="250" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="56" id="cY3-Vn-SQT"/>
                                             </constraints>
@@ -1906,8 +1916,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" misplaced="YES" text="10:00 - 12:00" lineBreakMode="tailTruncation" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQf-Cw-F1U">
-                                            <rect key="frame" x="294" y="2" width="266" height="25"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="10:00 - 12:00" lineBreakMode="tailTruncation" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQf-Cw-F1U">
+                                            <rect key="frame" x="278" y="2" width="250" height="25"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -2002,7 +2012,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQA-i9-60b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096.625" y="-2609.25"/>
+            <point key="canvasLocation" x="2318" y="-2609"/>
         </scene>
     </scenes>
     <resources>
