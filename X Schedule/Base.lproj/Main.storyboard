@@ -1591,9 +1591,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                             </constraint>
                             <constraint firstItem="yXj-UI-QZh" firstAttribute="width" secondItem="sxm-VN-jc3" secondAttribute="width" id="6EH-gD-G52"/>
                             <constraint firstItem="hat-cx-nw1" firstAttribute="top" secondItem="B3v-Dh-h5k" secondAttribute="bottom" constant="8" id="6QO-dh-HdC"/>
-                            <constraint firstItem="UrD-Vb-kp5" firstAttribute="leading" secondItem="7lY-C3-7zR" secondAttribute="trailing" constant="21" id="6lz-UA-gx9">
-                                <variation key="heightClass=regular-widthClass=regular" constant="23"/>
-                            </constraint>
                             <constraint firstItem="hat-cx-nw1" firstAttribute="leading" secondItem="sD0-Ab-Xe0" secondAttribute="leadingMargin" id="7We-le-MJZ">
                                 <variation key="widthClass=compact" constant="-16"/>
                             </constraint>
@@ -1732,7 +1729,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="pTC-4t-Prq"/>
                                 <exclude reference="vfi-2V-0Tb"/>
                                 <exclude reference="yH9-GR-Ky9"/>
-                                <exclude reference="6lz-UA-gx9"/>
                                 <exclude reference="NFQ-aN-3bd"/>
                                 <exclude reference="Tec-bW-W3c"/>
                                 <exclude reference="aex-sF-At3"/>
@@ -1799,7 +1795,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="P7i-fv-Phq"/>
                                 <include reference="S5i-vW-2u4"/>
                                 <include reference="VCx-zF-PUR"/>
-                                <include reference="ank-qu-X0g"/>
+                                <exclude reference="ank-qu-X0g"/>
                                 <exclude reference="7We-le-MJZ"/>
                                 <include reference="BYi-4o-vXx"/>
                                 <exclude reference="BRn-Tj-AJ8"/>
@@ -1831,7 +1827,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <include reference="pTC-4t-Prq"/>
                                 <include reference="vfi-2V-0Tb"/>
                                 <include reference="yH9-GR-Ky9"/>
-                                <include reference="6lz-UA-gx9"/>
                                 <include reference="NFQ-aN-3bd"/>
                                 <include reference="Tec-bW-W3c"/>
                                 <exclude reference="aex-sF-At3"/>
