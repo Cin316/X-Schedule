@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -545,6 +546,26 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconiTunes" translatesAutoresizingMaskIntoConstraints="NO" id="CGr-J2-22j">
+                                <rect key="frame" x="50" y="79" width="500" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="03d-bi-RMJ"/>
+                                    <constraint firstAttribute="width" secondItem="CGr-J2-22j" secondAttribute="height" multiplier="1:1" id="V2M-Yt-oq7"/>
+                                    <constraint firstAttribute="height" constant="500" id="ahz-cr-wUj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="03d-bi-RMJ"/>
+                                        <exclude reference="ahz-cr-wUj"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clV-qp-RFO">
                                 <rect key="frame" x="188" y="587" width="224" height="47"/>
                                 <constraints>
@@ -554,19 +575,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconiTunes" translatesAutoresizingMaskIntoConstraints="NO" id="CGr-J2-22j">
-                                <rect key="frame" x="50" y="79" width="500" height="500"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="500" id="03d-bi-RMJ"/>
-                                    <constraint firstAttribute="height" constant="500" id="ahz-cr-wUj"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="40"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2015 Nicholas Reichert.  Available under the MIT License." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytx-K1-59s">
                                 <rect key="frame" x="157" y="487" width="286" height="56"/>
                                 <constraints>
@@ -590,11 +598,13 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         </subviews>
                         <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="CGr-J2-22j" firstAttribute="leading" secondItem="E94-8B-n7t" secondAttribute="leadingMargin" constant="34" id="6gM-iA-ohc"/>
                             <constraint firstAttribute="centerX" secondItem="clV-qp-RFO" secondAttribute="centerX" id="7R9-vT-6Ps"/>
                             <constraint firstItem="TtB-eS-AGY" firstAttribute="top" secondItem="clV-qp-RFO" secondAttribute="bottom" constant="-9" id="BPB-uu-JzH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CGr-J2-22j" secondAttribute="trailing" constant="34" id="EQJ-5Q-GPX"/>
                             <constraint firstAttribute="centerX" secondItem="TtB-eS-AGY" secondAttribute="centerX" id="Gaa-PD-hwJ"/>
                             <constraint firstItem="clV-qp-RFO" firstAttribute="top" secondItem="CGr-J2-22j" secondAttribute="bottom" constant="8" id="W68-or-b6h"/>
-                            <constraint firstItem="TtB-eS-AGY" firstAttribute="top" secondItem="clV-qp-RFO" secondAttribute="bottom" constant="8" id="WlB-jB-kVe"/>
+                            <constraint firstItem="TtB-eS-AGY" firstAttribute="top" secondItem="clV-qp-RFO" secondAttribute="bottom" id="WlB-jB-kVe"/>
                             <constraint firstItem="CGr-J2-22j" firstAttribute="top" secondItem="EDi-G8-ekn" secondAttribute="bottom" constant="15" id="YGK-b0-bMj"/>
                             <constraint firstAttribute="centerX" secondItem="CGr-J2-22j" secondAttribute="centerX" id="a6O-fP-c63"/>
                             <constraint firstAttribute="centerX" secondItem="Ytx-K1-59s" secondAttribute="centerX" id="kMI-dL-ddp"/>
@@ -1150,7 +1160,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                         <include reference="YtQ-ST-Aka"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="243" y="16" width="316" height="69"/>
                                     <mask key="constraints">
                                         <include reference="Iuq-6s-sAR"/>
                                         <include reference="WV7-Mg-mFr"/>
@@ -1217,7 +1228,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     <segue destination="iXd-71-7Tc" kind="embed" id="vuT-py-pOR"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEM-Nx-vI8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEM-Nx-vI8">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="NhU-9m-HaB"/>
                                     <constraint firstAttribute="height" constant="21" id="ewI-4K-3Ia"/>
@@ -1260,7 +1271,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                         <exclude reference="vw2-D0-sEy"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="382" y="82" width="37" height="37"/>
                                     <mask key="constraints">
                                         <exclude reference="7vk-OH-nBy"/>
                                         <exclude reference="vw2-D0-sEy"/>
