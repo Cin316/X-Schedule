@@ -50,6 +50,8 @@ class ScheduleSwitcherViewController: UINavigationController {
         if let top = self.topViewController {
             if let topData = top as? DataViewController {
                 self.scheduleDate = topData.scheduleDate
+            } else if let topData = top as? WeekDataViewController {
+                self.scheduleDate = topData.scheduleDate
             }
         }
         
@@ -73,6 +75,8 @@ class ScheduleSwitcherViewController: UINavigationController {
         //Store date in new view controller if necessary.
         if let top = self.topViewController {
             if let topData = top as? DataViewController {
+                topData.scheduleDate = self.scheduleDate
+            }  else if let topData = top as? WeekDataViewController {
                 topData.scheduleDate = self.scheduleDate
             }
         }
