@@ -21,6 +21,9 @@
 		E1DEBEA31AD619B0004B2CC1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DEBEA21AD619B0004B2CC1 /* MainInterface.storyboard */; };
 		E1DEBEA61AD619B0004B2CC1 /* X Schedule Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E1DEBE991AD619B0004B2CC1 /* X Schedule Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E1DEBED41AD61F5B004B2CC1 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DEBED31AD61F5B004B2CC1 /* Schedule.swift */; };
+		E1DEBEDF1AD61FE2004B2CC1 /* XScheduleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E1DEBEDE1AD61FE2004B2CC1 /* XScheduleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1DEBEF11AD61FE3004B2CC1 /* XScheduleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DEBEDA1AD61FE2004B2CC1 /* XScheduleKit.framework */; };
+		E1DEBEF21AD61FE3004B2CC1 /* XScheduleKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1DEBEDA1AD61FE2004B2CC1 /* XScheduleKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */; };
 		E1E3EE4A1AA8F24F00A00603 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1E3EE491AA8F24F00A00603 /* LICENSE.txt */; };
 		E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18039831AABF260006513B2 /* AboutViewController.swift */; };
@@ -36,6 +39,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = E1DEBE981AD619B0004B2CC1;
 			remoteInfo = "X Schedule Widget";
+		};
+		E1DEBEEF1AD61FE3004B2CC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E138A8021A8E8B1E00549F84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1DEBED91AD61FE2004B2CC1;
+			remoteInfo = XScheduleKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -57,6 +67,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E1DEBEF21AD61FE3004B2CC1 /* XScheduleKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +93,9 @@
 		E1DEBEA01AD619B0004B2CC1 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		E1DEBEA21AD619B0004B2CC1 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		E1DEBED31AD61F5B004B2CC1 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		E1DEBEDA1AD61FE2004B2CC1 /* XScheduleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XScheduleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1DEBEDD1AD61FE2004B2CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1DEBEDE1AD61FE2004B2CC1 /* XScheduleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XScheduleKit.h; sourceTree = "<group>"; };
 		E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		E1E3EE491AA8F24F00A00603 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDownloader.swift; sourceTree = "<group>"; };
@@ -94,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DEBEF11AD61FE3004B2CC1 /* XScheduleKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +120,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E1DEBED61AD61FE2004B2CC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -113,6 +135,7 @@
 			children = (
 				E138A80C1A8E8B1E00549F84 /* X Schedule */,
 				E1DEBE9D1AD619B0004B2CC1 /* X Schedule Widget */,
+				E1DEBEDB1AD61FE2004B2CC1 /* XScheduleKit */,
 				E1DEBE9A1AD619B0004B2CC1 /* Frameworks */,
 				E138A80B1A8E8B1E00549F84 /* Products */,
 			);
@@ -123,6 +146,7 @@
 			children = (
 				E138A80A1A8E8B1E00549F84 /* X Schedule.app */,
 				E1DEBE991AD619B0004B2CC1 /* X Schedule Widget.appex */,
+				E1DEBEDA1AD61FE2004B2CC1 /* XScheduleKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,7 +209,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E1DEBEDB1AD61FE2004B2CC1 /* XScheduleKit */ = {
+			isa = PBXGroup;
+			children = (
+				E1DEBEDE1AD61FE2004B2CC1 /* XScheduleKit.h */,
+				E1DEBEDC1AD61FE2004B2CC1 /* Supporting Files */,
+			);
+			path = XScheduleKit;
+			sourceTree = "<group>";
+		};
+		E1DEBEDC1AD61FE2004B2CC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1DEBEDD1AD61FE2004B2CC1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E1DEBED71AD61FE2004B2CC1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1DEBEDF1AD61FE2004B2CC1 /* XScheduleKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		E138A8091A8E8B1E00549F84 /* X Schedule */ = {
@@ -202,6 +254,7 @@
 			);
 			dependencies = (
 				E1DEBEA51AD619B0004B2CC1 /* PBXTargetDependency */,
+				E1DEBEF01AD61FE3004B2CC1 /* PBXTargetDependency */,
 			);
 			name = "X Schedule";
 			productName = "X Schedule";
@@ -225,6 +278,24 @@
 			productReference = E1DEBE991AD619B0004B2CC1 /* X Schedule Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		E1DEBED91AD61FE2004B2CC1 /* XScheduleKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1DEBEF31AD61FE3004B2CC1 /* Build configuration list for PBXNativeTarget "XScheduleKit" */;
+			buildPhases = (
+				E1DEBED51AD61FE2004B2CC1 /* Sources */,
+				E1DEBED61AD61FE2004B2CC1 /* Frameworks */,
+				E1DEBED71AD61FE2004B2CC1 /* Headers */,
+				E1DEBED81AD61FE2004B2CC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XScheduleKit;
+			productName = XScheduleKit;
+			productReference = E1DEBEDA1AD61FE2004B2CC1 /* XScheduleKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -238,6 +309,9 @@
 						CreatedOnToolsVersion = 6.1.1;
 					};
 					E1DEBE981AD619B0004B2CC1 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					E1DEBED91AD61FE2004B2CC1 = {
 						CreatedOnToolsVersion = 6.2;
 					};
 				};
@@ -257,6 +331,7 @@
 			targets = (
 				E138A8091A8E8B1E00549F84 /* X Schedule */,
 				E1DEBE981AD619B0004B2CC1 /* X Schedule Widget */,
+				E1DEBED91AD61FE2004B2CC1 /* XScheduleKit */,
 			);
 		};
 /* End PBXProject section */
@@ -279,6 +354,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1DEBEA31AD619B0004B2CC1 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1DEBED81AD61FE2004B2CC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +393,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E1DEBED51AD61FE2004B2CC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -318,6 +407,11 @@
 			isa = PBXTargetDependency;
 			target = E1DEBE981AD619B0004B2CC1 /* X Schedule Widget */;
 			targetProxy = E1DEBEA41AD619B0004B2CC1 /* PBXContainerItemProxy */;
+		};
+		E1DEBEF01AD61FE3004B2CC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1DEBED91AD61FE2004B2CC1 /* XScheduleKit */;
+			targetProxy = E1DEBEEF1AD61FE3004B2CC1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -477,6 +571,53 @@
 			};
 			name = Release;
 		};
+		E1DEBEF41AD61FE3004B2CC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = XScheduleKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E1DEBEF51AD61FE3004B2CC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = XScheduleKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -503,6 +644,14 @@
 			buildConfigurations = (
 				E1DEBEA81AD619B1004B2CC1 /* Debug */,
 				E1DEBEA91AD619B1004B2CC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E1DEBEF31AD61FE3004B2CC1 /* Build configuration list for PBXNativeTarget "XScheduleKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1DEBEF41AD61FE3004B2CC1 /* Debug */,
+				E1DEBEF51AD61FE3004B2CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
