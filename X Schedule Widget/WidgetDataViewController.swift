@@ -1,5 +1,5 @@
 //
-//  TodayViewController.swift
+//  WidgetDataViewController.swift
 //  X Schedule Widget
 //
 //  Created by Nicholas Reichert on 4/8/15.
@@ -8,8 +8,9 @@
 
 import UIKit
 import NotificationCenter
+import XScheduleKit
 
-class TodayViewController: UIViewController, NCWidgetProviding {
+class WidgetDataViewController: UIViewController, NCWidgetProviding {
         
     override func viewDidLoad() {
         super.viewDidLoad()

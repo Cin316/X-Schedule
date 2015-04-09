@@ -17,7 +17,7 @@
 		E1DDD4E61AD06CBD0007ABC8 /* WeekDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */; };
 		E1DDEAF81AB7C35200B6F37F /* ScheduleSwitcherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */; };
 		E1DEBE9C1AD619B0004B2CC1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DEBE9B1AD619B0004B2CC1 /* NotificationCenter.framework */; };
-		E1DEBEA11AD619B0004B2CC1 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DEBEA01AD619B0004B2CC1 /* TodayViewController.swift */; };
+		E1DEBEA11AD619B0004B2CC1 /* WidgetDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DEBEA01AD619B0004B2CC1 /* WidgetDataViewController.swift */; };
 		E1DEBEA31AD619B0004B2CC1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DEBEA21AD619B0004B2CC1 /* MainInterface.storyboard */; };
 		E1DEBEA61AD619B0004B2CC1 /* X Schedule Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E1DEBE991AD619B0004B2CC1 /* X Schedule Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E1DEBEDF1AD61FE2004B2CC1 /* XScheduleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E1DEBEDE1AD61FE2004B2CC1 /* XScheduleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -90,7 +90,7 @@
 		E1DEBE991AD619B0004B2CC1 /* X Schedule Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "X Schedule Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DEBE9B1AD619B0004B2CC1 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		E1DEBE9F1AD619B0004B2CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1DEBEA01AD619B0004B2CC1 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		E1DEBEA01AD619B0004B2CC1 /* WidgetDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataViewController.swift; sourceTree = "<group>"; };
 		E1DEBEA21AD619B0004B2CC1 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		E1DEBED31AD61F5B004B2CC1 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		E1DEBEDA1AD61FE2004B2CC1 /* XScheduleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XScheduleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,7 +190,7 @@
 		E1DEBE9D1AD619B0004B2CC1 /* X Schedule Widget */ = {
 			isa = PBXGroup;
 			children = (
-				E1DEBEA01AD619B0004B2CC1 /* TodayViewController.swift */,
+				E1DEBEA01AD619B0004B2CC1 /* WidgetDataViewController.swift */,
 				E1DEBEA21AD619B0004B2CC1 /* MainInterface.storyboard */,
 				E1DEBE9E1AD619B0004B2CC1 /* Supporting Files */,
 			);
@@ -385,7 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1DEBEA11AD619B0004B2CC1 /* TodayViewController.swift in Sources */,
+				E1DEBEA11AD619B0004B2CC1 /* WidgetDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +646,7 @@
 				E1DEBEA91AD619B1004B2CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1DEBEF31AD61FE3004B2CC1 /* Build configuration list for PBXNativeTarget "XScheduleKit" */ = {
 			isa = XCConfigurationList;
@@ -654,6 +655,7 @@
 				E1DEBEF51AD61FE3004B2CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
