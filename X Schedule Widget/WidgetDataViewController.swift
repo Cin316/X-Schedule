@@ -12,9 +12,50 @@ import XScheduleKit
 
 class WidgetDataViewController: UIViewController, NCWidgetProviding {
         
+    @IBOutlet weak var emptyLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
+        refreshSchedule()
+    }
+    
+    private func refreshSchedule() {
+        
+        // Download today's schedule from the St. X website.
+        ScheduleDownloader.downloadSchedule(NSDate(),
+            { (output: String) in
+                //Execute code in main thread.
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    var parser = ScheduleParser()
+                    //Parse the downloaded code for schedule.
+                    var schedule = parser.parseForSchedule(output)
+                    
+                    //Display schedule items in table.
+                    if let tableController = self.childViewControllers[0] as? ScheduleTableController {
+                        tableController.schedule = schedule
+                        let tableView = (tableController.view as? UITableView)!
+                        tableView.reloadData()
+                        
+                        //Size widget correctly.
+                        if (tableView.contentSize.height > self.emptyLabel.frame.height){
+                            self.preferredContentSize = tableView.contentSize
+                        } else {
+                            self.preferredContentSize = self.emptyLabel.frame.size
+                        }
+                    }
+                    
+                    //Empty label
+                    if (schedule.items.isEmpty) {
+                        self.emptyLabel.text = "No classes"
+                    } else {
+                        self.emptyLabel.text = ""
+                    }
+                    
+                }
+            }
+        )
     }
     
     override func didReceiveMemoryWarning() {
