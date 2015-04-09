@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XScheduleKit
 
 class DataViewController: UIViewController {
     

@@ -237,7 +237,7 @@
         <!--Schedule Table Controller-->
         <scene sceneID="1li-nj-NUt">
             <objects>
-                <tableViewController id="qEg-fp-2sb" customClass="ScheduleTableController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="qEg-fp-2sb" customClass="ScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="U1X-SY-klC">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="468"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -585,7 +585,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Nicholas Reichert." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtB-eS-AGY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Created by Nicholas Reichert." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtB-eS-AGY">
                                 <rect key="frame" x="162" y="642" width="276" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ac0-15-gfO"/>
@@ -1066,7 +1066,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
         <!--Schedule Table Controller-->
         <scene sceneID="WbW-HK-YxM">
             <objects>
-                <tableViewController id="xPD-YH-zR3" customClass="ScheduleTableController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xPD-YH-zR3" customClass="ScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="EL4-Bd-hbP">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="468"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1160,8 +1160,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                         <include reference="YtQ-ST-Aka"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="243" y="16" width="316" height="69"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="Iuq-6s-sAR"/>
                                         <include reference="WV7-Mg-mFr"/>
@@ -1228,7 +1227,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     <segue destination="iXd-71-7Tc" kind="embed" id="vuT-py-pOR"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEM-Nx-vI8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEM-Nx-vI8">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="NhU-9m-HaB"/>
                                     <constraint firstAttribute="height" constant="21" id="ewI-4K-3Ia"/>
@@ -1271,8 +1270,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                         <exclude reference="vw2-D0-sEy"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="382" y="82" width="37" height="37"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <exclude reference="7vk-OH-nBy"/>
                                         <exclude reference="vw2-D0-sEy"/>
@@ -1850,7 +1848,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
         <!--Schedule Table Controller-->
         <scene sceneID="fYS-gN-T1Z">
             <objects>
-                <tableViewController id="iXd-71-7Tc" customClass="ScheduleTableController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="iXd-71-7Tc" customClass="ScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="cRv-xb-esa">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="468"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

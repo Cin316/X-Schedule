@@ -8,9 +8,9 @@
 
 import Foundation
 
-class ScheduleDownloader {
+public class ScheduleDownloader {
     
-    class func downloadSchedule(date: NSDate, completionHandler: String -> Void) {
+    public class func downloadSchedule(date: NSDate, completionHandler: String -> Void) {
         // Download today's schedule from the St. X website.
         // Setup for request.
         var url = NSURL(string:"http://www.stxavier.org/cf_calendar/export.cfm")!
@@ -44,7 +44,7 @@ class ScheduleDownloader {
         postSession.resume()
     }
     
-    class func downloadSchedule(completionHandler: String -> Void) {
+    public class func downloadSchedule(completionHandler: String -> Void) {
         var currentDate = NSDate()
         downloadSchedule(currentDate, completionHandler: completionHandler)
     }

@@ -8,33 +8,33 @@
 
 import Foundation
 
-class Schedule {
-    var items: [ScheduleItem] = []
-    var title: String = ""
-    var date: NSDate = NSDate()
+public class Schedule {
+    public var items: [ScheduleItem] = []
+    public var title: String = ""
+    public var date: NSDate = NSDate()
     
-    init(items: [ScheduleItem]) {
+    public init(items: [ScheduleItem]) {
         self.items = items
     }
-    init(items: [ScheduleItem], title: String) {
+    public init(items: [ScheduleItem], title: String) {
         self.items = items
         self.title = title
     }
 }
 
-class ScheduleItem {
-    var blockName: String = ""
-    var startTime: NSDate = NSDate()
-    var endTime: NSDate = NSDate()
+public class ScheduleItem {
+    public var blockName: String = ""
+    public var startTime: NSDate = NSDate()
+    public var endTime: NSDate = NSDate()
     
-    init(blockName: String) {
+    public init(blockName: String) {
         self.blockName = blockName
     }
-    init(startTime: NSDate, endTime: NSDate) {
+    public init(startTime: NSDate, endTime: NSDate) {
         self.startTime = startTime
         self.endTime = endTime
     }
-    init(blockName: String, startTime: NSDate, endTime: NSDate) {
+    public init(blockName: String, startTime: NSDate, endTime: NSDate) {
         self.blockName = blockName
         self.startTime = startTime
         self.endTime = endTime

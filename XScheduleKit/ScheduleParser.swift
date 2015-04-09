@@ -8,14 +8,14 @@
 
 import Foundation
 
-class ScheduleParser: NSObject, NSXMLParserDelegate {
+public class ScheduleParser: NSObject, NSXMLParserDelegate {
     
     var descriptionString = ""
     var titleString = ""
     var dateString = ""
     var currentElement = ""
     
-    func parseForSchedule(string: String) -> Schedule {
+    public func parseForSchedule(string: String) -> Schedule {
         //Setup variables
         var items = [ScheduleItem]()
         var schedule = Schedule(items: items)
@@ -124,14 +124,14 @@ class ScheduleParser: NSObject, NSXMLParserDelegate {
         return schedule
     }
     
-    func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]!) {
+    public func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]!) {
         currentElement = elementName
     }
-    func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {
+    public func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {
         
     }
     
-    func parser(parser: NSXMLParser!, foundCharacters string: String!) {
+    public func parser(parser: NSXMLParser!, foundCharacters string: String!) {
         switch currentElement {
         case "summary":
             titleString += string
