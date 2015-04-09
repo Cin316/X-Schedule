@@ -58,6 +58,14 @@ class WeekDataViewController: UIViewController {
         refreshScheduleNum(3)
         refreshScheduleNum(4)
         refreshScheduleNum(5)
+        
+        
+        //Display correctly formatted date label.
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MMMM d"
+        var mondayText = dateFormatter.stringFromDate(self.scheduleMonday)
+        var fridayText = dateFormatter.stringFromDate(self.scheduleMonday.dateByAddingTimeInterval(60*60*24*4))
+        dateLabel.text = "\(mondayText) - \(fridayText)"
     }
     
     private func refreshScheduleNum(num: Int) {
@@ -101,10 +109,6 @@ class WeekDataViewController: UIViewController {
                     
                     //Display title.
                     titleLabel.text = schedule.title
-                    //Display correctly formatted date.
-                    var dateFormatter = NSDateFormatter()
-                    dateFormatter.dateFormat = "EEEE, MMMM d"
-                    self.dateLabel.text = dateFormatter.stringFromDate(self.scheduleDate)
                     
                     //Add default weekend title.
                     var weekday = NSCalendar.currentCalendar().component(.CalendarUnitWeekday, fromDate: downloadDate)
