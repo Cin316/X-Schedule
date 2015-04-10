@@ -73,7 +73,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 12:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxl-aY-XNe">
-                                            <rect key="frame" x="113" y="2" width="199" height="25"/>
+                                            <rect key="frame" x="170" y="2" width="142" height="25"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
                                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -88,16 +88,14 @@
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLEX 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbB-Ft-KgI">
-                                            <rect key="frame" x="8" y="5" width="85" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="85" id="sBi-jd-ame"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="5" width="142" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="ZbB-Ft-KgI" firstAttribute="width" secondItem="zxl-aY-XNe" secondAttribute="width" id="2Xj-5v-2re"/>
                                         <constraint firstItem="zxl-aY-XNe" firstAttribute="trailing" secondItem="bqH-5p-2FW" secondAttribute="trailingMargin" id="77h-oE-svV"/>
                                         <constraint firstAttribute="centerY" secondItem="ZbB-Ft-KgI" secondAttribute="centerY" constant="-1" id="Aed-F3-gTj"/>
                                         <constraint firstItem="ZbB-Ft-KgI" firstAttribute="leading" secondItem="bqH-5p-2FW" secondAttribute="leadingMargin" id="aA2-Qh-j8w"/>
