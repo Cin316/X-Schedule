@@ -14,6 +14,8 @@ class WidgetDataViewController: UIViewController, NCWidgetProviding {
         
     @IBOutlet weak var emptyLabel: UILabel!
     
+    var lastUpdated = NSDate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
@@ -65,12 +67,16 @@ class WidgetDataViewController: UIViewController, NCWidgetProviding {
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
         // Perform any setup necessary in order to update the view.
-
-        // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
-
-        completionHandler(NCUpdateResult.NewData)
+        
+        //Update every 3 hours.
+        var secondsBetween = lastUpdated.timeIntervalSinceDate(NSDate())//Seconds since last update.
+        if (secondsBetween > 60*60*3){
+            completionHandler(NCUpdateResult.NewData)
+        } else {
+            completionHandler(NCUpdateResult.NoData)
+        }
     }
     
     func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
