@@ -46,6 +46,11 @@ class WidgetDataViewController: UIViewController, NCWidgetProviding {
                         } else {
                             self.preferredContentSize = self.emptyLabel.frame.size
                         }
+                        
+                        //Hide schedule table if schedule is blank.
+                        if (schedule.items.isEmpty) {
+                            tableView.hidden = true
+                        }
                     }
                     
                     //Empty label
