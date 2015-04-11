@@ -145,4 +145,9 @@ class WeekDataViewController: UIViewController {
         refreshSchedule()
     }
     
+    @IBAction func onTodayButtonPress(sender: AnyObject) {
+        scheduleDate = NSDate()
+        refreshSchedule()
+    }
+    
 }
