@@ -67,7 +67,11 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
             
             //Split string up by newlines.
             var lines = descriptionString.componentsSeparatedByString("\n")
-            for line in lines {
+            
+            //Make array for w
+            var missingTime: [Bool] = [Bool](count: lines.count, repeatedValue: false)
+            
+            for (num, line) in enumerate(lines) {
                 //Split each line into tokens.
                 var tokens = line.componentsSeparatedByString(" ")
                 
@@ -84,39 +88,85 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
                     i++
                 }
                 
-                //Throw out any tokens after time token.
-                tokens.removeRange(timeTokenNum+1..<(tokens.count))
+                //If a time token isn't found, mark in missingTime array.
+                if (timeTokenNum == Int.max) {
+                    missingTime[num] = true
+                    
+                    //Combine tokens into item description & add to ScheduleItem.
+                    var item: ScheduleItem = ScheduleItem(blockName: " ".join(tokens))
+                    
+                    //Add item to schedule.
+                    schedule.items.append(item)
+
+                } else {
                 
-                //Remove time token and transfer to string.
-                var timeToken: String = tokens[timeTokenNum]
-                tokens.removeAtIndex(timeTokenNum)
+                    //Throw out any tokens after time token.
+                    tokens.removeRange(timeTokenNum+1..<(tokens.count))
                 
-                //Combine remaining tokens into item description & add to ScheduleItem.
-                var item: ScheduleItem = ScheduleItem(blockName: " ".join(tokens))
+                    //Remove time token and transfer to string.
+                    var timeToken: String = tokens[timeTokenNum]
+                    tokens.removeAtIndex(timeTokenNum)
                 
-                //Analyze time token.
-                var times = timeToken.componentsSeparatedByString("-")
-                var startTime: NSDate = NSDate()
-                var endTime: NSDate = NSDate()
-                var foundTime: Bool = false
-                var dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "h:mm"
-                for time in times {
-                    if (time != "") {
-                        //Convert strings into dates.
-                        if (foundTime == false) {
-                            startTime = dateFormatter.dateFromString(time)!
-                            foundTime = true
-                        } else {
-                            endTime = dateFormatter.dateFromString(time)!
+                    //Combine remaining tokens into item description & add to ScheduleItem.
+                    var item: ScheduleItem = ScheduleItem(blockName: " ".join(tokens))
+                
+                    //Analyze time token.
+                    var times = timeToken.componentsSeparatedByString("-")
+                    var startTime: NSDate = NSDate()
+                    var endTime: NSDate = NSDate()
+                    var foundTime: Bool = false
+                    var dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "h:mm"
+                    for time in times {
+                        if (time != "") {
+                            //Convert strings into dates.
+                            if (foundTime == false) {
+                                startTime = dateFormatter.dateFromString(time)!
+                                foundTime = true
+                            } else {
+                                endTime = dateFormatter.dateFromString(time)!
+                            }
                         }
                     }
-                }
-                item.startTime = startTime
-                item.endTime = endTime
+                    
+                    item.startTime = startTime
+                    item.endTime = endTime
 
-                //Add item to schedule.
-                schedule.items.append(item)
+                    //Add item to schedule.
+                    schedule.items.append(item)
+                
+                }
+            }
+            
+            //Loop through a fill in times where they are missing.
+            for (i, item) in enumerate(schedule.items) {
+                //Check if time is missing.
+                if (missingTime[i]) {
+                    
+                    //Find start time.
+                    if (i == 0) { //First item.
+                        //Set start time to 8:00.
+                        var dateComps = NSDateComponents()
+                        dateComps.hour = 8
+                        dateComps.minute = 00
+                        var calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+                        schedule.items[i].startTime = calendar.dateFromComponents(dateComps)!
+                    } else {
+                        schedule.items[i].startTime = schedule.items[i-1].endTime
+                    }
+                    
+                    //Find end time.
+                    if (i == schedule.items.count-1) { //Last item.
+                        //Set end time to 3:04.
+                        var dateComps = NSDateComponents()
+                        dateComps.hour = 3+12
+                        dateComps.minute = 04
+                        var calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+                        schedule.items[i].endTime = calendar.dateFromComponents(dateComps)!
+                    } else {
+                        schedule.items[i].endTime = schedule.items[i+1].startTime
+                    }
+                }
             }
         }
         
