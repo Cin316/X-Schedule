@@ -20,7 +20,7 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
         var items = [ScheduleItem]()
         var schedule = Schedule(items: items)
         var stringData = string.dataUsingEncoding(NSUTF8StringEncoding)
-        var xmlParser = NSXMLParser(data: stringData)
+        var xmlParser = NSXMLParser(data: stringData!)
         xmlParser.delegate = self
         
         //Parsing code.
@@ -124,21 +124,21 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
         return schedule
     }
     
-    public func parser(parser: NSXMLParser!, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]!) {
+    public func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
         currentElement = elementName
     }
-    public func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {
+    public func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
     }
     
-    public func parser(parser: NSXMLParser!, foundCharacters string: String!) {
+    public func parser(parser: NSXMLParser, foundCharacters string: String?) {
         switch currentElement {
         case "summary":
-            titleString += string
+            titleString += string!
         case "description":
-            descriptionString += string
+            descriptionString += string!
         case "dtstart":
-            dateString += string
+            dateString += string!
         default:
             break;
         }

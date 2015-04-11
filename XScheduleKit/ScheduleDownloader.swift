@@ -35,7 +35,7 @@ public class ScheduleDownloader {
         var postSession = session.uploadTaskWithRequest(request, fromData: postData, completionHandler:
             { ( data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
                 //Convert output to a string.
-                var output = NSString(data: data, encoding: NSUTF8StringEncoding)!
+                var output = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
                 //Call completion handler with string.
                 completionHandler(output)
             }

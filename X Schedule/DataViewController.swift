@@ -33,7 +33,7 @@ class DataViewController: UIViewController {
         
         // Download today's schedule from the St. X website.
         ScheduleDownloader.downloadSchedule(scheduleDate,
-            { (output: String) in
+            completionHandler: { (output: String) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
                     var parser = ScheduleParser()

@@ -33,7 +33,7 @@ class WeekDataViewController: UIViewController {
     var scheduleDate: NSDate = NSDate()
     var scheduleMonday: NSDate {
         get{
-            var calendar: NSCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+            var calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
             var weekday: Int = calendar.component(.CalendarUnitWeekday, fromDate: scheduleDate)
             var daysPastMonday: Int = weekday-2
             var seconds: Double = Double(-24*60*60*daysPastMonday)
@@ -95,7 +95,7 @@ class WeekDataViewController: UIViewController {
         
         // Download today's schedule from the St. X website.
         ScheduleDownloader.downloadSchedule(downloadDate,
-            { (output: String) in
+            completionHandler: { (output: String) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
                     var parser = ScheduleParser()

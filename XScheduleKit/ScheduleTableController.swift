@@ -32,7 +32,7 @@ public class ScheduleTableController: UITableViewController {
     }
 
     public override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableCell", forIndexPath: indexPath) as! UITableViewCell
         let item = schedule.items[indexPath.row]
         var dateFormat = NSDateFormatter()
         dateFormat.dateFormat = "h:mm"
