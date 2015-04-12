@@ -118,10 +118,37 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ne-xz-1FJ">
+                                <rect key="frame" x="538" y="80" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Rwh-lG-3ge"/>
+                                    <constraint firstAttribute="width" constant="46" id="hcr-aC-0S9"/>
+                                </constraints>
+                                <state key="normal" title="Today">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="hcr-aC-0S9"/>
+                                        <exclude reference="Rwh-lG-3ge"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="hcr-aC-0S9"/>
+                                        <include reference="Rwh-lG-3ge"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onTodayButtonPress:" destination="Gma-nl-gFO" eventType="touchUpInside" id="lbr-V7-5YF"/>
+                                    <action selector="onTodayButtonPress:" destination="58n-Ck-sFa" eventType="touchUpInside" id="vLa-Gg-ABp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77647058820000003" green="0.86666666670000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="3Le-KT-W9Q" firstAttribute="top" secondItem="wfv-Qt-cKq" secondAttribute="bottom" constant="218" id="50f-uc-wPd"/>
+                            <constraint firstItem="vcx-Nt-lHH" firstAttribute="top" secondItem="7Ne-xz-1FJ" secondAttribute="bottom" constant="8" id="5cb-00-15p"/>
                             <constraint firstItem="Jco-4z-jy7" firstAttribute="leading" secondItem="K7z-aj-o82" secondAttribute="trailing" constant="-6" id="5kh-VT-eMN"/>
                             <constraint firstItem="Jco-4z-jy7" firstAttribute="centerY" secondItem="K7z-aj-o82" secondAttribute="centerY" constant="0.5" id="6WF-rt-DRK"/>
                             <constraint firstItem="3Le-KT-W9Q" firstAttribute="top" secondItem="wfv-Qt-cKq" secondAttribute="bottom" constant="139" id="6sd-bp-cto"/>
@@ -144,6 +171,7 @@
                             <constraint firstItem="K7z-aj-o82" firstAttribute="leading" secondItem="ohP-oA-heh" secondAttribute="leadingMargin" constant="30" id="dHa-uC-BEN"/>
                             <constraint firstItem="vcx-Nt-lHH" firstAttribute="top" secondItem="TZG-lt-W8K" secondAttribute="bottom" constant="8" id="gDV-9e-Vrq"/>
                             <constraint firstItem="vcx-Nt-lHH" firstAttribute="centerY" secondItem="3Le-KT-W9Q" secondAttribute="centerY" constant="136" id="i56-n5-ZIr"/>
+                            <constraint firstItem="7Ne-xz-1FJ" firstAttribute="trailing" secondItem="ohP-oA-heh" secondAttribute="trailingMargin" id="iF5-5Q-jhK"/>
                             <constraint firstItem="K7z-aj-o82" firstAttribute="top" secondItem="wfv-Qt-cKq" secondAttribute="bottom" constant="36" id="jKG-5c-mAx"/>
                             <constraint firstItem="K7z-aj-o82" firstAttribute="leading" secondItem="sMG-so-slP" secondAttribute="trailing" constant="-6" id="k94-cw-Ofv"/>
                             <constraint firstItem="64X-Ui-5fQ" firstAttribute="top" secondItem="wfv-Qt-cKq" secondAttribute="bottom" constant="-2" id="kLX-hq-fyd"/>
@@ -585,8 +613,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Created by Nicholas Reichert." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtB-eS-AGY">
-                                <rect key="frame" x="162" y="642" width="276" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Nicholas Reichert." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtB-eS-AGY">
+                                <rect key="frame" x="162" y="634" width="276" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ac0-15-gfO"/>
                                     <constraint firstAttribute="width" constant="276" id="etZ-qU-KoZ"/>
@@ -1228,6 +1256,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEM-Nx-vI8">
+                                <rect key="frame" x="-62" y="18" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="NhU-9m-HaB"/>
                                     <constraint firstAttribute="height" constant="21" id="ewI-4K-3Ia"/>
@@ -1692,6 +1721,31 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="8Cq-Na-xip"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9pg-G6-IuW"/>
+                                <exclude reference="rnj-Tv-hKt"/>
+                                <exclude reference="6EH-gD-G52"/>
+                                <exclude reference="uzb-XW-klj"/>
+                                <exclude reference="MsE-74-iGM"/>
+                                <exclude reference="WnA-mX-bWk"/>
+                                <exclude reference="Ugi-yJ-60s"/>
+                                <exclude reference="S5i-vW-2u4"/>
+                                <exclude reference="VCx-zF-PUR"/>
+                                <exclude reference="ank-qu-X0g"/>
+                                <exclude reference="BYi-4o-vXx"/>
+                                <exclude reference="1nT-NB-K40"/>
+                                <exclude reference="HQ9-9l-irx"/>
+                                <exclude reference="rcW-AJ-0dR"/>
+                                <exclude reference="zbT-8t-oAe"/>
+                                <exclude reference="ag2-jw-EUf"/>
+                                <exclude reference="gnt-Ci-3Tw"/>
+                                <exclude reference="wWp-oG-FZW"/>
+                                <exclude reference="BU6-ke-WHN"/>
+                                <exclude reference="EHv-Ma-vc6"/>
+                                <exclude reference="JqU-8a-F0d"/>
+                                <exclude reference="MRb-Aq-0m6"/>
+                                <exclude reference="jhE-ew-BhD"/>
+                                <exclude reference="kcf-13-Qgq"/>
+                                <exclude reference="x6F-1O-T8g"/>
                                 <exclude reference="1FU-xC-ZnY"/>
                                 <exclude reference="C7b-2a-naa"/>
                                 <exclude reference="FOI-Fy-XC6"/>
@@ -1703,41 +1757,10 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="pTC-4t-Prq"/>
                                 <exclude reference="vfi-2V-0Tb"/>
                                 <exclude reference="yH9-GR-Ky9"/>
-                                <exclude reference="BYi-4o-vXx"/>
-                                <exclude reference="1nT-NB-K40"/>
-                                <exclude reference="HQ9-9l-irx"/>
-                                <exclude reference="rcW-AJ-0dR"/>
-                                <exclude reference="Ugi-yJ-60s"/>
-                                <exclude reference="BU6-ke-WHN"/>
-                                <exclude reference="EHv-Ma-vc6"/>
-                                <exclude reference="JqU-8a-F0d"/>
-                                <exclude reference="MRb-Aq-0m6"/>
-                                <exclude reference="jhE-ew-BhD"/>
-                                <exclude reference="kcf-13-Qgq"/>
-                                <exclude reference="x6F-1O-T8g"/>
-                                <exclude reference="S5i-vW-2u4"/>
-                                <exclude reference="VCx-zF-PUR"/>
-                                <exclude reference="ank-qu-X0g"/>
                                 <exclude reference="NFQ-aN-3bd"/>
                                 <exclude reference="Tec-bW-W3c"/>
                                 <exclude reference="aex-sF-At3"/>
                                 <exclude reference="gHZ-0O-Inh"/>
-                                <exclude reference="ag2-jw-EUf"/>
-                                <exclude reference="gnt-Ci-3Tw"/>
-                                <exclude reference="wWp-oG-FZW"/>
-                                <exclude reference="zbT-8t-oAe"/>
-                                <exclude reference="6EH-gD-G52"/>
-                                <exclude reference="uzb-XW-klj"/>
-                                <exclude reference="1qF-JK-jVL"/>
-                                <exclude reference="61G-Cx-LO6"/>
-                                <exclude reference="aEY-e9-2ox"/>
-                                <exclude reference="c1p-iV-pQj"/>
-                                <exclude reference="yVL-rY-MMW"/>
-                                <exclude reference="MsE-74-iGM"/>
-                                <exclude reference="ERO-7o-kwV"/>
-                                <exclude reference="LKS-LA-o1M"/>
-                                <exclude reference="ghr-Z1-TJn"/>
-                                <exclude reference="r6p-db-6VZ"/>
                                 <exclude reference="Fd4-aK-Wh3"/>
                                 <exclude reference="I9d-qd-IM4"/>
                                 <exclude reference="LgU-Kr-rL9"/>
@@ -1746,9 +1769,15 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="ehj-p1-ovT"/>
                                 <exclude reference="pEI-ae-fXx"/>
                                 <exclude reference="tnS-Ts-EuT"/>
-                                <exclude reference="WnA-mX-bWk"/>
-                                <exclude reference="9pg-G6-IuW"/>
-                                <exclude reference="rnj-Tv-hKt"/>
+                                <exclude reference="1qF-JK-jVL"/>
+                                <exclude reference="61G-Cx-LO6"/>
+                                <exclude reference="aEY-e9-2ox"/>
+                                <exclude reference="c1p-iV-pQj"/>
+                                <exclude reference="yVL-rY-MMW"/>
+                                <exclude reference="ERO-7o-kwV"/>
+                                <exclude reference="LKS-LA-o1M"/>
+                                <exclude reference="ghr-Z1-TJn"/>
+                                <exclude reference="r6p-db-6VZ"/>
                                 <exclude reference="BUK-7g-wdX"/>
                                 <exclude reference="Jci-c6-sjn"/>
                                 <exclude reference="dzb-n7-ynV"/>
@@ -1758,12 +1787,12 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
+                                <include reference="P7i-fv-Phq"/>
                                 <include reference="7We-le-MJZ"/>
                                 <include reference="1nT-NB-K40"/>
                                 <include reference="BRn-Tj-AJ8"/>
                                 <include reference="QOd-6c-fDE"/>
                                 <include reference="vao-gB-fgA"/>
-                                <include reference="P7i-fv-Phq"/>
                                 <include reference="vps-Me-gHb"/>
                                 <include reference="r6p-db-6VZ"/>
                                 <include reference="vRM-3O-h5H"/>
@@ -1787,6 +1816,37 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <include reference="8Cq-Na-xip"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="9pg-G6-IuW"/>
+                                <include reference="rnj-Tv-hKt"/>
+                                <include reference="6EH-gD-G52"/>
+                                <include reference="uzb-XW-klj"/>
+                                <include reference="MsE-74-iGM"/>
+                                <include reference="WnA-mX-bWk"/>
+                                <include reference="Ugi-yJ-60s"/>
+                                <exclude reference="P7i-fv-Phq"/>
+                                <include reference="S5i-vW-2u4"/>
+                                <include reference="VCx-zF-PUR"/>
+                                <exclude reference="ank-qu-X0g"/>
+                                <exclude reference="7We-le-MJZ"/>
+                                <include reference="BYi-4o-vXx"/>
+                                <exclude reference="BRn-Tj-AJ8"/>
+                                <exclude reference="HQ9-9l-irx"/>
+                                <exclude reference="QOd-6c-fDE"/>
+                                <include reference="rcW-AJ-0dR"/>
+                                <exclude reference="vao-gB-fgA"/>
+                                <exclude reference="KNX-e7-Fk4"/>
+                                <include reference="zbT-8t-oAe"/>
+                                <include reference="ag2-jw-EUf"/>
+                                <include reference="gnt-Ci-3Tw"/>
+                                <exclude reference="vps-Me-gHb"/>
+                                <include reference="wWp-oG-FZW"/>
+                                <include reference="BU6-ke-WHN"/>
+                                <include reference="EHv-Ma-vc6"/>
+                                <include reference="JqU-8a-F0d"/>
+                                <include reference="MRb-Aq-0m6"/>
+                                <include reference="jhE-ew-BhD"/>
+                                <include reference="kcf-13-Qgq"/>
+                                <include reference="x6F-1O-T8g"/>
                                 <include reference="1FU-xC-ZnY"/>
                                 <include reference="C7b-2a-naa"/>
                                 <include reference="FOI-Fy-XC6"/>
@@ -1798,47 +1858,10 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <include reference="pTC-4t-Prq"/>
                                 <include reference="vfi-2V-0Tb"/>
                                 <include reference="yH9-GR-Ky9"/>
-                                <exclude reference="7We-le-MJZ"/>
-                                <include reference="BYi-4o-vXx"/>
-                                <exclude reference="BRn-Tj-AJ8"/>
-                                <exclude reference="HQ9-9l-irx"/>
-                                <exclude reference="QOd-6c-fDE"/>
-                                <include reference="rcW-AJ-0dR"/>
-                                <exclude reference="vao-gB-fgA"/>
-                                <include reference="Ugi-yJ-60s"/>
-                                <include reference="BU6-ke-WHN"/>
-                                <include reference="EHv-Ma-vc6"/>
-                                <include reference="JqU-8a-F0d"/>
-                                <include reference="MRb-Aq-0m6"/>
-                                <include reference="jhE-ew-BhD"/>
-                                <include reference="kcf-13-Qgq"/>
-                                <include reference="x6F-1O-T8g"/>
-                                <exclude reference="P7i-fv-Phq"/>
-                                <include reference="S5i-vW-2u4"/>
-                                <include reference="VCx-zF-PUR"/>
-                                <exclude reference="ank-qu-X0g"/>
                                 <include reference="NFQ-aN-3bd"/>
                                 <include reference="Tec-bW-W3c"/>
                                 <exclude reference="aex-sF-At3"/>
                                 <include reference="gHZ-0O-Inh"/>
-                                <include reference="ag2-jw-EUf"/>
-                                <include reference="gnt-Ci-3Tw"/>
-                                <exclude reference="vps-Me-gHb"/>
-                                <include reference="wWp-oG-FZW"/>
-                                <exclude reference="KNX-e7-Fk4"/>
-                                <include reference="zbT-8t-oAe"/>
-                                <include reference="6EH-gD-G52"/>
-                                <include reference="uzb-XW-klj"/>
-                                <include reference="1qF-JK-jVL"/>
-                                <include reference="61G-Cx-LO6"/>
-                                <include reference="aEY-e9-2ox"/>
-                                <include reference="c1p-iV-pQj"/>
-                                <exclude reference="yVL-rY-MMW"/>
-                                <include reference="MsE-74-iGM"/>
-                                <include reference="ERO-7o-kwV"/>
-                                <include reference="LKS-LA-o1M"/>
-                                <exclude reference="ghr-Z1-TJn"/>
-                                <exclude reference="vRM-3O-h5H"/>
                                 <include reference="Fd4-aK-Wh3"/>
                                 <include reference="I9d-qd-IM4"/>
                                 <include reference="LgU-Kr-rL9"/>
@@ -1847,9 +1870,15 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="ehj-p1-ovT"/>
                                 <include reference="pEI-ae-fXx"/>
                                 <include reference="tnS-Ts-EuT"/>
-                                <include reference="WnA-mX-bWk"/>
-                                <include reference="9pg-G6-IuW"/>
-                                <include reference="rnj-Tv-hKt"/>
+                                <include reference="1qF-JK-jVL"/>
+                                <include reference="61G-Cx-LO6"/>
+                                <include reference="aEY-e9-2ox"/>
+                                <include reference="c1p-iV-pQj"/>
+                                <exclude reference="yVL-rY-MMW"/>
+                                <include reference="ERO-7o-kwV"/>
+                                <include reference="LKS-LA-o1M"/>
+                                <exclude reference="ghr-Z1-TJn"/>
+                                <exclude reference="vRM-3O-h5H"/>
                                 <include reference="BUK-7g-wdX"/>
                                 <include reference="Jci-c6-sjn"/>
                                 <include reference="dzb-n7-ynV"/>
