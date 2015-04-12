@@ -12,6 +12,7 @@ class ScheduleSwitcherViewController: UINavigationController {
     
     var currentOrientation: UIDeviceOrientation = UIDevice.currentDevice().orientation
     var scheduleDate: NSDate = NSDate()
+    var currentView: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +80,10 @@ class ScheduleSwitcherViewController: UINavigationController {
             }  else if let topData = top as? WeekDataViewController {
                 topData.scheduleDate = self.scheduleDate
             }
+        }
+        
+        if let top = self.topViewController {
+            currentView = top
         }
     }
 }
