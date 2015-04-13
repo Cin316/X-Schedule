@@ -119,7 +119,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ne-xz-1FJ">
-                                <rect key="frame" x="538" y="80" width="46" height="30"/>
+                                <rect key="frame" x="543" y="80" width="41" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Rwh-lG-3ge"/>
                                     <constraint firstAttribute="width" constant="46" id="hcr-aC-0S9"/>
@@ -129,14 +129,14 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="hcr-aC-0S9"/>
                                         <exclude reference="Rwh-lG-3ge"/>
+                                        <exclude reference="hcr-aC-0S9"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="hcr-aC-0S9"/>
                                         <include reference="Rwh-lG-3ge"/>
+                                        <include reference="hcr-aC-0S9"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -419,7 +419,7 @@
         <scene sceneID="j3l-mr-92c">
             <objects>
                 <navigationController navigationBarHidden="YES" id="KIL-La-wUR" customClass="ScheduleSwitcherViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Schedule" image="scheduleTabFilled" id="svf-tK-Cn6"/>
+                    <tabBarItem key="tabBarItem" tag="401" title="Schedule" image="scheduleTabFilled" id="svf-tK-Cn6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SQY-7y-qUZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1728,13 +1728,13 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="MsE-74-iGM"/>
                                 <exclude reference="WnA-mX-bWk"/>
                                 <exclude reference="Ugi-yJ-60s"/>
-                                <exclude reference="S5i-vW-2u4"/>
-                                <exclude reference="VCx-zF-PUR"/>
-                                <exclude reference="ank-qu-X0g"/>
                                 <exclude reference="BYi-4o-vXx"/>
                                 <exclude reference="1nT-NB-K40"/>
                                 <exclude reference="HQ9-9l-irx"/>
                                 <exclude reference="rcW-AJ-0dR"/>
+                                <exclude reference="S5i-vW-2u4"/>
+                                <exclude reference="VCx-zF-PUR"/>
+                                <exclude reference="ank-qu-X0g"/>
                                 <exclude reference="zbT-8t-oAe"/>
                                 <exclude reference="ag2-jw-EUf"/>
                                 <exclude reference="gnt-Ci-3Tw"/>
@@ -1787,12 +1787,12 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
-                                <include reference="P7i-fv-Phq"/>
                                 <include reference="7We-le-MJZ"/>
                                 <include reference="1nT-NB-K40"/>
                                 <include reference="BRn-Tj-AJ8"/>
                                 <include reference="QOd-6c-fDE"/>
                                 <include reference="vao-gB-fgA"/>
+                                <include reference="P7i-fv-Phq"/>
                                 <include reference="vps-Me-gHb"/>
                                 <include reference="r6p-db-6VZ"/>
                                 <include reference="vRM-3O-h5H"/>
@@ -1823,10 +1823,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <include reference="MsE-74-iGM"/>
                                 <include reference="WnA-mX-bWk"/>
                                 <include reference="Ugi-yJ-60s"/>
-                                <exclude reference="P7i-fv-Phq"/>
-                                <include reference="S5i-vW-2u4"/>
-                                <include reference="VCx-zF-PUR"/>
-                                <exclude reference="ank-qu-X0g"/>
                                 <exclude reference="7We-le-MJZ"/>
                                 <include reference="BYi-4o-vXx"/>
                                 <exclude reference="BRn-Tj-AJ8"/>
@@ -1834,6 +1830,10 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="QOd-6c-fDE"/>
                                 <include reference="rcW-AJ-0dR"/>
                                 <exclude reference="vao-gB-fgA"/>
+                                <exclude reference="P7i-fv-Phq"/>
+                                <include reference="S5i-vW-2u4"/>
+                                <include reference="VCx-zF-PUR"/>
+                                <exclude reference="ank-qu-X0g"/>
                                 <exclude reference="KNX-e7-Fk4"/>
                                 <include reference="zbT-8t-oAe"/>
                                 <include reference="ag2-jw-EUf"/>
