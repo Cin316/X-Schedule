@@ -48,7 +48,7 @@ class WeekDataViewController: UIViewController {
         refreshSchedule()
     }
     
-    private func refreshSchedule() {
+    func refreshSchedule() {
         //Start loading indicator before download.
         loadingIndicator.startAnimating()
         finishedLoadingNum = 0
