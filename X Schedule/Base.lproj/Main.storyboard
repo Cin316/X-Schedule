@@ -262,10 +262,10 @@
             </objects>
             <point key="canvasLocation" x="1637" y="-1932"/>
         </scene>
-        <!--Schedule Table Controller-->
+        <!--White Schedule Table Controller-->
         <scene sceneID="1li-nj-NUt">
             <objects>
-                <tableViewController id="qEg-fp-2sb" customClass="ScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
+                <tableViewController id="qEg-fp-2sb" customClass="WhiteScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="U1X-SY-klC">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="468"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1091,10 +1091,10 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
             </objects>
             <point key="canvasLocation" x="1637" y="-1000"/>
         </scene>
-        <!--Schedule Table Controller-->
+        <!--White Schedule Table Controller-->
         <scene sceneID="WbW-HK-YxM">
             <objects>
-                <tableViewController id="xPD-YH-zR3" customClass="ScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
+                <tableViewController id="xPD-YH-zR3" customClass="WhiteScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="EL4-Bd-hbP">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="468"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1907,10 +1907,10 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
             </objects>
             <point key="canvasLocation" x="1636.5" y="-2608.5"/>
         </scene>
-        <!--Schedule Table Controller-->
+        <!--White Schedule Table Controller-->
         <scene sceneID="fYS-gN-T1Z">
             <objects>
-                <tableViewController id="iXd-71-7Tc" customClass="ScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
+                <tableViewController id="iXd-71-7Tc" customClass="WhiteScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="cRv-xb-esa">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="468"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
