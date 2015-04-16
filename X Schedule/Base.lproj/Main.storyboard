@@ -575,7 +575,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconiTunes" translatesAutoresizingMaskIntoConstraints="NO" id="CGr-J2-22j">
-                                <rect key="frame" x="50" y="79" width="500" height="500"/>
+                                <rect key="frame" x="139" y="79" width="322" height="322"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="500" id="03d-bi-RMJ"/>
                                     <constraint firstAttribute="width" secondItem="CGr-J2-22j" secondAttribute="height" multiplier="1:1" id="V2M-Yt-oq7"/>
@@ -583,7 +583,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="40"/>
+                                        <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -595,7 +595,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clV-qp-RFO">
-                                <rect key="frame" x="188" y="587" width="224" height="47"/>
+                                <rect key="frame" x="188" y="409" width="224" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="224" id="gvr-zF-sj0"/>
                                 </constraints>
@@ -614,7 +614,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Nicholas Reichert." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtB-eS-AGY">
-                                <rect key="frame" x="162" y="634" width="276" height="30"/>
+                                <rect key="frame" x="162" y="456" width="276" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ac0-15-gfO"/>
                                     <constraint firstAttribute="width" constant="276" id="etZ-qU-KoZ"/>
@@ -626,10 +626,11 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         </subviews>
                         <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="CGr-J2-22j" firstAttribute="leading" secondItem="E94-8B-n7t" secondAttribute="leadingMargin" constant="34" id="6gM-iA-ohc"/>
+                            <constraint firstItem="yBU-SF-Kgp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CGr-J2-22j" secondAttribute="bottom" constant="150" id="5B9-3L-tpi"/>
+                            <constraint firstItem="CGr-J2-22j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E94-8B-n7t" secondAttribute="leadingMargin" constant="50" id="6gM-iA-ohc"/>
                             <constraint firstAttribute="centerX" secondItem="clV-qp-RFO" secondAttribute="centerX" id="7R9-vT-6Ps"/>
                             <constraint firstItem="TtB-eS-AGY" firstAttribute="top" secondItem="clV-qp-RFO" secondAttribute="bottom" constant="-9" id="BPB-uu-JzH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="CGr-J2-22j" secondAttribute="trailing" constant="34" id="EQJ-5Q-GPX"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="CGr-J2-22j" secondAttribute="trailing" constant="50" id="EQJ-5Q-GPX"/>
                             <constraint firstAttribute="centerX" secondItem="TtB-eS-AGY" secondAttribute="centerX" id="Gaa-PD-hwJ"/>
                             <constraint firstItem="clV-qp-RFO" firstAttribute="top" secondItem="CGr-J2-22j" secondAttribute="bottom" constant="8" id="W68-or-b6h"/>
                             <constraint firstItem="TtB-eS-AGY" firstAttribute="top" secondItem="clV-qp-RFO" secondAttribute="bottom" id="WlB-jB-kVe"/>
