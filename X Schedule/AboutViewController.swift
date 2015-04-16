@@ -16,7 +16,9 @@ class AboutViewController: UITableViewController, UITableViewDelegate {
         super.viewDidLoad()
         
         if let version = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as? String {
-            versionLabel.text = version
+            if let build = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as? String {
+                versionLabel.text = "\(version) (\(build))"
+            }
         }
     }
     
