@@ -123,6 +123,25 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
                         }
                     }
                     
+                    //Put time tokens on the schedule date.
+                    var dateComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear | .CalendarUnitEra, fromDate: schedule.date)
+                    var startTimeComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour | .CalendarUnitMinute, fromDate: startTime)
+                    var endTimeComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour | .CalendarUnitMinute, fromDate: endTime)
+                    
+                    startTimeComponents.day = dateComponents.day
+                    startTimeComponents.month = dateComponents.month
+                    startTimeComponents.year = dateComponents.year
+                    startTimeComponents.era = dateComponents.era
+                    
+                    endTimeComponents.day = dateComponents.day
+                    endTimeComponents.month = dateComponents.month
+                    endTimeComponents.year = dateComponents.year
+                    endTimeComponents.era = dateComponents.era
+                    
+                    startTime = NSCalendar.currentCalendar().dateFromComponents(startTimeComponents)!
+                    endTime = NSCalendar.currentCalendar().dateFromComponents(endTimeComponents)!
+                    
+                    //Store start and end times in schedule.
                     item.startTime = startTime
                     item.endTime = endTime
 
