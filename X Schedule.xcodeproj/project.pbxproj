@@ -250,6 +250,7 @@
 				E138A8061A8E8B1E00549F84 /* Sources */,
 				E138A8071A8E8B1E00549F84 /* Frameworks */,
 				E138A8081A8E8B1E00549F84 /* Resources */,
+				E1841FB61ADF554D00C5DF3E /* ShellScript */,
 				E1DEBEAA1AD619B1004B2CC1 /* Embed App Extensions */,
 				E1DEBECC1AD61ACD004B2CC1 /* Embed Frameworks */,
 			);
@@ -370,6 +371,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E1841FB61ADF554D00C5DF3E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E138A8061A8E8B1E00549F84 /* Sources */ = {
