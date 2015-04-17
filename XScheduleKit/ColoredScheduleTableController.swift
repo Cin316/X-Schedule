@@ -1,16 +1,16 @@
 //
-//  WhiteScheduleTableController.swift
+//  ColoredScheduleTableController.swift
 //  X Schedule
 //
 //  Created by Nicholas Reichert on 4/14/15.
-//  Copyright (c) 2015 Nicholas Reichert. All rights reserved.
+//  Copyright (c) 2015 Nicholas Reichert.
 //
 
 import Foundation
 
 import UIKit
 
-public class WhiteScheduleTableController: ScheduleTableController {
+public class ColoredScheduleTableController: ScheduleTableController {
     
     public override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         //Fix background color on iPad.
