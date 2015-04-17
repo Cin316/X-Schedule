@@ -42,8 +42,16 @@ class ScheduleSwitcherViewController: UINavigationController {
     }
     
     func deviceOrientationDidChangeNotification() {
-        currentOrientation = UIDevice.currentDevice().orientation
-        switchToOrientationView()
+        var newOrientation = UIDevice.currentDevice().orientation
+        //Check if newOrientation is valid.
+        if (newOrientation.isPortrait || newOrientation.isLandscape) {
+            //Check if newOrientation is different from the currentOrientation.
+            if (newOrientation != currentOrientation) {
+                //Update current orientation and update UI.
+                currentOrientation = UIDevice.currentDevice().orientation
+                switchToOrientationView()
+            }
+        }
     }
     
     func switchToOrientationView() {
