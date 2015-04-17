@@ -53,6 +53,23 @@ class WeekDataViewController: UIViewController {
         loadingIndicator.startAnimating()
         finishedLoadingNum = 0
         
+        //Blank out every schedule.
+        var items: [ScheduleItem] = []
+        var blankSchedule: Schedule = Schedule(items: items)
+        for (var i=0; i<5; i++) {
+            if let tableController = self.childViewControllers[i] as? ScheduleTableController {
+                tableController.schedule = blankSchedule
+                let tableView = (tableController.view as? UITableView)!
+                tableView.reloadData()
+            }
+        }
+        //Clear all "No classes" labels.
+        blankLabel1.text = ""
+        blankLabel2.text = ""
+        blankLabel3.text = ""
+        blankLabel4.text = ""
+        blankLabel5.text = ""
+        
         //Refresh schedule for each day of the week.
         refreshScheduleNum(1)
         refreshScheduleNum(2)
