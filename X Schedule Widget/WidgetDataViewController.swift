@@ -32,7 +32,7 @@ class WidgetDataViewController: UIViewController, NCWidgetProviding {
                     
                     var parser = ScheduleParser()
                     //Parse the downloaded code for schedule.
-                    var schedule = parser.parseForSchedule(output)
+                    var schedule = parser.parseForSchedule(output, date: NSDate())
                     
                     //Display schedule items in table.
                     if let tableController = self.childViewControllers[0] as? ScheduleTableController {

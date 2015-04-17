@@ -15,7 +15,7 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
     var dateString = ""
     var currentElement = ""
     
-    public func parseForSchedule(string: String) -> Schedule {
+    public func parseForSchedule(string: String, date: NSDate) -> Schedule {
         //Setup variables
         var items = [ScheduleItem]()
         var schedule = Schedule(items: items)
@@ -36,14 +36,8 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
         //Trim whitespace.
         dateString = dateString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
-        //Get and parse date.
-        var dayFormatter = NSDateFormatter()
-        dayFormatter.dateFormat = "yyyyMMdd"
-        var dayDate: NSDate? = dayFormatter.dateFromString(dateString)
-        
-        if let realDayDate = dayDate {
-            schedule.date = realDayDate
-        }
+        //Store date.
+        schedule.date = date
         
         //Parse description.
         //Trim whitespace.

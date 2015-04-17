@@ -38,7 +38,7 @@ class DataViewController: UIViewController {
                 dispatch_async(dispatch_get_main_queue()) {
                     var parser = ScheduleParser()
                     //Parse the downloaded code for schedule.
-                    var schedule = parser.parseForSchedule(output)
+                    var schedule = parser.parseForSchedule(output, date: self.scheduleDate)
                     //Display schedule items in table.
                     if let tableController = self.childViewControllers[0] as? ScheduleTableController {
                         tableController.schedule = schedule
