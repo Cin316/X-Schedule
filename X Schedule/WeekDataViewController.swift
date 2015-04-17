@@ -112,8 +112,7 @@ class WeekDataViewController: UIViewController {
                     titleLabel.text = schedule.title
                     
                     //Add default weekend title.
-                    var weekday = NSCalendar.currentCalendar().component(.CalendarUnitWeekday, fromDate: downloadDate)
-                    if ((weekday==1 || weekday==7) && schedule.title==""){
+                    if (NSCalendar.currentCalendar().isDateInWeekend(self.scheduleDate)){
                         titleLabel.text = "Weekend"
                     }
                     

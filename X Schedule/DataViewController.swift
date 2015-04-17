@@ -53,8 +53,7 @@ class DataViewController: UIViewController {
                     self.dateLabel.text = dateFormatter.stringFromDate(self.scheduleDate)
                     
                     //Add default weekend title.
-                    var weekday = NSCalendar.currentCalendar().component(.CalendarUnitWeekday, fromDate: self.scheduleDate)
-                    if ((weekday==1 || weekday==7) && schedule.title==""){
+                    if (NSCalendar.currentCalendar().isDateInWeekend(self.scheduleDate)){
                         self.titleLabel.text = "Weekend"
                     }
                     
