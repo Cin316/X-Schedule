@@ -24,9 +24,9 @@
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h5-e9-lnm">
-                                <rect key="frame" x="98" y="0.0" width="125" height="60"/>
+                                <rect key="frame" x="98" y="0.0" width="125" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="XST-VF-unC"/>
+                                    <constraint firstAttribute="height" constant="90" id="XST-VF-unC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
