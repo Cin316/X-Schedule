@@ -3,19 +3,24 @@
 //  X Schedule
 //
 //  Created by Nicholas Reichert on 2/13/15.
-//  Copyright (c) 2015 Nicholas Reichert. All rights reserved.
+//  Copyright (c) 2015 Nicholas Reichert.
 //
 
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Allow self to control tab bar.
+        if let tabBar = self.window?.rootViewController as? UITabBarController {
+            tabBar.delegate = self
+        }
+        
         return true
     }
 
@@ -40,7 +45,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        var oldViewController: UIViewController = tabBarController.viewControllers![tabBarController.selectedIndex] as! UIViewController
+        //If the schedule tab is selected again while it's already selected.
+        if (oldViewController.tabBarItem.tag == 401 && viewController.tabBarItem.tag == 401) {
+            if let switcher = viewController as? ScheduleSwitcherViewController {
+                if let currentView = switcher.currentView {
+                    //Set schedule date to today.
+                    if let dataView = currentView as? DataViewController {
+                        dataView.scheduleDate = NSDate()
+                        dataView.refreshSchedule()
+                    }  else if let dataView = currentView as? WeekDataViewController {
+                        dataView.scheduleDate = NSDate()
+                        dataView.refreshSchedule()
+                    }
+                }
+            }
+        }
+        return true
+    }
 
 }
 
