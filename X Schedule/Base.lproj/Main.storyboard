@@ -476,6 +476,59 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
             </objects>
             <point key="canvasLocation" x="2232" y="2446"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="jAt-cu-Knh">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Hnn-0q-MNM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Hy-TZ-Ig2"/>
+                        <viewControllerLayoutGuide type="bottom" id="937-ZM-W63"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EtJ-Iu-wwT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GvE-6u-cRr">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" red="0.77647058820000003" green="0.86666666670000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="X Schedule is created and maintained by Nicholas Reichert.">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">  To contact me directly, email reichertsoftware@gmail.com  To report bugs and request new features, go to the GitHub Issue tracker for X Schedule: https://github.com/Cin316/X-Schedule/issues  Be sure to include your X Schedule build number and version, your device, and your iOS version in any requests.  The build number is the number in parentheses next to the version.  If you like X Schedule, please leave a review on the App Store.  This will help me reach a wider audience.  </string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Thank you for your support and usage of X Schedule!">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77647058820000003" green="0.86666666670000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="GvE-6u-cRr" firstAttribute="top" secondItem="8Hy-TZ-Ig2" secondAttribute="bottom" id="BOl-ql-bvH"/>
+                            <constraint firstItem="937-ZM-W63" firstAttribute="top" secondItem="GvE-6u-cRr" secondAttribute="bottom" id="C2D-x0-qgk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GvE-6u-cRr" secondAttribute="trailing" constant="-16" id="P9w-3M-CTG"/>
+                            <constraint firstItem="GvE-6u-cRr" firstAttribute="leading" secondItem="EtJ-Iu-wwT" secondAttribute="leadingMargin" constant="-16" id="l5Q-aR-A3Y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iZD-ak-yuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2232" y="3126"/>
+        </scene>
         <!--About-->
         <scene sceneID="Vg9-J5-sj7">
             <objects>
@@ -666,6 +719,24 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                         <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="TaS-PC-bZ7" kind="show" id="7Xv-Rf-VSS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="M1v-8k-D6g" style="IBUITableViewCellStyleDefault" id="ZmR-uq-Gvh">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="ZmR-uq-Gvh" id="Rob-Bn-7cJ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M1v-8k-D6g">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="Hnn-0q-MNM" kind="show" id="l1x-yT-0B4"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
