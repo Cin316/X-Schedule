@@ -499,7 +499,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">  To contact me directly, email reichertsoftware@gmail.com  To report bugs and request new features, go to the GitHub Issue tracker for X Schedule: https://github.com/Cin316/X-Schedule/issues  Be sure to include your X Schedule build number and version, your device, and your iOS version in any requests.  The build number is the number in parentheses next to the version.  If you like X Schedule, please leave a review on the App Store.  This will help me reach a wider audience.  </string>
+                                        <string key="content">  To contact me directly, email reichertsoftware@gmail.com  To report bugs and request new features, go to the GitHub Issue tracker for X Schedule: https://github.com/Cin316/X-Schedule/issues  Be sure to include your X Schedule build number and version, your device, and your iOS version in any requests.  The build number is the number in parentheses next to the version.  If you like X Schedule, please leave a review on the App Store.  This will help me reach a wider audience.  Special thanks to Aaron Wright for helping me with resolving an issue I had with submitting X Schedule to the App Store.  </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
