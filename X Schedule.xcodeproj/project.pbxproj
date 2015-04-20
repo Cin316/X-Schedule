@@ -305,15 +305,15 @@
 				TargetAttributes = {
 					E138A8091A8E8B1E00549F84 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = RLF8EEWY2Z;
+						DevelopmentTeam = NK4953M888;
 					};
 					E1DEBE981AD619B0004B2CC1 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = RLF8EEWY2Z;
+						DevelopmentTeam = NK4953M888;
 					};
 					E1DEBED91AD61FE2004B2CC1 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = RLF8EEWY2Z;
+						DevelopmentTeam = NK4953M888;
 					};
 				};
 			};
