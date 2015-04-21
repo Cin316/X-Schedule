@@ -83,7 +83,8 @@ class WeekDataViewController: UIViewController {
         dateFormatter.dateFormat = "MMMM d"
         var mondayText = dateFormatter.stringFromDate(self.scheduleMonday)
         var fridayText = dateFormatter.stringFromDate(self.scheduleMonday.dateByAddingTimeInterval(60*60*24*4))
-        dateLabel.text = "\(mondayText) - \(fridayText)"
+        var year: Int = NSCalendar.currentCalendar().component(NSCalendarUnit.CalendarUnitYear, fromDate: self.scheduleMonday)
+        dateLabel.text = "\(mondayText) - \(fridayText), \(year)"
     }
     
     private func refreshScheduleNum(num: Int) {
