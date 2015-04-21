@@ -141,6 +141,14 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
                     startTime = NSCalendar.currentCalendar().dateFromComponents(startTimeComponents)!
                     endTime = NSCalendar.currentCalendar().dateFromComponents(endTimeComponents)!
                     
+                    //Hours 12-5 are PM.  Hours 6-11 are AM.
+                    if (startTimeComponents.hour==12 || startTimeComponents.hour<5) {
+                        startTime = startTime.dateByAddingTimeInterval(60*60*12)
+                    }
+                    if (endTimeComponents.hour==12 || endTimeComponents.hour<5) {
+                        endTime = endTime.dateByAddingTimeInterval(60*60*12)
+                    }
+                    
                     //Store start and end times in schedule.
                     item.startTime = startTime
                     item.endTime = endTime
