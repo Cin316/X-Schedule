@@ -117,7 +117,7 @@ class WeekDataViewController: UIViewController {
                 dispatch_async(dispatch_get_main_queue()) {
                     var parser = ScheduleParser()
                     //Parse the downloaded code for schedule.
-                    var schedule = parser.parseForSchedule(output, date: self.scheduleDate)
+                    var schedule = parser.parseForSchedule(output, date: downloadDate)
                     //Display schedule items in table.
                     if let tableController = self.childViewControllers[num-1] as? ScheduleTableController {
                         tableController.schedule = schedule
