@@ -55,6 +55,8 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
             
             //Replace all <br> with \n
             descriptionString = descriptionString.stringByReplacingOccurrencesOfString("<br>", withString: "\n")
+            //Replace all <br /> with \n
+            descriptionString = descriptionString.stringByReplacingOccurrencesOfString("<br />", withString: "\n")
             
             //Remove whitespace.
             descriptionString = descriptionString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
@@ -106,6 +108,7 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
                 
                     //Analyze time token.
                     var times = timeToken.componentsSeparatedByString("-")
+                    var foundError: Bool = false
                     var startTime: NSDate = NSDate()
                     var endTime: NSDate = NSDate()
                     var foundTime: Bool = false
@@ -115,47 +118,61 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
                         if (time != "") {
                             //Convert strings into dates.
                             if (foundTime == false) {
-                                startTime = dateFormatter.dateFromString(time)!
-                                foundTime = true
+                                if let realStartTime = dateFormatter.dateFromString(time) {
+                                    startTime = realStartTime
+                                    foundTime = true
+                                } else {
+                                    //Register error as found.
+                                    foundError = true
+                                    startTime = NSDate()
+                                }
                             } else {
-                                endTime = dateFormatter.dateFromString(time)!
+                                if let realEndTime = dateFormatter.dateFromString(time) {
+                                    endTime = realEndTime
+                                } else {
+                                    //Register error as found.
+                                    foundError = true
+                                    endTime = NSDate()
+                                }
                             }
                         }
                     }
-                    
-                    //Put time tokens on the schedule date.
-                    var dateComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear | .CalendarUnitEra, fromDate: schedule.date)
-                    var startTimeComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour | .CalendarUnitMinute, fromDate: startTime)
-                    var endTimeComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour | .CalendarUnitMinute, fromDate: endTime)
-                    
-                    startTimeComponents.day = dateComponents.day
-                    startTimeComponents.month = dateComponents.month
-                    startTimeComponents.year = dateComponents.year
-                    startTimeComponents.era = dateComponents.era
-                    
-                    endTimeComponents.day = dateComponents.day
-                    endTimeComponents.month = dateComponents.month
-                    endTimeComponents.year = dateComponents.year
-                    endTimeComponents.era = dateComponents.era
-                    
-                    startTime = NSCalendar.currentCalendar().dateFromComponents(startTimeComponents)!
-                    endTime = NSCalendar.currentCalendar().dateFromComponents(endTimeComponents)!
-                    
-                    //Hours 12-5 are PM.  Hours 6-11 are AM.
-                    if (startTimeComponents.hour==12 || startTimeComponents.hour<5) {
-                        startTime = startTime.dateByAddingTimeInterval(60*60*12)
+                    if (!foundError) {
+                        //Put time tokens on the schedule date.
+                        var dateComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear | .CalendarUnitEra, fromDate: schedule.date)
+                        var startTimeComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour | .CalendarUnitMinute, fromDate: startTime)
+                        var endTimeComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour | .CalendarUnitMinute, fromDate: endTime)
+                        
+                        startTimeComponents.day = dateComponents.day
+                        startTimeComponents.month = dateComponents.month
+                        startTimeComponents.year = dateComponents.year
+                        startTimeComponents.era = dateComponents.era
+                        
+                        endTimeComponents.day = dateComponents.day
+                        endTimeComponents.month = dateComponents.month
+                        endTimeComponents.year = dateComponents.year
+                        endTimeComponents.era = dateComponents.era
+                        
+                        startTime = NSCalendar.currentCalendar().dateFromComponents(startTimeComponents)!
+                        endTime = NSCalendar.currentCalendar().dateFromComponents(endTimeComponents)!
+                        
+                        //Hours 12-5 are PM.  Hours 6-11 are AM.
+                        if (startTimeComponents.hour==12 || startTimeComponents.hour<5) {
+                            startTime = startTime.dateByAddingTimeInterval(60*60*12)
+                        }
+                        if (endTimeComponents.hour==12 || endTimeComponents.hour<5) {
+                            endTime = endTime.dateByAddingTimeInterval(60*60*12)
+                        }
+                        
+                        //Store start and end times in schedule.
+                        item.startTime = startTime
+                        item.endTime = endTime
+                        
+                        //Add item to schedule.
+                        schedule.items.append(item)
+                    } else {
+                        //If an error is found, don't add the item to the schedule.
                     }
-                    if (endTimeComponents.hour==12 || endTimeComponents.hour<5) {
-                        endTime = endTime.dateByAddingTimeInterval(60*60*12)
-                    }
-                    
-                    //Store start and end times in schedule.
-                    item.startTime = startTime
-                    item.endTime = endTime
-
-                    //Add item to schedule.
-                    schedule.items.append(item)
-                
                 }
             }
             
