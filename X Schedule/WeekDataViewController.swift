@@ -41,7 +41,7 @@ class WeekDataViewController: UIViewController {
         }
     }
     
-    var requests:[NSURLSessionTask] = []
+    var tasks: [NSURLSessionTask] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +114,7 @@ class WeekDataViewController: UIViewController {
         }
         
         // Download today's schedule from the St. X website.
-        ScheduleDownloader.downloadSchedule(downloadDate,
+        var newTask: NSURLSessionTask = ScheduleDownloader.downloadSchedule(downloadDate,
             completionHandler: { (output: String) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
@@ -148,11 +148,16 @@ class WeekDataViewController: UIViewController {
                     if(self.finishedLoadingNum==5) {
                         self.loadingIndicator.stopAnimating()
                         self.finishedLoadingNum = 0
+                        
+                        //Clear references to tasks from tasks.
+                        self.tasks = []
                     }
                     
                 }
             }
         )
+        
+        tasks.append(newTask)
     }
     
     @IBAction func onBackButtonPress(sender: AnyObject) {
@@ -167,9 +172,10 @@ class WeekDataViewController: UIViewController {
     }
     
     private func cancelRequests() {
-        for request in requests {
-            request.cancel()
+        for task in tasks {
+            task.cancel()
         }
+        tasks = []
     }
     
     @IBAction func onTodayButtonPress(sender: AnyObject) {
