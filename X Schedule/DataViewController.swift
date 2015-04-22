@@ -49,7 +49,7 @@ class DataViewController: UIViewController {
                     self.titleLabel.text = schedule.title
                     //Display correctly formatted date.
                     var dateFormatter = NSDateFormatter()
-                    dateFormatter.dateFormat = "EEEE, MMMM d"
+                    dateFormatter.dateFormat = "EEEE, MMMM d, yyyy"
                     self.dateLabel.text = dateFormatter.stringFromDate(self.scheduleDate)
                     
                     //Add default weekend title.
