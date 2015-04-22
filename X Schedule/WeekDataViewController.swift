@@ -41,6 +41,8 @@ class WeekDataViewController: UIViewController {
         }
     }
     
+    var requests:[NSURLSessionTask] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -154,12 +156,20 @@ class WeekDataViewController: UIViewController {
     }
     
     @IBAction func onBackButtonPress(sender: AnyObject) {
+        cancelRequests()
         scheduleDate = scheduleDate.dateByAddingTimeInterval(-24*60*60*7)
         refreshSchedule()
     }
     @IBAction func onForwardButtonPress(sender: AnyObject) {
+        cancelRequests()
         scheduleDate = scheduleDate.dateByAddingTimeInterval(24*60*60*7)
         refreshSchedule()
+    }
+    
+    private func cancelRequests() {
+        for request in requests {
+            request.cancel()
+        }
     }
     
     @IBAction func onTodayButtonPress(sender: AnyObject) {
