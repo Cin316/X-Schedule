@@ -114,6 +114,7 @@ public class ScheduleParser: NSObject, NSXMLParserDelegate {
                     var foundTime: Bool = false
                     var dateFormatter = NSDateFormatter()
                     dateFormatter.dateFormat = "h:mm"
+                    dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
                     for time in times {
                         if (time != "") {
                             //Convert strings into dates.
