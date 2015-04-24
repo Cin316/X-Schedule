@@ -31,7 +31,13 @@ class DonorsViewController: UIViewController {
                     var fileText = String(contentsOfURL: url, encoding: NSUTF8StringEncoding, error: nil)
                     if let realFileText = fileText {
                         //Save to donors.txt.
-                        realFileText.writeToFile(donorsPath, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+                        // TODO Fix this.  It doesn't work because you can't write to the app bundle.  Fix by using the document bundle instead.
+                        //realFileText.writeToFile(donorsPath, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+                        
+                        //Display in GUI
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.mainTextView.text = realFileText
+                        }
                     }
                 }
             }

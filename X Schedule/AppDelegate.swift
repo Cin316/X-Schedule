@@ -40,6 +40,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        // TODO Refactor and clean up this code.
+        //Set date to today on app reopen.
+        
+        var rootController = self.window!.rootViewController!
+        var tabBarController: UITabBarController = rootController as! UITabBarController
+        
+        for controller in tabBarController.viewControllers! {
+            var viewController = controller as! UIViewController
+            if (viewController.tabBarItem.tag == 401) {
+                if let switcher = viewController as? ScheduleSwitcherViewController {
+                    if let currentView = switcher.currentView {
+                        //Set schedule date to today.
+                        if let dataView = currentView as? DataViewController {
+                            dataView.scheduleDate = NSDate()
+                            dataView.refreshSchedule()
+                        }  else if let dataView = currentView as? WeekDataViewController {
+                            dataView.scheduleDate = NSDate()
+                            dataView.refreshSchedule()
+                        }
+                    }
+                }
+            }
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {

@@ -10,7 +10,7 @@ import Foundation
 
 public class ScheduleDownloader {
     
-    public class func downloadSchedule(date: NSDate, completionHandler: String -> Void) {
+    public class func downloadSchedule(date: NSDate, completionHandler: String -> Void) -> NSURLSessionTask {
         // Download today's schedule from the St. X website.
         // Setup for request.
         var url = NSURL(string:"http://www.stxavier.org/cf_calendar/export.cfm")!
@@ -42,11 +42,13 @@ public class ScheduleDownloader {
         )
         //Start POST request.
         postSession.resume()
+        
+        return postSession
     }
     
-    public class func downloadSchedule(completionHandler: String -> Void) {
+    public class func downloadSchedule(completionHandler: String -> Void) -> NSURLSessionTask {
         var currentDate = NSDate()
-        downloadSchedule(currentDate, completionHandler: completionHandler)
+        return downloadSchedule(currentDate, completionHandler: completionHandler)
     }
     
 }

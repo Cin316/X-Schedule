@@ -41,6 +41,8 @@ class WeekDataViewController: UIViewController {
         }
     }
     
+    var tasks: [NSURLSessionTask] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -83,7 +85,8 @@ class WeekDataViewController: UIViewController {
         dateFormatter.dateFormat = "MMMM d"
         var mondayText = dateFormatter.stringFromDate(self.scheduleMonday)
         var fridayText = dateFormatter.stringFromDate(self.scheduleMonday.dateByAddingTimeInterval(60*60*24*4))
-        dateLabel.text = "\(mondayText) - \(fridayText)"
+        var year: Int = NSCalendar.currentCalendar().component(NSCalendarUnit.CalendarUnitYear, fromDate: self.scheduleMonday)
+        dateLabel.text = "\(mondayText) - \(fridayText), \(year)"
     }
     
     private func refreshScheduleNum(num: Int) {
@@ -111,13 +114,13 @@ class WeekDataViewController: UIViewController {
         }
         
         // Download today's schedule from the St. X website.
-        ScheduleDownloader.downloadSchedule(downloadDate,
+        var newTask: NSURLSessionTask = ScheduleDownloader.downloadSchedule(downloadDate,
             completionHandler: { (output: String) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
                     var parser = ScheduleParser()
                     //Parse the downloaded code for schedule.
-                    var schedule = parser.parseForSchedule(output, date: self.scheduleDate)
+                    var schedule = parser.parseForSchedule(output, date: downloadDate)
                     //Display schedule items in table.
                     if let tableController = self.childViewControllers[num-1] as? ScheduleTableController {
                         tableController.schedule = schedule
@@ -145,20 +148,34 @@ class WeekDataViewController: UIViewController {
                     if(self.finishedLoadingNum==5) {
                         self.loadingIndicator.stopAnimating()
                         self.finishedLoadingNum = 0
+                        
+                        //Clear references to tasks from tasks.
+                        self.tasks = []
                     }
                     
                 }
             }
         )
+        
+        tasks.append(newTask)
     }
     
     @IBAction func onBackButtonPress(sender: AnyObject) {
+        cancelRequests()
         scheduleDate = scheduleDate.dateByAddingTimeInterval(-24*60*60*7)
         refreshSchedule()
     }
     @IBAction func onForwardButtonPress(sender: AnyObject) {
+        cancelRequests()
         scheduleDate = scheduleDate.dateByAddingTimeInterval(24*60*60*7)
         refreshSchedule()
+    }
+    
+    private func cancelRequests() {
+        for task in tasks {
+            task.cancel()
+        }
+        tasks = []
     }
     
     @IBAction func onTodayButtonPress(sender: AnyObject) {
