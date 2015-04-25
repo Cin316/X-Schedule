@@ -132,7 +132,7 @@ class WeekDataViewController: UIViewController {
                     titleLabel.text = schedule.title
                     
                     //Add default weekend title.
-                    if (NSCalendar.currentCalendar().isDateInWeekend(self.scheduleDate)){
+                    if (NSCalendar.currentCalendar().isDateInWeekend(self.scheduleMonday)){
                         titleLabel.text = "Weekend"
                     }
                     
