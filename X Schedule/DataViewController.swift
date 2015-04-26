@@ -68,10 +68,31 @@ class DataViewController: UIViewController {
                     self.loadingIndicator.stopAnimating()
                     
                 }
+            },
+            errorHandler: { (errorText: String) in
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    //Display error.
+                    var alert = UIAlertController(title: errorText, message: nil, preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
+                        alert.dismissViewControllerAnimated(true, completion: {})
+                    }))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
+                    //Stop loading indicator.
+                    self.loadingIndicator.stopAnimating()
+                    
+                    //Display correctly formatted date.
+                    var dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "EEEE, MMMM d, yyyy"
+                    self.dateLabel.text = dateFormatter.stringFromDate(self.scheduleDate)
+                    
+                    self.titleLabel.text = "Error"
+                }
             }
         )
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
