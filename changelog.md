@@ -32,3 +32,9 @@ This files keeps track of all of the changes made betweem version of X Schedule.
 - Fixed issues with concurrent downloading.
 - Added display of year on schedule.
 - Fixed bugs with military time.
+
+#1.0.0
+- Initial App Store release.
+- Fixed bug where all schedule titles would appear as "Weekend" on iPad week view.
+- Added network error handling.
+- Fixed bug where app would set date to today when using control center/notification center.
