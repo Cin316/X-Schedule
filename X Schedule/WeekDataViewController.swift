@@ -145,7 +145,7 @@ class WeekDataViewController: UIViewController {
                     
                     //Stop loading indicator after everything is complete.
                     self.finishedLoadingNum++
-                    if(self.finishedLoadingNum==5) {
+                    if(self.finishedLoadingNum>=5) {
                         self.loadingIndicator.stopAnimating()
                         self.finishedLoadingNum = 0
                         
@@ -153,6 +153,27 @@ class WeekDataViewController: UIViewController {
                         self.tasks = []
                     }
                     
+                }
+            },
+            errorHandler: { (errorText: String) in
+                //Execute code in main thread.
+                dispatch_async(dispatch_get_main_queue()) {
+                    //Stop loading indicator after everything is complete.
+                    self.finishedLoadingNum++
+                    if(self.finishedLoadingNum>=5) {
+                        self.loadingIndicator.stopAnimating()
+                        self.finishedLoadingNum = 0
+                        
+                        //Clear references to tasks from tasks.
+                        self.tasks = []
+                        
+                        //Display error.
+                        var alert = UIAlertController(title: errorText, message: nil, preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
+                            alert.dismissViewControllerAnimated(true, completion: {})
+                        }))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
                 }
             }
         )
