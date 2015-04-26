@@ -10,7 +10,7 @@ import Foundation
 
 public class ScheduleDownloader {
     
-    public class func downloadSchedule(date: NSDate, completionHandler: String -> Void) -> NSURLSessionTask {
+    public class func downloadSchedule(date: NSDate, completionHandler: String -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
         // Download today's schedule from the St. X website.
         // Setup for request.
         var url = NSURL(string:"http://www.stxavier.org/cf_calendar/export.cfm")!
@@ -36,8 +36,13 @@ public class ScheduleDownloader {
             { ( data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
                 //Convert output to a string.
                 var output = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
-                //Call completion handler with string.
-                completionHandler(output)
+                
+                if (error == nil) {
+                    //Call completion handler with string.
+                    completionHandler(output)
+                } else { // If there is an error...
+                    errorHandler(error.localizedDescription)
+                }
             }
         )
         //Start POST request.
@@ -46,9 +51,13 @@ public class ScheduleDownloader {
         return postSession
     }
     
-    public class func downloadSchedule(completionHandler: String -> Void) -> NSURLSessionTask {
+    public class func downloadSchedule(completionHandler: String -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
         var currentDate = NSDate()
-        return downloadSchedule(currentDate, completionHandler: completionHandler)
+        return downloadSchedule(currentDate, completionHandler: completionHandler, errorHandler: errorHandler)
+    }
+    
+    public class func downloadSchedule(date: NSDate, completionHandler: String -> Void) -> NSURLSessionTask {
+        return downloadSchedule(date, completionHandler: completionHandler, errorHandler: { (output: String) in })
     }
     
 }
