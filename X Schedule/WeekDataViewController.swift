@@ -114,7 +114,7 @@ class WeekDataViewController: UIViewController {
         }
         
         // Download today's schedule from the St. X website.
-        var newTask: NSURLSessionTask = ScheduleDownloader.downloadSchedule(downloadDate,
+        var newTask: NSURLSessionTask = XScheduleDownloader.downloadSchedule(downloadDate,
             completionHandler: { (output: String) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {

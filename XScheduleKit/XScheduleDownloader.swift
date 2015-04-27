@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ScheduleDownloader {
+public class XScheduleDownloader {
     
     private static var scheduleCalenderID: String = "27"
     private static var scheduleURL: NSURL = NSURL(string: "http://www.stxavier.org/cf_calendar/export.cfm")!
