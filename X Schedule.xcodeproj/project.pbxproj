@@ -28,7 +28,7 @@
 		E1DEBEF91AD621F0004B2CC1 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DEBED31AD61F5B004B2CC1 /* Schedule.swift */; };
 		E1DEBEFA1AD6237A004B2CC1 /* ScheduleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */; };
 		E1DEBEFB1AD6237D004B2CC1 /* ScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEB01A950851003D3C57 /* ScheduleParser.swift */; };
-		E1DEBEFC1AD62380004B2CC1 /* ScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */; };
+		E1DEBEFC1AD62380004B2CC1 /* XScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */; };
 		E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */; };
 		E1E3EE4A1AA8F24F00A00603 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1E3EE491AA8F24F00A00603 /* LICENSE.txt */; };
 		E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18039831AABF260006513B2 /* AboutViewController.swift */; };
@@ -94,7 +94,7 @@
 		E1DEBEDD1AD61FE2004B2CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		E1E3EE491AA8F24F00A00603 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
-		E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDownloader.swift; sourceTree = "<group>"; };
+		E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleDownloader.swift; sourceTree = "<group>"; };
 		E1EFEEB01A950851003D3C57 /* ScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParser.swift; sourceTree = "<group>"; };
 		E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,7 +208,7 @@
 				45CB99211AE485A800937163 /* XScheduleKit-Swift.h */,
 				E1DEBED31AD61F5B004B2CC1 /* Schedule.swift */,
 				E1EFEEB01A950851003D3C57 /* ScheduleParser.swift */,
-				E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */,
+				E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */,
 				E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */,
 				E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */,
 				E1DEBEDC1AD61FE2004B2CC1 /* Supporting Files */,
@@ -413,7 +413,7 @@
 				E1DEBEF91AD621F0004B2CC1 /* Schedule.swift in Sources */,
 				E1DEBEFB1AD6237D004B2CC1 /* ScheduleParser.swift in Sources */,
 				E1DEBEFA1AD6237A004B2CC1 /* ScheduleTableController.swift in Sources */,
-				E1DEBEFC1AD62380004B2CC1 /* ScheduleDownloader.swift in Sources */,
+				E1DEBEFC1AD62380004B2CC1 /* XScheduleDownloader.swift in Sources */,
 				E1841FB51ADDFD4900C5DF3E /* ColoredScheduleTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
