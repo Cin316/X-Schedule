@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class XScheduleDownloader {
+public class XScheduleDownloader: ScheduleDownloader {
     
     private static var scheduleCalenderID: String = "27"
     private static var scheduleURL: NSURL = NSURL(string: "http://www.stxavier.org/cf_calendar/export.cfm")!
     
-    public class func downloadSchedule(date: NSDate, completionHandler: String -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
+    public override class func downloadSchedule(date: NSDate, completionHandler: String -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
         //Download today's schedule from the St. X website.
     
         //Create objects for network request.
@@ -72,15 +72,6 @@ public class XScheduleDownloader {
         let escapedDate: String = formattedDate.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
         
         return escapedDate
-    }
-    
-    public class func downloadSchedule(completionHandler: String -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
-        var currentDate = NSDate()
-        return downloadSchedule(currentDate, completionHandler: completionHandler, errorHandler: errorHandler)
-    }
-    
-    public class func downloadSchedule(date: NSDate, completionHandler: String -> Void) -> NSURLSessionTask {
-        return downloadSchedule(date, completionHandler: completionHandler, errorHandler: { (output: String) in })
     }
     
 }
