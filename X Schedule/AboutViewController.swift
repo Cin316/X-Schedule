@@ -12,37 +12,38 @@ class AboutViewController: UITableViewController, UITableViewDelegate {
     
     @IBOutlet weak var versionLabel: UILabel!
     
+    private var cellColor: UIColor = UIColor(red: (225.0/255.0), green: (238.0/255.0), blue: (254.0/255.0), alpha: 1.0)
+    
+    var versionNumber: String = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+    var buildNumber: String = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as! String
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let version = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as? String {
-            if let build = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as? String {
-                versionLabel.text = "\(version) (\(build))"
-            }
-        }
+        displayVersionNumber()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func displayVersionNumber() {
+        versionLabel.text = "\(versionNumber) (\(buildNumber))"
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var selectedCell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
         if let cell = selectedCell {
             if (cell.tag == 200) { //GitHub link
-                var url: NSURL = NSURL(string: "http://github.com/Cin316/X-Schedule")!
-                UIApplication.sharedApplication().openURL(url)
+                openURL("http://github.com/Cin316/X-Schedule")
             } else if (cell.tag == 201) { //St. X link
-                var url: NSURL = NSURL(string: "http://www.stxavier.org/")!
-                UIApplication.sharedApplication().openURL(url)
+                openURL("http://www.stxavier.org/")
             }
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    private func openURL(url: String) {
+        var url: NSURL = NSURL(string: url)!
+        UIApplication.sharedApplication().openURL(url)
+    }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         //Fix background color on iPad.
-        cell.backgroundColor = UIColor(red: (225.0/255.0), green: (238.0/255.0), blue: (254.0/255.0), alpha: 1.0)
+        cell.backgroundColor = cellColor
     }
 }
