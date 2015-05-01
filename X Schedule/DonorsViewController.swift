@@ -12,31 +12,43 @@ class DonorsViewController: UIViewController {
     
     @IBOutlet weak var mainTextView: UITextView!
     
+    private var donorsPath: String = NSBundle.mainBundle().pathForResource("donors", ofType: "txt")!
+    private var editedDonorsPath: String = DonorsViewController.documentsDirectory().stringByAppendingPathComponent("editedDonors.txt")
+    
+    private var onlineDonorsURL: NSURL = NSURL(string: "http://raw.githubusercontent.com/Cin316/X-Schedule/develop/donors.txt")!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var donorsPath = NSBundle.mainBundle().pathForResource("donors", ofType: "txt")!
+        displayStoredFiles()
+        updateStoredDonors()
         
+    }
+    private func displayStoredFiles() {
+        //Read path from editedDonors.txt and display it if it exists.
+        if (fileExists(editedDonorsPath)) {
+            displayContentsOfFile(editedDonorsPath)
+        } else {
+            //If it doesn't, read donors.txt in the read-only app bundle and display it.
+            displayContentsOfFile(donorsPath)
+        }
+    }
+    private func updateStoredDonors() {
         //Attempt to download donors from website and update saved donors.txt.
-        var url = NSURL(string: "http://raw.githubusercontent.com/Cin316/X-Schedule/develop/donors.txt")!
-        var config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        var session = NSURLSession(configuration: config)
-        var request = NSMutableURLRequest(URL: url)
+        var session = downloadSession()
         
-        var postSession = session.downloadTaskWithURL(url, completionHandler:
+        var postSession = session.downloadTaskWithURL(onlineDonorsURL, completionHandler:
             { (url: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
                 //If the request was successful...
                 if let realURL = url {
                     //Get text of download.
                     var fileText = String(contentsOfURL: url, encoding: NSUTF8StringEncoding, error: nil)
                     if let realFileText = fileText {
-                        //Save to donors.txt.
-                        // TODO Fix this.  It doesn't work because you can't write to the app bundle.  Fix by using the document bundle instead.
-                        //realFileText.writeToFile(donorsPath, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
-                        
+                        //Save to editedDonors.txt.
+                        self.saveEditedDonorsText(realFileText)
                         //Display in GUI
                         dispatch_async(dispatch_get_main_queue()) {
-                            self.mainTextView.text = realFileText
+                            self.displayStoredFiles()
                         }
                     }
                 }
@@ -44,19 +56,37 @@ class DonorsViewController: UIViewController {
         )
         
         postSession.resume()
+    }
+    private func downloadSession() -> NSURLSession {
+        var config: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        var session: NSURLSession = NSURLSession(configuration: config)
         
-        //Load and display donors.txt.
-        var donorListText = String(contentsOfFile: donorsPath, encoding: NSUTF8StringEncoding, error: nil)
-        
+        return session
+    }
+    private func saveEditedDonorsText(downloadedText: String) {
+        downloadedText.writeToFile(self.editedDonorsPath, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+    }
+    private func displayDonors(donorListText: String?) {
+        //Displays the list of donors in a center aligned text view.
         if let donorList = donorListText {
             mainTextView.text = donorList
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func displayContentsOfFile(filePath: String) {
+        var fileContents: String? = String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil)
+        displayDonors(fileContents)
     }
-    
+    private class func documentsDirectory() -> String {
+        let directories: [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as! [String]
+        let documentsDirectory: String =  directories[0]
+        
+        return documentsDirectory
+    }
+    private func fileExists(filePath: String) -> Bool {
+        var manager: NSFileManager = NSFileManager.defaultManager()
+        var exists: Bool = manager.fileExistsAtPath(filePath)
+        
+        return exists
+    }
     
 }
