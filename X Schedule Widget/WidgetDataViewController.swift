@@ -16,12 +16,15 @@ class WidgetDataViewController: UIViewController, NCWidgetProviding {
     
     var lastUpdated = NSDate()
     
+    var scheduleDate = NSDate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
+        
+        scheduleDate = NSDate()
         refreshSchedule()
     }
-    
     private func refreshSchedule() {
         
         // Download today's schedule from the St. X website.
@@ -31,43 +34,40 @@ class WidgetDataViewController: UIViewController, NCWidgetProviding {
                 dispatch_async(dispatch_get_main_queue()) {
                     
                     var parser = ScheduleParser()
-                    //Parse the downloaded code for schedule.
                     var schedule = parser.parseForSchedule(output, date: NSDate())
                     
                     //Display schedule items in table.
                     if let tableController = self.childViewControllers[0] as? ScheduleTableController {
-                        tableController.schedule = schedule
-                        let tableView = (tableController.view as? UITableView)!
-                        tableView.reloadData()
                         
-                        //Size widget correctly.
-                        if (tableView.contentSize.height > self.emptyLabel.frame.height){
-                            self.preferredContentSize = tableView.contentSize
-                        } else {
-                            self.preferredContentSize = self.emptyLabel.frame.size
-                        }
+                        tableController.displaySchedule(schedule)
                         
-                        //Hide schedule table if schedule is blank.
+                        self.correctlySizeWidget(tableController.tableView)
+                        
+                        //Hide schedule table lines if schedule is blank.
                         if (schedule.items.isEmpty) {
-                            tableView.hidden = true
+                            tableController.view.hidden = true
                         }
                     }
                     
-                    //Empty label
-                    if (schedule.items.isEmpty) {
-                        self.emptyLabel.text = "No classes"
-                    } else {
-                        self.emptyLabel.text = ""
-                    }
+                    self.displayEmptyLabel(schedule)
                     
                 }
             }
         )
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func correctlySizeWidget(tableView: UITableView) {
+        if (tableView.contentSize.height > self.emptyLabel.frame.height){
+            self.preferredContentSize = tableView.contentSize
+        } else {
+            self.preferredContentSize = self.emptyLabel.frame.size
+        }
+    }
+    private func displayEmptyLabel(schedule: Schedule) {
+        if (schedule.items.isEmpty) {
+            self.emptyLabel.text = "No classes"
+        } else {
+            self.emptyLabel.text = ""
+        }
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
@@ -76,8 +76,8 @@ class WidgetDataViewController: UIViewController, NCWidgetProviding {
         // If there's an update, use NCUpdateResult.NewData
         
         //Update every 3 hours.
-        var secondsBetween = lastUpdated.timeIntervalSinceDate(NSDate())//Seconds since last update.
-        if (secondsBetween > 60*60*3){
+        var secondsSinceLastUpdate = lastUpdated.timeIntervalSinceDate(NSDate())
+        if (secondsSinceLastUpdate > 60*60*3){
             completionHandler(NCUpdateResult.NewData)
         } else {
             completionHandler(NCUpdateResult.NoData)
