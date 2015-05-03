@@ -82,4 +82,9 @@ public class ScheduleTableController: UITableViewController {
         return  internalHighlightedColor
     }
     
+    public func displaySchedule(newSchedule: Schedule) {
+        schedule = newSchedule
+        self.tableView.reloadData()
+    }
+    
 }
