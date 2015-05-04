@@ -16,6 +16,7 @@
 		E138A8191A8E8B1E00549F84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E138A8181A8E8B1E00549F84 /* Images.xcassets */; };
 		E138A81C1A8E8B1E00549F84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E138A81A1A8E8B1E00549F84 /* LaunchScreen.xib */; };
 		E138A8321A8E970E00549F84 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138A8311A8E970E00549F84 /* DataViewController.swift */; };
+		E13FCD6A1AF6CCD400696F3B /* MainTabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */; };
 		E13FCD6D1AF6EDBB00696F3B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13FCD6C1AF6EDBB00696F3B /* ScheduleViewController.swift */; };
 		E1451B1E1AD348D600A39564 /* DonorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1451B1D1AD348D600A39564 /* DonorsViewController.swift */; };
 		E16DCB6D1AB3BF610045F5A0 /* donors.txt in Resources */ = {isa = PBXBuildFile; fileRef = E16DCB6C1AB3BF610045F5A0 /* donors.txt */; };
@@ -80,6 +81,7 @@
 		E138A8181A8E8B1E00549F84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E138A81B1A8E8B1E00549F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E138A8311A8E970E00549F84 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarDelegate.swift; sourceTree = "<group>"; };
 		E13FCD6C1AF6EDBB00696F3B /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		E1451B1D1AD348D600A39564 /* DonorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorsViewController.swift; sourceTree = "<group>"; };
 		E16DCB6C1AB3BF610045F5A0 /* donors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = donors.txt; sourceTree = SOURCE_ROOT; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				E138A80F1A8E8B1E00549F84 /* AppDelegate.swift */,
+				E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */,
 				E138A8311A8E970E00549F84 /* DataViewController.swift */,
 				E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */,
 				E138A8151A8E8B1E00549F84 /* Main.storyboard */,
@@ -401,6 +404,7 @@
 				E1451B1E1AD348D600A39564 /* DonorsViewController.swift in Sources */,
 				E1DDD4E61AD06CBD0007ABC8 /* WeekDataViewController.swift in Sources */,
 				E138A8101A8E8B1E00549F84 /* AppDelegate.swift in Sources */,
+				E13FCD6A1AF6CCD400696F3B /* MainTabBarDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
