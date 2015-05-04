@@ -9,7 +9,7 @@
 import UIKit
 import XScheduleKit
 
-class WeekDataViewController: UIViewController {
+class WeekDataViewController: ScheduleViewController {
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     var finishedLoadingNum: Int = 0
@@ -30,7 +30,6 @@ class WeekDataViewController: UIViewController {
     @IBOutlet weak var titleLabel5: UILabel!
     @IBOutlet weak var blankLabel5: UILabel!
     
-    var scheduleDate: NSDate = NSDate()
     var scheduleMonday: NSDate {
         get{
             var calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
@@ -50,7 +49,7 @@ class WeekDataViewController: UIViewController {
         refreshSchedule()
     }
     
-    func refreshSchedule() {
+    override func refreshSchedule() {
         //Start loading indicator before download.
         loadingIndicator.startAnimating()
         finishedLoadingNum = 0
@@ -184,12 +183,10 @@ class WeekDataViewController: UIViewController {
     @IBAction func onBackButtonPress(sender: AnyObject) {
         cancelRequests()
         scheduleDate = scheduleDate.dateByAddingTimeInterval(-24*60*60*7)
-        refreshSchedule()
     }
     @IBAction func onForwardButtonPress(sender: AnyObject) {
         cancelRequests()
         scheduleDate = scheduleDate.dateByAddingTimeInterval(24*60*60*7)
-        refreshSchedule()
     }
     
     private func cancelRequests() {
@@ -201,7 +198,6 @@ class WeekDataViewController: UIViewController {
     
     @IBAction func onTodayButtonPress(sender: AnyObject) {
         scheduleDate = NSDate()
-        refreshSchedule()
     }
     
 }

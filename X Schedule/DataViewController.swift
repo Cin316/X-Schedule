@@ -9,9 +9,7 @@
 import UIKit
 import XScheduleKit
 
-class DataViewController: UIViewController {
-    
-    var scheduleDate: NSDate = NSDate()
+class DataViewController: ScheduleViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -27,7 +25,7 @@ class DataViewController: UIViewController {
         refreshSchedule()
     }
     
-    func refreshSchedule() {
+    override func refreshSchedule() {
         //Start loading indicator before download.
         loadingIndicator.startAnimating()
         
@@ -100,16 +98,13 @@ class DataViewController: UIViewController {
     
     @IBAction func onBackButtonPress(sender: AnyObject) {
         scheduleDate = scheduleDate.dateByAddingTimeInterval(-24*60*60)
-        refreshSchedule()
     }
     @IBAction func onForwardButtonPress(sender: AnyObject) {
         scheduleDate = scheduleDate.dateByAddingTimeInterval(24*60*60)
-        refreshSchedule()
     }
     
     @IBAction func onTodayButtonPress(sender: AnyObject) {
         scheduleDate = NSDate()
-        refreshSchedule()
     }
 }
 
