@@ -10,22 +10,19 @@ import UIKit
 import NotificationCenter
 import XScheduleKit
 
-class WidgetDataViewController: UIViewController, NCWidgetProviding {
+class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
         
     @IBOutlet weak var emptyLabel: UILabel!
     
     var lastUpdated = NSDate()
-    
-    var scheduleDate = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
         
         scheduleDate = NSDate()
-        refreshSchedule()
     }
-    private func refreshSchedule() {
+    override func refreshSchedule() {
         
         // Download today's schedule from the St. X website.
         XScheduleDownloader.downloadSchedule(NSDate(),
