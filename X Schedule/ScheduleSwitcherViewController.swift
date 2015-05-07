@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XScheduleKit
 
 class ScheduleSwitcherViewController: UINavigationController {
     
@@ -57,9 +58,7 @@ class ScheduleSwitcherViewController: UINavigationController {
     func switchToOrientationView() {
         //Take date from current view controller and store it.
         if let top = self.topViewController {
-            if let topData = top as? DataViewController {
-                self.scheduleDate = topData.scheduleDate
-            } else if let topData = top as? WeekDataViewController {
+            if let topData = top as? ScheduleViewController {
                 self.scheduleDate = topData.scheduleDate
             }
         }
@@ -83,9 +82,7 @@ class ScheduleSwitcherViewController: UINavigationController {
         
         //Store date in new view controller if necessary.
         if let top = self.topViewController {
-            if let topData = top as? DataViewController {
-                topData.scheduleDate = self.scheduleDate
-            }  else if let topData = top as? WeekDataViewController {
+            if let topData = top as? ScheduleViewController {
                 topData.scheduleDate = self.scheduleDate
             }
         }
