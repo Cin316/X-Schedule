@@ -18,12 +18,18 @@ class ScheduleSwitcherViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Get current orientation and store it.
-        currentOrientation = UIDevice.currentDevice().orientation
+        updateCurrentOrientation()
         switchToOrientationView()
         
+        registerAsOrientationListener()
+    }
+    private func registerAsOrientationListener() {
         //Register orientation change listener.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "deviceOrientationDidChangeNotification", name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    private func updateCurrentOrientation() {
+        //Store current orientation.
+        currentOrientation = UIDevice.currentDevice().orientation
     }
     
     func deviceOrientationDidChangeNotification() {
@@ -33,20 +39,19 @@ class ScheduleSwitcherViewController: UINavigationController {
             //Check if newOrientation is different from the currentOrientation.
             if (newOrientation != currentOrientation) {
                 //Update current orientation and update UI.
-                currentOrientation = UIDevice.currentDevice().orientation
+                updateCurrentOrientation()
                 switchToOrientationView()
             }
         }
     }
     
     func switchToOrientationView() {
-        //Take date from current view controller and store it.
-        if let top = self.topViewController {
-            if let topData = top as? ScheduleViewController {
-                self.scheduleDate = topData.scheduleDate
-            }
-        }
-        
+        loadScheduleDateIntoViewController(self.topViewController)
+        performSegueBasedOnOrientation()
+        storeScheduleDate()
+        updateCurrentView()
+    }
+    private func performSegueBasedOnOrientation() {
         if (UIDevice.currentDevice().userInterfaceIdiom == .Phone) { //If on iPhone...
             //Check if there is a view already.
             if (self.topViewController != nil) {
@@ -63,18 +68,30 @@ class ScheduleSwitcherViewController: UINavigationController {
                 self.performSegueWithIdentifier("displayScheduleiPadPortrait", sender: self)
             }
         }
-        
+    }
+    private func loadScheduleDateIntoViewController(viewController: UIViewController?) {
+        //Take date from current view controller and store it.
+        if let top = viewController {
+            if let topData = top as? ScheduleViewController {
+                self.scheduleDate = topData.scheduleDate
+            }
+        }
+    }
+    private func storeScheduleDate() {
         //Store date in new view controller if necessary.
         if let top = self.topViewController {
             if let topData = top as? ScheduleViewController {
                 topData.scheduleDate = self.scheduleDate
             }
         }
-        
+    }
+    private func updateCurrentView() {
+        //Store the value of the current view.
         if let top = self.topViewController {
             currentView = top
         }
     }
+    
 }
 
 class NoAnimationSegue: UIStoryboardSegue {
