@@ -18,28 +18,12 @@ class ScheduleSwitcherViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Correct tab bar title.
-        self.title = "Schedule"
-        self.tabBarController!.title = "Schedule"
-        
         //Get current orientation and store it.
         currentOrientation = UIDevice.currentDevice().orientation
         switchToOrientationView()
         
         //Register orientation change listener.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "deviceOrientationDidChangeNotification", name: UIDeviceOrientationDidChangeNotification, object: nil)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        //Correct tab bar title.
-        self.title = "Schedule"
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func deviceOrientationDidChangeNotification() {
