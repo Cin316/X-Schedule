@@ -10,7 +10,9 @@ X Schedule is an iOS app that fetches the bell schedule for St. Xavier High Scho
 
 #Download and Installation
 
-X Schedule will be available on the iOS App Store for free when it is released.
+X Schedule is available on the App Store for iPhone and iPad.
+
+[![Download on the App Store](https://cdn.rawgit.com/Cin316/X-Schedule/develop/App_Store_Badge.svg)](https://itunes.apple.com/app/id987185535)
 
 #Compiling
 
