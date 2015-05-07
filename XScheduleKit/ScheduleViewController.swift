@@ -14,7 +14,9 @@ public class ScheduleViewController: UIViewController {
     
     public var scheduleDate: NSDate = NSDate() {
         didSet {
-            refreshScheduleIfReady()
+            if (oldValue != scheduleDate) {
+                refreshScheduleIfReady()
+            }
         }
     }
     
