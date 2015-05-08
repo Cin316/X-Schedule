@@ -20,8 +20,6 @@ class DataViewController: ScheduleViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         refreshSchedule()
     }
     
@@ -34,69 +32,91 @@ class DataViewController: ScheduleViewController {
             completionHandler: { (output: String) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
-                    var parser = ScheduleParser()
-                    //Parse the downloaded code for schedule.
-                    var schedule = parser.parseForSchedule(output, date: self.scheduleDate)
-                    //Display schedule items in table.
-                    if let tableController = self.childViewControllers[0] as? ScheduleTableController {
-                        tableController.schedule = schedule
-                        let tableView = (tableController.view as? UITableView)!
-                        tableView.reloadData()
-                    }
-                    //Display title.
-                    self.titleLabel.text = schedule.title
-                    //Display correctly formatted date.
-                    var dateFormatter = NSDateFormatter()
-                    dateFormatter.dateFormat = "EEEE, MMMM d, yyyy"
-                    self.dateLabel.text = dateFormatter.stringFromDate(self.scheduleDate)
-                    
-                    //Add default weekend title.
-                    /*if (NSCalendar.currentCalendar().isDateInWeekend(self.scheduleDate)){
-                        self.titleLabel.text = "Weekend"
-                    }*/
-                    
-                    //Empty label
-                    if (schedule.items.isEmpty) {
-                        self.emptyLabel.text = "No classes"
-                    } else {
-                        self.emptyLabel.text = ""
-                    }
-
-                    //Stop loading indicator after everything is complete.
-                    self.loadingIndicator.stopAnimating()
+                    self.handleCompletionOfDownload(output)
                     
                 }
             },
             errorHandler: { (errorText: String) in
                 dispatch_async(dispatch_get_main_queue()) {
-                    
-                    //Display error.
-                    var alert = UIAlertController(title: errorText, message: nil, preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
-                        alert.dismissViewControllerAnimated(true, completion: {})
-                    }))
-                    self.presentViewController(alert, animated: true, completion: nil)
-                    
-                    //Stop loading indicator.
-                    self.loadingIndicator.stopAnimating()
-                    
-                    //Display correctly formatted date.
-                    var dateFormatter = NSDateFormatter()
-                    dateFormatter.dateFormat = "EEEE, MMMM d, yyyy"
-                    self.dateLabel.text = dateFormatter.stringFromDate(self.scheduleDate)
-                    
-                    self.titleLabel.text = "Error"
+                    self.handleError(errorText)
                 }
             }
         )
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func handleCompletionOfDownload(output: String) {
+        var schedule: Schedule = parseStringForSchedule(output)
+        
+        displayScheduleInTable(schedule)
+        
+        displayTitleForSchedule(schedule)
+        
+        displayDateLabelForDate(scheduleDate)
+        
+        displayEmptyLabelForSchedule(schedule)
+        
+        loadingIndicator.stopAnimating()
+    }
+    private func parseStringForSchedule(string: String) -> Schedule {
+        var parser: ScheduleParser = ScheduleParser()
+        var schedule: Schedule = parser.parseForSchedule(string, date: scheduleDate)
+    
+       return schedule
+    }
+    private func displayScheduleInTable(schedule: Schedule) {
+        if let tableController = childViewControllers[0] as? ScheduleTableController {
+            tableController.schedule = schedule
+            let tableView = (tableController.view as? UITableView)!
+            tableView.reloadData()
+        }
+    }
+    private func displayTitleForSchedule(schedule: Schedule) {
+        //Display normal title.
+        titleLabel.text = schedule.title
+        
+        //Add default weekend title if needed.
+        if (NSCalendar.currentCalendar().isDateInWeekend(scheduleDate)) {
+            titleLabel.text = "Weekend"
+        }
+    }
+    private func displayEmptyLabelForSchedule(schedule: Schedule) {
+        if (schedule.items.isEmpty) {
+            emptyLabel.text = "No classes"
+        } else {
+            emptyLabel.text = ""
+        }
     }
     
-    @IBAction func onBackButtonPress(sender: AnyObject) {
+    private func displayDateLabelForDate(date: NSDate) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM d, yyyy"
+        dateLabel.text = dateFormatter.stringFromDate(date)
+    }
+    
+    private func handleError(errorText: String) {
+        displayAlertWithText(errorText)
+        loadingIndicator.stopAnimating()
+        displayDateLabelForDate(scheduleDate)
+        titleLabel.text = "Error"
+    }
+    private func displayAlertWithText(message: String) {
+        var alert = createAlertWithText(message)
+        displayAlert(alert)
+    }
+    private func createAlertWithText(message: String) -> UIAlertController {
+        //Creates an alert with provided text and an "OK" button that closes the alert.
+        var alert: UIAlertController = UIAlertController(title: message, message: nil, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
+            alert.dismissViewControllerAnimated(true, completion: {})
+        }))
+        
+        return alert
+    }
+    private func displayAlert(alert: UIAlertController) {
+        presentViewController(alert, animated: true, completion: nil)
+    }
+
+	@IBAction func onBackButtonPress(sender: AnyObject) {
         scheduleDate = scheduleDate.dateByAddingTimeInterval(-24*60*60)
     }
     @IBAction func onForwardButtonPress(sender: AnyObject) {
