@@ -54,16 +54,16 @@ public class ScheduleTableController: UITableViewController {
         let item = schedule.items[indexPath.row]
         let calendar: NSCalendar = NSCalendar.currentCalendar()
         //Highlight the cell if the schedule is for today and the class is happening now.
-        var isNow: Bool = calendar.isDateInToday(schedule.date) && isSceduleItemHappeningNow(item)
+        /*var isNow: Bool = calendar.isDateInToday(schedule.date) && isSceduleItemHappeningNow(item)
         
         if (isNow) {
             //Color is higlighted.
             cell.backgroundColor = highlightedColor()
-        } else {
+        } else {*/
             //Fixes background color on iPad.
             //Color is transparent.
             cell.backgroundColor = cellColor()
-        }
+        //}
         
     }
     private func isSceduleItemHappeningNow(item: ScheduleItem) -> Bool {

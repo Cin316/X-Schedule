@@ -51,9 +51,9 @@ class DataViewController: ScheduleViewController {
                     self.dateLabel.text = dateFormatter.stringFromDate(self.scheduleDate)
                     
                     //Add default weekend title.
-                    if (NSCalendar.currentCalendar().isDateInWeekend(self.scheduleDate)){
+                    /*if (NSCalendar.currentCalendar().isDateInWeekend(self.scheduleDate)){
                         self.titleLabel.text = "Weekend"
-                    }
+                    }*/
                     
                     //Empty label
                     if (schedule.items.isEmpty) {
