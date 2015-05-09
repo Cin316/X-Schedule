@@ -18,39 +18,39 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
-        
         scheduleDate = NSDate()
     }
     override func refreshSchedule() {
-        
         // Download today's schedule from the St. X website.
         XScheduleDownloader.downloadSchedule(NSDate(),
             completionHandler: { (output: String) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
-                    
-                    var parser = ScheduleParser()
-                    var schedule = parser.parseForSchedule(output, date: NSDate())
-                    
-                    //Display schedule items in table.
-                    if let tableController = self.childViewControllers[0] as? ScheduleTableController {
-                        
-                        tableController.displaySchedule(schedule)
-                        
-                        self.correctlySizeWidget(tableController.tableView)
-                        
-                        //Hide schedule table lines if schedule is blank.
-                        if (schedule.items.isEmpty) {
-                            tableController.view.hidden = true
-                        }
-                    }
-                    
-                    self.displayEmptyLabel(schedule)
-                    
+                    self.handleCompletionOfDownload(output)
                 }
             }
         )
+    }
+    private func handleCompletionOfDownload(output: String) {
+        var schedule: Schedule = parseStringForSchedule(output)
+        
+        displayScheduleInTable(schedule)
+        
+        displayEmptyLabelForSchedule(schedule)
+    }
+    private func parseStringForSchedule(string: String) -> Schedule {
+        var parser: ScheduleParser = ScheduleParser()
+        var schedule: Schedule = parser.parseForSchedule(string, date: scheduleDate)
+        
+        return schedule
+    }
+    private func displayScheduleInTable(schedule: Schedule) {
+        //Display schedule items in table.
+        if let tableController = childViewControllers[0] as? ScheduleTableController {
+            tableController.displaySchedule(schedule)
+            correctlySizeWidget(tableController.tableView)
+            hideIfEmpty(tableController, schedule: schedule)
+        }
     }
     private func correctlySizeWidget(tableView: UITableView) {
         if (tableView.contentSize.height > self.emptyLabel.frame.height){
@@ -59,19 +59,21 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
             self.preferredContentSize = self.emptyLabel.frame.size
         }
     }
-    private func displayEmptyLabel(schedule: Schedule) {
+    private func displayEmptyLabelForSchedule(schedule: Schedule) {
         if (schedule.items.isEmpty) {
             self.emptyLabel.text = "No classes"
         } else {
             self.emptyLabel.text = ""
         }
     }
+    private func hideIfEmpty(tableController: UIViewController, schedule: Schedule) {
+        //Hide schedule table lines if schedule is blank.
+        if (schedule.items.isEmpty) {
+            tableController.view.hidden = true
+        }
+    }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        // Perform any setup necessary in order to update the view.
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
         //Update every 3 hours.
         var secondsSinceLastUpdate = lastUpdated.timeIntervalSinceDate(NSDate())
         if (secondsSinceLastUpdate > 60*60*3){
