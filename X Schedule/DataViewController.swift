@@ -65,9 +65,7 @@ class DataViewController: ScheduleViewController {
     }
     private func displayScheduleInTable(schedule: Schedule) {
         if let tableController = childViewControllers[0] as? ScheduleTableController {
-            tableController.schedule = schedule
-            let tableView = (tableController.view as? UITableView)!
-            tableView.reloadData()
+            tableController.displaySchedule(schedule)
         }
     }
     private func displayTitleForSchedule(schedule: Schedule) {

@@ -122,9 +122,7 @@ class WeekDataViewController: ScheduleViewController {
                     var schedule = parser.parseForSchedule(output, date: downloadDate)
                     //Display schedule items in table.
                     if let tableController = self.childViewControllers[num-1] as? ScheduleTableController {
-                        tableController.schedule = schedule
-                        let tableView = (tableController.view as? UITableView)!
-                        tableView.reloadData()
+                        tableController.displaySchedule(schedule)
                     }
                     
                     //Display title.
