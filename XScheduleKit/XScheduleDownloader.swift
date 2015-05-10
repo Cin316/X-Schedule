@@ -1,5 +1,5 @@
 //
-//  ScheduleDownloader.swift
+//  XScheduleDownloader.swift
 //  X Schedule
 //
 //  Created by Nicholas Reichert on 2/17/15.
