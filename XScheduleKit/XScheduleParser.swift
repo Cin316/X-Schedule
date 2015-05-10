@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class XScheduleParser: NSObject, NSXMLParserDelegate {
+public class XScheduleParser: ScheduleParser, NSXMLParserDelegate {
     
     var descriptionString = ""
     var titleString = ""
     var dateString = ""
     var currentElement = ""
     
-    public func parseForSchedule(string: String, date: NSDate) -> Schedule {
+    public override func parseForSchedule(string: String, date: NSDate) -> Schedule {
         //Setup variables
         var items = [ScheduleItem]()
         var schedule = Schedule(items: items)
