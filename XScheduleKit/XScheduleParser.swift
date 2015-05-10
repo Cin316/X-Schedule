@@ -1,5 +1,5 @@
 //
-//  ScheduleParser.swift
+//  XScheduleParser.swift
 //  X Schedule
 //
 //  Created by Nicholas Reichert on 2/18/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ScheduleParser: NSObject, NSXMLParserDelegate {
+public class XScheduleParser: NSObject, NSXMLParserDelegate {
     
     var descriptionString = ""
     var titleString = ""

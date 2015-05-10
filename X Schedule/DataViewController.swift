@@ -58,7 +58,7 @@ class DataViewController: ScheduleViewController {
         loadingIndicator.stopAnimating()
     }
     private func parseStringForSchedule(string: String) -> Schedule {
-        var parser: ScheduleParser = ScheduleParser()
+        var parser: XScheduleParser = XScheduleParser()
         var schedule: Schedule = parser.parseForSchedule(string, date: scheduleDate)
     
         return schedule

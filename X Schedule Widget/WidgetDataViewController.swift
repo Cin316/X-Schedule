@@ -39,7 +39,7 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
         displayEmptyLabelForSchedule(schedule)
     }
     private func parseStringForSchedule(string: String) -> Schedule {
-        var parser: ScheduleParser = ScheduleParser()
+        var parser: XScheduleParser = XScheduleParser()
         var schedule: Schedule = parser.parseForSchedule(string, date: scheduleDate)
         
         return schedule

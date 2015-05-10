@@ -117,7 +117,7 @@ class WeekDataViewController: ScheduleViewController {
             completionHandler: { (output: String) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
-                    var parser = ScheduleParser()
+                    var parser = XScheduleParser()
                     //Parse the downloaded code for schedule.
                     var schedule = parser.parseForSchedule(output, date: downloadDate)
                     //Display schedule items in table.
