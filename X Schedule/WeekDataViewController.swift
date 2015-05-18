@@ -44,16 +44,24 @@ class WeekDataViewController: ScheduleViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         refreshSchedule()
     }
     
     override func refreshSchedule() {
-        //Start loading indicator before download.
-        loadingIndicator.startAnimating()
-        finishedLoadingNum = 0
+        startTaskCounter()
         
+        clearWeek()
+        
+        refreshSchedules()
+        
+        displayDateLabel()
+    }
+    private func clearWeek() {
+        clearScheduleTables()
+        
+    }
+    private func clearScheduleTables() {
         //Blank out every schedule.
         var items: [ScheduleItem] = []
         var blankSchedule: Schedule = Schedule(items: items)
@@ -64,28 +72,34 @@ class WeekDataViewController: ScheduleViewController {
                 tableView.reloadData()
             }
         }
+    }
+    private func clearEmptyLabels() {
         //Clear all "No classes" labels.
-        blankLabel1.text = ""
-        blankLabel2.text = ""
-        blankLabel3.text = ""
-        blankLabel4.text = ""
-        blankLabel5.text = ""
-        
+        for (var i=1; i<=5; i++) {
+            emptyLabel(i).text = ""
+        }
+    }
+    private func refreshSchedules() {
         //Refresh schedule for each day of the week.
-        refreshScheduleNum(1)
-        refreshScheduleNum(2)
-        refreshScheduleNum(3)
-        refreshScheduleNum(4)
-        refreshScheduleNum(5)
-        
-        
+        for (var i=1; i<=5; i++) {
+            refreshScheduleNum(i)
+        }
+    }
+    
+    private func displayDateLabel() {
+        dateLabel.text = dateLabelText()
+    }
+    private func dateLabelText() -> String {
         //Display correctly formatted date label.
-        var dateFormatter = NSDateFormatter()
+        var dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMMM d"
-        var mondayText = dateFormatter.stringFromDate(self.scheduleMonday)
-        var fridayText = dateFormatter.stringFromDate(self.scheduleMonday.dateByAddingTimeInterval(60*60*24*4))
+        
+        var mondayText: String = dateFormatter.stringFromDate(self.scheduleMonday)
+        var fridayText: String = dateFormatter.stringFromDate(self.scheduleMonday.dateByAddingTimeInterval(60*60*24*4))
+        
         var year: Int = NSCalendar.currentCalendar().component(NSCalendarUnit.CalendarUnitYear, fromDate: self.scheduleMonday)
-        dateLabel.text = "\(mondayText) - \(fridayText), \(year)"
+        
+        return "\(mondayText) - \(fridayText), \(year)"
     }
     
     private func refreshScheduleNum(num: Int) {
@@ -126,7 +140,7 @@ class WeekDataViewController: ScheduleViewController {
         titleLabel.text = schedule.title
         
         //Add default weekend title if needed.
-        if (NSCalendar.currentCalendar().isDateInWeekend(scheduleDate)) {
+        if (NSCalendar.currentCalendar().isDateInWeekend(scheduleMonday)) {
             titleLabel.text = "Weekend"
         }
     }
@@ -182,6 +196,12 @@ class WeekDataViewController: ScheduleViewController {
         return downloadDate
     }
     
+    private func startTaskCounter() {
+        cancelRequests()
+        //Start loading indicator before download.
+        loadingIndicator.startAnimating()
+        finishedLoadingNum = 0
+    }
     private func oneTaskIsFinished() {
         //Stop loading indicator after everything is complete.
         finishedLoadingNum++
@@ -200,7 +220,7 @@ class WeekDataViewController: ScheduleViewController {
         for task in tasks {
             task.cancel()
         }
-        tasks = []
+        clearTasks()
     }
     
     private func handleError(errorText: String, num: Int) {
@@ -209,11 +229,9 @@ class WeekDataViewController: ScheduleViewController {
     }
     
     @IBAction func onBackButtonPress(sender: AnyObject) {
-        cancelRequests()
         scheduleDate = scheduleDate.dateByAddingTimeInterval(-24*60*60*7)
     }
     @IBAction func onForwardButtonPress(sender: AnyObject) {
-        cancelRequests()
         scheduleDate = scheduleDate.dateByAddingTimeInterval(24*60*60*7)
     }
     
