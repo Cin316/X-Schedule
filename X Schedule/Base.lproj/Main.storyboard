@@ -283,9 +283,6 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="13" width="366" height="39"/>
-                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 12:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qt8-IP-8tC">
                                             <rect key="frame" x="294" y="14" width="266" height="31"/>
@@ -300,9 +297,6 @@
                                             </variation>
                                             <variation key="widthClass=regular" misplaced="YES">
                                                 <rect key="frame" x="130" y="3" width="102" height="25"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                                <rect key="frame" x="394" y="8" width="366" height="43"/>
                                             </variation>
                                         </label>
                                     </subviews>
@@ -1563,8 +1557,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                         <exclude reference="gEz-Te-zYH"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="735" y="36" width="46" height="30"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="PRl-vN-8Te"/>
                                         <include reference="gEz-Te-zYH"/>
@@ -1860,12 +1853,12 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                     </view>
                     <navigationItem key="navigationItem" id="tMd-Do-uW4"/>
                     <connections>
-                        <outlet property="blankLabel1" destination="nZv-Ja-fE6" id="Fjc-w2-eRM"/>
-                        <outlet property="blankLabel2" destination="dGU-HT-3br" id="wxd-j9-Fd7"/>
-                        <outlet property="blankLabel3" destination="RKh-pn-kCv" id="279-Br-pTH"/>
-                        <outlet property="blankLabel4" destination="Xaf-ZM-fAu" id="72x-wn-jZ3"/>
-                        <outlet property="blankLabel5" destination="hIb-vJ-MC2" id="Y98-ml-rzN"/>
                         <outlet property="dateLabel" destination="yfE-Vt-axm" id="f4I-FP-xXk"/>
+                        <outlet property="emptyLabel1" destination="nZv-Ja-fE6" id="NJC-04-RwH"/>
+                        <outlet property="emptyLabel2" destination="dGU-HT-3br" id="VCV-2c-iks"/>
+                        <outlet property="emptyLabel3" destination="RKh-pn-kCv" id="QUC-IH-U6V"/>
+                        <outlet property="emptyLabel4" destination="Xaf-ZM-fAu" id="mBX-NZ-Avj"/>
+                        <outlet property="emptyLabel5" destination="hIb-vJ-MC2" id="Bgd-wr-5Xm"/>
                         <outlet property="loadingIndicator" destination="LiP-m0-IIA" id="bsI-ak-Qcn"/>
                         <outlet property="titleLabel1" destination="vuj-k9-cQb" id="imq-Wf-RZM"/>
                         <outlet property="titleLabel2" destination="u1B-o5-XT9" id="b5k-6k-EIT"/>

@@ -16,19 +16,19 @@ class WeekDataViewController: ScheduleViewController {
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var titleLabel1: UILabel!
-    @IBOutlet weak var blankLabel1: UILabel!
+    @IBOutlet weak var emptyLabel1: UILabel!
     
     @IBOutlet weak var titleLabel2: UILabel!
-    @IBOutlet weak var blankLabel2: UILabel!
+    @IBOutlet weak var emptyLabel2: UILabel!
     
     @IBOutlet weak var titleLabel3: UILabel!
-    @IBOutlet weak var blankLabel3: UILabel!
+    @IBOutlet weak var emptyLabel3: UILabel!
     
     @IBOutlet weak var titleLabel4: UILabel!
-    @IBOutlet weak var blankLabel4: UILabel!
+    @IBOutlet weak var emptyLabel4: UILabel!
     
     @IBOutlet weak var titleLabel5: UILabel!
-    @IBOutlet weak var blankLabel5: UILabel!
+    @IBOutlet weak var emptyLabel5: UILabel!
     
     var scheduleMonday: NSDate {
         get{
@@ -175,15 +175,15 @@ class WeekDataViewController: ScheduleViewController {
         var emptyLabel: UILabel!
         switch num {
         case 1:
-            emptyLabel = self.blankLabel1
+            emptyLabel = self.emptyLabel1
         case 2:
-            emptyLabel = self.blankLabel2
+            emptyLabel = self.emptyLabel2
         case 3:
-            emptyLabel = self.blankLabel3
+            emptyLabel = self.emptyLabel3
         case 4:
-            emptyLabel = self.blankLabel4
+            emptyLabel = self.emptyLabel4
         case 5:
-            emptyLabel = self.blankLabel5
+            emptyLabel = self.emptyLabel5
         default:
             return UILabel()
         }
