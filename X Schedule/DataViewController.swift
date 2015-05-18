@@ -57,12 +57,6 @@ class DataViewController: ScheduleViewController {
         
         loadingIndicator.stopAnimating()
     }
-    private func parseStringForSchedule(string: String) -> Schedule {
-        var parser: XScheduleParser = XScheduleParser()
-        var schedule: Schedule = parser.parseForSchedule(string, date: scheduleDate)
-    
-        return schedule
-    }
     private func displayScheduleInTable(schedule: Schedule) {
         if let tableController = childViewControllers[0] as? ScheduleTableController {
             tableController.displaySchedule(schedule)
@@ -96,22 +90,6 @@ class DataViewController: ScheduleViewController {
         loadingIndicator.stopAnimating()
         displayDateLabelForDate(scheduleDate)
         titleLabel.text = "Error"
-    }
-    private func displayAlertWithText(message: String) {
-        var alert = createAlertWithText(message)
-        displayAlert(alert)
-    }
-    private func createAlertWithText(message: String) -> UIAlertController {
-        //Creates an alert with provided text and an "OK" button that closes the alert.
-        var alert: UIAlertController = UIAlertController(title: message, message: nil, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
-            alert.dismissViewControllerAnimated(true, completion: {})
-        }))
-        
-        return alert
-    }
-    private func displayAlert(alert: UIAlertController) {
-        presentViewController(alert, animated: true, completion: nil)
     }
     
     @IBAction func onBackButtonPress(sender: AnyObject) {

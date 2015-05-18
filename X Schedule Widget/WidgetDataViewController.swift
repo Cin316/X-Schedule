@@ -38,12 +38,7 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
         
         displayEmptyLabelForSchedule(schedule)
     }
-    private func parseStringForSchedule(string: String) -> Schedule {
-        var parser: XScheduleParser = XScheduleParser()
-        var schedule: Schedule = parser.parseForSchedule(string, date: scheduleDate)
-        
-        return schedule
-    }
+    
     private func displayScheduleInTable(schedule: Schedule) {
         //Display schedule items in table.
         if let tableController = childViewControllers[0] as? ScheduleTableController {

@@ -89,93 +89,123 @@ class WeekDataViewController: ScheduleViewController {
     }
     
     private func refreshScheduleNum(num: Int) {
-        var titleLabel: UILabel!
-        var emptyLabel: UILabel!
-        var downloadDate = scheduleMonday.dateByAddingTimeInterval(Double(24*60*60*(num-1)))
-        switch num {
-        case 1:
-            titleLabel = self.titleLabel1
-            emptyLabel = self.blankLabel1
-        case 2:
-            titleLabel = self.titleLabel2
-            emptyLabel = self.blankLabel2
-        case 3:
-            titleLabel = self.titleLabel3
-            emptyLabel = self.blankLabel3
-        case 4:
-            titleLabel = self.titleLabel4
-            emptyLabel = self.blankLabel4
-        case 5:
-            titleLabel = self.titleLabel5
-            emptyLabel = self.blankLabel5
-        default:
-            return
-        }
-        
         // Download today's schedule from the St. X website.
-        var newTask: NSURLSessionTask = XScheduleDownloader.downloadSchedule(downloadDate,
+        var newTask: NSURLSessionTask = XScheduleDownloader.downloadSchedule(downloadDateForNum(num),
             completionHandler: { (output: String) in
-                //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
-                    var parser = XScheduleParser()
-                    //Parse the downloaded code for schedule.
-                    var schedule = parser.parseForSchedule(output, date: downloadDate)
-                    //Display schedule items in table.
-                    if let tableController = self.childViewControllers[num-1] as? ScheduleTableController {
-                        tableController.displaySchedule(schedule)
-                    }
-                    
-                    //Display title.
-                    titleLabel.text = schedule.title
-                    
-                    //Add default weekend title.
-                    if (NSCalendar.currentCalendar().isDateInWeekend(self.scheduleMonday)){
-                        titleLabel.text = "Weekend"
-                    }
-                    
-                    //Empty label
-                    if (schedule.items.isEmpty) {
-                        emptyLabel.text = "No classes"
-                    } else {
-                        emptyLabel.text = ""
-                    }
-                    
-                    //Stop loading indicator after everything is complete.
-                    self.finishedLoadingNum++
-                    if(self.finishedLoadingNum>=5) {
-                        self.loadingIndicator.stopAnimating()
-                        self.finishedLoadingNum = 0
-                        
-                        //Clear references to tasks from tasks.
-                        self.tasks = []
-                    }
-                    
+                    self.handleCompletionOfDownload(output, num: num)
                 }
             },
             errorHandler: { (errorText: String) in
-                //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
-                    //Stop loading indicator after everything is complete.
-                    self.finishedLoadingNum++
-                    if(self.finishedLoadingNum>=5) {
-                        self.loadingIndicator.stopAnimating()
-                        self.finishedLoadingNum = 0
-                        
-                        //Clear references to tasks from tasks.
-                        self.tasks = []
-                        
-                        //Display error.
-                        var alert = UIAlertController(title: errorText, message: nil, preferredStyle: .Alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
-                            alert.dismissViewControllerAnimated(true, completion: {})
-                        }))
-                        self.presentViewController(alert, animated: true, completion: nil)
-                    }
+                    self.handleError(errorText, num: num)
                 }
             }
         )
         
         tasks.append(newTask)
+    }
+    private func handleCompletionOfDownload(output: String, num: Int) {
+        var schedule: Schedule = parseStringForSchedule(output)
+
+        displayScheduleInTable(schedule, num: num)
+        
+        displayTitleForSchedule(schedule, titleLabel: titleLabel(num))
+        
+        displayEmptyLabelForSchedule(schedule, emptyLabel: emptyLabel(num))
+        
+        oneTaskIsFinished()
+    }
+    private func displayScheduleInTable(schedule: Schedule, num: Int) {
+        if let tableController = childViewControllers[num-1] as? ScheduleTableController {
+            tableController.displaySchedule(schedule)
+        }
+    }
+    private func displayTitleForSchedule(schedule: Schedule, titleLabel: UILabel) {
+        //Display normal title.
+        titleLabel.text = schedule.title
+        
+        //Add default weekend title if needed.
+        if (NSCalendar.currentCalendar().isDateInWeekend(scheduleDate)) {
+            titleLabel.text = "Weekend"
+        }
+    }
+    private func displayEmptyLabelForSchedule(schedule: Schedule, emptyLabel: UILabel) {
+        if (schedule.items.isEmpty) {
+            emptyLabel.text = "No classes"
+        } else {
+            emptyLabel.text = ""
+        }
+    }
+    
+    private func titleLabel(num: Int) -> UILabel {
+        var titleLabel: UILabel!
+        switch num {
+        case 1:
+            titleLabel = self.titleLabel1
+        case 2:
+            titleLabel = self.titleLabel2
+        case 3:
+            titleLabel = self.titleLabel3
+        case 4:
+            titleLabel = self.titleLabel4
+        case 5:
+            titleLabel = self.titleLabel5
+        default:
+            return UILabel()
+        }
+        
+        return titleLabel
+    }
+    private func emptyLabel(num: Int) -> UILabel {
+        var emptyLabel: UILabel!
+        switch num {
+        case 1:
+            emptyLabel = self.blankLabel1
+        case 2:
+            emptyLabel = self.blankLabel2
+        case 3:
+            emptyLabel = self.blankLabel3
+        case 4:
+            emptyLabel = self.blankLabel4
+        case 5:
+            emptyLabel = self.blankLabel5
+        default:
+            return UILabel()
+        }
+        
+        return emptyLabel
+    }
+    private func downloadDateForNum(num: Int) -> NSDate {
+        var downloadDate: NSDate = scheduleMonday.dateByAddingTimeInterval(Double(24*60*60*(num-1)))
+        
+        return downloadDate
+    }
+    
+    private func oneTaskIsFinished() {
+        //Stop loading indicator after everything is complete.
+        finishedLoadingNum++
+        if(finishedLoadingNum>=5) {
+            finishedLoadingNum = 0
+            loadingIndicator.stopAnimating()
+            
+            clearTasks()
+        }
+    }
+    private func clearTasks() {
+        //Clear references to tasks from tasks variable.
+        tasks = []
+    }
+    private func cancelRequests() {
+        for task in tasks {
+            task.cancel()
+        }
+        tasks = []
+    }
+    
+    private func handleError(errorText: String, num: Int) {
+        displayAlertWithText(errorText)
+        oneTaskIsFinished()
     }
     
     @IBAction func onBackButtonPress(sender: AnyObject) {
@@ -185,13 +215,6 @@ class WeekDataViewController: ScheduleViewController {
     @IBAction func onForwardButtonPress(sender: AnyObject) {
         cancelRequests()
         scheduleDate = scheduleDate.dateByAddingTimeInterval(24*60*60*7)
-    }
-    
-    private func cancelRequests() {
-        for task in tasks {
-            task.cancel()
-        }
-        tasks = []
     }
     
     @IBAction func onTodayButtonPress(sender: AnyObject) {
