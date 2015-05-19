@@ -13,6 +13,9 @@ public class Schedule {
     public var title: String = ""
     public var date: NSDate = NSDate()
     
+    public init() {
+        
+    }
     public init(items: [ScheduleItem]) {
         self.items = items
     }
