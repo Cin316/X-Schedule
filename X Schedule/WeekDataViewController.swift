@@ -127,7 +127,7 @@ class WeekDataViewController: ScheduleViewController {
         
         displayEmptyLabelForSchedule(schedule, emptyLabel: emptyLabel(num))
         
-        oneTaskIsFinished()
+        markOneTaskAsFinished()
     }
     private func displayScheduleInTable(schedule: Schedule, num: Int) {
         if let tableController = childViewControllers[num-1] as? ScheduleTableController {
@@ -201,7 +201,7 @@ class WeekDataViewController: ScheduleViewController {
         loadingIndicator.startAnimating()
         finishedLoadingNum = 0
     }
-    private func oneTaskIsFinished() {
+    private func markOneTaskAsFinished() {
         //Stop loading indicator after everything is complete.
         finishedLoadingNum++
         if(finishedLoadingNum>=5) {
@@ -224,7 +224,7 @@ class WeekDataViewController: ScheduleViewController {
     
     private func handleError(errorText: String, num: Int) {
         displayAlertWithText(errorText)
-        oneTaskIsFinished()
+        markOneTaskAsFinished()
     }
     
     @IBAction func onBackButtonPress(sender: AnyObject) {
