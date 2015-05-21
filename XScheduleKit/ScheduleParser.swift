@@ -11,7 +11,7 @@ import Foundation
 public class ScheduleParser: NSObject {
     
     public func parseForSchedule(string: String, date: NSDate) -> Schedule {
-        return Schedule(items: [])
+        return Schedule()
     }
     
 }

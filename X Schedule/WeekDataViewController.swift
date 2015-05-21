@@ -63,8 +63,7 @@ class WeekDataViewController: ScheduleViewController {
     }
     private func clearScheduleTables() {
         //Blank out every schedule.
-        var items: [ScheduleItem] = []
-        var blankSchedule: Schedule = Schedule(items: items)
+        var blankSchedule: Schedule = Schedule()
         for (var i=0; i<5; i++) {
             if let tableController = self.childViewControllers[i] as? ScheduleTableController {
                 tableController.schedule = blankSchedule

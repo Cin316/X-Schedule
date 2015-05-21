@@ -10,7 +10,7 @@ import UIKit
 
 public class ScheduleTableController: UITableViewController {
     
-    public var schedule: Schedule = Schedule(items: [])
+    public var schedule: Schedule = Schedule()
     
     private var internalCellColor: UIColor = UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 0.0)
     private var internalHighlightedColor: UIColor = UIColor(red: (251.0/255.0), green: (250.0/255.0), blue: (146.0/255.0), alpha: 0.4)
