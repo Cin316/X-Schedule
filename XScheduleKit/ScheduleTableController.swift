@@ -40,13 +40,23 @@ public class ScheduleTableController: UITableViewController {
         return cell
     }
     private func timeTextForScheduleItem(item: ScheduleItem) -> String {
-        var dateFormat = NSDateFormatter()
-        dateFormat.dateFormat = "h:mm"
-        var startString = dateFormat.stringFromDate(item.startTime)
-        var endString = dateFormat.stringFromDate(item.endTime)
+        var startString = timeTextForNSDate(item.startTime)
+        var endString = timeTextForNSDate(item.endTime)
         var outputText = "\(startString) - \(endString)"
         
         return outputText
+    }
+    private func timeTextForNSDate(time: NSDate?) -> String {
+        var timeText: String = ""
+        var dateFormat: NSDateFormatter = NSDateFormatter()
+        dateFormat.dateFormat = "h:mm"
+        if let realTime = time {
+            timeText = dateFormat.stringFromDate(realTime)
+        } else {
+            timeText = "?:??"
+        }
+        
+        return timeText
     }
     
     public override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -68,9 +78,12 @@ public class ScheduleTableController: UITableViewController {
     }
     private func isSceduleItemHappeningNow(item: ScheduleItem) -> Bool {
         //Determine if right now is between the start and end of a ScheduleItem.
-        var afterStart: Bool = NSDate().compare(item.startTime) != NSComparisonResult.OrderedAscending
-        var beforeEnd: Bool = NSDate().compare(item.endTime) != NSComparisonResult.OrderedDescending
-        var happeningNow: Bool = afterStart && beforeEnd
+        var happeningNow: Bool = false
+        if (item.startTime != nil && item.endTime != nil) {
+            var afterStart: Bool = NSDate().compare(item.startTime!) != NSComparisonResult.OrderedAscending
+            var beforeEnd: Bool = NSDate().compare(item.endTime!) != NSComparisonResult.OrderedDescending
+            happeningNow = afterStart && beforeEnd
+        }
         
         return happeningNow
     }

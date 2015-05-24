@@ -27,8 +27,8 @@ public class Schedule {
 
 public class ScheduleItem {
     public var blockName: String = ""
-    public var startTime: NSDate = NSDate()
-    public var endTime: NSDate = NSDate()
+    public var startTime: NSDate?
+    public var endTime: NSDate?
     
     public init(blockName: String) {
         self.blockName = blockName
