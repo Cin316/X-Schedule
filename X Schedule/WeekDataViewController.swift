@@ -50,11 +50,8 @@ class WeekDataViewController: ScheduleViewController {
     
     override func refreshSchedule() {
         startTaskCounter()
-        
         clearWeek()
-        
         refreshSchedules()
-        
         displayDateLabel()
     }
     private func clearWeek() {
@@ -122,11 +119,8 @@ class WeekDataViewController: ScheduleViewController {
         var schedule: Schedule = parseStringForSchedule(output)
 
         displayScheduleInTable(schedule, num: num)
-        
         displayTitleForSchedule(schedule, titleLabel: titleLabel(num))
-        
         displayEmptyLabelForSchedule(schedule, emptyLabel: emptyLabel(num))
-        
         markOneTaskAsFinished()
     }
     private func displayScheduleInTable(schedule: Schedule, num: Int) {

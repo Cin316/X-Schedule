@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         //Set date to today on app reopen.
-        
         setScheduleDateToToday()
     }
     private func setScheduleDateToToday() {

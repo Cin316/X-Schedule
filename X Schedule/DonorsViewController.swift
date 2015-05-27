@@ -22,7 +22,6 @@ class DonorsViewController: UIViewController {
         
         displayStoredFiles()
         updateStoredDonors()
-        
     }
     private func displayStoredFiles() {
         //Read path from editedDonors.txt and display it if it exists.

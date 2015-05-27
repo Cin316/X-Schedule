@@ -35,7 +35,6 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
         var schedule: Schedule = parseStringForSchedule(output)
         
         displayScheduleInTable(schedule)
-        
         displayEmptyLabelForSchedule(schedule)
     }
     

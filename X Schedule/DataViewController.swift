@@ -48,13 +48,9 @@ class DataViewController: ScheduleViewController {
         var schedule: Schedule = parseStringForSchedule(output)
         
         displayScheduleInTable(schedule)
-        
         displayTitleForSchedule(schedule)
-        
         displayDateLabelForDate(scheduleDate)
-        
         displayEmptyLabelForSchedule(schedule)
-        
         loadingIndicator.stopAnimating()
     }
     private func displayScheduleInTable(schedule: Schedule) {
