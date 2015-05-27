@@ -8,229 +8,241 @@
 
 import Foundation
 
-public class XScheduleParser: ScheduleParser, NSXMLParserDelegate {
-    
-    var descriptionString = ""
-    var titleString = ""
-    var dateString = ""
-    var currentElement = ""
+public class XScheduleParser: ScheduleParser {
     
     public override func parseForSchedule(string: String, date: NSDate) -> Schedule {
-        //Setup variables
-        var items = [ScheduleItem]()
-        var schedule = Schedule(items: items)
-        var stringData = string.dataUsingEncoding(NSUTF8StringEncoding)
-        var xmlParser = NSXMLParser(data: stringData!)
-        xmlParser.delegate = self
+        var schedule = Schedule()
         
-        //Parsing code.
-        
-        //Parse XML.
-        xmlParser.parse()
-        
-        //Put title into Schedule.
-        titleString = titleString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-        schedule.title = titleString
-        
-        
-        //Trim whitespace.
-        dateString = dateString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-        
-        //Store date.
-        schedule.date = date
-        
-        //Parse description.
-        //Trim whitespace.
-        descriptionString = descriptionString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-        //Only use text between the <p> tags.  Delete <p> tags.
-        var pRangeStart = descriptionString.rangeOfString("<p>")
-        var pRangeEnd = descriptionString.rangeOfString("</p>")
-        
-        //If <p> tags aren't present, skip string parsing.
-        if ((pRangeStart) != nil && (pRangeEnd) != nil){
-            
-            //Remove <p> tags
-            var noPRange = (pRangeStart!.endIndex)..<(pRangeEnd!.startIndex)
-            descriptionString = descriptionString.substringWithRange(noPRange)
-            
-            //Replace all <br> with \n
-            descriptionString = descriptionString.stringByReplacingOccurrencesOfString("<br>", withString: "\n")
-            //Replace all <br /> with \n
-            descriptionString = descriptionString.stringByReplacingOccurrencesOfString("<br />", withString: "\n")
-            
-            //Remove whitespace.
-            descriptionString = descriptionString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-            
-            //Split string up by newlines.
-            var lines = descriptionString.componentsSeparatedByString("\n")
-            
-            //Make array for w
-            var missingTime: [Bool] = [Bool](count: lines.count, repeatedValue: false)
-            
-            for (num, line) in enumerate(lines) {
-                //Split each line into tokens.
-                var tokens = line.componentsSeparatedByString(" ")
-                
-                //Identify time token. It contains numbers and "-".
-                var timeTokenNum: Int = Int.max
-                var i = 0
-                for token in tokens {
-                    var hasNums = token.rangeOfCharacterFromSet(NSCharacterSet.decimalDigitCharacterSet()) != nil
-                    var hasDash = token.rangeOfString("-") != nil
-                    if (hasNums && hasDash) {
-                        timeTokenNum = i
-                        break
-                    }
-                    i++
-                }
-                
-                //If a time token isn't found, mark in missingTime array.
-                if (timeTokenNum == Int.max) {
-                    missingTime[num] = true
-                    
-                    //Combine tokens into item description & add to ScheduleItem.
-                    var item: ScheduleItem = ScheduleItem(blockName: " ".join(tokens))
-                    
-                    //Add item to schedule.
-                    schedule.items.append(item)
+        //Parse XML from inputted string.
+        var delegate: XScheduleXMLParser = parsedXMLElements(string)
 
-                } else {
-                
-                    //Throw out any tokens after time token.
-                    tokens.removeRange(timeTokenNum+1..<(tokens.count))
-                
-                    //Remove time token and transfer to string.
-                    var timeToken: String = tokens[timeTokenNum]
-                    tokens.removeAtIndex(timeTokenNum)
-                
-                    //Combine remaining tokens into item description & add to ScheduleItem.
-                    var item: ScheduleItem = ScheduleItem(blockName: " ".join(tokens))
-                
-                    //Analyze time token.
-                    var times = timeToken.componentsSeparatedByString("-")
-                    var foundError: Bool = false
-                    var startTime: NSDate = NSDate()
-                    var endTime: NSDate = NSDate()
-                    var foundTime: Bool = false
-                    var dateFormatter = NSDateFormatter()
-                    dateFormatter.dateFormat = "h:mm"
-                    dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-                    for time in times {
-                        if (time != "") {
-                            //Convert strings into dates.
-                            if (foundTime == false) {
-                                if let realStartTime = dateFormatter.dateFromString(time) {
-                                    startTime = realStartTime
-                                    foundTime = true
-                                } else {
-                                    //Register error as found.
-                                    foundError = true
-                                    startTime = NSDate()
-                                }
-                            } else {
-                                if let realEndTime = dateFormatter.dateFromString(time) {
-                                    endTime = realEndTime
-                                } else {
-                                    //Register error as found.
-                                    foundError = true
-                                    endTime = NSDate()
-                                }
-                            }
-                        }
-                    }
-                    if (!foundError) {
-                        //Put time tokens on the schedule date.
-                        var dateComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear | .CalendarUnitEra, fromDate: schedule.date)
-                        var startTimeComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour | .CalendarUnitMinute, fromDate: startTime)
-                        var endTimeComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour | .CalendarUnitMinute, fromDate: endTime)
-                        
-                        startTimeComponents.day = dateComponents.day
-                        startTimeComponents.month = dateComponents.month
-                        startTimeComponents.year = dateComponents.year
-                        startTimeComponents.era = dateComponents.era
-                        
-                        endTimeComponents.day = dateComponents.day
-                        endTimeComponents.month = dateComponents.month
-                        endTimeComponents.year = dateComponents.year
-                        endTimeComponents.era = dateComponents.era
-                        
-                        startTime = NSCalendar.currentCalendar().dateFromComponents(startTimeComponents)!
-                        endTime = NSCalendar.currentCalendar().dateFromComponents(endTimeComponents)!
-                        
-                        //Hours 12-5 are PM.  Hours 6-11 are AM.
-                        if (startTimeComponents.hour==12 || startTimeComponents.hour<5) {
-                            startTime = startTime.dateByAddingTimeInterval(60*60*12)
-                        }
-                        if (endTimeComponents.hour==12 || endTimeComponents.hour<5) {
-                            endTime = endTime.dateByAddingTimeInterval(60*60*12)
-                        }
-                        
-                        //Store start and end times in schedule.
-                        item.startTime = startTime
-                        item.endTime = endTime
-                        
-                        //Add item to schedule.
-                        schedule.items.append(item)
-                    } else {
-                        //If an error is found, don't add the item to the schedule.
-                    }
-                }
-            }
-            
-            //Loop through a fill in times where they are missing.
-            for (i, item) in enumerate(schedule.items) {
-                //Check if time is missing.
-                if (missingTime[i]) {
-                    
-                    //Find start time.
-                    if (i == 0) { //First item.
-                        //Set start time to 8:00.
-                        var dateComps = NSDateComponents()
-                        dateComps.hour = 8
-                        dateComps.minute = 00
-                        var calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-                        schedule.items[i].startTime = calendar.dateFromComponents(dateComps)!
-                    } else {
-                        schedule.items[i].startTime = schedule.items[i-1].endTime
-                    }
-                    
-                    //Find end time.
-                    if (i == schedule.items.count-1) { //Last item.
-                        //Set end time to 3:04.
-                        var dateComps = NSDateComponents()
-                        dateComps.hour = 3+12
-                        dateComps.minute = 04
-                        var calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-                        schedule.items[i].endTime = calendar.dateFromComponents(dateComps)!
-                    } else {
-                        schedule.items[i].endTime = schedule.items[i+1].startTime
-                    }
-                }
-            }
-        }
+        storeTitleString(delegate.titleString, inSchedule: schedule)
+        storeDate(date, inSchedule: schedule)
+        println("\(date): {\"\(delegate.descriptionString)\"}")
+        storeScheduleBody(delegate.descriptionString, inSchedule: schedule)
         
         //Return finished schedule.
         return schedule
     }
     
-    public func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
+    private func parsedXMLElements(string: String) -> XScheduleXMLParser {
+        //Returns the parsed XML.
+        var stringData = string.dataUsingEncoding(NSUTF8StringEncoding)
+        var xmlParser = NSXMLParser(data: stringData!)
+        var xmlParserDelegate: NSXMLParserDelegate = XScheduleXMLParser()
+        xmlParser.delegate = xmlParserDelegate
+        xmlParser.parse()
+
+        return xmlParser.delegate as! XScheduleXMLParser
+    }
+    
+    private func storeDate(date: NSDate, inSchedule schedule: Schedule) {
+        schedule.date = date
+    }
+    private func storeTitleString(string: String, inSchedule schedule: Schedule) {
+        var titleString: String = string
+        trimWhitespaceFrom(&titleString)
+        schedule.title = titleString
+    }
+    private func storeScheduleBody(scheduleDescription: String, inSchedule schedule: Schedule) {
+        
+        var scheduleString: String = scheduleDescription
+        cleanUpDescriptionString(&scheduleString)
+        //Split string up by newlines.
+        var lines: [String] = separateLines(scheduleString)
+        
+        for (num, line) in enumerate(lines) {
+            
+            //Split each line into tokens.
+            var tokens: [String] = separateLineIntoTokens(line)
+            //Identify index of time token.
+            var timeTokenIndex: Int? = indexOfTimeTokenInArray(tokens)
+            
+            if (timeTokenIndex == nil) {
+                //Only add a timeless ScheduleItem if it has a description.
+                if (tokens != []) {
+                    //Make schedule item and add to schedule.
+                    var item: ScheduleItem = ScheduleItem(blockName: stringFromTokens(tokens))
+                    schedule.items.append(item)
+                }
+            } else {
+                //Analyze time token.
+                var times: (start: NSDate?, end: NSDate?) = parseArrayForTimes(&tokens, index: timeTokenIndex!, onDate: schedule.date)
+                //Make schedule item and add to schedule.
+                var item: ScheduleItem = ScheduleItem(blockName: stringFromTokens(tokens), startTime: times.start, endTime: times.end)
+                schedule.items.append(item)
+            }
+        }
+    }
+    
+    private func cleanUpDescriptionString(inout scheduleString: String) {
+        trimWhitespaceFrom(&scheduleString)
+        removePTags(&scheduleString)
+        replaceBRTagsWithNewlines(&scheduleString)
+        trimWhitespaceFrom(&scheduleString)
+    }
+    private func trimWhitespaceFrom(inout string: String) {
+        string = string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    }
+    private func removePTags(inout string: String) {
+        //Find p tags.
+        var pRangeStart = string.rangeOfString("<p>")
+        var pRangeEnd = string.rangeOfString("</p>")
+        //Remove p tags.
+        if ((pRangeStart) != nil && (pRangeEnd) != nil) {
+            var noPRange = (pRangeStart!.endIndex)..<(pRangeEnd!.startIndex)
+            string = string.substringWithRange(noPRange)
+        }
+    }
+    private func replaceBRTagsWithNewlines(inout string: String) {
+        string = string.stringByReplacingOccurrencesOfString("<br>", withString: "\n")
+        string = string.stringByReplacingOccurrencesOfString("<br />", withString: "\n")
+    }
+    
+    private func separateLines(string: String) -> [String] {
+        var lines: [String] = string.componentsSeparatedByString("\n")
+        
+        return lines
+    }
+    private func separateLineIntoTokens(string: String) -> [String] {
+        //If string is empty, return empty output array. Else, separate the string by spaces.
+        var tokens: [String]
+        if (string == "") {
+            tokens = []
+        } else {
+            tokens = string.componentsSeparatedByString(" ")
+        }
+        
+        return tokens
+    }
+    
+    private func indexOfTimeTokenInArray(tokens: [String]) -> Int? {
+        //Search through array for time token and return it's id.
+        var timeTokenNum: Int?
+        for (i, token) in enumerate(tokens) {
+            if (isStringTimeToken(token)) {
+                timeTokenNum = i
+                break
+            }
+        }
+        
+        return timeTokenNum
+    }
+    private func isStringTimeToken(string: String) -> Bool {
+        var hasNums: Bool = string.rangeOfCharacterFromSet(NSCharacterSet.decimalDigitCharacterSet()) != nil
+        var hasDash: Bool = string.rangeOfString("-") != nil
+        var isTimeToken: Bool = hasNums && hasDash
+        
+        return isTimeToken
+    }
+    
+    private func analyzeTimeToken(timeToken: String) -> (NSDate?, NSDate?) {
+        //Analyze time token.
+        var times: (start: String, end: String) = splitTimeToken(timeToken)
+        var dateFormatter: NSDateFormatter = setUpParsingDateFormatter()
+        
+        var startTime: NSDate? = dateFormatter.dateFromString(times.start)
+        var endTime: NSDate? = dateFormatter.dateFromString(times.end)
+        
+        return (startTime, endTime)
+    }
+    
+    private func stringFromTokens(tokensArray: [String]) -> String {
+        //Join tokens delimited by spaces and set as desription of ScheduleItem.
+        var itemDescription: String = " ".join(tokensArray)
+        
+        return itemDescription
+    }
+    
+    private func removeArrayItemsAfterIndex<T>(index: Int, inout array: [T]) {
+        array.removeRange(index+1..<(array.count))
+    }
+    
+    private func setUpParsingDateFormatter() -> NSDateFormatter {
+        var dateFormatter: NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "h:mm"
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        
+        return dateFormatter
+    }
+    private func splitTimeToken(string: String) -> (String, String) {
+        var array: [String] = string.componentsSeparatedByString("-")
+        var tuple: (String, String) = (array.first!, array.last!)
+        
+        return tuple
+    }
+    private func combineTimeAndDate(#time: NSDate?, date: NSDate) -> NSDate? {
+        var combined: NSDate?
+        if (time != nil) {
+            var dateComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear | .CalendarUnitEra, fromDate: date)
+            var timeComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour | .CalendarUnitMinute, fromDate: time!)
+            
+            timeComponents.day = dateComponents.day
+            timeComponents.month = dateComponents.month
+            timeComponents.year = dateComponents.year
+            timeComponents.era = dateComponents.era
+            
+            combined = NSCalendar.currentCalendar().dateFromComponents(timeComponents)
+        } else {
+            combined = nil
+        }
+        
+        return combined
+    }
+    private func assignAMPM(inout date: NSDate?) {
+        //Hours 12-5 are PM.  Hours 6-11 are AM.
+        if (date != nil) {
+            var dateComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour, fromDate: date!)
+            if (dateComponents.hour==12 || dateComponents.hour<5) {
+                date = date!.dateByAddingTimeInterval(60*60*12)
+            }
+        }
+    }
+    private func addDateInfoToTime(inout time: NSDate?, onDate scheduleDate: NSDate) {
+        time = combineTimeAndDate(time: time, date: scheduleDate)
+        assignAMPM(&time)
+    }
+    
+    private func parseArrayForTimes(inout tokens: [String], index timeTokenIndex: Int, onDate date: NSDate) -> (NSDate?, NSDate?) {
+        //Throw out any tokens after time token.
+        removeArrayItemsAfterIndex(timeTokenIndex, array: &tokens)
+        
+        //Remove time token and transfer to string.
+        var timeToken: String = tokens.removeAtIndex(timeTokenIndex)
+        
+        //Analyze time token.
+        var times: (start: NSDate?, end: NSDate?) = analyzeTimeToken(timeToken)
+        
+        //Put time tokens on the schedule date.
+        addDateInfoToTime(&times.start, onDate: date)
+        addDateInfoToTime(&times.end, onDate: date)
+        
+        return times
+    }
+}
+
+class XScheduleXMLParser: NSObject, NSXMLParserDelegate {
+
+    var descriptionString = ""
+    var titleString = ""
+    private var currentElement = ""
+
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
         currentElement = elementName
     }
-    public func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
     }
     
-    public func parser(parser: NSXMLParser, foundCharacters string: String?) {
+    func parser(parser: NSXMLParser, foundCharacters string: String?) {
         switch currentElement {
         case "summary":
             titleString += string!
         case "description":
             descriptionString += string!
-        case "dtstart":
-            dateString += string!
         default:
             break;
         }
     }
-    
+
 }
