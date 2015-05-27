@@ -18,7 +18,6 @@ public class XScheduleParser: ScheduleParser {
 
         storeTitleString(delegate.titleString, inSchedule: schedule)
         storeDate(date, inSchedule: schedule)
-        println("\(date): {\"\(delegate.descriptionString)\"}")
         storeScheduleBody(delegate.descriptionString, inSchedule: schedule)
         
         //Return finished schedule.
