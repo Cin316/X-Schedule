@@ -33,11 +33,11 @@ public class ScheduleItem {
     public init(blockName: String) {
         self.blockName = blockName
     }
-    public init(startTime: NSDate, endTime: NSDate) {
+    public init(startTime: NSDate?, endTime: NSDate?) {
         self.startTime = startTime
         self.endTime = endTime
     }
-    public init(blockName: String, startTime: NSDate, endTime: NSDate) {
+    public init(blockName: String, startTime: NSDate?, endTime: NSDate?) {
         self.blockName = blockName
         self.startTime = startTime
         self.endTime = endTime
