@@ -36,8 +36,7 @@ public class ScheduleViewController: UIViewController {
     }
     
     public func parseStringForSchedule(string: String) -> Schedule {
-        var parser: XScheduleParser = XScheduleParser()
-        var schedule: Schedule = parser.parseForSchedule(string, date: scheduleDate)
+        var schedule: Schedule = XScheduleParser.parseForSchedule(string, date: scheduleDate)
         
         return schedule
     }
