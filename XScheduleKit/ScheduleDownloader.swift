@@ -14,8 +14,7 @@ public class ScheduleDownloader {
         return  NSURLSessionTask()
     }
     public class func downloadSchedule(completionHandler: String -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
-        var currentDate = NSDate()
-        return downloadSchedule(currentDate, completionHandler: completionHandler, errorHandler: errorHandler)
+        return downloadSchedule(NSDate(), completionHandler: completionHandler, errorHandler: errorHandler)
     }
     
     public class func downloadSchedule(date: NSDate, completionHandler: String -> Void) -> NSURLSessionTask {
