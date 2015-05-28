@@ -129,8 +129,9 @@ public class XScheduleParser: ScheduleParser {
     }
     private class func isStringTimeToken(string: String) -> Bool {
         var hasNums: Bool = string.rangeOfCharacterFromSet(NSCharacterSet.decimalDigitCharacterSet()) != nil
+        var hasQuestionMark: Bool = string.rangeOfString("?") != nil
         var hasDash: Bool = string.rangeOfString("-") != nil
-        var isTimeToken: Bool = hasNums && hasDash
+        var isTimeToken: Bool = (hasQuestionMark || hasNums) && hasDash
         
         return isTimeToken
     }
