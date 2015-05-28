@@ -10,6 +10,39 @@ import Foundation
 
 public class XScheduleParser: ScheduleParser {
     
+    public class func storeScheduleInString(schedule: Schedule) -> String {
+        var output: String = ""
+        output += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+        output += "<schedule>\n"
+        output += "<summary>\(schedule.title)</summary>\n"
+        output += "<description>&lt;p&gt;"
+        output += "\(stringForItemsArray(schedule.items))"
+        output += "&lt;/p&gt;</description>\n"
+        output += "</schedule>"
+        
+        return output
+    }
+    private class func stringForItemsArray(items: [ScheduleItem]) -> String {
+        var output: String = ""
+        for item in items {
+            output += "\(item.blockName) \(timeStringForDate(item.startTime))-\(timeStringForDate(item.endTime))&lt;br&gt;"
+        }
+        
+        return output
+    }
+    private class func timeStringForDate(date: NSDate?) -> String {
+        var output: String = ""
+        var dateFormatter: NSDateFormatter = setUpParsingDateFormatter()
+        
+        if (date != nil) {
+            output = dateFormatter.stringFromDate(date!)
+        } else {
+            output = "?:??"
+        }
+        
+        return output
+    }
+    
     public override class func parseForSchedule(string: String, date: NSDate) -> Schedule {
         var schedule = Schedule()
         
