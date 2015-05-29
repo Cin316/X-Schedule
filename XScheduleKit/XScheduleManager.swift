@@ -10,6 +10,13 @@ import Foundation
 
 public class XScheduleManager: ScheduleManager {
     public override class func getScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) -> NSURLSessionTask? {
-        return nil
+        var task: NSURLSessionTask
+        task = XScheduleDownloader.downloadSchedule(date, completionHandler: { (output: String) in
+            var schedule: Schedule
+            schedule = XScheduleParser.parseForSchedule(output, date: date)
+            completionHandler(schedule)
+        }, errorHandler: errorHandler)
+        
+        return task
     }
 }
