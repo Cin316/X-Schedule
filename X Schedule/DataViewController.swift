@@ -28,11 +28,11 @@ class DataViewController: ScheduleViewController {
         loadingIndicator.startAnimating()
         
         // Download today's schedule from the St. X website.
-        XScheduleDownloader.downloadSchedule(scheduleDate,
-            completionHandler: { (output: String) in
+        XScheduleManager.getScheduleForDate(scheduleDate,
+            completionHandler: { (schedule: Schedule) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.handleCompletionOfDownload(output)
+                    self.handleCompletionOfDownload(schedule)
                     
                 }
             },
@@ -44,9 +44,7 @@ class DataViewController: ScheduleViewController {
         )
     }
     
-    private func handleCompletionOfDownload(output: String) {
-        var schedule: Schedule = parseStringForSchedule(output)
-        
+    private func handleCompletionOfDownload(schedule: Schedule) {
         displayScheduleInTable(schedule)
         displayTitleForSchedule(schedule)
         displayDateLabelForDate(scheduleDate)

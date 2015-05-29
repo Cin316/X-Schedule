@@ -56,7 +56,6 @@ class WeekDataViewController: ScheduleViewController {
     }
     private func clearWeek() {
         clearScheduleTables()
-        
     }
     private func clearScheduleTables() {
         //Blank out every schedule.
@@ -100,10 +99,10 @@ class WeekDataViewController: ScheduleViewController {
     
     private func refreshScheduleNum(num: Int) {
         // Download today's schedule from the St. X website.
-        var newTask: NSURLSessionTask = XScheduleDownloader.downloadSchedule(downloadDateForNum(num),
-            completionHandler: { (output: String) in
+        var newTask: NSURLSessionTask? = XScheduleManager.getScheduleForDate(downloadDateForNum(num),
+            completionHandler: { (schedule: Schedule) in
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.handleCompletionOfDownload(output, num: num)
+                    self.handleCompletionOfDownload(schedule, num: num)
                 }
             },
             errorHandler: { (errorText: String) in
@@ -112,12 +111,11 @@ class WeekDataViewController: ScheduleViewController {
                 }
             }
         )
-        
-        tasks.append(newTask)
+        if (newTask != nil) {
+            tasks.append(newTask!)
+        }
     }
-    private func handleCompletionOfDownload(output: String, num: Int) {
-        var schedule: Schedule = parseStringForSchedule(output)
-
+    private func handleCompletionOfDownload(schedule: Schedule, num: Int) {
         displayScheduleInTable(schedule, num: num)
         displayTitleForSchedule(schedule, titleLabel: titleLabel(num))
         displayEmptyLabelForSchedule(schedule, emptyLabel: emptyLabel(num))

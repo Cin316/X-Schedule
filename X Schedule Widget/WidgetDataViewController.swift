@@ -22,18 +22,16 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
     }
     override func refreshSchedule() {
         // Download today's schedule from the St. X website.
-        XScheduleDownloader.downloadSchedule(NSDate(),
-            completionHandler: { (output: String) in
+        XScheduleManager.getScheduleForDate(NSDate(),
+            completionHandler: { (schedule: Schedule) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.handleCompletionOfDownload(output)
+                    self.handleCompletionOfDownload(schedule)
                 }
             }
         )
     }
-    private func handleCompletionOfDownload(output: String) {
-        var schedule: Schedule = parseStringForSchedule(output)
-        
+    private func handleCompletionOfDownload(schedule: Schedule) {
         displayScheduleInTable(schedule)
         displayEmptyLabelForSchedule(schedule)
     }
