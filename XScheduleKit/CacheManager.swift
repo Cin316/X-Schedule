@@ -23,7 +23,11 @@ public class CacheManager {
         return Schedule()
     }
     public class func cacheSchedule(schedule: Schedule) {
-    
+        createScheduleCacheDir()
+        var path: String = pathForDate(schedule.date)
+        var contents: String = XScheduleParser.storeScheduleInString(schedule)
+        
+        contents.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
     }
     
     public class func buildCache() {
@@ -48,6 +52,11 @@ public class CacheManager {
         var path: String = documentsDirectory().stringByAppendingPathComponent(scheduleCacheDirectoryName)
         
         return path
+    }
+    private class func createScheduleCacheDir() {
+        if ( !fileManager().fileExistsAtPath(scheduleCacheDirectory()) ) {
+            fileManager().createDirectoryAtPath(scheduleCacheDirectory(), withIntermediateDirectories: true, attributes: nil, error: nil)
+        }
     }
     
     private class func pathForDate(date: NSDate) -> String {
