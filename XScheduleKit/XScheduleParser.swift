@@ -10,7 +10,7 @@ import Foundation
 
 public class XScheduleParser: ScheduleParser {
     
-    public class func storeScheduleInString(schedule: Schedule) -> String {
+    public override class func storeScheduleInString(schedule: Schedule) -> String {
         var output: String = ""
         output += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         output += "<schedule>\n"

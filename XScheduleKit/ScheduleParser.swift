@@ -10,6 +10,9 @@ import Foundation
 
 public class ScheduleParser: NSObject {
     
+    public class func storeScheduleInString(schedule: Schedule) -> String {
+        return ""
+    }
     public class func parseForSchedule(string: String, date: NSDate) -> Schedule {
         return Schedule()
     }
