@@ -13,16 +13,20 @@ public class XScheduleManager: ScheduleManager {
         var task: NSURLSessionTask?
         
         if (CacheManager.scheduleExistsForDate(date)) {
-            getCachedScheduleForDate(date, completionHandler: completionHandler)
+            getCachedScheduleForDate(date, completionHandler: completionHandler, errorHandler: errorHandler)
         } else {
             task = downloadScheduleForDate(date, completionHandler: completionHandler, errorHandler: errorHandler)
         }
         
         return task
     }
-    private class func getCachedScheduleForDate(date: NSDate, completionHandler: Schedule -> Void) {
-        var schedule: Schedule = CacheManager.loadScheduleForDate(date)
-        completionHandler(schedule)
+    private class func getCachedScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) {
+        var schedule: Schedule? = CacheManager.loadScheduleForDate(date)
+        if (schedule != nil) {
+            completionHandler(schedule!)
+        } else {
+            errorHandler("Error loading schedule from cache.")
+        }
     }
     private class func downloadScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
         var task: NSURLSessionTask

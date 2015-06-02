@@ -19,7 +19,7 @@ public class CacheManager {
         
         return exists
     }
-    public class func loadScheduleForDate(date: NSDate) -> Schedule {
+    public class func loadScheduleForDate(date: NSDate) -> Schedule? {
         return Schedule()
     }
     public class func cacheSchedule(schedule: Schedule) {
