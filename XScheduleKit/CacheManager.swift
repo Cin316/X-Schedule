@@ -20,7 +20,15 @@ public class CacheManager {
         return exists
     }
     public class func loadScheduleForDate(date: NSDate) -> Schedule? {
-        return Schedule()
+        var schedule: Schedule?
+        var path: String = pathForDate(date)
+        var contents: String? = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
+        if let realContents = contents {
+            schedule = XScheduleParser.parseForSchedule(realContents, date: date)
+        } else {
+            schedule = nil
+        }
+        return schedule
     }
     public class func cacheSchedule(schedule: Schedule) {
         createScheduleCacheDir()
