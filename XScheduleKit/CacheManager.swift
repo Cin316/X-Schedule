@@ -38,6 +38,10 @@ public class CacheManager {
         contents.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
     }
     
+    public class func clearCache() {
+        
+    }
+    
     public class func buildCache() {
         buildCacheForLengthOfTime(numOfDays: defaultCacheLengthInDays)
     }

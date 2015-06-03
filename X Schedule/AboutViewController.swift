@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XScheduleKit
 
 class AboutViewController: UITableViewController, UITableViewDelegate {
     
@@ -33,6 +34,9 @@ class AboutViewController: UITableViewController, UITableViewDelegate {
                 openURL("http://github.com/Cin316/X-Schedule")
             } else if (cell.tag == 201) { //St. X link
                 openURL("http://www.stxavier.org/")
+            } else if (cell.tag == 202) { //Rebuild cache option.
+                CacheManager.clearCache()
+                CacheManager.buildCache()
             }
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
