@@ -28,7 +28,7 @@ public class XScheduleManager: ScheduleManager {
             errorHandler("Error loading schedule from cache.")
         }
     }
-    private class func downloadScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
+    internal class func downloadScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
         var task: NSURLSessionTask
         
         task = XScheduleDownloader.downloadSchedule(date, completionHandler: { (output: String) in

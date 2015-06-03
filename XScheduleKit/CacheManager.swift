@@ -42,7 +42,16 @@ public class CacheManager {
         buildCacheForLengthOfTime(numOfDays: defaultCacheLengthInDays)
     }
     public class func buildCacheForLengthOfTime(numOfDays days: Int) {
-    
+        for (var i=(-days); i<=days; i++) {
+            var date: NSDate = dateDaysFromNow(numOfDays: i)
+            XScheduleManager.downloadScheduleForDate(date, completionHandler: { (schedule: Schedule) in}, errorHandler: { (errorText: String) in})
+        }
+    }
+    private class func dateDaysFromNow(numOfDays days: Int) -> NSDate {
+        var date: NSDate
+        date = NSDate().dateByAddingTimeInterval(Double(days*24*60*60))
+        
+        return date
     }
     
     private class func fileManager() -> NSFileManager {
