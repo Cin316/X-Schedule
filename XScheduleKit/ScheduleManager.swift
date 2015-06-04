@@ -8,7 +8,15 @@
 
 import Foundation
 
+public enum DownloadMethod {
+    case Download
+    case Cache
+}
+
 public class ScheduleManager {
+    public class func getScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void, inout method: DownloadMethod) -> NSURLSessionTask? {
+        return nil
+    }
     public class func getScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) -> NSURLSessionTask? {
         return nil
     }

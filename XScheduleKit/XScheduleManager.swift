@@ -9,13 +9,15 @@
 import Foundation
 
 public class XScheduleManager: ScheduleManager {
-    public override class func getScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) -> NSURLSessionTask? {
+    public override class func getScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void, inout method: DownloadMethod) -> NSURLSessionTask? {
         var task: NSURLSessionTask?
         
         if (CacheManager.scheduleExistsForDate(date)) {
             getCachedScheduleForDate(date, completionHandler: completionHandler, errorHandler: errorHandler)
+            method = DownloadMethod.Cache
         } else {
             task = downloadScheduleForDate(date, completionHandler: completionHandler, errorHandler: errorHandler)
+            method = DownloadMethod.Download
         }
         
         return task
