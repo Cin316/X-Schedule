@@ -39,7 +39,14 @@ public class CacheManager {
     }
     
     public class func clearCache() {
-        
+        var error: NSError?
+        var files: [AnyObject]? = fileManager().contentsOfDirectoryAtPath(scheduleCacheDirectory(), error: &error)
+        if let paths = files as? [String] {
+            for file in paths {
+                var path: String = scheduleCacheDirectory().stringByAppendingPathComponent(file)
+                fileManager().removeItemAtPath(path, error: &error)
+            }
+        }
     }
     
     public class func buildCache() {
