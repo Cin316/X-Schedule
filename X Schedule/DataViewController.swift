@@ -24,8 +24,7 @@ class DataViewController: ScheduleViewController {
     }
     
     override func refreshSchedule() {
-        //Start loading indicator before download.
-        loadingIndicator.startAnimating()
+        var method: DownloadMethod = DownloadMethod.Download
         
         // Download today's schedule from the St. X website.
         XScheduleManager.getScheduleForDate(scheduleDate,
@@ -40,8 +39,13 @@ class DataViewController: ScheduleViewController {
                 dispatch_async(dispatch_get_main_queue()) {
                     self.handleError(errorText)
                 }
-            }
+            },
+            method: &method
         )
+        if (method==DownloadMethod.Download) {
+            loadingIndicator.startAnimating()
+        }
+        
     }
     
     private func handleCompletionOfDownload(schedule: Schedule) {
