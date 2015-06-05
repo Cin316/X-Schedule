@@ -31,7 +31,7 @@ class WeekDataViewController: ScheduleViewController {
     @IBOutlet weak var emptyLabel5: UILabel!
     
     var scheduleMonday: NSDate {
-        get{
+        get {
             var calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
             var weekday: Int = calendar.component(.CalendarUnitWeekday, fromDate: scheduleDate)
             var daysPastMonday: Int = weekday-2
@@ -41,6 +41,18 @@ class WeekDataViewController: ScheduleViewController {
     }
     
     var tasks: [NSURLSessionTask] = []
+    var downloadMethods: [DownloadMethod] = [DownloadMethod](count: 5, repeatedValue: DownloadMethod.Cache)
+    var downloadCount: Int {
+        get {
+            var num: Int = 0
+            for method in downloadMethods {
+                if (method == DownloadMethod.Download) {
+                    num++
+                }
+            }
+            return num
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +61,10 @@ class WeekDataViewController: ScheduleViewController {
     }
     
     override func refreshSchedule() {
+        cancelRequests()
+        refreshSchedules()
         startTaskCounter()
         clearWeek()
-        refreshSchedules()
         displayDateLabel()
     }
     private func clearWeek() {
@@ -62,9 +75,9 @@ class WeekDataViewController: ScheduleViewController {
         var blankSchedule: Schedule = Schedule()
         for (var i=0; i<5; i++) {
             if let tableController = self.childViewControllers[i] as? ScheduleTableController {
-                tableController.schedule = blankSchedule
-                let tableView = (tableController.view as? UITableView)!
-                tableView.reloadData()
+                if (downloadMethods[i] == DownloadMethod.Download) {
+                    tableController.schedule = blankSchedule
+                }
             }
         }
     }
@@ -98,6 +111,8 @@ class WeekDataViewController: ScheduleViewController {
     }
     
     private func refreshScheduleNum(num: Int) {
+        var method: DownloadMethod = DownloadMethod.Download
+        
         // Download today's schedule from the St. X website.
         var newTask: NSURLSessionTask? = XScheduleManager.getScheduleForDate(downloadDateForNum(num),
             completionHandler: { (schedule: Schedule) in
@@ -109,8 +124,11 @@ class WeekDataViewController: ScheduleViewController {
                 dispatch_async(dispatch_get_main_queue()) {
                     self.handleError(errorText, num: num)
                 }
-            }
+            }, method: &method
         )
+        
+        downloadMethods[num-1] = method
+        
         if (newTask != nil) {
             tasks.append(newTask!)
         }
@@ -188,15 +206,16 @@ class WeekDataViewController: ScheduleViewController {
     }
     
     private func startTaskCounter() {
-        cancelRequests()
         //Start loading indicator before download.
-        loadingIndicator.startAnimating()
+        if (!(downloadCount==0)) {
+            loadingIndicator.startAnimating()
+        }
         finishedLoadingNum = 0
     }
     private func markOneTaskAsFinished() {
         //Stop loading indicator after everything is complete.
         finishedLoadingNum++
-        if(finishedLoadingNum>=5) {
+        if(finishedLoadingNum>=downloadCount) {
             finishedLoadingNum = 0
             loadingIndicator.stopAnimating()
             
