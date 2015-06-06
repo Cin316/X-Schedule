@@ -31,7 +31,9 @@ public class XScheduleDownloader: ScheduleDownloader {
                     //Call completion handler with string.
                     completionHandler(output)
                 } else { // If there is an error...
-                    errorHandler(error.localizedDescription)
+                    if ( self.errorShouldBeHandled(error) ) {
+                        errorHandler(error.localizedDescription)
+                    }
                 }
             }
         )
@@ -72,6 +74,12 @@ public class XScheduleDownloader: ScheduleDownloader {
         let escapedDate: String = formattedDate.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
         
         return escapedDate
+    }
+    private class func errorShouldBeHandled(error: NSError) -> Bool {
+        var ignoredError: Bool = false
+        ignoredError = ignoredError || (error.domain==NSURLErrorDomain && error.code==NSURLErrorCancelled)
+        
+        return !ignoredError
     }
     
 }
