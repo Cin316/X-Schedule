@@ -208,7 +208,7 @@ class WeekDataViewController: ScheduleViewController {
     private func startTaskCounter() {
         //Start loading indicator before download.
         if (!(downloadCount==0)) {
-            loadingIndicator.startAnimating()
+            startLoading()
         }
         finishedLoadingNum = 0
     }
@@ -217,7 +217,7 @@ class WeekDataViewController: ScheduleViewController {
         finishedLoadingNum++
         if(finishedLoadingNum>=downloadCount) {
             finishedLoadingNum = 0
-            loadingIndicator.stopAnimating()
+            stopLoading()
             
             clearTasks()
         }
@@ -236,6 +236,13 @@ class WeekDataViewController: ScheduleViewController {
     private func handleError(errorText: String, num: Int) {
         displayAlertWithText(errorText)
         markOneTaskAsFinished()
+    }
+    
+    private func startLoading() {
+        loadingIndicator.startAnimating()
+    }
+    private func stopLoading() {
+        loadingIndicator.stopAnimating()
     }
     
     @IBAction func onBackButtonPress(sender: AnyObject) {

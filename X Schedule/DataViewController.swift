@@ -43,7 +43,7 @@ class DataViewController: ScheduleViewController {
             method: &method
         )
         if (method==DownloadMethod.Download) {
-            loadingIndicator.startAnimating()
+            startLoading()
         }
         
     }
@@ -53,7 +53,7 @@ class DataViewController: ScheduleViewController {
         displayTitleForSchedule(schedule)
         displayDateLabelForDate(scheduleDate)
         displayEmptyLabelForSchedule(schedule)
-        loadingIndicator.stopAnimating()
+        stopLoading()
     }
     private func displayScheduleInTable(schedule: Schedule) {
         if let tableController = childViewControllers[0] as? ScheduleTableController {
@@ -85,9 +85,16 @@ class DataViewController: ScheduleViewController {
     
     private func handleError(errorText: String) {
         displayAlertWithText(errorText)
-        loadingIndicator.stopAnimating()
+        stopLoading()
         displayDateLabelForDate(scheduleDate)
         titleLabel.text = "Error"
+    }
+    
+    private func startLoading() {
+        loadingIndicator.startAnimating()
+    }
+    private func stopLoading() {
+        loadingIndicator.stopAnimating()
     }
     
     @IBAction func onBackButtonPress(sender: AnyObject) {
