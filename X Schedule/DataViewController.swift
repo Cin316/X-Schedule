@@ -92,9 +92,11 @@ class DataViewController: ScheduleViewController {
     
     private func startLoading() {
         loadingIndicator.startAnimating()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     }
     private func stopLoading() {
         loadingIndicator.stopAnimating()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
     @IBAction func onBackButtonPress(sender: AnyObject) {
