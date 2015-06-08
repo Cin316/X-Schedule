@@ -376,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5B-ug-dHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="372"/>
+            <point key="canvasLocation" x="2240" y="1836"/>
         </scene>
         <!--Image Licensing-->
         <scene sceneID="okb-JM-lK7">
@@ -418,7 +418,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFn-zS-hzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="1021"/>
+            <point key="canvasLocation" x="2240" y="2485"/>
         </scene>
         <!--Donors View-->
         <scene sceneID="6y4-A3-LfN">
@@ -468,7 +468,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d42-Kr-7p4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="2446"/>
+            <point key="canvasLocation" x="2240" y="3910"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jAt-cu-Knh">
@@ -521,7 +521,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZD-ak-yuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="3126"/>
+            <point key="canvasLocation" x="2240" y="4590"/>
         </scene>
         <!--About-->
         <scene sceneID="Vg9-J5-sj7">
@@ -609,7 +609,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZW-1b-J3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="1767"/>
+            <point key="canvasLocation" x="2240" y="3231"/>
         </scene>
         <!--About Menu-->
         <scene sceneID="FBn-X6-YqM">
@@ -804,7 +804,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETC-ek-aF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1453" y="1531"/>
+            <point key="canvasLocation" x="1461" y="2995"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6vs-dE-wsY">
@@ -822,7 +822,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uof-9k-U27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786" y="1531"/>
+            <point key="canvasLocation" x="794" y="2995"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -837,6 +837,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                     </tabBar>
                     <connections>
                         <segue destination="KIL-La-wUR" kind="relationship" relationship="viewControllers" id="bDp-q8-CXt"/>
+                        <segue destination="l9y-8Y-n4F" kind="relationship" relationship="viewControllers" id="Nnx-LF-wBP"/>
                         <segue destination="PMQ-eX-lqC" kind="relationship" relationship="viewControllers" id="din-X4-wFj"/>
                     </connections>
                 </tabBarController>
@@ -1072,6 +1073,143 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
             </objects>
             <point key="canvasLocation" x="1637" y="-1000"/>
         </scene>
+        <!--Customization-->
+        <scene sceneID="czq-nf-8zJ">
+            <objects>
+                <tableViewController id="AFl-QS-Wc8" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FeQ-vO-LOO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="We6-RI-GYf" detailTextLabel="eDc-fs-0h8" style="IBUITableViewCellStyleValue1" id="71z-gC-B8q">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="71z-gC-B8q" id="Thw-KK-94i">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="We6-RI-GYf">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eDc-fs-0h8">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AFl-QS-Wc8" id="UoF-UB-DlE"/>
+                            <outlet property="delegate" destination="AFl-QS-Wc8" id="Fon-H8-aIi"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Edit" id="6Cu-5K-gfj"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Customization" id="UaO-p2-jaZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="I8j-C9-q1h">
+                            <connections>
+                                <segue destination="wOS-b6-j1r" kind="show" id="BxA-La-n9W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rg2-yX-cDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="268"/>
+        </scene>
+        <!--New Substitution-->
+        <scene sceneID="7XC-rj-zQP">
+            <objects>
+                <tableViewController id="wOS-b6-j1r" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bkV-0W-epi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Block Name" id="iGP-mS-nJU">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gZm-4L-e9w">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gZm-4L-e9w" id="NPz-aQ-DNM">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="A" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zZ5-aO-t9V">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zZ5-aO-t9V" firstAttribute="leading" secondItem="NPz-aQ-DNM" secondAttribute="leadingMargin" id="0rT-80-FEL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zZ5-aO-t9V" secondAttribute="bottom" constant="-2" id="4Xb-e3-BDx"/>
+                                                <constraint firstItem="zZ5-aO-t9V" firstAttribute="top" secondItem="NPz-aQ-DNM" secondAttribute="topMargin" constant="-1" id="Z2Y-7X-TIm"/>
+                                                <constraint firstItem="zZ5-aO-t9V" firstAttribute="trailing" secondItem="NPz-aQ-DNM" secondAttribute="trailingMargin" id="phQ-Tf-D50"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Class Name" footerTitle="The entered block name will automatically be replaced with the class name when a schedule is displayed." id="ocP-au-bIj">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nL3-9k-8q2">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nL3-9k-8q2" id="Id1-CR-lz4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Fine Arts" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHL-yc-IvE">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tHL-yc-IvE" firstAttribute="trailing" secondItem="Id1-CR-lz4" secondAttribute="trailingMargin" id="9MV-cv-RQ8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tHL-yc-IvE" secondAttribute="bottom" constant="-2" id="FRv-9M-ddR"/>
+                                                <constraint firstItem="tHL-yc-IvE" firstAttribute="leading" secondItem="Id1-CR-lz4" secondAttribute="leadingMargin" id="j5o-O3-kvN"/>
+                                                <constraint firstItem="tHL-yc-IvE" firstAttribute="top" secondItem="Id1-CR-lz4" secondAttribute="topMargin" constant="-1" id="zMd-vK-Lm7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="wOS-b6-j1r" id="Jk1-05-3p8"/>
+                            <outlet property="delegate" destination="wOS-b6-j1r" id="9ud-Hy-Ix0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="New Substitution" id="IHb-AR-Q0X">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xnQ-at-ktY"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RgJ-qY-mbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2372" y="268"/>
+        </scene>
+        <!--Customization-->
+        <scene sceneID="r2n-Mg-AUf">
+            <objects>
+                <navigationController id="l9y-8Y-n4F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Customization" image="scheduleTab" id="pwn-hm-29L"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fcd-mo-5ns">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AFl-QS-Wc8" kind="relationship" relationship="rootViewController" id="lWZ-9X-gGy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHp-4M-Pfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="268"/>
+        </scene>
         <!--Colored Schedule Table Controller-->
         <scene sceneID="WbW-HK-YxM">
             <objects>
@@ -1131,7 +1269,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdQ-F3-6Gd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2382" y="-1000.875"/>
+            <point key="canvasLocation" x="2334" y="-1009.5"/>
         </scene>
         <!--iPad Landscape Data View Controller-->
         <scene sceneID="yZr-oW-LOj">
@@ -2029,6 +2167,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
         <image name="GitHub" width="40" height="33"/>
         <image name="backButton" width="44" height="44"/>
         <image name="forwardButton" width="44" height="44"/>
+        <image name="scheduleTab" width="25" height="25"/>
         <image name="scheduleTabFilled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
