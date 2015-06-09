@@ -493,7 +493,19 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">  To contact me directly, email reichertsoftware@gmail.com  To report bugs and request new features, go to the GitHub Issue tracker for X Schedule: https://github.com/Cin316/X-Schedule/issues  Be sure to include your X Schedule build number and version, your device, and your iOS version in any requests.  The build number is the number in parentheses next to the version.  If you like X Schedule, please leave a review on the App Store.  This will help me reach a wider audience.  Special thanks to Aaron Wright for helping me with resolving an issue I had with submitting X Schedule to the App Store.  </string>
+                                        <string key="content">
+
+To contact me directly, email reichertsoftware@gmail.com
+
+To report bugs and request new features, go to the GitHub Issue tracker for X Schedule: https://github.com/Cin316/X-Schedule/issues
+
+Be sure to include your X Schedule build number and version, your device, and your iOS version in any requests.  The build number is the number in parentheses next to the version.
+
+If you like X Schedule, please leave a review on the App Store.  This will help me reach a wider audience.
+
+Special thanks to Aaron Wright for helping me with resolving an issue I had with submitting X Schedule to the App Store.
+
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -1197,7 +1209,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
         <scene sceneID="r2n-Mg-AUf">
             <objects>
                 <navigationController id="l9y-8Y-n4F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Customization" image="scheduleTab" id="pwn-hm-29L"/>
+                    <tabBarItem key="tabBarItem" title="Customization" image="settingsTabFilled" selectedImage="settingsTabFilled" id="pwn-hm-29L"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fcd-mo-5ns">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2167,8 +2179,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
         <image name="GitHub" width="40" height="33"/>
         <image name="backButton" width="44" height="44"/>
         <image name="forwardButton" width="44" height="44"/>
-        <image name="scheduleTab" width="25" height="25"/>
         <image name="scheduleTabFilled" width="25" height="25"/>
+        <image name="settingsTabFilled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wRA-yG-nIp"/>
