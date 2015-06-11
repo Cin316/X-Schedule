@@ -1209,7 +1209,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
         <scene sceneID="r2n-Mg-AUf">
             <objects>
                 <navigationController id="l9y-8Y-n4F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Customization" image="settingsTabFilled" selectedImage="settingsTabFilled" id="pwn-hm-29L"/>
+                    <tabBarItem key="tabBarItem" title="Customization" image="settingsTabFilled" id="pwn-hm-29L"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fcd-mo-5ns">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
