@@ -40,6 +40,7 @@
 		E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18039831AABF260006513B2 /* AboutViewController.swift */; };
 		E1ECC41D1B16531200AB5D64 /* XScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECC41C1B16531200AB5D64 /* XScheduleManager.swift */; };
 		E1ECC41F1B16571300AB5D64 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECC41E1B16571300AB5D64 /* ScheduleManager.swift */; };
+		E1F0E2031B29B771006643C0 /* SubstitutionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0E2021B29B771006643C0 /* SubstitutionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		E1ECC41E1B16571300AB5D64 /* ScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
 		E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleDownloader.swift; sourceTree = "<group>"; };
 		E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableController.swift; sourceTree = "<group>"; };
+		E1F0E2021B29B771006643C0 /* SubstitutionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstitutionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 				E116D1E01B1A407C00C5DCA8 /* CacheManager.swift */,
 				E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */,
 				E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */,
+				E1F0E2021B29B771006643C0 /* SubstitutionManager.swift */,
 				E1DEBEDC1AD61FE2004B2CC1 /* Supporting Files */,
 			);
 			path = XScheduleKit;
@@ -436,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F0E2031B29B771006643C0 /* SubstitutionManager.swift in Sources */,
 				E1DEBEF91AD621F0004B2CC1 /* Schedule.swift in Sources */,
 				E1C6BDB21AFEDEEA00B444C8 /* ScheduleParser.swift in Sources */,
 				E1ECC41F1B16571300AB5D64 /* ScheduleManager.swift in Sources */,
