@@ -1126,7 +1126,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                     <navigationItem key="navigationItem" title="Customization" id="UaO-p2-jaZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="I8j-C9-q1h">
                             <connections>
-                                <segue destination="wOS-b6-j1r" kind="show" id="BxA-La-n9W"/>
+                                <segue destination="wOS-b6-j1r" kind="show" identifier="subDetail" id="BxA-La-n9W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

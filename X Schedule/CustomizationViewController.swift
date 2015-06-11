@@ -40,4 +40,17 @@ class CustomizationViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var selectedCell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
+        var substitution: (block: String, className: String) = substitutions[indexPath.row]
+        
+        self.performSegueWithIdentifier("subDetail", sender: self)
+        
+        //tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+}
+
+class NewSubViewController: UIViewController {
+
 }
