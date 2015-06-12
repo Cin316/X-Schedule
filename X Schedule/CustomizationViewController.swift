@@ -13,6 +13,9 @@ class CustomizationViewController: UITableViewController {
     
     var substitutions: [(block: String, className: String)] = SubstitutionManager.loadSubstitutions()
     
+    var selectedNum: Int = 0
+    var selectedItem: (block: String, className: String) = ("","")
+    
     override func viewDidLoad() {
         
     }
@@ -43,14 +46,36 @@ class CustomizationViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var selectedCell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
         var substitution: (block: String, className: String) = substitutions[indexPath.row]
+        selectedItem = substitution
+        selectedNum = indexPath.row
         
         self.performSegueWithIdentifier("subDetail", sender: self)
-        
-        //tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let newSub = segue.destinationViewController as? NewSubViewController {
+            if (segue.identifier == "subDetail") {
+                newSub.substitution = selectedItem
+            } else if (segue.identifier == "newSub") {
+                newSub.substitution = ("","")
+            }
+        }
+    }
 }
 
-class NewSubViewController: UIViewController {
+class NewSubViewController: UITableViewController {
 
+    @IBOutlet weak var blockName: UITextField!
+    @IBOutlet weak var className: UITextField!
+    
+    var substitution: (block: String, className: String) = ("","")
+    
+    override func viewDidLoad() {
+        loadSubstitution()
+    }
+    
+    func loadSubstitution() {
+        blockName.text = substitution.block
+        className.text = substitution.className
+    }
+    
 }

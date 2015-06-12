@@ -1126,11 +1126,14 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                     <navigationItem key="navigationItem" title="Customization" id="UaO-p2-jaZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="I8j-C9-q1h">
                             <connections>
-                                <segue destination="wOS-b6-j1r" kind="show" identifier="subDetail" id="BxA-La-n9W"/>
+                                <segue destination="wOS-b6-j1r" kind="show" identifier="newSub" id="BxA-La-n9W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="wOS-b6-j1r" kind="show" identifier="subDetail" id="kw2-64-4pd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rg2-yX-cDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1139,7 +1142,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
         <!--New Substitution-->
         <scene sceneID="7XC-rj-zQP">
             <objects>
-                <tableViewController id="wOS-b6-j1r" sceneMemberID="viewController">
+                <tableViewController id="wOS-b6-j1r" customClass="NewSubViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bkV-0W-epi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1200,6 +1203,10 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                     <navigationItem key="navigationItem" title="New Substitution" id="IHb-AR-Q0X">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="xnQ-at-ktY"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="blockName" destination="zZ5-aO-t9V" id="pdr-Wu-ztR"/>
+                        <outlet property="className" destination="tHL-yc-IvE" id="PBA-Hn-7zm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgJ-qY-mbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2183,6 +2190,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
         <image name="settingsTabFilled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="kw2-64-4pd"/>
         <segue reference="wRA-yG-nIp"/>
     </inferredMetricsTieBreakers>
 </document>
