@@ -63,9 +63,11 @@ class CustomizationViewController: UITableViewController {
     
     func addSubstitution(sub: (block: String, className: String)) {
         substitutions.append(sub)
+        SubstitutionManager.saveSubstitutions(substitutions)
     }
     func updateSubstitution(sub: (block: String, className: String)) {
         substitutions[selectedNum] = sub
+        SubstitutionManager.saveSubstitutions(substitutions)
     }
 }
 
