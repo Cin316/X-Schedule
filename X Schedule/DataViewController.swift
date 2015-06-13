@@ -110,4 +110,3 @@ class DataViewController: ScheduleViewController {
         scheduleDate = NSDate()
     }
 }
-
