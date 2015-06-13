@@ -54,9 +54,9 @@ class CustomizationViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let newSub = segue.destinationViewController as? NewSubViewController {
             if (segue.identifier == "subDetail") {
-                newSub.substitution = selectedItem
+                newSub.editSubstitution(selectedItem)
             } else if (segue.identifier == "newSub") {
-                newSub.substitution = ("","")
+                newSub.newSubstitution()
             }
         }
     }
@@ -68,14 +68,35 @@ class NewSubViewController: UITableViewController {
     @IBOutlet weak var className: UITextField!
     
     var substitution: (block: String, className: String) = ("","")
+    enum SubstitutionMethod {
+        case New
+        case Edit
+    }
+    var subMethod: SubstitutionMethod = .New
     
     override func viewDidLoad() {
-        loadSubstitution()
+        setUpTitle()
+        displaySubstitution()
     }
-    
-    func loadSubstitution() {
+    private func setUpTitle() {
+        if (subMethod == .New) {
+            self.title = "New Substitution"
+        } else if (subMethod == .Edit) {
+            self.title = "Edit Substitution"
+        }
+    }
+    private func displaySubstitution() {
         blockName.text = substitution.block
         className.text = substitution.className
+    }
+    
+    func newSubstitution() {
+        substitution = ("","")
+        subMethod = .New
+    }
+    func editSubstitution(sub: (block: String, className: String)) {
+        substitution = sub
+        subMethod = .Edit
     }
     
 }
