@@ -1201,7 +1201,11 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Substitution" id="IHb-AR-Q0X">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xnQ-at-ktY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xnQ-at-ktY">
+                            <connections>
+                                <action selector="saveButton:" destination="wOS-b6-j1r" id="1Ki-VF-AAX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="blockName" destination="zZ5-aO-t9V" id="pdr-Wu-ztR"/>

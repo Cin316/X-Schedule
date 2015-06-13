@@ -60,6 +60,13 @@ class CustomizationViewController: UITableViewController {
             }
         }
     }
+    
+    func addSubstitution(sub: (block: String, className: String)) {
+        substitutions.append(sub)
+    }
+    func updateSubstitution(sub: (block: String, className: String)) {
+        substitutions[selectedNum] = sub
+    }
 }
 
 class NewSubViewController: UITableViewController {
@@ -97,6 +104,33 @@ class NewSubViewController: UITableViewController {
     func editSubstitution(sub: (block: String, className: String)) {
         substitution = sub
         subMethod = .Edit
+    }
+    
+    @IBAction func saveButton(sender: AnyObject) {
+        moveEditsToSub()
+        
+        if let subList = backOneViewController() as? CustomizationViewController {
+            if (subMethod == .New) {
+                subList.addSubstitution(substitution)
+            } else if (subMethod == .Edit) {
+                subList.updateSubstitution(substitution)
+            }
+            subList.tableView.reloadData()
+        }
+        
+        //Goes back to the substitutions view.
+        self.navigationController!.popViewControllerAnimated(true)
+    }
+    private func backOneViewController() -> UIViewController? {
+        var parent: UIViewController?
+        var controllersCount: Int = self.navigationController!.viewControllers!.count
+        parent = self.navigationController?.viewControllers[controllersCount-2] as? UIViewController
+        
+        return parent
+    }
+    private func moveEditsToSub() {
+        substitution.block = blockName.text
+        substitution.className = className.text
     }
     
 }
