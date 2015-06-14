@@ -71,11 +71,14 @@ class CustomizationViewController: UITableViewController {
     }
 }
 
-class NewSubViewController: UITableViewController, UITextFieldDelegate {
+class NewSubViewController: UITableViewController {
 
     @IBOutlet weak var blockName: UITextField!
     @IBOutlet weak var className: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    var blockNameDelegate: BlockNameDelegate!
+    var classNameDelegate: ClassNameDelegate!
     
     var substitution: (block: String, className: String) = ("","")
     enum SubstitutionMethod {
@@ -85,10 +88,14 @@ class NewSubViewController: UITableViewController, UITextFieldDelegate {
     var subMethod: SubstitutionMethod = .New
     
     override func viewDidLoad() {
-        blockName.delegate = self
+        blockNameDelegate = BlockNameDelegate(parent: self)
+        classNameDelegate = ClassNameDelegate(parent: self)
+        blockName.delegate = blockNameDelegate
+        className.delegate = classNameDelegate
         setUpTitle()
         displaySubstitution()
         blockNameValueChanged(self)
+        blockName.becomeFirstResponder()
     }
     private func setUpTitle() {
         if (subMethod == .New) {
@@ -138,7 +145,6 @@ class NewSubViewController: UITableViewController, UITextFieldDelegate {
         substitution.className = className.text
     }
     
-    
     @IBAction func blockNameValueChanged(sender: AnyObject) {
         if (blockName.text == "") {
             saveButton.enabled = false
@@ -147,4 +153,26 @@ class NewSubViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
+}
+class BlockNameDelegate: NSObject, UITextFieldDelegate {
+    weak var parent: NewSubViewController!
+    init(parent: NewSubViewController) {
+        self.parent = parent
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        parent.className.becomeFirstResponder()
+        return true
+    }
+}
+class ClassNameDelegate: NSObject, UITextFieldDelegate {
+    weak var parent: NewSubViewController!
+    init(parent: NewSubViewController) {
+        self.parent = parent
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        parent.saveButton(self)
+        return true
+    }
 }
