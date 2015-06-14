@@ -36,7 +36,7 @@ public class SubstitutionManager {
         defaults.setObject(arrayVersion, forKey: substitutionsKey)
     }
     private class func convertTupleToArray(tuple: [(block: String, className: String)]) -> [[String]] {
-        var output: [[String]] = [[]]
+        var output: [[String]] = []
         for item in tuple {
             var tmpArray = ["",""]
             tmpArray[0] = item.block
