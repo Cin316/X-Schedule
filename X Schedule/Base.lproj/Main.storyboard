@@ -1159,6 +1159,9 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                                     <rect key="frame" x="8" y="7" width="584" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="blockNameValueChanged:" destination="wOS-b6-j1r" eventType="editingChanged" id="ku1-jx-C0q"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1201,7 +1204,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Substitution" id="IHb-AR-Q0X">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xnQ-at-ktY">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="xnQ-at-ktY">
                             <connections>
                                 <action selector="saveButton:" destination="wOS-b6-j1r" id="1Ki-VF-AAX"/>
                             </connections>
@@ -1210,6 +1213,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                     <connections>
                         <outlet property="blockName" destination="zZ5-aO-t9V" id="pdr-Wu-ztR"/>
                         <outlet property="className" destination="tHL-yc-IvE" id="PBA-Hn-7zm"/>
+                        <outlet property="saveButton" destination="xnQ-at-ktY" id="5ee-fR-3kk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgJ-qY-mbX" userLabel="First Responder" sceneMemberID="firstResponder"/>

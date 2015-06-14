@@ -71,10 +71,11 @@ class CustomizationViewController: UITableViewController {
     }
 }
 
-class NewSubViewController: UITableViewController {
+class NewSubViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var blockName: UITextField!
     @IBOutlet weak var className: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var substitution: (block: String, className: String) = ("","")
     enum SubstitutionMethod {
@@ -84,8 +85,10 @@ class NewSubViewController: UITableViewController {
     var subMethod: SubstitutionMethod = .New
     
     override func viewDidLoad() {
+        blockName.delegate = self
         setUpTitle()
         displaySubstitution()
+        blockNameValueChanged(self)
     }
     private func setUpTitle() {
         if (subMethod == .New) {
@@ -133,6 +136,15 @@ class NewSubViewController: UITableViewController {
     private func moveEditsToSub() {
         substitution.block = blockName.text
         substitution.className = className.text
+    }
+    
+    
+    @IBAction func blockNameValueChanged(sender: AnyObject) {
+        if (blockName.text == "") {
+            saveButton.enabled = false
+        } else {
+            saveButton.enabled = true
+        }
     }
     
 }
