@@ -1150,7 +1150,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                         <sections>
                             <tableViewSection headerTitle="Block Name" id="iGP-mS-nJU">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gZm-4L-e9w">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="gZm-4L-e9w">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gZm-4L-e9w" id="NPz-aQ-DNM">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1173,7 +1173,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                             </tableViewSection>
                             <tableViewSection headerTitle="Class Name" footerTitle="The entered block name will automatically be replaced with the class name when a schedule is displayed." id="ocP-au-bIj">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nL3-9k-8q2">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="nL3-9k-8q2">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nL3-9k-8q2" id="Id1-CR-lz4">
                                             <autoresizingMask key="autoresizingMask"/>
