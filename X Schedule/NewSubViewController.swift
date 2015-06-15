@@ -65,7 +65,6 @@ class NewSubViewController: UITableViewController {
             } else if (subMethod == .Edit) {
                 subList.updateSubstitution(substitution)
             }
-            subList.tableView.reloadData()
         }
         
         //Goes back to the substitutions view.

@@ -63,10 +63,15 @@ class CustomizationViewController: UITableViewController {
     
     func addSubstitution(sub: (block: String, className: String)) {
         substitutions.append(sub)
-        SubstitutionManager.saveSubstitutions(substitutions)
+        substitutionsChanged()
     }
     func updateSubstitution(sub: (block: String, className: String)) {
         substitutions[selectedNum] = sub
+        substitutionsChanged()
+    }
+    private func substitutionsChanged() {
+        substitutions.sort({ $0.block < $1.block })
         SubstitutionManager.saveSubstitutions(substitutions)
+        self.tableView.reloadData()
     }
 }
