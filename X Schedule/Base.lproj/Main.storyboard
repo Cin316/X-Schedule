@@ -647,7 +647,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.88235294117647056" green="0.93333333333333335" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="ll0-xW-i7f" kind="show" id="r1F-Rt-LL7"/>
                                         </connections>
@@ -1092,7 +1092,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FeQ-vO-LOO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomizationCell" textLabel="We6-RI-GYf" detailTextLabel="eDc-fs-0h8" style="IBUITableViewCellStyleValue1" id="71z-gC-B8q">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1120,9 +1120,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                             <outlet property="delegate" destination="AFl-QS-Wc8" id="Fon-H8-aIi"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Edit" id="6Cu-5K-gfj"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Customization" id="UaO-p2-jaZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="I8j-C9-q1h">
                             <connections>
@@ -1130,7 +1128,6 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="wOS-b6-j1r" kind="show" identifier="subDetail" id="kw2-64-4pd"/>
                     </connections>
@@ -1228,6 +1225,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fcd-mo-5ns">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="AFl-QS-Wc8" kind="relationship" relationship="rootViewController" id="lWZ-9X-gGy"/>
