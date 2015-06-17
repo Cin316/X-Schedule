@@ -25,7 +25,7 @@ public class XScheduleManager: ScheduleManager {
     private class func getCachedScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) {
         var schedule: Schedule? = CacheManager.loadScheduleForDate(date)
         if (schedule != nil) {
-            completionHandler(schedule!)
+            completionHandler(substituteSchedule(schedule!))
         } else {
             errorHandler("Error loading schedule from cache.")
         }
@@ -36,10 +36,16 @@ public class XScheduleManager: ScheduleManager {
         task = XScheduleDownloader.downloadSchedule(date, completionHandler: { (output: String) in
             var schedule: Schedule
             schedule = XScheduleParser.parseForSchedule(output, date: date)
-            completionHandler(schedule)
+            completionHandler(self.substituteSchedule(schedule))
             CacheManager.cacheSchedule(schedule)
         }, errorHandler: errorHandler)
         
         return task
+    }
+    private class func substituteSchedule(schedule: Schedule) -> Schedule {
+        var displaySchedule: Schedule
+        displaySchedule = SubstitutionManager.substituteItemsInSchedule(schedule, substitutions: SubstitutionManager.loadSubstitutions())
+        
+        return  displaySchedule
     }
 }
