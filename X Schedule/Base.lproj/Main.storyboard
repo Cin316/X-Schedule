@@ -630,7 +630,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DoG-bm-dRA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.89411764705882357" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Information" id="syG-yf-jhv">
                                 <cells>
@@ -1092,7 +1092,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FeQ-vO-LOO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.89411764705882346" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomizationCell" textLabel="We6-RI-GYf" detailTextLabel="eDc-fs-0h8" style="IBUITableViewCellStyleValue1" id="71z-gC-B8q">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1113,6 +1113,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.88235294117647056" green="0.93333333333333335" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1143,7 +1144,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bkV-0W-epi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.81568627449999997" green="0.89411764709999997" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Block Name" id="iGP-mS-nJU">
                                 <cells>
@@ -1161,6 +1162,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.88235294119999996" green="0.93333333330000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="zZ5-aO-t9V" firstAttribute="leading" secondItem="NPz-aQ-DNM" secondAttribute="leadingMargin" id="0rT-80-FEL"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zZ5-aO-t9V" secondAttribute="bottom" constant="-2" id="4Xb-e3-BDx"/>
@@ -1191,6 +1193,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                                 <constraint firstItem="tHL-yc-IvE" firstAttribute="top" secondItem="Id1-CR-lz4" secondAttribute="topMargin" constant="-1" id="zMd-vK-Lm7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88235294119999996" green="0.93333333330000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
