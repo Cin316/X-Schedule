@@ -747,25 +747,6 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Settings" id="a1z-k9-LPu">
-                                <cells>
-                                    <tableViewCell tag="202" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="7aO-nC-Gkc" style="IBUITableViewCellStyleDefault" id="TXe-sa-h48">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="TXe-sa-h48" id="f3i-iQ-Yj6">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Clear Cache" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7aO-nC-Gkc">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="Links" footerTitle="X Schedule is not endorsed by or affiliated with St. Xavier High School." id="mwb-ib-Edy">
                                 <cells>
                                     <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="05Z-n8-llP" imageView="qdv-qR-WN4" style="IBUITableViewCellStyleDefault" id="ToM-ob-dHZ">
@@ -1085,6 +1066,69 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
             </objects>
             <point key="canvasLocation" x="1637" y="-1000"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="J1N-WU-nmZ">
+            <objects>
+                <tableViewController id="c0X-ph-YfU" customClass="SettingsViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="oCg-2H-hDF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.81568627449999997" green="0.89411764709999997" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="Substitutions" id="5SD-UY-hhA">
+                                <string key="footerTitle">Substitutions are a list of word pairs which will be replaced into each schedule.  You can use this to input your classes into the schedules.</string>
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ij0-a3-UYM" style="IBUITableViewCellStyleDefault" id="biT-WG-74L">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="biT-WG-74L" id="cwi-5v-Oo7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Edit Substitutions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ij0-a3-UYM">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="AFl-QS-Wc8" kind="show" id="r7s-z5-qXL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Cache" footerTitle="Clear the cache if you are having problems." id="fwc-J7-4Ne">
+                                <cells>
+                                    <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="7gP-6z-iOp" style="IBUITableViewCellStyleDefault" id="amD-S1-m4T">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="amD-S1-m4T" id="FA5-Sd-gzd">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Clear Cache" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7gP-6z-iOp">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="c0X-ph-YfU" id="INU-FH-3Ib"/>
+                            <outlet property="delegate" destination="c0X-ph-YfU" id="B4r-gg-CEl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="pqa-Yq-r5f"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5c-rN-bpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1602" y="268"/>
+        </scene>
         <!--Customization-->
         <scene sceneID="czq-nf-8zJ">
             <objects>
@@ -1135,7 +1179,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rg2-yX-cDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1614" y="268"/>
+            <point key="canvasLocation" x="2399" y="268"/>
         </scene>
         <!--New Substitution-->
         <scene sceneID="7XC-rj-zQP">
@@ -1218,20 +1262,20 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgJ-qY-mbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2372" y="268"/>
+            <point key="canvasLocation" x="3157" y="268"/>
         </scene>
-        <!--Customization-->
+        <!--Settings-->
         <scene sceneID="r2n-Mg-AUf">
             <objects>
                 <navigationController id="l9y-8Y-n4F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Customization" image="settingsTabFilled" id="pwn-hm-29L"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsTabFilled" id="pwn-hm-29L"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fcd-mo-5ns">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="AFl-QS-Wc8" kind="relationship" relationship="rootViewController" id="lWZ-9X-gGy"/>
+                        <segue destination="c0X-ph-YfU" kind="relationship" relationship="rootViewController" id="WZK-F7-wWe"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHp-4M-Pfr" userLabel="First Responder" sceneMemberID="firstResponder"/>

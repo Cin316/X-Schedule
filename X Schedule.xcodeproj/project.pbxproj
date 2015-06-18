@@ -39,6 +39,7 @@
 		E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */; };
 		E1E3EE4A1AA8F24F00A00603 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1E3EE491AA8F24F00A00603 /* LICENSE.txt */; };
 		E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18039831AABF260006513B2 /* AboutViewController.swift */; };
+		E1E9856A1B32EF56000302DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E985691B32EF56000302DE /* SettingsViewController.swift */; };
 		E1ECC41D1B16531200AB5D64 /* XScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECC41C1B16531200AB5D64 /* XScheduleManager.swift */; };
 		E1ECC41F1B16571300AB5D64 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECC41E1B16571300AB5D64 /* ScheduleManager.swift */; };
 		E1F0E2031B29B771006643C0 /* SubstitutionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0E2021B29B771006643C0 /* SubstitutionManager.swift */; };
@@ -112,6 +113,7 @@
 		E1DEBEDD1AD61FE2004B2CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		E1E3EE491AA8F24F00A00603 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
+		E1E985691B32EF56000302DE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E1ECC41C1B16531200AB5D64 /* XScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleManager.swift; sourceTree = "<group>"; };
 		E1ECC41E1B16571300AB5D64 /* ScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
 		E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleDownloader.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				E138A8151A8E8B1E00549F84 /* Main.storyboard */,
 				E116D1E21B27164C00C5DCA8 /* CustomizationViewController.swift */,
 				E19965711B2E1F3A00E900FB /* NewSubViewController.swift */,
+				E1E985691B32EF56000302DE /* SettingsViewController.swift */,
 				E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */,
 				E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */,
 				E18039831AABF260006513B2 /* AboutViewController.swift */,
@@ -420,6 +423,7 @@
 			files = (
 				E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */,
 				E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */,
+				E1E9856A1B32EF56000302DE /* SettingsViewController.swift in Sources */,
 				E1DDEAF81AB7C35200B6F37F /* ScheduleSwitcherViewController.swift in Sources */,
 				E116D1E31B27164C00C5DCA8 /* CustomizationViewController.swift in Sources */,
 				E19965721B2E1F3A00E900FB /* NewSubViewController.swift in Sources */,
