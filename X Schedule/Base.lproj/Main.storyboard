@@ -1206,7 +1206,6 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                                     </connections>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.88235294119999996" green="0.93333333330000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="zZ5-aO-t9V" firstAttribute="leading" secondItem="NPz-aQ-DNM" secondAttribute="leadingMargin" id="0rT-80-FEL"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zZ5-aO-t9V" secondAttribute="bottom" constant="-2" id="4Xb-e3-BDx"/>
@@ -1214,6 +1213,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                                 <constraint firstItem="zZ5-aO-t9V" firstAttribute="trailing" secondItem="NPz-aQ-DNM" secondAttribute="trailingMargin" id="phQ-Tf-D50"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88235294119999996" green="0.93333333330000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

@@ -25,6 +25,8 @@ class NewSubViewController: UITableViewController {
     }
     var subMethod: SubstitutionMethod = .New
     
+    private var internalCellColor: UIColor = UIColor(red: (225.0/255.0), green: (238.0/255.0), blue: (254.0/255.0), alpha: 1.0)
+    
     override func viewDidLoad() {
         blockNameDelegate = BlockNameDelegate(parent: self)
         classNameDelegate = ClassNameDelegate(parent: self)
@@ -88,6 +90,11 @@ class NewSubViewController: UITableViewController {
         } else {
             saveButton.enabled = true
         }
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        //Fixes background color on iPad.
+        cell.backgroundColor = internalCellColor
     }
     
 }

@@ -16,6 +16,8 @@ class CustomizationViewController: UITableViewController {
     var selectedNum: Int = 0
     var selectedItem: (block: String, className: String) = ("","")
     
+    private var internalCellColor: UIColor = UIColor(red: (225.0/255.0), green: (238.0/255.0), blue: (254.0/255.0), alpha: 1.0)
+    
     override func viewDidLoad() {
         
     }
@@ -41,6 +43,11 @@ class CustomizationViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        //Fixes background color on iPad.
+        cell.backgroundColor = internalCellColor
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
