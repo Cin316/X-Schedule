@@ -11,11 +11,22 @@ import Foundation
 public class SubstitutionManager {
     
     static let substitutionsKey: String = "substitutions"
+    static let subSwitchKey: String = "substitutionsEnabled"
     
     static let defaultSubstitutions: [(block: String, className: String)] =
     [("A", "A"),
      ("B", "B")]
     
+    public class func substituteItemsInScheduleIfEnabled(schedule: Schedule, substitutions: [(block: String, className: String)]) -> Schedule {
+        var output: Schedule
+        if (getEnabled()) {
+            output = substituteItemsInSchedule(schedule, substitutions: substitutions)
+        } else {
+            output = schedule
+        }
+        
+        return output
+    }
     public class func substituteItemsInSchedule(schedule: Schedule, substitutions: [(block: String, className: String)]) -> Schedule {
         var outputSchedule: Schedule = schedule
         for (var i=0; i<schedule.items.count; i++) {
@@ -68,4 +79,16 @@ public class SubstitutionManager {
         
         return output
     }
+    
+    public class func setEnabled(bool: Bool) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(bool, forKey: subSwitchKey)
+    }
+    public class func getEnabled() -> Bool {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var object: Bool = defaults.boolForKey(subSwitchKey)
+        
+        return object
+    }
+    
 }
