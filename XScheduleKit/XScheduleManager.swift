@@ -44,7 +44,7 @@ public class XScheduleManager: ScheduleManager {
     }
     private class func substituteSchedule(schedule: Schedule) -> Schedule {
         var displaySchedule: Schedule
-        displaySchedule = SubstitutionManager.substituteItemsInSchedule(schedule, substitutions: SubstitutionManager.loadSubstitutions())
+        displaySchedule = SubstitutionManager.substituteItemsInScheduleIfEnabled(schedule, substitutions: SubstitutionManager.loadSubstitutions())
         
         return  displaySchedule
     }
