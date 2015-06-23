@@ -16,7 +16,7 @@ class SettingsViewController: UITableViewController {
     private var internalCellColor: UIColor = UIColor(red: (225.0/255.0), green: (238.0/255.0), blue: (254.0/255.0), alpha: 1.0)
     
     override func viewDidLoad() {
-        
+        substitutionSwitch.setOn(SubstitutionManager.getEnabled(), animated: false)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -39,7 +39,7 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func substitutionSwitchToggle(sender: AnyObject) {
-        
+        SubstitutionManager.setEnabled(substitutionSwitch.on)
     }
     
 }
