@@ -34,10 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Set date to today on app reopen.
         setScheduleDateToToday()
     }
-    private func setScheduleDateToToday() {
-        var scheduleSwitcherViewController: ScheduleSwitcherViewController = getScheduleSwitcherViewController()!
-        var scheduleViewController: ScheduleViewController = getScheduleViewController(scheduleSwitcherViewController)!
-        
+    
+    func refreshSchedule() {
+        var scheduleViewController: ScheduleViewController = getScheduleViewController()!
+        scheduleViewController.refreshSchedule()
+    }
+    func setScheduleDateToToday() {
+        var scheduleViewController: ScheduleViewController = getScheduleViewController()!
         scheduleViewController.scheduleDate = NSDate()
     }
     private func getScheduleSwitcherViewController() -> ScheduleSwitcherViewController? {
@@ -51,7 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return returnController
     }
-    private func getScheduleViewController(switcher: ScheduleSwitcherViewController) -> ScheduleViewController? {
+    private func getScheduleViewController() -> ScheduleViewController? {
+        var switcher = getScheduleSwitcherViewController()!
         var returnController: ScheduleViewController?
         if let currentView = switcher.currentView {
             if let scheduleView = currentView as? ScheduleViewController {

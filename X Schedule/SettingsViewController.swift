@@ -40,6 +40,15 @@ class SettingsViewController: UITableViewController {
     
     @IBAction func substitutionSwitchToggle(sender: AnyObject) {
         SubstitutionManager.setEnabled(substitutionSwitch.on)
+        refreshSchedule()
+    }
+    private func refreshSchedule() {
+        getAppDelegate().refreshSchedule()
+    }
+    private func getAppDelegate() -> AppDelegate {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        return appDelegate
     }
     
 }
