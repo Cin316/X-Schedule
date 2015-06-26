@@ -43,6 +43,7 @@
 		E1ECC41D1B16531200AB5D64 /* XScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECC41C1B16531200AB5D64 /* XScheduleManager.swift */; };
 		E1ECC41F1B16571300AB5D64 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECC41E1B16571300AB5D64 /* ScheduleManager.swift */; };
 		E1F0E2031B29B771006643C0 /* SubstitutionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0E2021B29B771006643C0 /* SubstitutionManager.swift */; };
+		E1F111921B3D7A3A00C5A772 /* DataPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F111911B3D7A3A00C5A772 /* DataPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleDownloader.swift; sourceTree = "<group>"; };
 		E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableController.swift; sourceTree = "<group>"; };
 		E1F0E2021B29B771006643C0 /* SubstitutionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstitutionManager.swift; sourceTree = "<group>"; };
+		E1F111911B3D7A3A00C5A772 /* DataPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				E138A8311A8E970E00549F84 /* DataViewController.swift */,
 				E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */,
 				E138A8151A8E8B1E00549F84 /* Main.storyboard */,
+				E1F111911B3D7A3A00C5A772 /* DataPageViewController.swift */,
 				E116D1E21B27164C00C5DCA8 /* CustomizationViewController.swift */,
 				E19965711B2E1F3A00E900FB /* NewSubViewController.swift */,
 				E1E985691B32EF56000302DE /* SettingsViewController.swift */,
@@ -422,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */,
+				E1F111921B3D7A3A00C5A772 /* DataPageViewController.swift in Sources */,
 				E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */,
 				E1E9856A1B32EF56000302DE /* SettingsViewController.swift in Sources */,
 				E1DDEAF81AB7C35200B6F37F /* ScheduleSwitcherViewController.swift in Sources */,
