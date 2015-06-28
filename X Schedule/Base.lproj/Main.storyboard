@@ -1374,10 +1374,10 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
             </objects>
             <point key="canvasLocation" x="2976" y="-1000"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Data Page View Controller-->
         <scene sceneID="6Sp-l5-oXi">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="OKc-4O-bRj" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="OKc-4O-bRj" customClass="DataPageViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMs-oy-dRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2292" y="-1000"/>
