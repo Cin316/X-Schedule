@@ -18,6 +18,10 @@ class DataViewController: ScheduleViewController {
     
     @IBOutlet weak var emptyLabel: UILabel!
     
+    func tableController() -> ScheduleTableController? {
+        return childViewControllers[0] as? ScheduleTableController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshSchedule()
@@ -56,7 +60,7 @@ class DataViewController: ScheduleViewController {
         stopLoading()
     }
     private func displayScheduleInTable(schedule: Schedule) {
-        if let tableController = childViewControllers[0] as? ScheduleTableController {
+        if let tableController = tableController() {
             tableController.displaySchedule(schedule)
         }
     }
