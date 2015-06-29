@@ -841,7 +841,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
         <!--iPhone Data View Controller-->
         <scene sceneID="vMJ-HW-49S">
             <objects>
-                <viewController title="iPhone Data View Controller" id="bA9-gW-icy" customClass="DataViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="iPhone Data View Controller" id="bA9-gW-icy" customClass="SwipeDataViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bfp-5A-fEg"/>
                         <viewControllerLayoutGuide type="bottom" id="1KM-yp-XGC"/>

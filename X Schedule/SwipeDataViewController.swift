@@ -6,8 +6,27 @@
 //  Copyright (c) 2015 Nicholas Reichert.
 //
 
-import Foundation
+import UIKit
+import XScheduleKit
 
 class SwipeDataViewController: DataViewController {
+    override func tableController() -> ScheduleTableController? {
+        if let pageController = pageController() {
+            return pageController.currentTable
+        } else {
+            return nil
+        }
+    }
+    private func pageController() -> DataPageViewController? {
+        return childViewControllers[0] as? DataPageViewController
+    }
+    @IBAction override func onBackButtonPress(sender: AnyObject) {
+        pageController()?.changePage(UIPageViewControllerNavigationDirection.Reverse)
+        super.onBackButtonPress(sender)
+    }
+    @IBAction override func onForwardButtonPress(sender: AnyObject) {
+        pageController()?.changePage(UIPageViewControllerNavigationDirection.Forward)
+        super.onForwardButtonPress(sender)
+    }
     
 }
