@@ -11,11 +11,7 @@ import XScheduleKit
 
 class SwipeDataViewController: DataViewController {
     override func tableController() -> ScheduleTableController? {
-        if let pageController = pageController() {
-            return pageController.currentTable
-        } else {
-            return nil
-        }
+        return pageController()?.currentTable
     }
     private func pageController() -> DataPageViewController? {
         return childViewControllers[0] as? DataPageViewController
