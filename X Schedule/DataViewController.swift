@@ -104,9 +104,15 @@ class DataViewController: ScheduleViewController {
     }
     
     @IBAction func onBackButtonPress(sender: AnyObject) {
+        pressBackButton()
+    }
+    func pressBackButton() {
         scheduleDate = scheduleDate.dateByAddingTimeInterval(-24*60*60)
     }
     @IBAction func onForwardButtonPress(sender: AnyObject) {
+        pressForwardButton()
+    }
+    func pressForwardButton() {
         scheduleDate = scheduleDate.dateByAddingTimeInterval(24*60*60)
     }
     
