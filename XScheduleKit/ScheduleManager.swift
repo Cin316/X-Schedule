@@ -18,7 +18,8 @@ public class ScheduleManager {
         return nil
     }
     public class func getScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) -> NSURLSessionTask? {
-        return nil
+        var unusedEnum: DownloadMethod = DownloadMethod.Download //Value doesn't matter, just provides a blank, unused DownloadMethod.
+        return getScheduleForDate(date, completionHandler: completionHandler, errorHandler: errorHandler, method: &unusedEnum)
     }
     public class func getScheduleForDate(date: NSDate, completionHandler: Schedule -> Void) -> NSURLSessionTask? {
         return getScheduleForDate(date, completionHandler: completionHandler, errorHandler: { (output: String) in })
