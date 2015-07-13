@@ -87,7 +87,7 @@ class DataViewController: ScheduleViewController {
         dateLabel.text = dateFormatter.stringFromDate(date)
     }
     
-    private func handleError(errorText: String) {
+    internal func handleError(errorText: String) {
         displayAlertWithText(errorText)
         stopLoading()
         displayDateLabelForDate(scheduleDate)

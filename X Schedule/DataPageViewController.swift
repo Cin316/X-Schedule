@@ -35,8 +35,7 @@ class DataPageViewController: UIPageViewController {
                 newController.schedule = schedule
             },
             errorHandler: {(errorText: String) in
-                //println("\(errorText)")
-                // TODO Handle error.
+                self.getDataController().handleError(errorText)
             }
         )
         
@@ -73,8 +72,8 @@ class DataPageViewControllerDataSource: NSObject, UIPageViewControllerDataSource
                 outputController.schedule = schedule
             },
             errorHandler: {(errorText: String) in
-                //println("\(errorText)")
-                // TODO Handle error.
+                var parentViewController: DataPageViewController = pageViewController as! DataPageViewController
+                parentViewController.getDataController().handleError(errorText)
             }
         )
         
