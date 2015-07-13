@@ -10,19 +10,32 @@ import UIKit
 import XScheduleKit
 
 class DataPageViewController: UIPageViewController {
+    var pageDelegate: DataPageViewControllerDelegate?
     var pageDataSource: DataPageViewControllerDataSource?
-    var currentTable: ScheduleTableController?
     
     override func viewDidLoad() {
         pageDataSource = DataPageViewControllerDataSource(viewController: self)
         self.dataSource = pageDataSource
-        var initialController = pageDataSource!.pageChanged(nil, pageViewController: self, currentController: nil)!
+        
+        pageDelegate = DataPageViewControllerDelegate(viewController: self)
+        self.delegate = pageDelegate
+        
+        var initialController = self.storyboard!.instantiateViewControllerWithIdentifier(DataPageViewControllerDataSource.scheduleIdentifier) as! ScheduleTableController
         self.setViewControllers([initialController], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: {(bool: Bool) in })
     }
     
-    func changePage(direction: UIPageViewControllerNavigationDirection) {
-        var initialController = pageDataSource!.pageChanged(nil, pageViewController: self, currentController: currentTable)!
-        self.setViewControllers([initialController], direction: direction, animated: true, completion: {(bool: Bool) in })
+    func flipPageInDirection(direction: UIPageViewControllerNavigationDirection, withDate date: NSDate) {
+        var newController = self.storyboard!.instantiateViewControllerWithIdentifier(DataPageViewControllerDataSource.scheduleIdentifier) as! ScheduleTableController
+        XScheduleManager.getScheduleForDate(date,
+            completionHandler: {(schedule: Schedule) in
+                newController.schedule = schedule
+            },
+            errorHandler: {(errorText: String) in
+                //println("\(errorText)")
+                // TODO Handle error.
+            }
+        )
+        self.setViewControllers([newController], direction: direction, animated: true, completion: {(bool: Bool) in })
     }
     
     func getDataController() -> DataViewController {
@@ -35,31 +48,62 @@ class DataPageViewControllerDataSource: NSObject, UIPageViewControllerDataSource
     private static let scheduleIdentifier = "ColoredScheduleTableViewController"
     weak var parentController: DataPageViewController?
     
-    enum Direction {
-        case Before
-        case After
-    }
-    
     init(viewController: DataPageViewController) {
         parentController = viewController
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        var outputController = pageChanged(.Before, pageViewController: pageViewController, currentController: viewController)
-        self.parentController?.currentTable = outputController as? ScheduleTableController
-        self.parentController?.getDataController().onBackButtonPress(self)
-        return outputController
+        return getNewViewController(pageViewController, viewController: viewController, direction: UIPageViewControllerNavigationDirection.Reverse)
     }
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        var outputController = pageChanged(.Before, pageViewController: pageViewController, currentController: viewController)
-        self.parentController?.currentTable = outputController as? ScheduleTableController
-        self.parentController?.getDataController().onForwardButtonPress(self)
+        return getNewViewController(pageViewController, viewController: viewController, direction: UIPageViewControllerNavigationDirection.Forward)
+    }
+    
+    func getNewViewController(pageViewController: UIPageViewController, viewController: UIViewController, direction: UIPageViewControllerNavigationDirection) -> UIViewController? {
+        //Makes a new, blank ScheduleTableController.
+        var outputController = pageViewController.storyboard!.instantiateViewControllerWithIdentifier(DataPageViewControllerDataSource.scheduleIdentifier) as! ScheduleTableController!
+        
+        //Set the right date in the table.
+        outputController.schedule.date = dateForNextSchedule(viewController as! ScheduleTableController, direction: direction)
+        
+        //Populate table with schedule.
+        XScheduleManager.getScheduleForDate(outputController.schedule.date,
+            completionHandler: {(schedule: Schedule) in
+                outputController.schedule = schedule
+            },
+            errorHandler: {(errorText: String) in
+                //println("\(errorText)")
+                // TODO Handle error.
+            }
+        )
+        
         return outputController
     }
     
-    private func pageChanged(direction: Direction?, pageViewController: UIPageViewController, currentController: UIViewController?) -> UIViewController? {
-        var outputController: ScheduleTableController? = pageViewController.storyboard!.instantiateViewControllerWithIdentifier(DataPageViewControllerDataSource.scheduleIdentifier) as! ScheduleTableController?
-        return outputController
+    private func dateForNextSchedule(previousController: ScheduleTableController, direction: UIPageViewControllerNavigationDirection) -> NSDate {
+        var oldDate: NSDate = previousController.schedule.date
+        var timeCoeff: Double = (direction == UIPageViewControllerNavigationDirection.Forward) ? 1.0 : -1.0
+        var newDate: NSDate = oldDate.dateByAddingTimeInterval(timeCoeff*60*60*24)
+        
+        return newDate
+    }
+    
+}
+
+class DataPageViewControllerDelegate: NSObject, UIPageViewControllerDelegate {
+    
+    weak var parentController: DataPageViewController?
+    
+    init(viewController: DataPageViewController) {
+        parentController = viewController
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
+        if (completed) {
+            var newViewController: ScheduleTableController = pageViewController.viewControllers.first! as! ScheduleTableController
+            var newDate: NSDate = newViewController.schedule.date
+            parentController?.getDataController().scheduleDate = newDate
+        }
     }
     
 }
