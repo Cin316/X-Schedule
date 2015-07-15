@@ -17,6 +17,9 @@ class DataViewController: ScheduleViewController {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var emptyLabel: UILabel!
+    func emptyUILabel() -> UILabel? {
+        return emptyLabel
+    }
     
     func tableController() -> ScheduleTableController? {
         return childViewControllers[0] as? ScheduleTableController
@@ -74,10 +77,12 @@ class DataViewController: ScheduleViewController {
         }
     }
     private func displayEmptyLabelForSchedule(schedule: Schedule) {
-        if (schedule.items.isEmpty) {
-            emptyLabel.text = "No classes"
-        } else {
-            emptyLabel.text = ""
+        if let emptyText = emptyUILabel() {
+            if (schedule.items.isEmpty) {
+                emptyText.text = "No classes"
+            } else {
+                emptyText.text = ""
+            }
         }
     }
     
