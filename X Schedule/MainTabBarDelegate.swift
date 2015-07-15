@@ -18,7 +18,7 @@ class MainTabBarDelegate: NSObject, UITabBarControllerDelegate {
             if let switcher = viewController as? ScheduleSwitcherViewController {
                 var dataView: ScheduleViewController = getScheduleViewController(switcher)!
                 
-                dataView.scheduleDate = NSDate()
+                dataView.onTodayButtonPress(self)
             }
         }
         return true

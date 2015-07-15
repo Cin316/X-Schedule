@@ -10,6 +10,11 @@ import UIKit
 
 public class ScheduleViewController: UIViewController {
     
+    private let daysPerView: Int = 1
+    public func numberOfDaysPerView() -> Int {
+        return daysPerView
+    }
+    
     public var initialized: Bool = false
     
     public var scheduleDate: NSDate = NSDate() {
@@ -56,6 +61,17 @@ public class ScheduleViewController: UIViewController {
     }
     public func displayAlert(alert: UIAlertController) {
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    public func onBackButtonPress(sender: AnyObject) {
+        scheduleDate = scheduleDate.dateByAddingTimeInterval(Double(-24*60*60*numberOfDaysPerView()))
+    }
+    public func onForwardButtonPress(sender: AnyObject) {
+        scheduleDate = scheduleDate.dateByAddingTimeInterval(Double(24*60*60*numberOfDaysPerView()))
+    }
+    
+    public func onTodayButtonPress(sender: AnyObject) {
+        scheduleDate = NSDate()
     }
     
 }

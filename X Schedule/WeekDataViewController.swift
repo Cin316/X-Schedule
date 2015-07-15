@@ -30,6 +30,11 @@ class WeekDataViewController: ScheduleViewController {
     @IBOutlet weak var titleLabel5: UILabel!
     @IBOutlet weak var emptyLabel5: UILabel!
     
+    private let daysPerView: Int = 7
+    override func numberOfDaysPerView() -> Int {
+        return daysPerView
+    }
+    
     var scheduleMonday: NSDate {
         get {
             var calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
@@ -245,17 +250,6 @@ class WeekDataViewController: ScheduleViewController {
     private func stopLoading() {
         loadingIndicator.stopAnimating()
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-    }
-    
-    @IBAction func onBackButtonPress(sender: AnyObject) {
-        scheduleDate = scheduleDate.dateByAddingTimeInterval(-24*60*60*7)
-    }
-    @IBAction func onForwardButtonPress(sender: AnyObject) {
-        scheduleDate = scheduleDate.dateByAddingTimeInterval(24*60*60*7)
-    }
-    
-    @IBAction func onTodayButtonPress(sender: AnyObject) {
-        scheduleDate = NSDate()
     }
     
 }
