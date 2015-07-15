@@ -19,6 +19,20 @@ class SwipeDataViewController: DataViewController {
         super.onForwardButtonPress(sender)
         pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.Forward, withDate: scheduleDate)
     }
+    override func onTodayButtonPress(sender: AnyObject) {
+        var previousDate: NSDate = scheduleDate
+        super.onTodayButtonPress(sender)
+        //Find which direction to flip in.
+        switch (previousDate.compare(scheduleDate)) {
+            case .OrderedAscending:
+                pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.Forward, withDate: scheduleDate)
+            case .OrderedDescending:
+                pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.Reverse, withDate: scheduleDate)
+            case .OrderedSame:
+                break //Do nothing.
+        }
+        
+    }
     
     override func tableController() -> ScheduleTableController? {
         return nil
