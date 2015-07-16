@@ -38,6 +38,10 @@ class SwipeDataViewController: DataViewController {
         return nil
     }
     
+    override func emptyUILabel() -> UILabel? {
+        return nil
+    }
+    
     private func pageController() -> DataPageViewController {
         var controller: DataPageViewController
         controller = self.childViewControllers.first as! DataPageViewController

@@ -27,6 +27,7 @@
 		E19965721B2E1F3A00E900FB /* NewSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19965711B2E1F3A00E900FB /* NewSubViewController.swift */; };
 		E1C6BDB01AFEDC5600B444C8 /* XScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */; };
 		E1C6BDB21AFEDEEA00B444C8 /* ScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */; };
+		E1D995841B56C0BF00002814 /* SchedulePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D995831B56C0BE00002814 /* SchedulePageViewController.swift */; };
 		E1DDD4E61AD06CBD0007ABC8 /* WeekDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */; };
 		E1DDEAF81AB7C35200B6F37F /* ScheduleSwitcherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */; };
 		E1DEBE9C1AD619B0004B2CC1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DEBE9B1AD619B0004B2CC1 /* NotificationCenter.framework */; };
@@ -103,6 +104,7 @@
 		E19965711B2E1F3A00E900FB /* NewSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSubViewController.swift; sourceTree = "<group>"; };
 		E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleParser.swift; sourceTree = "<group>"; };
 		E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParser.swift; sourceTree = "<group>"; };
+		E1D995831B56C0BE00002814 /* SchedulePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulePageViewController.swift; sourceTree = "<group>"; };
 		E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDataViewController.swift; sourceTree = "<group>"; };
 		E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleSwitcherViewController.swift; sourceTree = "<group>"; };
 		E1DEBE991AD619B0004B2CC1 /* X Schedule Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "X Schedule Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,7 @@
 				E138A8311A8E970E00549F84 /* DataViewController.swift */,
 				E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */,
 				E138A8151A8E8B1E00549F84 /* Main.storyboard */,
+				E1D995831B56C0BE00002814 /* SchedulePageViewController.swift */,
 				E1F111911B3D7A3A00C5A772 /* DataPageViewController.swift */,
 				E116D1E21B27164C00C5DCA8 /* CustomizationViewController.swift */,
 				E19965711B2E1F3A00E900FB /* NewSubViewController.swift */,
@@ -439,6 +442,7 @@
 				E1451B1E1AD348D600A39564 /* DonorsViewController.swift in Sources */,
 				E1DDD4E61AD06CBD0007ABC8 /* WeekDataViewController.swift in Sources */,
 				E138A8101A8E8B1E00549F84 /* AppDelegate.swift in Sources */,
+				E1D995841B56C0BF00002814 /* SchedulePageViewController.swift in Sources */,
 				E13FCD6A1AF6CCD400696F3B /* MainTabBarDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
