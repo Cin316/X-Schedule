@@ -39,8 +39,14 @@ class DataPageViewController: UIPageViewController {
             }
         )
         
+        //Disable swiping during the animation.
+        self.view.userInteractionEnabled = false
+        
         //Display the new table with correct animation.
-        self.setViewControllers([newContainerController], direction: direction, animated: true, completion: {(bool: Bool) in })
+        self.setViewControllers([newContainerController], direction: direction, animated: true, completion: {(bool: Bool) in
+            //Reenable swiping when animation is finished.
+            self.view.userInteractionEnabled = true
+        })
     }
     
     func getDataController() -> DataViewController {
