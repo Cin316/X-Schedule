@@ -42,7 +42,7 @@ class SwipeDataViewController: DataViewController {
         return nil
     }
     
-    private func pageController() -> DataPageViewController {
+    func pageController() -> DataPageViewController {
         var controller: DataPageViewController
         controller = self.childViewControllers.first as! DataPageViewController
         

@@ -21,6 +21,16 @@ class MainTabBarDelegate: NSObject, UITabBarControllerDelegate {
                 dataView.onTodayButtonPress(self)
             }
         }
+        //Refresh schedule if switching to the tab.
+        else if (viewController.tabBarItem.tag == 401) {
+            if let switcher = viewController as? ScheduleSwitcherViewController {
+                var dataView: ScheduleViewController = getScheduleViewController(switcher)!
+                dataView.refreshSchedule()
+                if let pageView = dataView as? SwipeDataViewController {
+                    pageView.pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.Forward, withDate: pageView.scheduleDate)
+                }
+            }
+        }
         return true
     }
     private func currentlySelectedViewController(tabBarController: UITabBarController) -> UIViewController {
