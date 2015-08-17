@@ -36,8 +36,8 @@ public class XScheduleManager: ScheduleManager {
         task = XScheduleDownloader.downloadSchedule(date, completionHandler: { (output: String) in
             var schedule: Schedule
             schedule = XScheduleParser.parseForSchedule(output, date: date)
-            completionHandler(self.substituteSchedule(schedule))
             CacheManager.cacheSchedule(schedule)
+            completionHandler(self.substituteSchedule(schedule))
         }, errorHandler: errorHandler)
         
         return task
