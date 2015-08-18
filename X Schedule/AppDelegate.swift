@@ -34,11 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Set date to today on app reopen.
         //Don't do this anymore.
         //setScheduleDateToToday()
+        
+        refreshSchedule()
     }
     
     func refreshSchedule() {
         var scheduleViewController: ScheduleViewController = getScheduleViewController()!
         scheduleViewController.refreshSchedule()
+        
+        if let pageView = scheduleViewController as? SwipeDataViewController {
+            pageView.pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.Forward, withDate: pageView.scheduleDate)
+        }
     }
     func setScheduleDateToToday() {
         var scheduleViewController: ScheduleViewController = getScheduleViewController()!
