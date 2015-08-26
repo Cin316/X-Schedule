@@ -34,6 +34,11 @@ class SwipeDataViewController: DataViewController {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        onTodayButtonPress(self)
+    }
+    
     override func tableController() -> ScheduleTableController? {
         return nil
     }
