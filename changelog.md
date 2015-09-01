@@ -19,7 +19,7 @@ This files keeps track of all of the changes made betweem version of X Schedule.
   - Get titles of schedule for day
   - Buggy highlighting of current class
 - App icon
-- Light blue minimalistic color scheme with rounded corners
+  - Light blue minimalistic color scheme with rounded corners
 
 #0.1.1
 - Fixed issue which prevented app from archiving successfully.
@@ -38,3 +38,17 @@ This files keeps track of all of the changes made betweem version of X Schedule.
 - Fixed bug where all schedule titles would appear as "Weekend" on iPad week view.
 - Added network error handling.
 - Fixed bug where app would set date to today when using control center/notification center.
+
+#1.1.0
+- Restructured and refactored internal code.
+- Downloaded schedules are now cached for offline access and quicker load times.
+- Re-added settings tab with:
+  - 'Clear cache' button.
+  - Substitutions editing.
+- Added tab bar loading indicator.
+- Added substitutions feature.
+  - Editable list of text to replace downloaded schedule names with.
+  - Interface to add and remove items.
+  - Can be turned on and off with switch.
+- Added gestures, swiping, and animations to the iPhone.
+- Bug fixes and tweaks.
