@@ -1,6 +1,6 @@
 #X Schedule
 
-X Schedule is an iOS app that fetches the bell schedule for St. Xavier High School from the [St. X website](http://www.stxavier.org).  It shows an in-app view of the schedule and has a Notification Center widget.  Its modular approach makes it easy to adapt to other situations.
+X Schedule is an iOS app that fetches the bell schedule for St. Xavier High School from the [St. X website](http://www.stxavier.org).  It shows an in-app view of the schedule and has a Notification Center widget.  Its modular approach makes it easy to adapt to a multitude of situations.
 
 #Screenshots
 
