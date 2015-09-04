@@ -13,6 +13,9 @@ public class Schedule {
     public var title: String = ""
     public var date: NSDate = NSDate()
     
+    public init() {
+        
+    }
     public init(items: [ScheduleItem]) {
         self.items = items
     }
@@ -24,17 +27,17 @@ public class Schedule {
 
 public class ScheduleItem {
     public var blockName: String = ""
-    public var startTime: NSDate = NSDate()
-    public var endTime: NSDate = NSDate()
+    public var startTime: NSDate?
+    public var endTime: NSDate?
     
     public init(blockName: String) {
         self.blockName = blockName
     }
-    public init(startTime: NSDate, endTime: NSDate) {
+    public init(startTime: NSDate?, endTime: NSDate?) {
         self.startTime = startTime
         self.endTime = endTime
     }
-    public init(blockName: String, startTime: NSDate, endTime: NSDate) {
+    public init(blockName: String, startTime: NSDate?, endTime: NSDate?) {
         self.blockName = blockName
         self.startTime = startTime
         self.endTime = endTime

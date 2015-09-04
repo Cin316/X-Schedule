@@ -9,3 +9,6 @@ José Pablo Fernández García
 Ryan Muldoon
 Andrew Koenig
 Rebecca Reichert
+Erich Guenther
+Jack Sorce
+Zach Salem

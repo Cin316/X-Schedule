@@ -9,9 +9,7 @@
 import UIKit
 import XScheduleKit
 
-class DataViewController: UIViewController {
-    
-    var scheduleDate: NSDate = NSDate()
+class DataViewController: ScheduleViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -19,97 +17,95 @@ class DataViewController: UIViewController {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var emptyLabel: UILabel!
+    func emptyUILabel() -> UILabel? {
+        return emptyLabel
+    }
+    
+    func tableController() -> ScheduleTableController? {
+        return childViewControllers[0] as? ScheduleTableController
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         refreshSchedule()
     }
     
-    func refreshSchedule() {
-        //Start loading indicator before download.
-        loadingIndicator.startAnimating()
+    override func refreshSchedule() {
+        var method: DownloadMethod = DownloadMethod.Download
         
         // Download today's schedule from the St. X website.
-        ScheduleDownloader.downloadSchedule(scheduleDate,
-            completionHandler: { (output: String) in
+        XScheduleManager.getScheduleForDate(scheduleDate,
+            completionHandler: { (schedule: Schedule) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
-                    var parser = ScheduleParser()
-                    //Parse the downloaded code for schedule.
-                    var schedule = parser.parseForSchedule(output, date: self.scheduleDate)
-                    //Display schedule items in table.
-                    if let tableController = self.childViewControllers[0] as? ScheduleTableController {
-                        tableController.schedule = schedule
-                        let tableView = (tableController.view as? UITableView)!
-                        tableView.reloadData()
-                    }
-                    //Display title.
-                    self.titleLabel.text = schedule.title
-                    //Display correctly formatted date.
-                    var dateFormatter = NSDateFormatter()
-                    dateFormatter.dateFormat = "EEEE, MMMM d, yyyy"
-                    self.dateLabel.text = dateFormatter.stringFromDate(self.scheduleDate)
-                    
-                    //Add default weekend title.
-                    if (NSCalendar.currentCalendar().isDateInWeekend(self.scheduleDate)){
-                        self.titleLabel.text = "Weekend"
-                    }
-                    
-                    //Empty label
-                    if (schedule.items.isEmpty) {
-                        self.emptyLabel.text = "No classes"
-                    } else {
-                        self.emptyLabel.text = ""
-                    }
-
-                    //Stop loading indicator after everything is complete.
-                    self.loadingIndicator.stopAnimating()
+                    self.handleCompletionOfDownload(schedule)
                     
                 }
             },
             errorHandler: { (errorText: String) in
                 dispatch_async(dispatch_get_main_queue()) {
-                    
-                    //Display error.
-                    var alert = UIAlertController(title: errorText, message: nil, preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
-                        alert.dismissViewControllerAnimated(true, completion: {})
-                    }))
-                    self.presentViewController(alert, animated: true, completion: nil)
-                    
-                    //Stop loading indicator.
-                    self.loadingIndicator.stopAnimating()
-                    
-                    //Display correctly formatted date.
-                    var dateFormatter = NSDateFormatter()
-                    dateFormatter.dateFormat = "EEEE, MMMM d, yyyy"
-                    self.dateLabel.text = dateFormatter.stringFromDate(self.scheduleDate)
-                    
-                    self.titleLabel.text = "Error"
+                    self.handleError(errorText)
                 }
-            }
+            },
+            method: &method
         )
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func onBackButtonPress(sender: AnyObject) {
-        scheduleDate = scheduleDate.dateByAddingTimeInterval(-24*60*60)
-        refreshSchedule()
-    }
-    @IBAction func onForwardButtonPress(sender: AnyObject) {
-        scheduleDate = scheduleDate.dateByAddingTimeInterval(24*60*60)
-        refreshSchedule()
+        if (method==DownloadMethod.Download) {
+            startLoading()
+        }
+        
     }
     
-    @IBAction func onTodayButtonPress(sender: AnyObject) {
-        scheduleDate = NSDate()
-        refreshSchedule()
+    private func handleCompletionOfDownload(schedule: Schedule) {
+        displayScheduleInTable(schedule)
+        displayTitleForSchedule(schedule)
+        displayDateLabelForDate(scheduleDate)
+        displayEmptyLabelForSchedule(schedule)
+        stopLoading()
     }
+    private func displayScheduleInTable(schedule: Schedule) {
+        if let tableController = tableController() {
+            tableController.displaySchedule(schedule)
+        }
+    }
+    private func displayTitleForSchedule(schedule: Schedule) {
+        //Display normal title.
+        titleLabel.text = schedule.title
+        
+        //Add default weekend title if needed.
+        if (NSCalendar.currentCalendar().isDateInWeekend(scheduleDate)) {
+            titleLabel.text = "Weekend"
+        }
+    }
+    private func displayEmptyLabelForSchedule(schedule: Schedule) {
+        if let emptyText = emptyUILabel() {
+            if (schedule.items.isEmpty) {
+                emptyText.text = "No classes"
+            } else {
+                emptyText.text = ""
+            }
+        }
+    }
+    
+    private func displayDateLabelForDate(date: NSDate) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM d, yyyy"
+        dateLabel.text = dateFormatter.stringFromDate(date)
+    }
+    
+    internal func handleError(errorText: String) {
+        displayAlertWithText(errorText)
+        stopLoading()
+        displayDateLabelForDate(scheduleDate)
+        titleLabel.text = "Error"
+    }
+    
+    private func startLoading() {
+        loadingIndicator.startAnimating()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    }
+    private func stopLoading() {
+        loadingIndicator.stopAnimating()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
 }
-

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -92,7 +92,7 @@
                                 <rect key="frame" x="282" y="307" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMG-so-slP">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMG-so-slP">
                                 <rect key="frame" x="16" y="31" width="44" height="44"/>
                                 <state key="normal" image="backButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -283,9 +283,6 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="13" width="366" height="39"/>
-                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 12:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qt8-IP-8tC">
                                             <rect key="frame" x="294" y="14" width="266" height="31"/>
@@ -300,9 +297,6 @@
                                             </variation>
                                             <variation key="widthClass=regular" misplaced="YES">
                                                 <rect key="frame" x="130" y="3" width="102" height="25"/>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                                <rect key="frame" x="394" y="8" width="366" height="43"/>
                                             </variation>
                                         </label>
                                     </subviews>
@@ -382,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5B-ug-dHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="372"/>
+            <point key="canvasLocation" x="2240" y="1836"/>
         </scene>
         <!--Image Licensing-->
         <scene sceneID="okb-JM-lK7">
@@ -424,7 +418,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFn-zS-hzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="1021"/>
+            <point key="canvasLocation" x="2240" y="2485"/>
         </scene>
         <!--Donors View-->
         <scene sceneID="6y4-A3-LfN">
@@ -474,7 +468,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d42-Kr-7p4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="2446"/>
+            <point key="canvasLocation" x="2240" y="3910"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jAt-cu-Knh">
@@ -499,7 +493,19 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">  To contact me directly, email reichertsoftware@gmail.com  To report bugs and request new features, go to the GitHub Issue tracker for X Schedule: https://github.com/Cin316/X-Schedule/issues  Be sure to include your X Schedule build number and version, your device, and your iOS version in any requests.  The build number is the number in parentheses next to the version.  If you like X Schedule, please leave a review on the App Store.  This will help me reach a wider audience.  Special thanks to Aaron Wright for helping me with resolving an issue I had with submitting X Schedule to the App Store.  </string>
+                                        <string key="content">
+
+To contact me directly, email reichertsoftware@gmail.com
+
+To report bugs and request new features, go to the GitHub Issue tracker for X Schedule: https://github.com/Cin316/X-Schedule/issues
+
+Be sure to include your X Schedule build number and version, your device, and your iOS version in any requests.  The build number is the number in parentheses next to the version.
+
+If you like X Schedule, please leave a review on the App Store.  This will help me reach a wider audience.
+
+Special thanks to Aaron Wright for helping me with resolving an issue I had with submitting X Schedule to the App Store.
+
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -527,7 +533,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZD-ak-yuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="3126"/>
+            <point key="canvasLocation" x="2240" y="4590"/>
         </scene>
         <!--About-->
         <scene sceneID="Vg9-J5-sj7">
@@ -615,7 +621,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZW-1b-J3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2232" y="1767"/>
+            <point key="canvasLocation" x="2240" y="3231"/>
         </scene>
         <!--About Menu-->
         <scene sceneID="FBn-X6-YqM">
@@ -624,7 +630,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DoG-bm-dRA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.89411764705882357" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Information" id="syG-yf-jhv">
                                 <cells>
@@ -641,7 +647,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.88235294117647056" green="0.93333333333333335" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="ll0-xW-i7f" kind="show" id="r1F-Rt-LL7"/>
                                         </connections>
@@ -766,7 +772,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="Xho-8t-700" id="5Lb-aY-RQr">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="St. Xaver Website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8dw-by-yk1">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="St. Xavier Website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8dw-by-yk1">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -791,7 +797,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETC-ek-aF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1453" y="1531"/>
+            <point key="canvasLocation" x="1461" y="2995"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6vs-dE-wsY">
@@ -809,7 +815,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uof-9k-U27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786" y="1531"/>
+            <point key="canvasLocation" x="794" y="2995"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -824,6 +830,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                     </tabBar>
                     <connections>
                         <segue destination="KIL-La-wUR" kind="relationship" relationship="viewControllers" id="bDp-q8-CXt"/>
+                        <segue destination="l9y-8Y-n4F" kind="relationship" relationship="viewControllers" id="Nnx-LF-wBP"/>
                         <segue destination="PMQ-eX-lqC" kind="relationship" relationship="viewControllers" id="din-X4-wFj"/>
                     </connections>
                 </tabBarController>
@@ -834,7 +841,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
         <!--iPhone Data View Controller-->
         <scene sceneID="vMJ-HW-49S">
             <objects>
-                <viewController title="iPhone Data View Controller" id="bA9-gW-icy" customClass="DataViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="iPhone Data View Controller" id="bA9-gW-icy" customClass="SwipeDataViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bfp-5A-fEg"/>
                         <viewControllerLayoutGuide type="bottom" id="1KM-yp-XGC"/>
@@ -883,7 +890,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="xPD-YH-zR3" kind="embed" id="0eB-JF-c0d"/>
+                                    <segue destination="OKc-4O-bRj" kind="embed" id="wA8-Pz-Xmz"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, Janurary 30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E66-Ux-urS">
@@ -916,7 +923,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <rect key="frame" x="282" y="307" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh0-JI-FfB">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh0-JI-FfB">
                                 <rect key="frame" x="16" y="28" width="44" height="44"/>
                                 <state key="normal" image="backButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -932,16 +939,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     <action selector="onForwardButtonPress:" destination="bA9-gW-icy" eventType="touchUpInside" id="mDd-yz-pnv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wg0-ru-l8k">
-                                <rect key="frame" x="190" y="159" width="220" height="65"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="7C4-mo-eBC"/>
-                                    <constraint firstAttribute="height" constant="65" id="zhE-7e-UkP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.77647058820000003" green="0.86666666670000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -956,7 +953,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <variation key="widthClass=compact" constant="-16"/>
                             </constraint>
                             <constraint firstItem="1KM-yp-XGC" firstAttribute="top" secondItem="Dkd-YP-ooV" secondAttribute="bottom" constant="14" id="5z7-Nl-8an"/>
-                            <constraint firstItem="Dkd-YP-ooV" firstAttribute="centerY" secondItem="wg0-ru-l8k" secondAttribute="centerY" constant="136" id="756-uW-cb6"/>
                             <constraint firstItem="cUx-ad-0kf" firstAttribute="leading" secondItem="G8S-w1-vTy" secondAttribute="trailing" constant="-202" id="9Fb-Vf-m0y"/>
                             <constraint firstItem="mh0-JI-FfB" firstAttribute="centerY" secondItem="G8S-w1-vTy" secondAttribute="centerY" id="DXg-Ge-3tZ">
                                 <variation key="widthClass=compact" constant="-4.5"/>
@@ -964,7 +960,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                             <constraint firstItem="E66-Ux-urS" firstAttribute="trailing" secondItem="eap-pn-UhR" secondAttribute="trailingMargin" id="EF9-HE-OAL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G8S-w1-vTy" secondAttribute="trailing" constant="30" id="IBh-ap-6hY"/>
                             <constraint firstItem="Dkd-YP-ooV" firstAttribute="top" secondItem="jv5-CN-QTn" secondAttribute="bottom" constant="8" id="NRS-vE-cHQ"/>
-                            <constraint firstItem="wg0-ru-l8k" firstAttribute="top" secondItem="bfp-5A-fEg" secondAttribute="bottom" constant="218" id="Pch-tm-wXx"/>
                             <constraint firstItem="Dkd-YP-ooV" firstAttribute="centerX" secondItem="jv5-CN-QTn" secondAttribute="centerX" constant="-0.5" id="UHC-Pa-y7e"/>
                             <constraint firstItem="G8S-w1-vTy" firstAttribute="top" secondItem="bfp-5A-fEg" secondAttribute="bottom" constant="17" id="V2c-ZJ-DpU"/>
                             <constraint firstItem="E66-Ux-urS" firstAttribute="top" secondItem="bfp-5A-fEg" secondAttribute="bottom" constant="-2" id="dMq-mb-5hf"/>
@@ -972,9 +967,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                             <constraint firstItem="Dkd-YP-ooV" firstAttribute="top" secondItem="bfp-5A-fEg" secondAttribute="bottom" constant="163" id="h6N-5h-1k8"/>
                             <constraint firstAttribute="centerY" secondItem="jv5-CN-QTn" secondAttribute="centerY" constant="-25.5" id="hlD-Ym-7Cl"/>
                             <constraint firstItem="cUx-ad-0kf" firstAttribute="centerY" secondItem="G8S-w1-vTy" secondAttribute="centerY" constant="0.5" id="hm1-dk-GAk"/>
-                            <constraint firstItem="Dkd-YP-ooV" firstAttribute="centerX" secondItem="wg0-ru-l8k" secondAttribute="centerX" id="hwp-Zo-FJe"/>
                             <constraint firstItem="G8S-w1-vTy" firstAttribute="leading" secondItem="mh0-JI-FfB" secondAttribute="trailing" constant="-202" id="jon-AM-VXv"/>
-                            <constraint firstItem="wg0-ru-l8k" firstAttribute="top" secondItem="bfp-5A-fEg" secondAttribute="bottom" constant="139" id="mne-wz-2j1"/>
                             <constraint firstItem="G8S-w1-vTy" firstAttribute="centerY" secondItem="cUx-ad-0kf" secondAttribute="centerY" id="nvs-V4-KoF">
                                 <variation key="widthClass=compact" constant="4"/>
                             </constraint>
@@ -992,10 +985,8 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <exclude reference="jon-AM-VXv"/>
                                 <exclude reference="r4M-cN-m81"/>
                                 <exclude reference="uTP-yX-LsK"/>
-                                <exclude reference="756-uW-cb6"/>
                                 <exclude reference="NRS-vE-cHQ"/>
                                 <exclude reference="h6N-5h-1k8"/>
-                                <exclude reference="Pch-tm-wXx"/>
                                 <exclude reference="1uk-Hw-VaQ"/>
                                 <exclude reference="9Fb-Vf-m0y"/>
                                 <exclude reference="hm1-dk-GAk"/>
@@ -1038,8 +1029,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <include reference="NRS-vE-cHQ"/>
                                 <include reference="h6N-5h-1k8"/>
                                 <exclude reference="xAV-FJ-fKk"/>
-                                <include reference="Pch-tm-wXx"/>
-                                <exclude reference="mne-wz-2j1"/>
                                 <exclude reference="hlD-Ym-7Cl"/>
                                 <exclude reference="0fE-CX-Qov"/>
                                 <include reference="1uk-Hw-VaQ"/>
@@ -1050,7 +1039,6 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                     <navigationItem key="navigationItem" id="oQa-Br-a7O"/>
                     <connections>
                         <outlet property="dateLabel" destination="E66-Ux-urS" id="VUL-nK-uza"/>
-                        <outlet property="emptyLabel" destination="wg0-ru-l8k" id="F0m-GT-IY7"/>
                         <outlet property="loadingIndicator" destination="jv5-CN-QTn" id="IvP-lW-C59"/>
                         <outlet property="titleLabel" destination="G8S-w1-vTy" id="zye-j9-Ry6"/>
                     </connections>
@@ -1059,12 +1047,306 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
             </objects>
             <point key="canvasLocation" x="1637" y="-1000"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="J1N-WU-nmZ">
+            <objects>
+                <tableViewController id="c0X-ph-YfU" customClass="SettingsViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="oCg-2H-hDF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.81568627449999997" green="0.89411764709999997" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="Substitutions" id="5SD-UY-hhA">
+                                <string key="footerTitle">Substitutions are a list of word pairs which will be replaced into each schedule.  You can use this to input your classes into the schedules.</string>
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="s3r-So-AcZ">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s3r-So-AcZ" id="XGA-jW-TtM">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kq3-He-wCG">
+                                                    <rect key="frame" x="536" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="substitutionSwitchToggle:" destination="c0X-ph-YfU" eventType="valueChanged" id="pgL-ed-Vwx"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Enable Substitutions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMb-ke-U1Z">
+                                                    <rect key="frame" x="8" y="0.0" width="520" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zMb-ke-U1Z" secondAttribute="bottom" constant="-8" id="3ie-iY-Cg3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kq3-He-wCG" secondAttribute="trailing" constant="7" id="DNi-dD-ngh"/>
+                                                <constraint firstItem="zMb-ke-U1Z" firstAttribute="leading" secondItem="XGA-jW-TtM" secondAttribute="leadingMargin" id="LAx-ZK-l3V"/>
+                                                <constraint firstAttribute="centerY" secondItem="kq3-He-wCG" secondAttribute="centerY" id="WM1-lI-XJb"/>
+                                                <constraint firstItem="zMb-ke-U1Z" firstAttribute="top" secondItem="XGA-jW-TtM" secondAttribute="topMargin" constant="-8" id="X7I-md-Krd"/>
+                                                <constraint firstItem="kq3-He-wCG" firstAttribute="leading" secondItem="zMb-ke-U1Z" secondAttribute="trailing" constant="8" id="c6T-UH-oSO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ij0-a3-UYM" style="IBUITableViewCellStyleDefault" id="biT-WG-74L">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="biT-WG-74L" id="cwi-5v-Oo7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Edit Substitutions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ij0-a3-UYM">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="AFl-QS-Wc8" kind="show" id="r7s-z5-qXL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Cache" footerTitle="Clear the cache if you are having problems." id="fwc-J7-4Ne">
+                                <cells>
+                                    <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="7gP-6z-iOp" style="IBUITableViewCellStyleDefault" id="amD-S1-m4T">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="amD-S1-m4T" id="FA5-Sd-gzd">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Clear Cache" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7gP-6z-iOp">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="c0X-ph-YfU" id="INU-FH-3Ib"/>
+                            <outlet property="delegate" destination="c0X-ph-YfU" id="B4r-gg-CEl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="pqa-Yq-r5f"/>
+                    <connections>
+                        <outlet property="substitutionSwitch" destination="kq3-He-wCG" id="z02-yC-M8p"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5c-rN-bpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1602" y="268"/>
+        </scene>
+        <!--Customization-->
+        <scene sceneID="czq-nf-8zJ">
+            <objects>
+                <tableViewController id="AFl-QS-Wc8" customClass="CustomizationViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FeQ-vO-LOO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.89411764705882346" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomizationCell" textLabel="We6-RI-GYf" detailTextLabel="eDc-fs-0h8" style="IBUITableViewCellStyleValue1" id="71z-gC-B8q">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="71z-gC-B8q" id="Thw-KK-94i">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" tag="501" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="We6-RI-GYf">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" tag="502" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eDc-fs-0h8">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.88235294117647056" green="0.93333333333333335" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AFl-QS-Wc8" id="UoF-UB-DlE"/>
+                            <outlet property="delegate" destination="AFl-QS-Wc8" id="Fon-H8-aIi"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Customization" id="UaO-p2-jaZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="I8j-C9-q1h">
+                            <connections>
+                                <segue destination="wOS-b6-j1r" kind="show" identifier="newSub" id="BxA-La-n9W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="wOS-b6-j1r" kind="show" identifier="subDetail" id="kw2-64-4pd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rg2-yX-cDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2399" y="268"/>
+        </scene>
+        <!--New Substitution-->
+        <scene sceneID="7XC-rj-zQP">
+            <objects>
+                <tableViewController id="wOS-b6-j1r" customClass="NewSubViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bkV-0W-epi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.81568627449999997" green="0.89411764709999997" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="Block Name" id="iGP-mS-nJU">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="gZm-4L-e9w">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gZm-4L-e9w" id="NPz-aQ-DNM">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="A" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zZ5-aO-t9V">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="blockNameValueChanged:" destination="wOS-b6-j1r" eventType="editingChanged" id="ku1-jx-C0q"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zZ5-aO-t9V" firstAttribute="leading" secondItem="NPz-aQ-DNM" secondAttribute="leadingMargin" id="0rT-80-FEL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zZ5-aO-t9V" secondAttribute="bottom" constant="-2" id="4Xb-e3-BDx"/>
+                                                <constraint firstItem="zZ5-aO-t9V" firstAttribute="top" secondItem="NPz-aQ-DNM" secondAttribute="topMargin" constant="-1" id="Z2Y-7X-TIm"/>
+                                                <constraint firstItem="zZ5-aO-t9V" firstAttribute="trailing" secondItem="NPz-aQ-DNM" secondAttribute="trailingMargin" id="phQ-Tf-D50"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88235294119999996" green="0.93333333330000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Class Name" footerTitle="The entered block name will automatically be replaced with the class name when a schedule is displayed." id="ocP-au-bIj">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="nL3-9k-8q2">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nL3-9k-8q2" id="Id1-CR-lz4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Fine Arts" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHL-yc-IvE">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tHL-yc-IvE" firstAttribute="trailing" secondItem="Id1-CR-lz4" secondAttribute="trailingMargin" id="9MV-cv-RQ8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tHL-yc-IvE" secondAttribute="bottom" constant="-2" id="FRv-9M-ddR"/>
+                                                <constraint firstItem="tHL-yc-IvE" firstAttribute="leading" secondItem="Id1-CR-lz4" secondAttribute="leadingMargin" id="j5o-O3-kvN"/>
+                                                <constraint firstItem="tHL-yc-IvE" firstAttribute="top" secondItem="Id1-CR-lz4" secondAttribute="topMargin" constant="-1" id="zMd-vK-Lm7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.88235294119999996" green="0.93333333330000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="wOS-b6-j1r" id="Jk1-05-3p8"/>
+                            <outlet property="delegate" destination="wOS-b6-j1r" id="9ud-Hy-Ix0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="New Substitution" id="IHb-AR-Q0X">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="xnQ-at-ktY">
+                            <connections>
+                                <action selector="saveButton:" destination="wOS-b6-j1r" id="1Ki-VF-AAX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="blockName" destination="zZ5-aO-t9V" id="pdr-Wu-ztR"/>
+                        <outlet property="className" destination="tHL-yc-IvE" id="PBA-Hn-7zm"/>
+                        <outlet property="saveButton" destination="xnQ-at-ktY" id="5ee-fR-3kk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RgJ-qY-mbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3157" y="268"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="r2n-Mg-AUf">
+            <objects>
+                <navigationController id="l9y-8Y-n4F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsTabFilled" id="pwn-hm-29L"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fcd-mo-5ns">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="c0X-ph-YfU" kind="relationship" relationship="rootViewController" id="WZK-F7-wWe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHp-4M-Pfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="268"/>
+        </scene>
+        <!--Schedule Page View Controller-->
+        <scene sceneID="xIh-1A-5me">
+            <objects>
+                <viewController storyboardIdentifier="ColoredScheduleTableViewController" id="4AS-IU-Dyz" customClass="SchedulePageViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W7J-aR-og6"/>
+                        <viewControllerLayoutGuide type="bottom" id="jfd-ji-83Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u70-oR-BaW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jZ-Mw-eao">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <segue destination="xPD-YH-zR3" kind="embed" id="kYh-Cx-67J"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfD-Oe-Ik5">
+                                <rect key="frame" x="190" y="62" width="220" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="F98-BW-bDT"/>
+                                    <constraint firstAttribute="height" constant="65" id="ZT2-x7-QBi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="rfD-Oe-Ik5" secondAttribute="centerX" id="BDx-tL-juL"/>
+                            <constraint firstItem="rfD-Oe-Ik5" firstAttribute="top" secondItem="W7J-aR-og6" secondAttribute="bottom" constant="42" id="DQc-D3-HSJ"/>
+                            <constraint firstItem="1jZ-Mw-eao" firstAttribute="height" secondItem="u70-oR-BaW" secondAttribute="height" id="UJV-Tx-Ioc"/>
+                            <constraint firstItem="1jZ-Mw-eao" firstAttribute="width" secondItem="u70-oR-BaW" secondAttribute="width" id="dYV-rJ-IHM"/>
+                            <constraint firstAttribute="centerX" secondItem="1jZ-Mw-eao" secondAttribute="centerX" id="mrv-fQ-dn7"/>
+                            <constraint firstAttribute="centerY" secondItem="1jZ-Mw-eao" secondAttribute="centerY" id="wyg-c4-6Dc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emptyLabel" destination="rfD-Oe-Ik5" id="lVY-kA-koQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sJS-MC-pqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2972" y="-1000"/>
+        </scene>
         <!--Colored Schedule Table Controller-->
         <scene sceneID="WbW-HK-YxM">
             <objects>
                 <tableViewController id="xPD-YH-zR3" customClass="ColoredScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="EL4-Bd-hbP">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="469"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
@@ -1075,7 +1357,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6KX-WY-9zk" id="ZnN-4j-SkO">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 12:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nD-rQ-NxA">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10:00 - 12:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nD-rQ-NxA">
                                             <rect key="frame" x="294" y="2" width="266" height="25"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1090,7 +1372,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                                 <rect key="frame" x="130" y="3" width="102" height="25"/>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLEX 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6U-vK-7a8">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FLEX 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6U-vK-7a8">
                                             <rect key="frame" x="8" y="5" width="266" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1118,7 +1400,15 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdQ-F3-6Gd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2382" y="-1000.875"/>
+            <point key="canvasLocation" x="3712" y="-1000"/>
+        </scene>
+        <!--Data Page View Controller-->
+        <scene sceneID="6Sp-l5-oXi">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="OKc-4O-bRj" customClass="DataPageViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMs-oy-dRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2292" y="-1000"/>
         </scene>
         <!--iPad Landscape Data View Controller-->
         <scene sceneID="yZr-oW-LOj">
@@ -1539,7 +1829,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hat-cx-nw1">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hat-cx-nw1">
                                 <rect key="frame" x="16" y="28" width="44" height="44"/>
                                 <state key="normal" image="backButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1563,8 +1853,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                         <exclude reference="gEz-Te-zYH"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="735" y="36" width="46" height="30"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="PRl-vN-8Te"/>
                                         <include reference="gEz-Te-zYH"/>
@@ -1860,12 +2149,12 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                     </view>
                     <navigationItem key="navigationItem" id="tMd-Do-uW4"/>
                     <connections>
-                        <outlet property="blankLabel1" destination="nZv-Ja-fE6" id="Fjc-w2-eRM"/>
-                        <outlet property="blankLabel2" destination="dGU-HT-3br" id="wxd-j9-Fd7"/>
-                        <outlet property="blankLabel3" destination="RKh-pn-kCv" id="279-Br-pTH"/>
-                        <outlet property="blankLabel4" destination="Xaf-ZM-fAu" id="72x-wn-jZ3"/>
-                        <outlet property="blankLabel5" destination="hIb-vJ-MC2" id="Y98-ml-rzN"/>
                         <outlet property="dateLabel" destination="yfE-Vt-axm" id="f4I-FP-xXk"/>
+                        <outlet property="emptyLabel1" destination="nZv-Ja-fE6" id="NJC-04-RwH"/>
+                        <outlet property="emptyLabel2" destination="dGU-HT-3br" id="VCV-2c-iks"/>
+                        <outlet property="emptyLabel3" destination="RKh-pn-kCv" id="QUC-IH-U6V"/>
+                        <outlet property="emptyLabel4" destination="Xaf-ZM-fAu" id="mBX-NZ-Avj"/>
+                        <outlet property="emptyLabel5" destination="hIb-vJ-MC2" id="Bgd-wr-5Xm"/>
                         <outlet property="loadingIndicator" destination="LiP-m0-IIA" id="bsI-ak-Qcn"/>
                         <outlet property="titleLabel1" destination="vuj-k9-cQb" id="imq-Wf-RZM"/>
                         <outlet property="titleLabel2" destination="u1B-o5-XT9" id="b5k-6k-EIT"/>
@@ -2018,8 +2307,10 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
         <image name="backButton" width="44" height="44"/>
         <image name="forwardButton" width="44" height="44"/>
         <image name="scheduleTabFilled" width="25" height="25"/>
+        <image name="settingsTabFilled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="kw2-64-4pd"/>
         <segue reference="wRA-yG-nIp"/>
     </inferredMetricsTieBreakers>
 </document>

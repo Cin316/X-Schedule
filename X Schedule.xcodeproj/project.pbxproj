@@ -11,14 +11,23 @@
 		45CB99251AE4885200937163 /* XScheduleKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1DEBEDA1AD61FE2004B2CC1 /* XScheduleKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45CB992B1AE488EC00937163 /* XScheduleKit-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 45CB99211AE485A800937163 /* XScheduleKit-Swift.h */; };
 		45CB99301AE492B700937163 /* XScheduleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DEBEDA1AD61FE2004B2CC1 /* XScheduleKit.framework */; };
+		E116D1E11B1A407C00C5DCA8 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116D1E01B1A407C00C5DCA8 /* CacheManager.swift */; };
+		E116D1E31B27164C00C5DCA8 /* CustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116D1E21B27164C00C5DCA8 /* CustomizationViewController.swift */; };
 		E138A8101A8E8B1E00549F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138A80F1A8E8B1E00549F84 /* AppDelegate.swift */; };
 		E138A8171A8E8B1E00549F84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E138A8151A8E8B1E00549F84 /* Main.storyboard */; };
 		E138A8191A8E8B1E00549F84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E138A8181A8E8B1E00549F84 /* Images.xcassets */; };
 		E138A81C1A8E8B1E00549F84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E138A81A1A8E8B1E00549F84 /* LaunchScreen.xib */; };
 		E138A8321A8E970E00549F84 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138A8311A8E970E00549F84 /* DataViewController.swift */; };
+		E13FCD6A1AF6CCD400696F3B /* MainTabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */; };
+		E13FCD6D1AF6EDBB00696F3B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13FCD6C1AF6EDBB00696F3B /* ScheduleViewController.swift */; };
 		E1451B1E1AD348D600A39564 /* DonorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1451B1D1AD348D600A39564 /* DonorsViewController.swift */; };
 		E16DCB6D1AB3BF610045F5A0 /* donors.txt in Resources */ = {isa = PBXBuildFile; fileRef = E16DCB6C1AB3BF610045F5A0 /* donors.txt */; };
 		E1841FB51ADDFD4900C5DF3E /* ColoredScheduleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */; };
+		E18C80A71AEDBDDA00C60CE1 /* ScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C80A61AEDBDDA00C60CE1 /* ScheduleDownloader.swift */; };
+		E19965721B2E1F3A00E900FB /* NewSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19965711B2E1F3A00E900FB /* NewSubViewController.swift */; };
+		E1C6BDB01AFEDC5600B444C8 /* XScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */; };
+		E1C6BDB21AFEDEEA00B444C8 /* ScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */; };
+		E1D995841B56C0BF00002814 /* SchedulePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D995831B56C0BE00002814 /* SchedulePageViewController.swift */; };
 		E1DDD4E61AD06CBD0007ABC8 /* WeekDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */; };
 		E1DDEAF81AB7C35200B6F37F /* ScheduleSwitcherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */; };
 		E1DEBE9C1AD619B0004B2CC1 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DEBE9B1AD619B0004B2CC1 /* NotificationCenter.framework */; };
@@ -27,11 +36,16 @@
 		E1DEBEA61AD619B0004B2CC1 /* X Schedule Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E1DEBE991AD619B0004B2CC1 /* X Schedule Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E1DEBEF91AD621F0004B2CC1 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DEBED31AD61F5B004B2CC1 /* Schedule.swift */; };
 		E1DEBEFA1AD6237A004B2CC1 /* ScheduleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */; };
-		E1DEBEFB1AD6237D004B2CC1 /* ScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEB01A950851003D3C57 /* ScheduleParser.swift */; };
-		E1DEBEFC1AD62380004B2CC1 /* ScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */; };
+		E1DEBEFC1AD62380004B2CC1 /* XScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */; };
 		E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */; };
 		E1E3EE4A1AA8F24F00A00603 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1E3EE491AA8F24F00A00603 /* LICENSE.txt */; };
 		E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18039831AABF260006513B2 /* AboutViewController.swift */; };
+		E1E9856A1B32EF56000302DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E985691B32EF56000302DE /* SettingsViewController.swift */; };
+		E1ECC41D1B16531200AB5D64 /* XScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECC41C1B16531200AB5D64 /* XScheduleManager.swift */; };
+		E1ECC41F1B16571300AB5D64 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECC41E1B16571300AB5D64 /* ScheduleManager.swift */; };
+		E1F0E2031B29B771006643C0 /* SubstitutionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0E2021B29B771006643C0 /* SubstitutionManager.swift */; };
+		E1F111921B3D7A3A00C5A772 /* DataPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F111911B3D7A3A00C5A772 /* DataPageViewController.swift */; };
+		E1F960931B40B18A008493FD /* SwipeDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F960921B40B18A008493FD /* SwipeDataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +85,8 @@
 
 /* Begin PBXFileReference section */
 		45CB99211AE485A800937163 /* XScheduleKit-Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XScheduleKit-Swift.h"; sourceTree = "<group>"; };
+		E116D1E01B1A407C00C5DCA8 /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		E116D1E21B27164C00C5DCA8 /* CustomizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizationViewController.swift; sourceTree = "<group>"; };
 		E138A80A1A8E8B1E00549F84 /* X Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "X Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E138A80E1A8E8B1E00549F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E138A80F1A8E8B1E00549F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,10 +94,17 @@
 		E138A8181A8E8B1E00549F84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E138A81B1A8E8B1E00549F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E138A8311A8E970E00549F84 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarDelegate.swift; sourceTree = "<group>"; };
+		E13FCD6C1AF6EDBB00696F3B /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		E1451B1D1AD348D600A39564 /* DonorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorsViewController.swift; sourceTree = "<group>"; };
 		E16DCB6C1AB3BF610045F5A0 /* donors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = donors.txt; sourceTree = SOURCE_ROOT; };
 		E18039831AABF260006513B2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredScheduleTableController.swift; sourceTree = "<group>"; };
+		E18C80A61AEDBDDA00C60CE1 /* ScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDownloader.swift; sourceTree = "<group>"; };
+		E19965711B2E1F3A00E900FB /* NewSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSubViewController.swift; sourceTree = "<group>"; };
+		E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleParser.swift; sourceTree = "<group>"; };
+		E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParser.swift; sourceTree = "<group>"; };
+		E1D995831B56C0BE00002814 /* SchedulePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulePageViewController.swift; sourceTree = "<group>"; };
 		E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDataViewController.swift; sourceTree = "<group>"; };
 		E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleSwitcherViewController.swift; sourceTree = "<group>"; };
 		E1DEBE991AD619B0004B2CC1 /* X Schedule Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "X Schedule Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,9 +117,14 @@
 		E1DEBEDD1AD61FE2004B2CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		E1E3EE491AA8F24F00A00603 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
-		E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDownloader.swift; sourceTree = "<group>"; };
-		E1EFEEB01A950851003D3C57 /* ScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParser.swift; sourceTree = "<group>"; };
+		E1E985691B32EF56000302DE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E1ECC41C1B16531200AB5D64 /* XScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleManager.swift; sourceTree = "<group>"; };
+		E1ECC41E1B16571300AB5D64 /* ScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
+		E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleDownloader.swift; sourceTree = "<group>"; };
 		E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableController.swift; sourceTree = "<group>"; };
+		E1F0E2021B29B771006643C0 /* SubstitutionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubstitutionManager.swift; sourceTree = "<group>"; };
+		E1F111911B3D7A3A00C5A772 /* DataPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPageViewController.swift; sourceTree = "<group>"; };
+		E1F960921B40B18A008493FD /* SwipeDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,9 +180,16 @@
 			isa = PBXGroup;
 			children = (
 				E138A80F1A8E8B1E00549F84 /* AppDelegate.swift */,
+				E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */,
+				E1F960921B40B18A008493FD /* SwipeDataViewController.swift */,
 				E138A8311A8E970E00549F84 /* DataViewController.swift */,
 				E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */,
 				E138A8151A8E8B1E00549F84 /* Main.storyboard */,
+				E1D995831B56C0BE00002814 /* SchedulePageViewController.swift */,
+				E1F111911B3D7A3A00C5A772 /* DataPageViewController.swift */,
+				E116D1E21B27164C00C5DCA8 /* CustomizationViewController.swift */,
+				E19965711B2E1F3A00E900FB /* NewSubViewController.swift */,
+				E1E985691B32EF56000302DE /* SettingsViewController.swift */,
 				E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */,
 				E1E3EE471AA8F18E00A00603 /* LegalViewController.swift */,
 				E18039831AABF260006513B2 /* AboutViewController.swift */,
@@ -207,10 +242,17 @@
 			children = (
 				45CB99211AE485A800937163 /* XScheduleKit-Swift.h */,
 				E1DEBED31AD61F5B004B2CC1 /* Schedule.swift */,
-				E1EFEEB01A950851003D3C57 /* ScheduleParser.swift */,
-				E1EFEEAC1A93918E003D3C57 /* ScheduleDownloader.swift */,
+				E13FCD6C1AF6EDBB00696F3B /* ScheduleViewController.swift */,
+				E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */,
+				E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */,
+				E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */,
+				E18C80A61AEDBDDA00C60CE1 /* ScheduleDownloader.swift */,
+				E1ECC41C1B16531200AB5D64 /* XScheduleManager.swift */,
+				E1ECC41E1B16571300AB5D64 /* ScheduleManager.swift */,
+				E116D1E01B1A407C00C5DCA8 /* CacheManager.swift */,
 				E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */,
 				E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */,
+				E1F0E2021B29B771006643C0 /* SubstitutionManager.swift */,
 				E1DEBEDC1AD61FE2004B2CC1 /* Supporting Files */,
 			);
 			path = XScheduleKit;
@@ -266,6 +308,7 @@
 				E1DEBE951AD619B0004B2CC1 /* Sources */,
 				E1DEBE961AD619B0004B2CC1 /* Frameworks */,
 				E1DEBE971AD619B0004B2CC1 /* Resources */,
+				E1B6F8301B6BD01400E2F4AE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -284,6 +327,7 @@
 				E1DEBED61AD61FE2004B2CC1 /* Frameworks */,
 				E1DEBED71AD61FE2004B2CC1 /* Headers */,
 				E1DEBED81AD61FE2004B2CC1 /* Resources */,
+				E1B6F82F1B6BD01100E2F4AE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -381,6 +425,32 @@
 			shellPath = /bin/bash;
 			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
 		};
+		E1B6F82F1B6BD01100E2F4AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
+		};
+		E1B6F8301B6BD01400E2F4AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -389,12 +459,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1E584141AABF4C90085BED9 /* AboutViewController.swift in Sources */,
+				E1F111921B3D7A3A00C5A772 /* DataPageViewController.swift in Sources */,
+				E1F960931B40B18A008493FD /* SwipeDataViewController.swift in Sources */,
 				E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */,
+				E1E9856A1B32EF56000302DE /* SettingsViewController.swift in Sources */,
 				E1DDEAF81AB7C35200B6F37F /* ScheduleSwitcherViewController.swift in Sources */,
+				E116D1E31B27164C00C5DCA8 /* CustomizationViewController.swift in Sources */,
+				E19965721B2E1F3A00E900FB /* NewSubViewController.swift in Sources */,
 				E138A8321A8E970E00549F84 /* DataViewController.swift in Sources */,
 				E1451B1E1AD348D600A39564 /* DonorsViewController.swift in Sources */,
 				E1DDD4E61AD06CBD0007ABC8 /* WeekDataViewController.swift in Sources */,
 				E138A8101A8E8B1E00549F84 /* AppDelegate.swift in Sources */,
+				E1D995841B56C0BF00002814 /* SchedulePageViewController.swift in Sources */,
+				E13FCD6A1AF6CCD400696F3B /* MainTabBarDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,10 +487,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F0E2031B29B771006643C0 /* SubstitutionManager.swift in Sources */,
 				E1DEBEF91AD621F0004B2CC1 /* Schedule.swift in Sources */,
-				E1DEBEFB1AD6237D004B2CC1 /* ScheduleParser.swift in Sources */,
+				E1C6BDB21AFEDEEA00B444C8 /* ScheduleParser.swift in Sources */,
+				E1ECC41F1B16571300AB5D64 /* ScheduleManager.swift in Sources */,
+				E1ECC41D1B16531200AB5D64 /* XScheduleManager.swift in Sources */,
+				E18C80A71AEDBDDA00C60CE1 /* ScheduleDownloader.swift in Sources */,
+				E1C6BDB01AFEDC5600B444C8 /* XScheduleParser.swift in Sources */,
+				E116D1E11B1A407C00C5DCA8 /* CacheManager.swift in Sources */,
 				E1DEBEFA1AD6237A004B2CC1 /* ScheduleTableController.swift in Sources */,
-				E1DEBEFC1AD62380004B2CC1 /* ScheduleDownloader.swift in Sources */,
+				E1DEBEFC1AD62380004B2CC1 /* XScheduleDownloader.swift in Sources */,
+				E13FCD6D1AF6EDBB00696F3B /* ScheduleViewController.swift in Sources */,
 				E1841FB51ADDFD4900C5DF3E /* ColoredScheduleTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XScheduleKit
 
 class ScheduleSwitcherViewController: UINavigationController {
     
@@ -17,28 +18,18 @@ class ScheduleSwitcherViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Correct tab bar title.
-        self.title = "Schedule"
-        self.tabBarController!.title = "Schedule"
-        
-        //Get current orientation and store it.
-        currentOrientation = UIDevice.currentDevice().orientation
+        updateCurrentOrientation()
         switchToOrientationView()
         
+        registerAsOrientationListener()
+    }
+    private func registerAsOrientationListener() {
         //Register orientation change listener.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "deviceOrientationDidChangeNotification", name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        //Correct tab bar title.
-        self.title = "Schedule"
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func updateCurrentOrientation() {
+        //Store current orientation.
+        currentOrientation = UIDevice.currentDevice().orientation
     }
     
     func deviceOrientationDidChangeNotification() {
@@ -48,22 +39,19 @@ class ScheduleSwitcherViewController: UINavigationController {
             //Check if newOrientation is different from the currentOrientation.
             if (newOrientation != currentOrientation) {
                 //Update current orientation and update UI.
-                currentOrientation = UIDevice.currentDevice().orientation
+                updateCurrentOrientation()
                 switchToOrientationView()
             }
         }
     }
     
     func switchToOrientationView() {
-        //Take date from current view controller and store it.
-        if let top = self.topViewController {
-            if let topData = top as? DataViewController {
-                self.scheduleDate = topData.scheduleDate
-            } else if let topData = top as? WeekDataViewController {
-                self.scheduleDate = topData.scheduleDate
-            }
-        }
-        
+        loadScheduleDateIntoViewController(self.topViewController)
+        performSegueBasedOnOrientation()
+        storeScheduleDate()
+        updateCurrentView()
+    }
+    private func performSegueBasedOnOrientation() {
         if (UIDevice.currentDevice().userInterfaceIdiom == .Phone) { //If on iPhone...
             //Check if there is a view already.
             if (self.topViewController != nil) {
@@ -80,28 +68,39 @@ class ScheduleSwitcherViewController: UINavigationController {
                 self.performSegueWithIdentifier("displayScheduleiPadPortrait", sender: self)
             }
         }
-        
+    }
+    private func loadScheduleDateIntoViewController(viewController: UIViewController?) {
+        //Take date from current view controller and store it.
+        if let top = viewController {
+            if let topData = top as? ScheduleViewController {
+                self.scheduleDate = topData.scheduleDate
+            }
+        }
+    }
+    private func storeScheduleDate() {
         //Store date in new view controller if necessary.
         if let top = self.topViewController {
-            if let topData = top as? DataViewController {
-                topData.scheduleDate = self.scheduleDate
-            }  else if let topData = top as? WeekDataViewController {
+            if let topData = top as? ScheduleViewController {
                 topData.scheduleDate = self.scheduleDate
             }
         }
-        
+    }
+    private func updateCurrentView() {
+        //Store the value of the current view.
         if let top = self.topViewController {
             currentView = top
         }
     }
+    
 }
 
 class NoAnimationSegue: UIStoryboardSegue {
     override func perform() {
-        let source = sourceViewController as! UINavigationController //This will crash if not used with a UINaviagtionController.
         let destination = destinationViewController as! UIViewController
-        //Transition with no animation.  Sets new view as root view controller.
-        source.setViewControllers([destination], animated: false)
+        if let source = sourceViewController as? UINavigationController {
+            //Transition with no animation.  Sets new view as root view controller.
+            source.setViewControllers([destination], animated: false)
+        }
     }
     
 }
