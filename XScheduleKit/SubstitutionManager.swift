@@ -31,7 +31,7 @@ public class SubstitutionManager {
         let outputSchedule: Schedule = schedule
         for (var i=0; i<schedule.items.count; i++) {
             for sub in substitutions {
-                if outputSchedule.items[i].blockName == sub.block {
+                if outputSchedule.items[i].blockName.uppercaseString == sub.block.uppercaseString {
                     outputSchedule.items[i].blockName = sub.className
                 }
             }
