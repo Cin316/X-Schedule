@@ -50,8 +50,8 @@ public class SubstitutionManager {
         var output: [[String]] = []
         for item in tuple {
             var tmpArray = ["",""]
-            tmpArray[0] = item.block
-            tmpArray[1] = item.className
+            tmpArray[0] = item.block.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            tmpArray[1] = item.className.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
             output.append(tmpArray)
         }
         
