@@ -65,9 +65,9 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
         }
     }
     
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         //Update every 3 hours.
-        var secondsSinceLastUpdate = lastUpdated.timeIntervalSinceDate(NSDate())
+        let secondsSinceLastUpdate = lastUpdated.timeIntervalSinceDate(NSDate())
         if (secondsSinceLastUpdate > 60*60*3){
             completionHandler(NCUpdateResult.NewData)
         } else {

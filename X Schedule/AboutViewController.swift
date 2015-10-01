@@ -9,7 +9,7 @@
 import UIKit
 import XScheduleKit
 
-class AboutViewController: UITableViewController, UITableViewDelegate {
+class AboutViewController: UITableViewController {
     
     @IBOutlet weak var versionLabel: UILabel!
     
@@ -28,7 +28,7 @@ class AboutViewController: UITableViewController, UITableViewDelegate {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var selectedCell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
+        let selectedCell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
         if let cell = selectedCell {
             if (cell.tag == 200) { //GitHub link
                 openURL("http://github.com/Cin316/X-Schedule")
@@ -39,7 +39,7 @@ class AboutViewController: UITableViewController, UITableViewDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     private func openURL(url: String) {
-        var url: NSURL = NSURL(string: url)!
+        let url: NSURL = NSURL(string: url)!
         UIApplication.sharedApplication().openURL(url)
     }
     

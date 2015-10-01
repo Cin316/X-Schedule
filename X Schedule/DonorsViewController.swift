@@ -13,7 +13,7 @@ class DonorsViewController: UIViewController {
     @IBOutlet weak var mainTextView: UITextView!
     
     private var donorsPath: String = NSBundle.mainBundle().pathForResource("donors", ofType: "txt")!
-    private var editedDonorsPath: String = DonorsViewController.documentsDirectory().stringByAppendingPathComponent("editedDonors.txt")
+    private var editedDonorsPath: String = NSURL(fileURLWithPath: DonorsViewController.documentsDirectory()).URLByAppendingPathComponent("editedDonors.txt").relativePath!
     
     private var onlineDonorsURL: NSURL = NSURL(string: "http://raw.githubusercontent.com/Cin316/X-Schedule/develop/donors.txt")!
     
@@ -34,14 +34,14 @@ class DonorsViewController: UIViewController {
     }
     private func updateStoredDonors() {
         //Attempt to download donors from website and update saved donors.txt.
-        var session = downloadSession()
+        let session = downloadSession()
         
-        var postSession = session.downloadTaskWithURL(onlineDonorsURL, completionHandler:
-            { (url: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
+        let postSession = session.downloadTaskWithURL(onlineDonorsURL, completionHandler:
+            { (url: NSURL?, response: NSURLResponse?, error: NSError?) -> Void in
                 //If the request was successful...
                 if let realURL = url {
                     //Get text of download.
-                    var fileText = String(contentsOfURL: url, encoding: NSUTF8StringEncoding, error: nil)
+                    let fileText = try? String(contentsOfURL: realURL, encoding: NSUTF8StringEncoding)
                     if let realFileText = fileText {
                         //Save to editedDonors.txt.
                         self.saveEditedDonorsText(realFileText)
@@ -57,13 +57,16 @@ class DonorsViewController: UIViewController {
         postSession.resume()
     }
     private func downloadSession() -> NSURLSession {
-        var config: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        var session: NSURLSession = NSURLSession(configuration: config)
+        let config: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session: NSURLSession = NSURLSession(configuration: config)
         
         return session
     }
     private func saveEditedDonorsText(downloadedText: String) {
-        downloadedText.writeToFile(self.editedDonorsPath, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+        do {
+            try downloadedText.writeToFile(self.editedDonorsPath, atomically: false, encoding: NSUTF8StringEncoding)
+        } catch _ {
+        }
     }
     private func displayDonors(donorListText: String?) {
         //Displays the list of donors in a center aligned text view.
@@ -72,18 +75,18 @@ class DonorsViewController: UIViewController {
         }
     }
     private func displayContentsOfFile(filePath: String) {
-        var fileContents: String? = String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil)
+        let fileContents: String? = try? String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding)
         displayDonors(fileContents)
     }
     private class func documentsDirectory() -> String {
-        let directories: [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as! [String]
+        let directories: [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) 
         let documentsDirectory: String =  directories[0]
         
         return documentsDirectory
     }
     private func fileExists(filePath: String) -> Bool {
-        var manager: NSFileManager = NSFileManager.defaultManager()
-        var exists: Bool = manager.fileExistsAtPath(filePath)
+        let manager: NSFileManager = NSFileManager.defaultManager()
+        let exists: Bool = manager.fileExistsAtPath(filePath)
         
         return exists
     }

@@ -41,19 +41,19 @@ public class ScheduleViewController: UIViewController {
     }
     
     public func parseStringForSchedule(string: String) -> Schedule {
-        var schedule: Schedule = XScheduleParser.parseForSchedule(string, date: scheduleDate)
+        let schedule: Schedule = XScheduleParser.parseForSchedule(string, date: scheduleDate)
         
         return schedule
     }
     
     public func displayAlertWithText(message: String) {
-        var alert = createAlertWithText(message)
+        let alert = createAlertWithText(message)
         displayAlert(alert)
     }
     public func createAlertWithText(message: String) -> UIAlertController {
         //Creates an alert with provided text and an "OK" button that closes the alert.
-        var alert: UIAlertController = UIAlertController(title: message, message: nil, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
+        let alert: UIAlertController = UIAlertController(title: message, message: nil, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction) in
             alert.dismissViewControllerAnimated(true, completion: {})
         }))
         

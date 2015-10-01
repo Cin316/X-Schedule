@@ -12,25 +12,25 @@ import XScheduleKit
 class MainTabBarDelegate: NSObject, UITabBarControllerDelegate {
     
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-        var oldViewController: UIViewController = currentlySelectedViewController(tabBarController)
+        let oldViewController: UIViewController = currentlySelectedViewController(tabBarController)
         //If the schedule tab is selected again while it's already selected.
         if (oldViewController.tabBarItem.tag == 401 && viewController.tabBarItem.tag == 401) {
             if let switcher = viewController as? ScheduleSwitcherViewController {
-                var dataView: ScheduleViewController = getScheduleViewController(switcher)!
+                let dataView: ScheduleViewController = getScheduleViewController(switcher)!
                 
                 dataView.onTodayButtonPress(self)
             }
         }
         //Refresh schedule if switching to the tab.
         else if (viewController.tabBarItem.tag == 401) {
-            var app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             app.refreshSchedule()
         }
         return true
     }
     private func currentlySelectedViewController(tabBarController: UITabBarController) -> UIViewController {
-        var selectedItem: AnyObject = tabBarController.viewControllers![tabBarController.selectedIndex]
-        var viewController: UIViewController = selectedItem as! UIViewController
+        let selectedItem: AnyObject = tabBarController.viewControllers![tabBarController.selectedIndex]
+        let viewController: UIViewController = selectedItem as! UIViewController
         
         return viewController
     }

@@ -28,7 +28,7 @@ public class SubstitutionManager {
         return output
     }
     public class func substituteItemsInSchedule(schedule: Schedule, substitutions: [(block: String, className: String)]) -> Schedule {
-        var outputSchedule: Schedule = schedule
+        let outputSchedule: Schedule = schedule
         for (var i=0; i<schedule.items.count; i++) {
             for sub in substitutions {
                 if outputSchedule.items[i].blockName == sub.block {
@@ -41,7 +41,7 @@ public class SubstitutionManager {
     }
     
     public class func saveSubstitutions(subs: [(block: String, className: String)]) {
-        var arrayVersion: [[String]] = convertTupleToArray(subs)
+        let arrayVersion: [[String]] = convertTupleToArray(subs)
         
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(arrayVersion, forKey: substitutionsKey)
@@ -60,7 +60,7 @@ public class SubstitutionManager {
     
     public class func loadSubstitutions() -> [(block: String, className: String)] {
         let defaults = NSUserDefaults.standardUserDefaults()
-        var object: AnyObject? = defaults.objectForKey(substitutionsKey)
+        let object: AnyObject? = defaults.objectForKey(substitutionsKey)
         
         var tupleVersion: [(block: String, className: String)]
         if let array = object as? [[String]] {
@@ -74,7 +74,7 @@ public class SubstitutionManager {
     private class func convertArrayToTuple(array: [[String]]) -> [(block: String, className: String)] {
         var output: [(block: String, className: String)] = []
         for item in array {
-            output.append(block: item[0], className: item[1])
+            output.append((block: item[0], className: item[1]))
         }
         
         return output
@@ -86,7 +86,7 @@ public class SubstitutionManager {
     }
     public class func getEnabled() -> Bool {
         let defaults = NSUserDefaults.standardUserDefaults()
-        var object: Bool = defaults.boolForKey(subSwitchKey)
+        let object: Bool = defaults.boolForKey(subSwitchKey)
         
         return object
     }

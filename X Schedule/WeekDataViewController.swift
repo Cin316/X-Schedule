@@ -37,10 +37,10 @@ class WeekDataViewController: ScheduleViewController {
     
     var scheduleMonday: NSDate {
         get {
-            var calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            var weekday: Int = calendar.component(.CalendarUnitWeekday, fromDate: scheduleDate)
-            var daysPastMonday: Int = weekday-2
-            var seconds: Double = Double(-24*60*60*daysPastMonday)
+            let calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+            let weekday: Int = calendar.component(.Weekday, fromDate: scheduleDate)
+            let daysPastMonday: Int = weekday-2
+            let seconds: Double = Double(-24*60*60*daysPastMonday)
             return scheduleDate.dateByAddingTimeInterval(seconds)
         }
     }
@@ -77,7 +77,7 @@ class WeekDataViewController: ScheduleViewController {
     }
     private func clearScheduleTables() {
         //Blank out every schedule.
-        var blankSchedule: Schedule = Schedule()
+        let blankSchedule: Schedule = Schedule()
         for (var i=0; i<5; i++) {
             if let tableController = self.childViewControllers[i] as? ScheduleTableController {
                 if (downloadMethods[i] == DownloadMethod.Download) {
@@ -104,13 +104,13 @@ class WeekDataViewController: ScheduleViewController {
     }
     private func dateLabelText() -> String {
         //Display correctly formatted date label.
-        var dateFormatter: NSDateFormatter = NSDateFormatter()
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMMM d"
         
-        var mondayText: String = dateFormatter.stringFromDate(self.scheduleMonday)
-        var fridayText: String = dateFormatter.stringFromDate(self.scheduleMonday.dateByAddingTimeInterval(60*60*24*4))
+        let mondayText: String = dateFormatter.stringFromDate(self.scheduleMonday)
+        let fridayText: String = dateFormatter.stringFromDate(self.scheduleMonday.dateByAddingTimeInterval(60*60*24*4))
         
-        var year: Int = NSCalendar.currentCalendar().component(NSCalendarUnit.CalendarUnitYear, fromDate: self.scheduleMonday)
+        let year: Int = NSCalendar.currentCalendar().component(NSCalendarUnit.Year, fromDate: self.scheduleMonday)
         
         return "\(mondayText) - \(fridayText), \(year)"
     }
@@ -119,7 +119,7 @@ class WeekDataViewController: ScheduleViewController {
         var method: DownloadMethod = DownloadMethod.Download
         
         // Download today's schedule from the St. X website.
-        var newTask: NSURLSessionTask? = XScheduleManager.getScheduleForDate(downloadDateForNum(num),
+        let newTask: NSURLSessionTask? = XScheduleManager.getScheduleForDate(downloadDateForNum(num),
             completionHandler: { (schedule: Schedule) in
                 dispatch_async(dispatch_get_main_queue()) {
                     self.handleCompletionOfDownload(schedule, num: num)
@@ -205,7 +205,7 @@ class WeekDataViewController: ScheduleViewController {
         return emptyLabel
     }
     private func downloadDateForNum(num: Int) -> NSDate {
-        var downloadDate: NSDate = scheduleMonday.dateByAddingTimeInterval(Double(24*60*60*(num-1)))
+        let downloadDate: NSDate = scheduleMonday.dateByAddingTimeInterval(Double(24*60*60*(num-1)))
         
         return downloadDate
     }

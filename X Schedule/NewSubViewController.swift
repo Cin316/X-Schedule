@@ -74,14 +74,14 @@ class NewSubViewController: UITableViewController {
     }
     private func backOneViewController() -> UIViewController? {
         var parent: UIViewController?
-        var controllersCount: Int = self.navigationController!.viewControllers!.count
-        parent = self.navigationController?.viewControllers[controllersCount-2] as? UIViewController
+        let controllersCount: Int = self.navigationController!.viewControllers.count
+        parent = self.navigationController?.viewControllers[controllersCount-2]
         
         return parent
     }
     private func moveEditsToSub() {
-        substitution.block = blockName.text
-        substitution.className = className.text
+        substitution.block = blockName.text!
+        substitution.className = className.text!
     }
     
     @IBAction func blockNameValueChanged(sender: AnyObject) {

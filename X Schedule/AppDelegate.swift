@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func refreshSchedule() {
-        var scheduleViewController: ScheduleViewController = getScheduleViewController()!
+        let scheduleViewController: ScheduleViewController = getScheduleViewController()!
         scheduleViewController.refreshSchedule()
         
         if let pageView = scheduleViewController as? SwipeDataViewController {
@@ -43,14 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     func setScheduleDateToToday() {
-        var scheduleViewController: ScheduleViewController = getScheduleViewController()!
+        let scheduleViewController: ScheduleViewController = getScheduleViewController()!
         scheduleViewController.scheduleDate = NSDate()
     }
     private func getScheduleSwitcherViewController() -> ScheduleSwitcherViewController? {
         var returnController: ScheduleSwitcherViewController?
-        var tabBarController: UITabBarController = self.window!.rootViewController! as! UITabBarController
+        let tabBarController: UITabBarController = self.window!.rootViewController! as! UITabBarController
         for controller in tabBarController.viewControllers! {
-            var viewController = controller as! UIViewController
+            let viewController = controller 
             if let switcher = viewController as? ScheduleSwitcherViewController {
                 returnController = switcher
             }
@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return returnController
     }
     private func getScheduleViewController() -> ScheduleViewController? {
-        var switcher = getScheduleSwitcherViewController()!
+        let switcher = getScheduleSwitcherViewController()!
         var returnController: ScheduleViewController?
         if let currentView = switcher.currentView {
             if let scheduleView = currentView as? ScheduleViewController {
