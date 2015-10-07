@@ -15,7 +15,7 @@ class DonorsViewController: UIViewController {
     private var donorsPath: String = NSBundle.mainBundle().pathForResource("donors", ofType: "txt")!
     private var editedDonorsPath: String = NSURL(fileURLWithPath: DonorsViewController.documentsDirectory()).URLByAppendingPathComponent("editedDonors.txt").relativePath!
     
-    private var onlineDonorsURL: NSURL = NSURL(string: "http://raw.githubusercontent.com/Cin316/X-Schedule/develop/donors.txt")!
+    private var onlineDonorsURL: NSURL = NSURL(string: "https://raw.githubusercontent.com/Cin316/X-Schedule/develop/donors.txt")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
