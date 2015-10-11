@@ -31,9 +31,9 @@ class AboutViewController: UITableViewController {
         let selectedCell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
         if let cell = selectedCell {
             if (cell.tag == 200) { //GitHub link
-                openURL("http://github.com/Cin316/X-Schedule")
+                openURL("https://github.com/Cin316/X-Schedule")
             } else if (cell.tag == 201) { //St. X link
-                openURL("http://www.stxavier.org/")
+                openURL("https://www.stxavier.org/")
             }
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
