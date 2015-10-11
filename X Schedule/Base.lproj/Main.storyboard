@@ -435,13 +435,13 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The following people have generously donated to help support X Schedule:" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cQ-C7-s6d">
-                                <rect key="frame" x="20" y="72" width="568" height="41"/>
+                                <rect key="frame" x="13" y="72" width="574" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Donors" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-Cc-F8L">
-                                <rect key="frame" x="4" y="130" width="592" height="421"/>
+                                <rect key="frame" x="4" y="110" width="592" height="441"/>
                                 <color key="backgroundColor" red="0.77647058823529413" green="0.8666666666666667" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -451,18 +451,11 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         <constraints>
                             <constraint firstItem="OGA-Cc-F8L" firstAttribute="top" secondItem="8cQ-C7-s6d" secondAttribute="bottom" constant="17" id="3ML-li-2HA"/>
                             <constraint firstItem="OGA-Cc-F8L" firstAttribute="leading" secondItem="RDN-NG-ajT" secondAttribute="leadingMargin" constant="-16" id="QEV-AQ-RWc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8cQ-C7-s6d" secondAttribute="trailing" constant="-8" id="Zke-Bi-hcf"/>
+                            <constraint firstItem="8cQ-C7-s6d" firstAttribute="centerX" secondItem="RDN-NG-ajT" secondAttribute="centerX" id="WCJ-A9-gMH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OGA-Cc-F8L" secondAttribute="trailing" constant="-16" id="cLf-p9-ZZk"/>
-                            <constraint firstItem="8cQ-C7-s6d" firstAttribute="leading" secondItem="RDN-NG-ajT" secondAttribute="leadingMargin" id="cqF-Wm-4IB"/>
                             <constraint firstItem="7I0-Lt-bTk" firstAttribute="top" secondItem="OGA-Cc-F8L" secondAttribute="bottom" id="rrJ-Yx-5e2"/>
                             <constraint firstItem="8cQ-C7-s6d" firstAttribute="top" secondItem="Mj1-Ja-ihE" secondAttribute="bottom" constant="8" id="uJ1-24-FTu"/>
-                            <constraint firstAttribute="centerX" secondItem="8cQ-C7-s6d" secondAttribute="centerX" constant="-4" id="vg8-Z2-Hb6"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="vg8-Z2-Hb6"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="mainTextView" destination="OGA-Cc-F8L" id="syE-hf-Ouc"/>
@@ -652,9 +645,9 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.88235294117647056" green="0.93333333333333335" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="ll0-xW-i7f" kind="show" id="r1F-Rt-LL7"/>
+                                            <segue destination="ll0-xW-i7f" kind="show" id="SBV-VG-mWL"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="Vb5-rm-BeN" detailTextLabel="Yia-Hx-e8b" style="IBUITableViewCellStyleValue1" id="V23-Bd-1Iz">
@@ -742,7 +735,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="TaS-PC-bZ7" kind="show" id="7Xv-Rf-VSS"/>
+                                            <segue destination="TaS-PC-bZ7" kind="show" id="0xz-FN-JWY"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="M1v-8k-D6g" style="IBUITableViewCellStyleDefault" id="ZmR-uq-Gvh">
@@ -2033,13 +2026,13 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <exclude reference="MsE-74-iGM"/>
                                 <exclude reference="WnA-mX-bWk"/>
                                 <exclude reference="Ugi-yJ-60s"/>
+                                <exclude reference="S5i-vW-2u4"/>
+                                <exclude reference="VCx-zF-PUR"/>
+                                <exclude reference="ank-qu-X0g"/>
                                 <exclude reference="BYi-4o-vXx"/>
                                 <exclude reference="1nT-NB-K40"/>
                                 <exclude reference="HQ9-9l-irx"/>
                                 <exclude reference="rcW-AJ-0dR"/>
-                                <exclude reference="S5i-vW-2u4"/>
-                                <exclude reference="VCx-zF-PUR"/>
-                                <exclude reference="ank-qu-X0g"/>
                                 <exclude reference="zbT-8t-oAe"/>
                                 <exclude reference="ag2-jw-EUf"/>
                                 <exclude reference="gnt-Ci-3Tw"/>
@@ -2092,12 +2085,12 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
+                                <include reference="P7i-fv-Phq"/>
                                 <include reference="7We-le-MJZ"/>
                                 <include reference="1nT-NB-K40"/>
                                 <include reference="BRn-Tj-AJ8"/>
                                 <include reference="QOd-6c-fDE"/>
                                 <include reference="vao-gB-fgA"/>
-                                <include reference="P7i-fv-Phq"/>
                                 <include reference="vps-Me-gHb"/>
                                 <include reference="r6p-db-6VZ"/>
                                 <include reference="vRM-3O-h5H"/>
@@ -2128,6 +2121,10 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <include reference="MsE-74-iGM"/>
                                 <include reference="WnA-mX-bWk"/>
                                 <include reference="Ugi-yJ-60s"/>
+                                <exclude reference="P7i-fv-Phq"/>
+                                <include reference="S5i-vW-2u4"/>
+                                <include reference="VCx-zF-PUR"/>
+                                <exclude reference="ank-qu-X0g"/>
                                 <exclude reference="7We-le-MJZ"/>
                                 <include reference="BYi-4o-vXx"/>
                                 <exclude reference="BRn-Tj-AJ8"/>
@@ -2135,10 +2132,6 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <exclude reference="QOd-6c-fDE"/>
                                 <include reference="rcW-AJ-0dR"/>
                                 <exclude reference="vao-gB-fgA"/>
-                                <exclude reference="P7i-fv-Phq"/>
-                                <include reference="S5i-vW-2u4"/>
-                                <include reference="VCx-zF-PUR"/>
-                                <exclude reference="ank-qu-X0g"/>
                                 <exclude reference="KNX-e7-Fk4"/>
                                 <include reference="zbT-8t-oAe"/>
                                 <include reference="ag2-jw-EUf"/>
