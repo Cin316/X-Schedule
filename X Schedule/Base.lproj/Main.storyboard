@@ -434,31 +434,31 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The following people have generously donated to help support X Schedule:" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cQ-C7-s6d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The following people have generously donated to help support X Schedule:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cQ-C7-s6d">
                                 <rect key="frame" x="13" y="72" width="574" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Donors" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-Cc-F8L">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="  Donors  " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jsq-LD-IkQ">
                                 <rect key="frame" x="4" y="110" width="592" height="441"/>
-                                <color key="backgroundColor" red="0.77647058823529413" green="0.8666666666666667" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.77647058823529413" green="0.8666666666666667" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="OGA-Cc-F8L" firstAttribute="top" secondItem="8cQ-C7-s6d" secondAttribute="bottom" constant="17" id="3ML-li-2HA"/>
-                            <constraint firstItem="OGA-Cc-F8L" firstAttribute="leading" secondItem="RDN-NG-ajT" secondAttribute="leadingMargin" constant="-16" id="QEV-AQ-RWc"/>
-                            <constraint firstItem="8cQ-C7-s6d" firstAttribute="centerX" secondItem="RDN-NG-ajT" secondAttribute="centerX" id="WCJ-A9-gMH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="OGA-Cc-F8L" secondAttribute="trailing" constant="-16" id="cLf-p9-ZZk"/>
-                            <constraint firstItem="7I0-Lt-bTk" firstAttribute="top" secondItem="OGA-Cc-F8L" secondAttribute="bottom" id="rrJ-Yx-5e2"/>
+                            <constraint firstItem="7I0-Lt-bTk" firstAttribute="top" secondItem="jsq-LD-IkQ" secondAttribute="bottom" id="3kF-79-wJr"/>
+                            <constraint firstItem="jsq-LD-IkQ" firstAttribute="top" secondItem="8cQ-C7-s6d" secondAttribute="bottom" constant="17" id="Jc7-kp-OlZ"/>
+                            <constraint firstItem="jsq-LD-IkQ" firstAttribute="leading" secondItem="RDN-NG-ajT" secondAttribute="leadingMargin" constant="-16" id="Ojn-lf-H7B"/>
+                            <constraint firstItem="8cQ-C7-s6d" firstAttribute="leading" secondItem="RDN-NG-ajT" secondAttribute="leadingMargin" constant="-7" id="VwX-Vr-lkh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8cQ-C7-s6d" secondAttribute="trailing" constant="-7" id="rSz-bB-5ty"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jsq-LD-IkQ" secondAttribute="trailing" constant="-16" id="slf-mT-aoe"/>
                             <constraint firstItem="8cQ-C7-s6d" firstAttribute="top" secondItem="Mj1-Ja-ihE" secondAttribute="bottom" constant="8" id="uJ1-24-FTu"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mainTextView" destination="OGA-Cc-F8L" id="syE-hf-Ouc"/>
+                        <outlet property="mainTextView" destination="jsq-LD-IkQ" id="84F-Zb-E9V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d42-Kr-7p4" userLabel="First Responder" sceneMemberID="firstResponder"/>
