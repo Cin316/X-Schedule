@@ -63,11 +63,6 @@
       "idiom" : "ipad",
       "filename" : "AppIcon_iPad@2x.png",
       "scale" : "2x"
-    },
-    {
-      "idiom" : "car",
-      "size" : "120x120",
-      "scale" : "1x"
     }
   ],
   "info" : {

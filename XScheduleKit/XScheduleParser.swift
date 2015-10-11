@@ -32,7 +32,7 @@ public class XScheduleParser: ScheduleParser {
     }
     private class func timeStringForDate(date: NSDate?) -> String {
         var output: String = ""
-        var dateFormatter: NSDateFormatter = setUpParsingDateFormatter()
+        let dateFormatter: NSDateFormatter = setUpParsingDateFormatter()
         
         if (date != nil) {
             output = dateFormatter.stringFromDate(date!)
@@ -44,10 +44,10 @@ public class XScheduleParser: ScheduleParser {
     }
     
     public override class func parseForSchedule(string: String, date: NSDate) -> Schedule {
-        var schedule = Schedule()
+        let schedule = Schedule()
         
         //Parse XML from inputted string.
-        var delegate: XScheduleXMLParser = parsedXMLElements(string)
+        let delegate: XScheduleXMLParser = parsedXMLElements(string)
 
         storeTitleString(delegate.titleString, inSchedule: schedule)
         storeDate(date, inSchedule: schedule)
@@ -59,9 +59,9 @@ public class XScheduleParser: ScheduleParser {
     
     private class func parsedXMLElements(string: String) -> XScheduleXMLParser {
         //Returns the parsed XML.
-        var stringData = string.dataUsingEncoding(NSUTF8StringEncoding)
-        var xmlParser = NSXMLParser(data: stringData!)
-        var xmlParserDelegate: NSXMLParserDelegate = XScheduleXMLParser()
+        let stringData = string.dataUsingEncoding(NSUTF8StringEncoding)
+        let xmlParser = NSXMLParser(data: stringData!)
+        let xmlParserDelegate: NSXMLParserDelegate = XScheduleXMLParser()
         xmlParser.delegate = xmlParserDelegate
         xmlParser.parse()
 
@@ -81,27 +81,27 @@ public class XScheduleParser: ScheduleParser {
         var scheduleString: String = scheduleDescription
         cleanUpDescriptionString(&scheduleString)
         //Split string up by newlines.
-        var lines: [String] = separateLines(scheduleString)
+        let lines: [String] = separateLines(scheduleString)
         
-        for (num, line) in enumerate(lines) {
+        for line in lines {
             
             //Split each line into tokens.
             var tokens: [String] = separateLineIntoTokens(line)
             //Identify index of time token.
-            var timeTokenIndex: Int? = indexOfTimeTokenInArray(tokens)
+            let timeTokenIndex: Int? = indexOfTimeTokenInArray(tokens)
             
             if (timeTokenIndex == nil) {
                 //Only add a timeless ScheduleItem if it has a description.
                 if (tokens != []) {
                     //Make schedule item and add to schedule.
-                    var item: ScheduleItem = ScheduleItem(blockName: stringFromTokens(tokens))
+                    let item: ScheduleItem = ScheduleItem(blockName: stringFromTokens(tokens))
                     schedule.items.append(item)
                 }
             } else {
                 //Analyze time token.
-                var times: (start: NSDate?, end: NSDate?) = parseArrayForTimes(&tokens, index: timeTokenIndex!, onDate: schedule.date)
+                let times: (start: NSDate?, end: NSDate?) = parseArrayForTimes(&tokens, index: timeTokenIndex!, onDate: schedule.date)
                 //Make schedule item and add to schedule.
-                var item: ScheduleItem = ScheduleItem(blockName: stringFromTokens(tokens), startTime: times.start, endTime: times.end)
+                let item: ScheduleItem = ScheduleItem(blockName: stringFromTokens(tokens), startTime: times.start, endTime: times.end)
                 schedule.items.append(item)
             }
         }
@@ -118,11 +118,11 @@ public class XScheduleParser: ScheduleParser {
     }
     private class func removePTags(inout string: String) {
         //Find p tags.
-        var pRangeStart = string.rangeOfString("<p>")
-        var pRangeEnd = string.rangeOfString("</p>")
+        let pRangeStart = string.rangeOfString("<p>")
+        let pRangeEnd = string.rangeOfString("</p>")
         //Remove p tags.
         if ((pRangeStart) != nil && (pRangeEnd) != nil) {
-            var noPRange = (pRangeStart!.endIndex)..<(pRangeEnd!.startIndex)
+            let noPRange = (pRangeStart!.endIndex)..<(pRangeEnd!.startIndex)
             string = string.substringWithRange(noPRange)
         }
     }
@@ -132,7 +132,7 @@ public class XScheduleParser: ScheduleParser {
     }
     
     private class func separateLines(string: String) -> [String] {
-        var lines: [String] = string.componentsSeparatedByString("\n")
+        let lines: [String] = string.componentsSeparatedByString("\n")
         
         return lines
     }
@@ -151,7 +151,7 @@ public class XScheduleParser: ScheduleParser {
     private class func indexOfTimeTokenInArray(tokens: [String]) -> Int? {
         //Search through array for time token and return it's id.
         var timeTokenNum: Int?
-        for (i, token) in enumerate(tokens) {
+        for (i, token) in tokens.enumerate() {
             if (isStringTimeToken(token)) {
                 timeTokenNum = i
                 break
@@ -161,28 +161,28 @@ public class XScheduleParser: ScheduleParser {
         return timeTokenNum
     }
     private class func isStringTimeToken(string: String) -> Bool {
-        var hasNums: Bool = string.rangeOfCharacterFromSet(NSCharacterSet.decimalDigitCharacterSet()) != nil
-        var hasQuestionMark: Bool = string.rangeOfString("?") != nil
-        var hasDash: Bool = string.rangeOfString("-") != nil
-        var isTimeToken: Bool = (hasQuestionMark || hasNums) && hasDash
+        let hasNums: Bool = string.rangeOfCharacterFromSet(NSCharacterSet.decimalDigitCharacterSet()) != nil
+        let hasQuestionMark: Bool = string.rangeOfString("?") != nil
+        let hasDash: Bool = string.rangeOfString("-") != nil
+        let isTimeToken: Bool = (hasQuestionMark || hasNums) && hasDash
         
         return isTimeToken
     }
     
     private class func analyzeTimeToken(timeToken: String) -> (NSDate?, NSDate?) {
         //Analyze time token.
-        var times: (start: String, end: String) = splitTimeToken(timeToken)
-        var dateFormatter: NSDateFormatter = setUpParsingDateFormatter()
+        let times: (start: String, end: String) = splitTimeToken(timeToken)
+        let dateFormatter: NSDateFormatter = setUpParsingDateFormatter()
         
-        var startTime: NSDate? = dateFormatter.dateFromString(times.start)
-        var endTime: NSDate? = dateFormatter.dateFromString(times.end)
+        let startTime: NSDate? = dateFormatter.dateFromString(times.start)
+        let endTime: NSDate? = dateFormatter.dateFromString(times.end)
         
         return (startTime, endTime)
     }
     
     private class func stringFromTokens(tokensArray: [String]) -> String {
         //Join tokens delimited by spaces and set as desription of ScheduleItem.
-        var itemDescription: String = " ".join(tokensArray)
+        let itemDescription: String = tokensArray.joinWithSeparator(" ")
         
         return itemDescription
     }
@@ -192,23 +192,23 @@ public class XScheduleParser: ScheduleParser {
     }
     
     private class func setUpParsingDateFormatter() -> NSDateFormatter {
-        var dateFormatter: NSDateFormatter = NSDateFormatter()
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "h:mm"
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         
         return dateFormatter
     }
     private class func splitTimeToken(string: String) -> (String, String) {
-        var array: [String] = string.componentsSeparatedByString("-")
-        var tuple: (String, String) = (array.first!, array.last!)
+        let array: [String] = string.componentsSeparatedByString("-")
+        let tuple: (String, String) = (array.first!, array.last!)
         
         return tuple
     }
-    private class func combineTimeAndDate(#time: NSDate?, date: NSDate) -> NSDate? {
+    private class func combineTimeAndDate(time time: NSDate?, date: NSDate) -> NSDate? {
         var combined: NSDate?
         if (time != nil) {
-            var dateComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear | .CalendarUnitEra, fromDate: date)
-            var timeComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour | .CalendarUnitMinute, fromDate: time!)
+            let dateComponents: NSDateComponents = NSCalendar.currentCalendar().components( [.Day, .Month, .Year, .Era], fromDate: date)
+            let timeComponents: NSDateComponents = NSCalendar.currentCalendar().components( [.Hour, .Minute], fromDate: time!)
             
             timeComponents.day = dateComponents.day
             timeComponents.month = dateComponents.month
@@ -225,7 +225,7 @@ public class XScheduleParser: ScheduleParser {
     private class func assignAMPM(inout date: NSDate?) {
         //Hours 12-5 are PM.  Hours 6-11 are AM.
         if (date != nil) {
-            var dateComponents: NSDateComponents = NSCalendar.currentCalendar().components( .CalendarUnitHour, fromDate: date!)
+            let dateComponents: NSDateComponents = NSCalendar.currentCalendar().components( .Hour, fromDate: date!)
             if (dateComponents.hour==12 || dateComponents.hour<5) {
                 date = date!.dateByAddingTimeInterval(60*60*12)
             }
@@ -241,7 +241,7 @@ public class XScheduleParser: ScheduleParser {
         removeArrayItemsAfterIndex(timeTokenIndex, array: &tokens)
         
         //Remove time token and transfer to string.
-        var timeToken: String = tokens.removeAtIndex(timeTokenIndex)
+        let timeToken: String = tokens.removeAtIndex(timeTokenIndex)
         
         //Analyze time token.
         var times: (start: NSDate?, end: NSDate?) = analyzeTimeToken(timeToken)
@@ -260,19 +260,19 @@ class XScheduleXMLParser: NSObject, NSXMLParserDelegate {
     var titleString = ""
     private var currentElement = ""
 
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         currentElement = elementName
     }
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
     }
     
-    func parser(parser: NSXMLParser, foundCharacters string: String?) {
+    func parser(parser: NSXMLParser, foundCharacters string: String) {
         switch currentElement {
         case "summary":
-            titleString += string!
+            titleString += string
         case "description":
-            descriptionString += string!
+            descriptionString += string
         default:
             break;
         }

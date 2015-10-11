@@ -21,7 +21,7 @@ class LegalViewController: UIViewController {
     }
     func loadLegalText() {
         if let path = licensePath {
-            var licenseText = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
+            let licenseText = try? String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
             if let license = licenseText {
                 mainTextView.text = license
             }

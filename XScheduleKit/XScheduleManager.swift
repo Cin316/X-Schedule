@@ -23,7 +23,7 @@ public class XScheduleManager: ScheduleManager {
         return task
     }
     private class func getCachedScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) {
-        var schedule: Schedule? = CacheManager.loadScheduleForDate(date)
+        let schedule: Schedule? = CacheManager.loadScheduleForDate(date)
         if (schedule != nil) {
             completionHandler(substituteSchedule(schedule!))
         } else {

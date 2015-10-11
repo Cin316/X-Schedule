@@ -52,3 +52,8 @@ This files keeps track of all of the changes made betweem version of X Schedule.
   - Can be turned on and off with switch.
 - Added gestures, swiping, and animations to the iPhone.
 - Bug fixes and tweaks.
+
+#1.1.1
+- Fixed major bug where schedules would not properly download.
+- Fixed bug where donors view would crash app.
+- Updated code to Swift 2.

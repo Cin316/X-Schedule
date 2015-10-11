@@ -31,7 +31,7 @@ class CustomizationViewController: UITableViewController {
         return substitutions.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CustomizationCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CustomizationCell", forIndexPath: indexPath) 
         let item = substitutions[indexPath.row]
         
         // Configure the cell.
@@ -63,8 +63,7 @@ class CustomizationViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var selectedCell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
-        var substitution: (block: String, className: String) = substitutions[indexPath.row]
+        let substitution: (block: String, className: String) = substitutions[indexPath.row]
         selectedItem = substitution
         selectedNum = indexPath.row
         
@@ -89,7 +88,7 @@ class CustomizationViewController: UITableViewController {
         substitutionsChanged()
     }
     private func substitutionsChanged() {
-        substitutions.sort({ $0.block < $1.block })
+        substitutions.sortInPlace({ $0.block < $1.block })
         SubstitutionManager.saveSubstitutions(substitutions)
         self.tableView.reloadData()
     }

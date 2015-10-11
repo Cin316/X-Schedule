@@ -14,15 +14,15 @@ public class CacheManager {
     public static let scheduleCacheDirectoryName = "Schedules"
     
     public class func scheduleExistsForDate(date: NSDate) -> Bool {
-        var path: String = pathForDate(date)
-        var exists: Bool = fileManager().fileExistsAtPath(path)
+        let path: String = pathForDate(date)
+        let exists: Bool = fileManager().fileExistsAtPath(path)
         
         return exists
     }
     public class func loadScheduleForDate(date: NSDate) -> Schedule? {
         var schedule: Schedule?
-        var path: String = pathForDate(date)
-        var contents: String? = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
+        let path: String = pathForDate(date)
+        let contents: String? = try? String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
         if let realContents = contents {
             schedule = XScheduleParser.parseForSchedule(realContents, date: date)
         } else {
@@ -32,19 +32,25 @@ public class CacheManager {
     }
     public class func cacheSchedule(schedule: Schedule) {
         createScheduleCacheDir()
-        var path: String = pathForDate(schedule.date)
-        var contents: String = XScheduleParser.storeScheduleInString(schedule)
+        let path: String = pathForDate(schedule.date)
+        let contents: String = XScheduleParser.storeScheduleInString(schedule)
         
-        contents.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+        do {
+            try contents.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+        } catch _ {
+        }
     }
     
     public class func clearCache() {
-        var error: NSError?
-        var files: [AnyObject]? = fileManager().contentsOfDirectoryAtPath(scheduleCacheDirectory(), error: &error)
+        var files: [AnyObject]?
+        files = try! fileManager().contentsOfDirectoryAtPath(scheduleCacheDirectory())
+        
         if let paths = files as? [String] {
             for file in paths {
-                var path: String = scheduleCacheDirectory().stringByAppendingPathComponent(file)
-                fileManager().removeItemAtPath(path, error: &error)
+                let cacheURL: NSURL = NSURL(fileURLWithPath: scheduleCacheDirectory())
+                let path: String = cacheURL.URLByAppendingPathComponent(file).relativePath!
+                try! fileManager().removeItemAtPath(path)
+
             }
         }
     }
@@ -54,7 +60,7 @@ public class CacheManager {
     }
     public class func buildCacheForLengthOfTime(numOfDays days: Int) {
         for (var i=(-days); i<=days; i++) {
-            var date: NSDate = dateDaysFromNow(numOfDays: i)
+            let date: NSDate = dateDaysFromNow(numOfDays: i)
             XScheduleManager.downloadScheduleForDate(date, completionHandler: { (schedule: Schedule) in}, errorHandler: { (errorText: String) in})
         }
     }
@@ -66,44 +72,48 @@ public class CacheManager {
     }
     
     private class func fileManager() -> NSFileManager {
-        var fileManager: NSFileManager = NSFileManager.defaultManager()
+        let fileManager: NSFileManager = NSFileManager.defaultManager()
         
         return fileManager
     }
     private class func documentsDirectory() -> String {
-        let directories: [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as! [String]
+        let directories: [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) 
         let documentsDirectory: String =  directories[0]
         
         return documentsDirectory
     }
     private class func scheduleCacheDirectory() -> String {
-        var path: String = documentsDirectory().stringByAppendingPathComponent(scheduleCacheDirectoryName)
+        let documentsURL: NSURL = NSURL(fileURLWithPath: documentsDirectory())
+        let path: String = documentsURL.URLByAppendingPathComponent(scheduleCacheDirectoryName).relativePath!
         
         return path
     }
     private class func createScheduleCacheDir() {
         if ( !fileManager().fileExistsAtPath(scheduleCacheDirectory()) ) {
-            fileManager().createDirectoryAtPath(scheduleCacheDirectory(), withIntermediateDirectories: true, attributes: nil, error: nil)
+            do {
+                try fileManager().createDirectoryAtPath(scheduleCacheDirectory(), withIntermediateDirectories: true, attributes: nil)
+            } catch _ {
+            }
         }
     }
     
     private class func pathForDate(date: NSDate) -> String {
-        var cacheDirectory: String = scheduleCacheDirectory()
-        var scheduleFileName: String = fileNameForDate(date)
-        var path: String = cacheDirectory.stringByAppendingPathComponent(scheduleFileName)
+        let cacheDirectoryURL: NSURL = NSURL(fileURLWithPath: scheduleCacheDirectory())
+        let scheduleFileName: String = fileNameForDate(date)
+        let path: String = cacheDirectoryURL.URLByAppendingPathComponent(scheduleFileName).relativePath!
         
         return path
     }
     
     private class func fileNameForDate(date: NSDate) -> String {
-        var dateFormat: NSDateFormatter = setUpFileDateFormatter()
-        var dateString:  String = dateFormat.stringFromDate(date)
-        var filename = "\(dateString).xml"
+        let dateFormat: NSDateFormatter = setUpFileDateFormatter()
+        let dateString:  String = dateFormat.stringFromDate(date)
+        let filename = "\(dateString).xml"
         
         return filename
     }
     private class func setUpFileDateFormatter() -> NSDateFormatter {
-        var dateFormat: NSDateFormatter = NSDateFormatter()
+        let dateFormat: NSDateFormatter = NSDateFormatter()
         dateFormat.dateFormat = "yyyy-MM-dd"
         dateFormat.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         

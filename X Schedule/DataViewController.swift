@@ -87,7 +87,7 @@ class DataViewController: ScheduleViewController {
     }
     
     private func displayDateLabelForDate(date: NSDate) {
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d, yyyy"
         dateLabel.text = dateFormatter.stringFromDate(date)
     }

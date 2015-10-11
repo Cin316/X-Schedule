@@ -26,7 +26,7 @@ public class ScheduleTableController: UITableViewController {
     }
 
     public override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableCell", forIndexPath: indexPath) 
         let item = schedule.items[indexPath.row]
         
         // Configure the cell.
@@ -40,15 +40,15 @@ public class ScheduleTableController: UITableViewController {
         return cell
     }
     private func timeTextForScheduleItem(item: ScheduleItem) -> String {
-        var startString = timeTextForNSDate(item.startTime)
-        var endString = timeTextForNSDate(item.endTime)
-        var outputText = "\(startString) - \(endString)"
+        let startString = timeTextForNSDate(item.startTime)
+        let endString = timeTextForNSDate(item.endTime)
+        let outputText = "\(startString) - \(endString)"
         
         return outputText
     }
     private func timeTextForNSDate(time: NSDate?) -> String {
         var timeText: String = ""
-        var dateFormat: NSDateFormatter = NSDateFormatter()
+        let dateFormat: NSDateFormatter = NSDateFormatter()
         dateFormat.dateFormat = "h:mm"
         if let realTime = time {
             timeText = dateFormat.stringFromDate(realTime)
@@ -64,7 +64,7 @@ public class ScheduleTableController: UITableViewController {
         let item = schedule.items[indexPath.row]
         let calendar: NSCalendar = NSCalendar.currentCalendar()
         //Highlight the cell if the schedule is for today and the class is happening now.
-        var isNow: Bool = calendar.isDateInToday(schedule.date) && isSceduleItemHappeningNow(item)
+        let isNow: Bool = calendar.isDateInToday(schedule.date) && isSceduleItemHappeningNow(item)
         
         if (isNow) {
             //Color is higlighted.
@@ -80,8 +80,8 @@ public class ScheduleTableController: UITableViewController {
         //Determine if right now is between the start and end of a ScheduleItem.
         var happeningNow: Bool = false
         if (item.startTime != nil && item.endTime != nil) {
-            var afterStart: Bool = NSDate().compare(item.startTime!) != NSComparisonResult.OrderedAscending
-            var beforeEnd: Bool = NSDate().compare(item.endTime!) != NSComparisonResult.OrderedDescending
+            let afterStart: Bool = NSDate().compare(item.startTime!) != NSComparisonResult.OrderedAscending
+            let beforeEnd: Bool = NSDate().compare(item.endTime!) != NSComparisonResult.OrderedDescending
             happeningNow = afterStart && beforeEnd
         }
         

@@ -33,7 +33,7 @@ class ScheduleSwitcherViewController: UINavigationController {
     }
     
     func deviceOrientationDidChangeNotification() {
-        var newOrientation = UIDevice.currentDevice().orientation
+        let newOrientation = UIDevice.currentDevice().orientation
         //Check if newOrientation is valid.
         if (newOrientation.isPortrait || newOrientation.isLandscape) {
             //Check if newOrientation is different from the currentOrientation.
@@ -96,7 +96,7 @@ class ScheduleSwitcherViewController: UINavigationController {
 
 class NoAnimationSegue: UIStoryboardSegue {
     override func perform() {
-        let destination = destinationViewController as! UIViewController
+        let destination = destinationViewController 
         if let source = sourceViewController as? UINavigationController {
             //Transition with no animation.  Sets new view as root view controller.
             source.setViewControllers([destination], animated: false)

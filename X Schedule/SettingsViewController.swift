@@ -20,7 +20,7 @@ class SettingsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var selectedCell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
+        let selectedCell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
         if let cell = selectedCell {
             if (cell.tag == 501) { //Clear Cache button.
                 clearCache()
