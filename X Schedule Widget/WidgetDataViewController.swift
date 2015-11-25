@@ -18,11 +18,12 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scheduleDate = NSDate()
+        //Schedule date is 8 hours in the future so the schedule displays the next day's classes in the evenings.
+        scheduleDate = NSDate().dateByAddingTimeInterval(60*60*8)
     }
     override func refreshSchedule() {
         // Download today's schedule from the St. X website.
-        XScheduleManager.getScheduleForDate(NSDate(),
+        XScheduleManager.getScheduleForDate(scheduleDate,
             completionHandler: { (schedule: Schedule) in
                 //Execute code in main thread.
                 dispatch_async(dispatch_get_main_queue()) {
