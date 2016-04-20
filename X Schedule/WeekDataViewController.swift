@@ -52,7 +52,7 @@ class WeekDataViewController: ScheduleViewController {
             var num: Int = 0
             for method in downloadMethods {
                 if (method == DownloadMethod.Download) {
-                    num++
+                    num += 1
                 }
             }
             return num
@@ -78,7 +78,7 @@ class WeekDataViewController: ScheduleViewController {
     private func clearScheduleTables() {
         //Blank out every schedule.
         let blankSchedule: Schedule = Schedule()
-        for (var i=0; i<5; i++) {
+        for i in 0...4 {
             if let tableController = self.childViewControllers[i] as? ScheduleTableController {
                 if (downloadMethods[i] == DownloadMethod.Download) {
                     tableController.schedule = blankSchedule
@@ -88,13 +88,13 @@ class WeekDataViewController: ScheduleViewController {
     }
     private func clearEmptyLabels() {
         //Clear all "No classes" labels.
-        for (var i=1; i<=5; i++) {
+        for i in 1...5 {
             emptyLabel(i).text = ""
         }
     }
     private func refreshSchedules() {
         //Refresh schedule for each day of the week.
-        for (var i=1; i<=5; i++) {
+        for i in 1...5 {
             refreshScheduleNum(i)
         }
     }
@@ -219,7 +219,7 @@ class WeekDataViewController: ScheduleViewController {
     }
     private func markOneTaskAsFinished() {
         //Stop loading indicator after everything is complete.
-        finishedLoadingNum++
+        finishedLoadingNum += 1
         if(finishedLoadingNum>=downloadCount) {
             finishedLoadingNum = 0
             stopLoading()

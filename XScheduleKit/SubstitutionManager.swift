@@ -29,10 +29,10 @@ public class SubstitutionManager {
     }
     public class func substituteItemsInSchedule(schedule: Schedule, substitutions: [(block: String, className: String)]) -> Schedule {
         let outputSchedule: Schedule = schedule
-        for (var i=0; i<schedule.items.count; i++) {
+        for item in outputSchedule.items {
             for sub in substitutions {
-                if outputSchedule.items[i].blockName.uppercaseString == sub.block.uppercaseString {
-                    outputSchedule.items[i].blockName = sub.className
+                if item.blockName.uppercaseString == sub.block.uppercaseString {
+                    item.blockName = sub.className
                 }
             }
         }

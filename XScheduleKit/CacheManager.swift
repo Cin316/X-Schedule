@@ -59,7 +59,7 @@ public class CacheManager {
         buildCacheForLengthOfTime(numOfDays: defaultCacheLengthInDays)
     }
     public class func buildCacheForLengthOfTime(numOfDays days: Int) {
-        for (var i=(-days); i<=days; i++) {
+        for i in -days...days {
             let date: NSDate = dateDaysFromNow(numOfDays: i)
             XScheduleManager.downloadScheduleForDate(date, completionHandler: { (schedule: Schedule) in}, errorHandler: { (errorText: String) in})
         }
