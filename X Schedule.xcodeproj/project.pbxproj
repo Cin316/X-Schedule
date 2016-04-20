@@ -41,6 +41,7 @@
 		E14E79C01CC7112200FE1DB7 /* XScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */; };
 		E14E79C51CC7112200FE1DB7 /* XScheduleKit-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 45CB99211AE485A800937163 /* XScheduleKit-Swift.h */; };
 		E14E79D31CC7157C00FE1DB7 /* XScheduleKitWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14E79CB1CC7112200FE1DB7 /* XScheduleKitWatch.framework */; };
+		E14E79D51CC717EA00FE1DB7 /* ScheduleTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E79D41CC717EA00FE1DB7 /* ScheduleTableRow.swift */; };
 		E16DCB6D1AB3BF610045F5A0 /* donors.txt in Resources */ = {isa = PBXBuildFile; fileRef = E16DCB6C1AB3BF610045F5A0 /* donors.txt */; };
 		E1841FB51ADDFD4900C5DF3E /* ColoredScheduleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */; };
 		E18C80A71AEDBDDA00C60CE1 /* ScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C80A61AEDBDDA00C60CE1 /* ScheduleDownloader.swift */; };
@@ -174,6 +175,7 @@
 		E14E79A81CC705F700FE1DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E14E79CB1CC7112200FE1DB7 /* XScheduleKitWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XScheduleKitWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14E79CC1CC7112200FE1DB7 /* XScheduleKitWatch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "XScheduleKitWatch-Info.plist"; path = "/Users/nicholas/Xcode Projects/X Schedule/XScheduleKitWatch-Info.plist"; sourceTree = "<absolute>"; };
+		E14E79D41CC717EA00FE1DB7 /* ScheduleTableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableRow.swift; sourceTree = "<group>"; };
 		E16DCB6C1AB3BF610045F5A0 /* donors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = donors.txt; sourceTree = SOURCE_ROOT; };
 		E18039831AABF260006513B2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredScheduleTableController.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 		E14E799B1CC705F700FE1DB7 /* X Schedule Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E14E79D41CC717EA00FE1DB7 /* ScheduleTableRow.swift */,
 				E14E799E1CC705F700FE1DB7 /* InterfaceController.swift */,
 				E14E79A01CC705F700FE1DB7 /* ExtensionDelegate.swift */,
 				E14E79A21CC705F700FE1DB7 /* NotificationController.swift */,
@@ -740,6 +743,7 @@
 				E14E79A51CC705F700FE1DB7 /* ComplicationController.swift in Sources */,
 				E14E79A11CC705F700FE1DB7 /* ExtensionDelegate.swift in Sources */,
 				E14E799F1CC705F700FE1DB7 /* InterfaceController.swift in Sources */,
+				E14E79D51CC717EA00FE1DB7 /* ScheduleTableRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

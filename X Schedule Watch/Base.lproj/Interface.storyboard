@@ -12,7 +12,7 @@
                     <items>
                         <table alignment="left" id="iNY-84-N2J">
                             <items>
-                                <tableRow identifier="scheduleItem" selectable="NO" id="Bjq-Kt-0yY">
+                                <tableRow identifier="scheduleTableRow" selectable="NO" id="Bjq-Kt-0yY" customClass="ScheduleTableRow" customModule="X_Schedule_Watch_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="qky-YI-bg4">
                                         <items>
                                             <label alignment="center" verticalAlignment="center" text="A    " textAlignment="left" id="4O0-E9-Kf0">
@@ -21,10 +21,17 @@
                                             <dateLabel alignment="center" verticalAlignment="center" textAlignment="right" format="h:mm a" id="3h0-AE-ehS"/>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="classLabel" destination="4O0-E9-Kf0" id="1bN-LA-zFJ"/>
+                                        <outlet property="time" destination="3h0-AE-ehS" id="2dq-aR-1fE"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="scheduleTable" destination="iNY-84-N2J" id="mp6-DS-eLA"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>

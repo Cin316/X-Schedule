@@ -12,8 +12,13 @@ import XScheduleKitWatch
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet var scheduleTable: WKInterfaceTable!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        scheduleTable.setNumberOfRows(10, withRowType: "scheduleTableRow")
+        let row = scheduleTable.rowControllerAtIndex(0) as? ScheduleTableRow
+        row?.classLabel.setText("B    ") //4 spaces afterwards for spacing.
         
         // Configure interface objects here.
     }
