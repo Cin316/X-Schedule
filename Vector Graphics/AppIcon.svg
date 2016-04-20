@@ -17,9 +17,9 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="AppIcon.svg"
-   inkscape:export-filename="/Users/nicholas/Xcode Projects/X Schedule/Vector Graphics/AppIcon_iPad@1x.png"
-   inkscape:export-xdpi="114"
-   inkscape:export-ydpi="114">
+   inkscape:export-filename="/Users/nicholas/Xcode Projects/X Schedule/Vector Graphics/AppIcon_iPad@1xn.png"
+   inkscape:export-xdpi="250.5"
+   inkscape:export-ydpi="250.5">
   <defs
      id="defs4">
     <linearGradient
@@ -171,8 +171,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="12.170441"
-     inkscape:cx="29.88838"
-     inkscape:cy="29.346187"
+     inkscape:cx="16.865023"
+     inkscape:cy="39.206142"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -185,7 +185,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
         <cc:license
            rdf:resource="http://creativecommons.org/licenses/by/3.0/" />
       </cc:Work>
