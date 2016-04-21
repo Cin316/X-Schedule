@@ -16,11 +16,41 @@ class InterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        scheduleTable.setNumberOfRows(10, withRowType: "scheduleTableRow")
-        let row = scheduleTable.rowControllerAtIndex(0) as? ScheduleTableRow
-        row?.classLabel.setText("B    ") //4 spaces afterwards for spacing.
+        
+        //TODO Display schedule date and title.
+        let testSchedule = Schedule()
+        testSchedule.items.append(ScheduleItem(blockName: "A", startTime: NSDate(timeIntervalSinceNow: -5*3600), endTime: NSDate(timeIntervalSinceNow: -4*3600)))
+        testSchedule.items.append(ScheduleItem(blockName: "B", startTime: NSDate(timeIntervalSinceNow: -4*3600), endTime: NSDate(timeIntervalSinceNow: -3*3600)))
+        testSchedule.items.append(ScheduleItem(blockName: "Assembly", startTime: nil, endTime: nil))
+        testSchedule.items.append(ScheduleItem(blockName: "C", startTime: NSDate(timeIntervalSinceNow: -1*3600), endTime: NSDate(timeIntervalSinceNow: -0*3600)))
+        
+        displaySchedule(testSchedule)
         
         // Configure interface objects here.
+    }
+    
+    func displaySchedule(schedule: Schedule) {
+        scheduleTable.setNumberOfRows(schedule.items.count, withRowType: "scheduleTableRow")
+        for i in 0...schedule.items.count-1 {
+            let item = schedule.items[i]
+            let row = scheduleTable.rowControllerAtIndex(i) as? ScheduleTableRow
+            row?.classLabel.setText(item.blockName)
+            
+            row?.startTime.setText(timeTextForNSDate(item.startTime))
+            row?.endTime.setText(timeTextForNSDate(item.endTime))
+        }
+    }
+    private func timeTextForNSDate(time: NSDate?) -> String {
+        var timeText: String = ""
+        let dateFormat: NSDateFormatter = NSDateFormatter()
+        dateFormat.dateFormat = "h:mm"
+        if let realTime = time {
+            timeText = dateFormat.stringFromDate(realTime)
+        } else {
+            timeText = "?:??"
+        }
+        
+        return timeText
     }
 
     override func willActivate() {
