@@ -15,22 +15,18 @@
                                 <tableRow identifier="scheduleTableRow" selectable="NO" id="Bjq-Kt-0yY" customClass="ScheduleTableRow" customModule="X_Schedule_Watch_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="qky-YI-bg4">
                                         <items>
-                                            <label alignment="center" verticalAlignment="center" text="A    " textAlignment="left" id="4O0-E9-Kf0">
+                                            <label alignment="left" verticalAlignment="center" text="A" textAlignment="left" id="4O0-E9-Kf0">
                                                 <fontDescription key="font" type="boldSystem" pointSize="22"/>
                                             </label>
-                                            <dateLabel alignment="center" verticalAlignment="center" textAlignment="right" format="h:mm" id="3h0-AE-ehS"/>
-                                            <label alignment="center" verticalAlignment="center" text=" - " id="RAG-ga-QLZ"/>
-                                            <dateLabel alignment="right" verticalAlignment="center" textAlignment="right" format="h:mm" id="PcM-9t-9n1">
-                                                <date key="previewedDate" timeIntervalSinceReferenceDate="431978940">
-                                                    <!--2014-09-09 18:09:00 +0000-->
-                                                </date>
-                                            </dateLabel>
+                                            <label alignment="right" verticalAlignment="center" text="1:05" id="nbZ-Jj-zIU"/>
+                                            <label alignment="right" verticalAlignment="center" text=" - " id="RAG-ga-QLZ"/>
+                                            <label alignment="right" verticalAlignment="center" text="2:05" id="Lf6-NM-Qkg"/>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="classLabel" destination="4O0-E9-Kf0" id="1bN-LA-zFJ"/>
-                                        <outlet property="endTime" destination="PcM-9t-9n1" id="wLN-0j-jw0"/>
-                                        <outlet property="startTime" destination="3h0-AE-ehS" id="aB7-34-RCf"/>
+                                        <outlet property="endTime" destination="Lf6-NM-Qkg" id="a5l-NI-m9v"/>
+                                        <outlet property="startTime" destination="nbZ-Jj-zIU" id="Dkl-QV-pOD"/>
                                     </connections>
                                 </tableRow>
                             </items>
