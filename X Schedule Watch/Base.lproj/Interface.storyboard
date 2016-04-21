@@ -18,12 +18,19 @@
                                             <label alignment="center" verticalAlignment="center" text="A    " textAlignment="left" id="4O0-E9-Kf0">
                                                 <fontDescription key="font" type="boldSystem" pointSize="22"/>
                                             </label>
-                                            <dateLabel alignment="center" verticalAlignment="center" textAlignment="right" format="h:mm a" id="3h0-AE-ehS"/>
+                                            <dateLabel alignment="center" verticalAlignment="center" textAlignment="right" format="h:mm" id="3h0-AE-ehS"/>
+                                            <label alignment="center" verticalAlignment="center" text=" - " id="RAG-ga-QLZ"/>
+                                            <dateLabel alignment="right" verticalAlignment="center" textAlignment="right" format="h:mm" id="PcM-9t-9n1">
+                                                <date key="previewedDate" timeIntervalSinceReferenceDate="431978940">
+                                                    <!--2014-09-09 18:09:00 +0000-->
+                                                </date>
+                                            </dateLabel>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="classLabel" destination="4O0-E9-Kf0" id="1bN-LA-zFJ"/>
-                                        <outlet property="time" destination="3h0-AE-ehS" id="2dq-aR-1fE"/>
+                                        <outlet property="endTime" destination="PcM-9t-9n1" id="wLN-0j-jw0"/>
+                                        <outlet property="startTime" destination="3h0-AE-ehS" id="aB7-34-RCf"/>
                                     </connections>
                                 </tableRow>
                             </items>
