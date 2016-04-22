@@ -15,8 +15,8 @@
                                 <tableRow identifier="scheduleTableRow" selectable="NO" id="Bjq-Kt-0yY" customClass="ScheduleTableRow" customModule="X_Schedule_Watch_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="qky-YI-bg4">
                                         <items>
-                                            <label alignment="left" verticalAlignment="center" text="A" textAlignment="left" id="4O0-E9-Kf0">
-                                                <fontDescription key="font" type="boldSystem" pointSize="22"/>
+                                            <label width="37" alignment="left" verticalAlignment="center" text="FLEX" textAlignment="left" id="4O0-E9-Kf0">
+                                                <fontDescription key="font" type="boldSystem" pointSize="16"/>
                                             </label>
                                             <label alignment="right" verticalAlignment="center" text="1:05" id="nbZ-Jj-zIU"/>
                                             <label alignment="right" verticalAlignment="center" text=" - " id="RAG-ga-QLZ"/>

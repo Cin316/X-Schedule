@@ -23,6 +23,7 @@ class InterfaceController: WKInterfaceController {
         testSchedule.items.append(ScheduleItem(blockName: "B", startTime: NSDate(timeIntervalSinceNow: -4*3600), endTime: NSDate(timeIntervalSinceNow: -3*3600)))
         testSchedule.items.append(ScheduleItem(blockName: "Assembly", startTime: nil, endTime: nil))
         testSchedule.items.append(ScheduleItem(blockName: "C", startTime: NSDate(timeIntervalSinceNow: -1*3600), endTime: NSDate(timeIntervalSinceNow: -0*3600)))
+        testSchedule.items.append(ScheduleItem(blockName: "FLEX", startTime: NSDate(timeIntervalSinceNow: 0*3600), endTime: NSDate(timeIntervalSinceNow: 1*3600)))
         
         displaySchedule(testSchedule)
         
@@ -34,7 +35,16 @@ class InterfaceController: WKInterfaceController {
         for i in 0...schedule.items.count-1 {
             let item = schedule.items[i]
             let row = scheduleTable.rowControllerAtIndex(i) as? ScheduleTableRow
-            row?.classLabel.setText(item.blockName)
+            
+            var size: CGFloat = 0.0
+            if (item.blockName.characters.count <= 1) {
+                size = 22.0
+            } else {
+                size = 16.0
+            }
+            let font = UIFont.boldSystemFontOfSize(size)
+            let fontAttrs = [NSFontAttributeName : font]
+            row?.classLabel.setAttributedText(NSAttributedString(string: item.blockName, attributes: fontAttrs))
             
             row?.startTime.setText(timeTextForNSDate(item.startTime))
             row?.endTime.setText(timeTextForNSDate(item.endTime))
