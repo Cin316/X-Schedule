@@ -10,6 +10,9 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="X_Schedule_Watch" customModuleProvider="target">
                     <items>
+                        <label alignment="center" text="Late C Day" textAlignment="center" id="T1T-rP-8qZ">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
                         <table alignment="left" id="iNY-84-N2J">
                             <items>
                                 <tableRow identifier="scheduleTableRow" selectable="NO" id="Bjq-Kt-0yY" customClass="ScheduleTableRow" customModule="X_Schedule_Watch_Extension">
@@ -34,6 +37,7 @@
                     </items>
                     <connections>
                         <outlet property="scheduleTable" destination="iNY-84-N2J" id="mp6-DS-eLA"/>
+                        <outlet property="titleLabel" destination="T1T-rP-8qZ" id="i8k-Ni-iKI"/>
                     </connections>
                 </controller>
             </objects>
