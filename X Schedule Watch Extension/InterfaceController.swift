@@ -18,7 +18,6 @@ class InterfaceController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        //TODO Display schedule date and title.
         let testSchedule = Schedule()
         testSchedule.title = "Late A Day"
         testSchedule.items.append(ScheduleItem(blockName: "A", startTime: NSDate(timeIntervalSinceNow: -5*3600), endTime: NSDate(timeIntervalSinceNow: -4*3600)))
@@ -28,8 +27,6 @@ class InterfaceController: WKInterfaceController {
         testSchedule.items.append(ScheduleItem(blockName: "FLEX", startTime: NSDate(timeIntervalSinceNow: 0*3600), endTime: NSDate(timeIntervalSinceNow: 1*3600)))
         
         displaySchedule(testSchedule)
-        
-        // Configure interface objects here.
     }
     
     func displaySchedule(schedule: Schedule) {
