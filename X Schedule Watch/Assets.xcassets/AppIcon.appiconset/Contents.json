@@ -17,18 +17,21 @@
     {
       "size" : "29x29",
       "idiom" : "watch",
+      "filename" : "AppIcon_Watch@58px.png",
       "role" : "companionSettings",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "watch",
+      "filename" : "AppIcon_Watch@87px.png",
       "role" : "companionSettings",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "watch",
+      "filename" : "AppIcon_Watch@80px.png",
       "scale" : "2x",
       "role" : "appLauncher",
       "subtype" : "38mm"
@@ -36,6 +39,7 @@
     {
       "size" : "86x86",
       "idiom" : "watch",
+      "filename" : "AppIcon_Watch@172px.png",
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "38mm"
@@ -43,6 +47,7 @@
     {
       "size" : "98x98",
       "idiom" : "watch",
+      "filename" : "AppIcon_Watch@196px.png",
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "42mm"
