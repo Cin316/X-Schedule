@@ -19,20 +19,19 @@ class InterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
         
         let testSchedule = Schedule()
-        testSchedule.title = "Late A Day"
-        testSchedule.items.append(ScheduleItem(blockName: "A", startTime: NSDate(timeIntervalSinceNow: -5*3600), endTime: NSDate(timeIntervalSinceNow: -4*3600)))
-        testSchedule.items.append(ScheduleItem(blockName: "B", startTime: NSDate(timeIntervalSinceNow: -4*3600), endTime: NSDate(timeIntervalSinceNow: -3*3600)))
-        testSchedule.items.append(ScheduleItem(blockName: "Assembly", startTime: nil, endTime: nil))
-        testSchedule.items.append(ScheduleItem(blockName: "C", startTime: NSDate(timeIntervalSinceNow: -1*3600), endTime: NSDate(timeIntervalSinceNow: -0*3600)))
-        testSchedule.items.append(ScheduleItem(blockName: "FLEX", startTime: NSDate(timeIntervalSinceNow: 0*3600), endTime: NSDate(timeIntervalSinceNow: 1*3600)))
-        
+        testSchedule.title = "Loading"
+        //TODO Add support for weekends/no classes.
         displaySchedule(testSchedule)
+        
+        XScheduleManager.getScheduleForToday( { (schedule: Schedule) in
+            self.displaySchedule(schedule);
+        })
     }
     
     func displaySchedule(schedule: Schedule) {
         titleLabel.setText(schedule.title)
         scheduleTable.setNumberOfRows(schedule.items.count, withRowType: "scheduleTableRow")
-        for i in 0...schedule.items.count-1 {
+        for i in 0..<schedule.items.count {
             let item = schedule.items[i]
             let row = scheduleTable.rowControllerAtIndex(i) as? ScheduleTableRow
             
@@ -44,7 +43,7 @@ class InterfaceController: WKInterfaceController {
             }
             let font = UIFont.boldSystemFontOfSize(size)
             let fontAttrs = [NSFontAttributeName : font]
-            row?.classLabel.setAttributedText(NSAttributedString(string: item.blockName, attributes: fontAttrs))
+            row?.classLabel.setAttributedText(NSAttributedString(string: item.blockName.uppercaseString, attributes: fontAttrs))
             
             row?.startTime.setText(timeTextForNSDate(item.startTime))
             row?.endTime.setText(timeTextForNSDate(item.endTime))
