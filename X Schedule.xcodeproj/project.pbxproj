@@ -740,7 +740,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = ./buildNum.bash;
+			shellScript = ./buildNumWatch.bash;
 		};
 /* End PBXShellScriptBuildPhase section */
 
