@@ -183,8 +183,9 @@ public class XScheduleParser: ScheduleParser {
     private class func stringFromTokens(tokensArray: [String]) -> String {
         //Join tokens delimited by spaces and set as desription of ScheduleItem.
         let itemDescription: String = tokensArray.joinWithSeparator(" ")
+        let trimmedDescription: String = itemDescription.stringByTrimmingCharactersInSet(.whitespaceCharacterSet())
         
-        return itemDescription
+        return trimmedDescription
     }
     
     private class func removeArrayItemsAfterIndex<T>(index: Int, inout array: [T]) {
