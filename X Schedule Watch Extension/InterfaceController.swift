@@ -48,6 +48,9 @@ class InterfaceController: WKInterfaceController {
             row?.startTime.setText(timeTextForNSDate(item.startTime))
             row?.endTime.setText(timeTextForNSDate(item.endTime))
         }
+        if (schedule.title=="" && schedule.items.count==0) {
+            titleLabel.setText("No classes")
+        }
     }
     private func timeTextForNSDate(time: NSDate?) -> String {
         var timeText: String = ""
