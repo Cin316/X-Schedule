@@ -3,7 +3,7 @@
 //  X Schedule Watch Extension
 //
 //  Created by Nicholas Reichert on 4/19/16.
-//  Copyright © 2016 Nicholas Reichert. All rights reserved.
+//  Copyright © 2016 Nicholas Reichert.
 //
 
 import ClockKit
