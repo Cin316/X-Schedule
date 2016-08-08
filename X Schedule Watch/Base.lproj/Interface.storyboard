@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="X_Schedule_Watch" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" text="Late C Day" textAlignment="center" id="T1T-rP-8qZ">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <table alignment="left" id="iNY-84-N2J">
+                            <items>
+                                <tableRow identifier="scheduleTableRow" selectable="NO" id="Bjq-Kt-0yY" customClass="ScheduleTableRow" customModule="X_Schedule_Watch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="qky-YI-bg4">
+                                        <items>
+                                            <label width="37" alignment="left" verticalAlignment="center" text="FLEX" textAlignment="left" id="4O0-E9-Kf0">
+                                                <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                                            </label>
+                                            <label alignment="right" verticalAlignment="center" text="1:05" id="nbZ-Jj-zIU"/>
+                                            <label alignment="right" verticalAlignment="center" text=" - " id="RAG-ga-QLZ"/>
+                                            <label alignment="right" verticalAlignment="center" text="2:05" id="Lf6-NM-Qkg"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="classLabel" destination="4O0-E9-Kf0" id="1bN-LA-zFJ"/>
+                                        <outlet property="endTime" destination="Lf6-NM-Qkg" id="a5l-NI-m9v"/>
+                                        <outlet property="startTime" destination="nbZ-Jj-zIU" id="Dkl-QV-pOD"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="scheduleTable" destination="iNY-84-N2J" id="mp6-DS-eLA"/>
+                        <outlet property="titleLabel" destination="T1T-rP-8qZ" id="i8k-Ni-iKI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="X_Schedule_Watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

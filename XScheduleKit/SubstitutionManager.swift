@@ -31,13 +31,16 @@ public class SubstitutionManager {
         let outputSchedule: Schedule = schedule
         for item in outputSchedule.items {
             for sub in substitutions {
-                if item.blockName.uppercaseString == sub.block.uppercaseString {
+                if trimWhitespaceFrom(item.blockName.uppercaseString) == trimWhitespaceFrom(sub.block.uppercaseString) {
                     item.blockName = sub.className
                 }
             }
         }
         
         return outputSchedule
+    }
+    private class func trimWhitespaceFrom(string: String) -> String {
+        return string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
     }
     
     public class func saveSubstitutions(subs: [(block: String, className: String)]) {

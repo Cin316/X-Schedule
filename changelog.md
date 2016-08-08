@@ -57,3 +57,12 @@ This files keeps track of all of the changes made betweem version of X Schedule.
 - Fixed major bug where schedules would not properly download.
 - Fixed bug where donors view would crash app.
 - Updated code to Swift 2.
+
+#1.2.0
+- Made widget show next day's schedule after 8 PM.
+- Improved class substitutions.  They now ignore case and whitespace.
+- Added class substitutions to the widget.
+- Added iPad Pro support.
+- Added Apple Watch app.
+  - Shows the current day's schedule.
+
