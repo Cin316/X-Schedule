@@ -7,3 +7,4 @@ git=`sh /etc/profile; which git`
 # Add 12 so that build numbers match up with old way of counting.
 appBuild=`echo $(( $($git log --oneline | wc -l) + 12 ))`
 /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $appBuild" "${TARGET_BUILD_DIR}/${INFOPLIST_PATH}"
+/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $appBuild" "${TARGET_BUILD_DIR}/X Schedule Watch.app/Info.plist"

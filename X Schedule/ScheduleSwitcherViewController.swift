@@ -25,7 +25,7 @@ class ScheduleSwitcherViewController: UINavigationController {
     }
     private func registerAsOrientationListener() {
         //Register orientation change listener.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "deviceOrientationDidChangeNotification", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ScheduleSwitcherViewController.deviceOrientationDidChangeNotification), name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     private func updateCurrentOrientation() {
         //Store current orientation.

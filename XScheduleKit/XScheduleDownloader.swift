@@ -25,7 +25,12 @@ public class XScheduleDownloader: ScheduleDownloader {
         let postSession: NSURLSessionTask = session.uploadTaskWithRequest(request, fromData: postData, completionHandler:
             { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
                 //Convert output to a string.
-                let output = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                var output: String
+                if (data != nil) {
+                    output = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                } else {
+                    output = ""
+                }
                 
                 if (error == nil) {
                     //Call completion handler with string.

@@ -4,3 +4,5 @@
 /X Schedule.xcodeproj/xcuserdata/
 /Screenshots/App Store/
 /Offline/
+
+*.swp

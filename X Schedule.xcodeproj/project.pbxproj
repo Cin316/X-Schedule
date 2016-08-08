@@ -21,12 +21,33 @@
 		E13FCD6A1AF6CCD400696F3B /* MainTabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */; };
 		E13FCD6D1AF6EDBB00696F3B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13FCD6C1AF6EDBB00696F3B /* ScheduleViewController.swift */; };
 		E1451B1E1AD348D600A39564 /* DonorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1451B1D1AD348D600A39564 /* DonorsViewController.swift */; };
+		E14E798F1CC705F700FE1DB7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14E798D1CC705F700FE1DB7 /* Interface.storyboard */; };
+		E14E79911CC705F700FE1DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14E79901CC705F700FE1DB7 /* Assets.xcassets */; };
+		E14E79981CC705F700FE1DB7 /* X Schedule Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E14E79971CC705F700FE1DB7 /* X Schedule Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E14E799F1CC705F700FE1DB7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E799E1CC705F700FE1DB7 /* InterfaceController.swift */; };
+		E14E79A11CC705F700FE1DB7 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E79A01CC705F700FE1DB7 /* ExtensionDelegate.swift */; };
+		E14E79A31CC705F700FE1DB7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E79A21CC705F700FE1DB7 /* NotificationController.swift */; };
+		E14E79A71CC705F700FE1DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14E79A61CC705F700FE1DB7 /* Assets.xcassets */; };
+		E14E79AB1CC705F700FE1DB7 /* X Schedule Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E14E798B1CC705F700FE1DB7 /* X Schedule Watch.app */; };
+		E14E79B71CC7112200FE1DB7 /* SubstitutionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0E2021B29B771006643C0 /* SubstitutionManager.swift */; };
+		E14E79B81CC7112200FE1DB7 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DEBED31AD61F5B004B2CC1 /* Schedule.swift */; };
+		E14E79B91CC7112200FE1DB7 /* ScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */; };
+		E14E79BA1CC7112200FE1DB7 /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECC41E1B16571300AB5D64 /* ScheduleManager.swift */; };
+		E14E79BB1CC7112200FE1DB7 /* XScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ECC41C1B16531200AB5D64 /* XScheduleManager.swift */; };
+		E14E79BC1CC7112200FE1DB7 /* ScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C80A61AEDBDDA00C60CE1 /* ScheduleDownloader.swift */; };
+		E14E79BD1CC7112200FE1DB7 /* XScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */; };
+		E14E79BE1CC7112200FE1DB7 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116D1E01B1A407C00C5DCA8 /* CacheManager.swift */; };
+		E14E79C01CC7112200FE1DB7 /* XScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */; };
+		E14E79C51CC7112200FE1DB7 /* XScheduleKit-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 45CB99211AE485A800937163 /* XScheduleKit-Swift.h */; };
+		E14E79D51CC717EA00FE1DB7 /* ScheduleTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E79D41CC717EA00FE1DB7 /* ScheduleTableRow.swift */; };
 		E16DCB6D1AB3BF610045F5A0 /* donors.txt in Resources */ = {isa = PBXBuildFile; fileRef = E16DCB6C1AB3BF610045F5A0 /* donors.txt */; };
 		E1841FB51ADDFD4900C5DF3E /* ColoredScheduleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */; };
 		E18C80A71AEDBDDA00C60CE1 /* ScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C80A61AEDBDDA00C60CE1 /* ScheduleDownloader.swift */; };
 		E19965721B2E1F3A00E900FB /* NewSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19965711B2E1F3A00E900FB /* NewSubViewController.swift */; };
 		E1C6BDB01AFEDC5600B444C8 /* XScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */; };
 		E1C6BDB21AFEDEEA00B444C8 /* ScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */; };
+		E1D020E21D467A0900D3361D /* XScheduleKitWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14E79CB1CC7112200FE1DB7 /* XScheduleKitWatch.framework */; };
+		E1D020E31D467A0900D3361D /* XScheduleKitWatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E14E79CB1CC7112200FE1DB7 /* XScheduleKitWatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1D995841B56C0BF00002814 /* SchedulePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D995831B56C0BE00002814 /* SchedulePageViewController.swift */; };
 		E1DDD4E61AD06CBD0007ABC8 /* WeekDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */; };
 		E1DDEAF81AB7C35200B6F37F /* ScheduleSwitcherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */; };
@@ -56,6 +77,27 @@
 			remoteGlobalIDString = E1DEBED91AD61FE2004B2CC1;
 			remoteInfo = XScheduleKit;
 		};
+		E14E79991CC705F700FE1DB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E138A8021A8E8B1E00549F84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E14E79961CC705F700FE1DB7;
+			remoteInfo = "X Schedule Watch Extension";
+		};
+		E14E79A91CC705F700FE1DB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E138A8021A8E8B1E00549F84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E14E798A1CC705F700FE1DB7;
+			remoteInfo = "X Schedule Watch";
+		};
+		E1D020E41D467A0900D3361D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E138A8021A8E8B1E00549F84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E14E79B51CC7112200FE1DB7;
+			remoteInfo = XScheduleKitWatch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +108,39 @@
 			dstSubfolderSpec = 10;
 			files = (
 				45CB99251AE4885200937163 /* XScheduleKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14E79B11CC705F800FE1DB7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E14E79981CC705F700FE1DB7 /* X Schedule Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14E79B31CC705F800FE1DB7 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E14E79AB1CC705F700FE1DB7 /* X Schedule Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1D020E61D467A0900D3361D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E1D020E31D467A0900D3361D /* XScheduleKitWatch.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +172,20 @@
 		E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarDelegate.swift; sourceTree = "<group>"; };
 		E13FCD6C1AF6EDBB00696F3B /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		E1451B1D1AD348D600A39564 /* DonorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorsViewController.swift; sourceTree = "<group>"; };
+		E14E798B1CC705F700FE1DB7 /* X Schedule Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "X Schedule Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E14E798E1CC705F700FE1DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		E14E79901CC705F700FE1DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E14E79921CC705F700FE1DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E14E79971CC705F700FE1DB7 /* X Schedule Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "X Schedule Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E14E799D1CC705F700FE1DB7 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		E14E799E1CC705F700FE1DB7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		E14E79A01CC705F700FE1DB7 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		E14E79A21CC705F700FE1DB7 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		E14E79A61CC705F700FE1DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E14E79A81CC705F700FE1DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E14E79CB1CC7112200FE1DB7 /* XScheduleKitWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XScheduleKitWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E14E79CC1CC7112200FE1DB7 /* XScheduleKitWatch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "XScheduleKitWatch-Info.plist"; path = "/Users/nicholas/Xcode Projects/X Schedule/XScheduleKitWatch-Info.plist"; sourceTree = "<absolute>"; };
+		E14E79D41CC717EA00FE1DB7 /* ScheduleTableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableRow.swift; sourceTree = "<group>"; };
 		E16DCB6C1AB3BF610045F5A0 /* donors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = donors.txt; sourceTree = SOURCE_ROOT; };
 		E18039831AABF260006513B2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredScheduleTableController.swift; sourceTree = "<group>"; };
@@ -104,6 +193,8 @@
 		E19965711B2E1F3A00E900FB /* NewSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSubViewController.swift; sourceTree = "<group>"; };
 		E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleParser.swift; sourceTree = "<group>"; };
 		E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParser.swift; sourceTree = "<group>"; };
+		E1C6DA2D1BC06F5A000F292A /* X Schedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "X Schedule.entitlements"; sourceTree = "<group>"; };
+		E1C6DA2E1BC07164000F292A /* X Schedule Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "X Schedule Widget.entitlements"; sourceTree = "<group>"; };
 		E1D995831B56C0BE00002814 /* SchedulePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulePageViewController.swift; sourceTree = "<group>"; };
 		E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekDataViewController.swift; sourceTree = "<group>"; };
 		E1DDEAF71AB7C35200B6F37F /* ScheduleSwitcherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleSwitcherViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +227,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E14E79941CC705F700FE1DB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1D020E21D467A0900D3361D /* XScheduleKitWatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14E79C31CC7112200FE1DB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1DEBE961AD619B0004B2CC1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,8 +267,11 @@
 				E138A80C1A8E8B1E00549F84 /* X Schedule */,
 				E1DEBE9D1AD619B0004B2CC1 /* X Schedule Widget */,
 				E1DEBEDB1AD61FE2004B2CC1 /* XScheduleKit */,
+				E14E798C1CC705F700FE1DB7 /* X Schedule Watch */,
+				E14E799B1CC705F700FE1DB7 /* X Schedule Watch Extension */,
 				E1DEBE9A1AD619B0004B2CC1 /* Frameworks */,
 				E138A80B1A8E8B1E00549F84 /* Products */,
+				E14E79CC1CC7112200FE1DB7 /* XScheduleKitWatch-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +281,9 @@
 				E138A80A1A8E8B1E00549F84 /* X Schedule.app */,
 				E1DEBE991AD619B0004B2CC1 /* X Schedule Widget.appex */,
 				E1DEBEDA1AD61FE2004B2CC1 /* XScheduleKit.framework */,
+				E14E798B1CC705F700FE1DB7 /* X Schedule Watch.app */,
+				E14E79971CC705F700FE1DB7 /* X Schedule Watch Extension.appex */,
+				E14E79CB1CC7112200FE1DB7 /* XScheduleKitWatch.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +291,7 @@
 		E138A80C1A8E8B1E00549F84 /* X Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				E1C6DA2D1BC06F5A000F292A /* X Schedule.entitlements */,
 				E138A80F1A8E8B1E00549F84 /* AppDelegate.swift */,
 				E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */,
 				E1F960921B40B18A008493FD /* SwipeDataViewController.swift */,
@@ -211,6 +324,38 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E14E798C1CC705F700FE1DB7 /* X Schedule Watch */ = {
+			isa = PBXGroup;
+			children = (
+				E14E798D1CC705F700FE1DB7 /* Interface.storyboard */,
+				E14E79901CC705F700FE1DB7 /* Assets.xcassets */,
+				E14E79921CC705F700FE1DB7 /* Info.plist */,
+			);
+			path = "X Schedule Watch";
+			sourceTree = "<group>";
+		};
+		E14E799B1CC705F700FE1DB7 /* X Schedule Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E14E79D41CC717EA00FE1DB7 /* ScheduleTableRow.swift */,
+				E14E799E1CC705F700FE1DB7 /* InterfaceController.swift */,
+				E14E79A01CC705F700FE1DB7 /* ExtensionDelegate.swift */,
+				E14E79A21CC705F700FE1DB7 /* NotificationController.swift */,
+				E14E79A61CC705F700FE1DB7 /* Assets.xcassets */,
+				E14E79A81CC705F700FE1DB7 /* Info.plist */,
+				E14E799C1CC705F700FE1DB7 /* Supporting Files */,
+			);
+			path = "X Schedule Watch Extension";
+			sourceTree = "<group>";
+		};
+		E14E799C1CC705F700FE1DB7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E14E799D1CC705F700FE1DB7 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		E1DEBE9A1AD619B0004B2CC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +367,7 @@
 		E1DEBE9D1AD619B0004B2CC1 /* X Schedule Widget */ = {
 			isa = PBXGroup;
 			children = (
+				E1C6DA2E1BC07164000F292A /* X Schedule Widget.entitlements */,
 				E1DEBEA01AD619B0004B2CC1 /* WidgetDataViewController.swift */,
 				E1DEBEA21AD619B0004B2CC1 /* MainInterface.storyboard */,
 				E1DEBE9E1AD619B0004B2CC1 /* Supporting Files */,
@@ -269,6 +415,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		E14E79C41CC7112200FE1DB7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E14E79C51CC7112200FE1DB7 /* XScheduleKit-Swift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1DEBED71AD61FE2004B2CC1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,16 +444,74 @@
 				E1841FB61ADF554D00C5DF3E /* ShellScript */,
 				E1DEBEAA1AD619B1004B2CC1 /* Embed App Extensions */,
 				45CB99281AE4885200937163 /* Embed Frameworks */,
+				E14E79B31CC705F800FE1DB7 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				45CB99271AE4885200937163 /* PBXTargetDependency */,
+				E14E79AA1CC705F700FE1DB7 /* PBXTargetDependency */,
 			);
 			name = "X Schedule";
 			productName = "X Schedule";
 			productReference = E138A80A1A8E8B1E00549F84 /* X Schedule.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E14E798A1CC705F700FE1DB7 /* X Schedule Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E14E79B21CC705F800FE1DB7 /* Build configuration list for PBXNativeTarget "X Schedule Watch" */;
+			buildPhases = (
+				E14E79891CC705F700FE1DB7 /* Resources */,
+				E14E79B11CC705F800FE1DB7 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E14E799A1CC705F700FE1DB7 /* PBXTargetDependency */,
+			);
+			name = "X Schedule Watch";
+			productName = "X Schedule Watch";
+			productReference = E14E798B1CC705F700FE1DB7 /* X Schedule Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		E14E79961CC705F700FE1DB7 /* X Schedule Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E14E79B01CC705F800FE1DB7 /* Build configuration list for PBXNativeTarget "X Schedule Watch Extension" */;
+			buildPhases = (
+				E14E79931CC705F700FE1DB7 /* Sources */,
+				E14E79941CC705F700FE1DB7 /* Frameworks */,
+				E14E79951CC705F700FE1DB7 /* Resources */,
+				E1D020E61D467A0900D3361D /* Embed Frameworks */,
+				E160E2EB1D58F757002C4C2C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1D020E51D467A0900D3361D /* PBXTargetDependency */,
+			);
+			name = "X Schedule Watch Extension";
+			productName = "X Schedule Watch Extension";
+			productReference = E14E79971CC705F700FE1DB7 /* X Schedule Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		E14E79B51CC7112200FE1DB7 /* XScheduleKitWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E14E79C81CC7112200FE1DB7 /* Build configuration list for PBXNativeTarget "XScheduleKitWatch" */;
+			buildPhases = (
+				E14E79B61CC7112200FE1DB7 /* Sources */,
+				E14E79C31CC7112200FE1DB7 /* Frameworks */,
+				E14E79C41CC7112200FE1DB7 /* Headers */,
+				E14E79C61CC7112200FE1DB7 /* Resources */,
+				E14E79C71CC7112200FE1DB7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XScheduleKitWatch;
+			productName = XScheduleKit;
+			productReference = E14E79CB1CC7112200FE1DB7 /* XScheduleKitWatch.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		E1DEBE981AD619B0004B2CC1 /* X Schedule Widget */ = {
 			isa = PBXNativeTarget;
@@ -345,17 +557,38 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Nicholas Reichert";
 				TargetAttributes = {
 					E138A8091A8E8B1E00549F84 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = NK4953M888;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					E14E798A1CC705F700FE1DB7 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = NK4953M888;
+					};
+					E14E79961CC705F700FE1DB7 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = NK4953M888;
+					};
+					E14E79B51CC7112200FE1DB7 = {
+						DevelopmentTeam = NK4953M888;
 					};
 					E1DEBE981AD619B0004B2CC1 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = NK4953M888;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					E1DEBED91AD61FE2004B2CC1 = {
 						CreatedOnToolsVersion = 6.2;
@@ -379,6 +612,9 @@
 				E138A8091A8E8B1E00549F84 /* X Schedule */,
 				E1DEBE981AD619B0004B2CC1 /* X Schedule Widget */,
 				E1DEBED91AD61FE2004B2CC1 /* XScheduleKit */,
+				E14E798A1CC705F700FE1DB7 /* X Schedule Watch */,
+				E14E79961CC705F700FE1DB7 /* X Schedule Watch Extension */,
+				E14E79B51CC7112200FE1DB7 /* XScheduleKitWatch */,
 			);
 		};
 /* End PBXProject section */
@@ -393,6 +629,30 @@
 				E138A81C1A8E8B1E00549F84 /* LaunchScreen.xib in Resources */,
 				E138A8191A8E8B1E00549F84 /* Images.xcassets in Resources */,
 				E16DCB6D1AB3BF610045F5A0 /* donors.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14E79891CC705F700FE1DB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E14E79911CC705F700FE1DB7 /* Assets.xcassets in Resources */,
+				E14E798F1CC705F700FE1DB7 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14E79951CC705F700FE1DB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E14E79A71CC705F700FE1DB7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14E79C61CC7112200FE1DB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +674,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		E14E79C71CC7112200FE1DB7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = ./buildNum.bash;
+		};
+		E160E2EB1D58F757002C4C2C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "";
+		};
 		E1841FB61ADF554D00C5DF3E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -425,7 +711,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
+			shellScript = ./buildNum.bash;
 		};
 		E1B6F82F1B6BD01100E2F4AE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -438,7 +724,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
+			shellScript = ./buildNum.bash;
 		};
 		E1B6F8301B6BD01400E2F4AE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -451,7 +737,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list --all |wc -l`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
+			shellScript = ./buildNum.bash;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -474,6 +760,33 @@
 				E138A8101A8E8B1E00549F84 /* AppDelegate.swift in Sources */,
 				E1D995841B56C0BF00002814 /* SchedulePageViewController.swift in Sources */,
 				E13FCD6A1AF6CCD400696F3B /* MainTabBarDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14E79931CC705F700FE1DB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E14E79A31CC705F700FE1DB7 /* NotificationController.swift in Sources */,
+				E14E79A11CC705F700FE1DB7 /* ExtensionDelegate.swift in Sources */,
+				E14E799F1CC705F700FE1DB7 /* InterfaceController.swift in Sources */,
+				E14E79D51CC717EA00FE1DB7 /* ScheduleTableRow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14E79B61CC7112200FE1DB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E14E79B71CC7112200FE1DB7 /* SubstitutionManager.swift in Sources */,
+				E14E79B81CC7112200FE1DB7 /* Schedule.swift in Sources */,
+				E14E79B91CC7112200FE1DB7 /* ScheduleParser.swift in Sources */,
+				E14E79BA1CC7112200FE1DB7 /* ScheduleManager.swift in Sources */,
+				E14E79BB1CC7112200FE1DB7 /* XScheduleManager.swift in Sources */,
+				E14E79BC1CC7112200FE1DB7 /* ScheduleDownloader.swift in Sources */,
+				E14E79BD1CC7112200FE1DB7 /* XScheduleParser.swift in Sources */,
+				E14E79BE1CC7112200FE1DB7 /* CacheManager.swift in Sources */,
+				E14E79C01CC7112200FE1DB7 /* XScheduleDownloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +825,21 @@
 			target = E1DEBED91AD61FE2004B2CC1 /* XScheduleKit */;
 			targetProxy = 45CB99261AE4885200937163 /* PBXContainerItemProxy */;
 		};
+		E14E799A1CC705F700FE1DB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E14E79961CC705F700FE1DB7 /* X Schedule Watch Extension */;
+			targetProxy = E14E79991CC705F700FE1DB7 /* PBXContainerItemProxy */;
+		};
+		E14E79AA1CC705F700FE1DB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E14E798A1CC705F700FE1DB7 /* X Schedule Watch */;
+			targetProxy = E14E79A91CC705F700FE1DB7 /* PBXContainerItemProxy */;
+		};
+		E1D020E51D467A0900D3361D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E14E79B51CC7112200FE1DB7 /* XScheduleKitWatch */;
+			targetProxy = E1D020E41D467A0900D3361D /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -529,6 +857,14 @@
 				E138A81B1A8E8B1E00549F84 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		E14E798D1CC705F700FE1DB7 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E14E798E1CC705F700FE1DB7 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -618,6 +954,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "X Schedule/X Schedule.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "X Schedule/Info.plist";
@@ -634,6 +971,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "X Schedule/X Schedule.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "X Schedule/Info.plist";
@@ -646,9 +984,153 @@
 			};
 			name = Release;
 		};
+		E14E79AC1CC705F800FE1DB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = X_Schedule_Watch_Extension;
+				INFOPLIST_FILE = "X Schedule Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.X-Schedule.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		E14E79AD1CC705F800FE1DB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = X_Schedule_Watch_Extension;
+				INFOPLIST_FILE = "X Schedule Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.X-Schedule.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		E14E79AE1CC705F800FE1DB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "X Schedule Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.X-Schedule.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		E14E79AF1CC705F800FE1DB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "X Schedule Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.X-Schedule.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		E14E79C91CC7112200FE1DB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "XScheduleKitWatch-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = XScheduleKitWatch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E14E79CA1CC7112200FE1DB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				INFOPLIST_FILE = "XScheduleKitWatch-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = XScheduleKitWatch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E1DEBEA81AD619B1004B2CC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "X Schedule Widget/X Schedule Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -668,6 +1150,7 @@
 		E1DEBEA91AD619B1004B2CC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "X Schedule Widget/X Schedule Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -751,6 +1234,33 @@
 			buildConfigurations = (
 				E138A82C1A8E8B1F00549F84 /* Debug */,
 				E138A82D1A8E8B1F00549F84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E14E79B01CC705F800FE1DB7 /* Build configuration list for PBXNativeTarget "X Schedule Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E14E79AE1CC705F800FE1DB7 /* Debug */,
+				E14E79AF1CC705F800FE1DB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E14E79B21CC705F800FE1DB7 /* Build configuration list for PBXNativeTarget "X Schedule Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E14E79AC1CC705F800FE1DB7 /* Debug */,
+				E14E79AD1CC705F800FE1DB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E14E79C81CC7112200FE1DB7 /* Build configuration list for PBXNativeTarget "XScheduleKitWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E14E79C91CC7112200FE1DB7 /* Debug */,
+				E14E79CA1CC7112200FE1DB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

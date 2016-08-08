@@ -29,29 +29,32 @@ public class SubstitutionManager {
     }
     public class func substituteItemsInSchedule(schedule: Schedule, substitutions: [(block: String, className: String)]) -> Schedule {
         let outputSchedule: Schedule = schedule
-        for (var i=0; i<schedule.items.count; i++) {
+        for item in outputSchedule.items {
             for sub in substitutions {
-                if outputSchedule.items[i].blockName == sub.block {
-                    outputSchedule.items[i].blockName = sub.className
+                if trimWhitespaceFrom(item.blockName.uppercaseString) == trimWhitespaceFrom(sub.block.uppercaseString) {
+                    item.blockName = sub.className
                 }
             }
         }
         
         return outputSchedule
     }
+    private class func trimWhitespaceFrom(string: String) -> String {
+        return string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    }
     
     public class func saveSubstitutions(subs: [(block: String, className: String)]) {
         let arrayVersion: [[String]] = convertTupleToArray(subs)
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
         defaults.setObject(arrayVersion, forKey: substitutionsKey)
     }
     private class func convertTupleToArray(tuple: [(block: String, className: String)]) -> [[String]] {
         var output: [[String]] = []
         for item in tuple {
             var tmpArray = ["",""]
-            tmpArray[0] = item.block
-            tmpArray[1] = item.className
+            tmpArray[0] = item.block.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            tmpArray[1] = item.className.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
             output.append(tmpArray)
         }
         
@@ -59,12 +62,17 @@ public class SubstitutionManager {
     }
     
     public class func loadSubstitutions() -> [(block: String, className: String)] {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let object: AnyObject? = defaults.objectForKey(substitutionsKey)
+        let defaults = NSUserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
+        let oldDefaults = NSUserDefaults.standardUserDefaults()
+        
+        let newObject: AnyObject? = defaults.objectForKey(substitutionsKey)
+        let oldObject: AnyObject? = oldDefaults.objectForKey(substitutionsKey)
         
         var tupleVersion: [(block: String, className: String)]
-        if let array = object as? [[String]] {
-            tupleVersion = convertArrayToTuple(array)
+        if let newArray = newObject as? [[String]] {
+            tupleVersion = convertArrayToTuple(newArray)
+        } else if let oldArray = oldObject as? [[String]] {
+            tupleVersion = convertArrayToTuple(oldArray)
         } else {
             tupleVersion = defaultSubstitutions
         }
@@ -81,11 +89,11 @@ public class SubstitutionManager {
     }
     
     public class func setEnabled(bool: Bool) {
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
         defaults.setBool(bool, forKey: subSwitchKey)
     }
     public class func getEnabled() -> Bool {
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
         let object: Bool = defaults.boolForKey(subSwitchKey)
         
         return object
