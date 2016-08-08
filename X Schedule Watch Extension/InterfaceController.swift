@@ -22,10 +22,15 @@ class InterfaceController: WKInterfaceController {
         testSchedule.title = "Loading"
         //TODO Add support for weekends/no classes.
         displaySchedule(testSchedule)
-        
-        XScheduleManager.getScheduleForToday( { (schedule: Schedule) in
-            self.displaySchedule(schedule);
-        })
+        var method: DownloadMethod = DownloadMethod.Download
+        XScheduleManager.getScheduleForDate(NSDate().dateByAddingTimeInterval(16*24*60*60), completionHandler: { (schedule: Schedule) in
+            self.displaySchedule(schedule)
+        }, errorHandler: {_ in }, method: &method)
+        if (method == .Download) {
+            print("Downloaded")
+        } else {
+            print("Cached!")
+        }
     }
     
     func displaySchedule(schedule: Schedule) {
@@ -36,6 +41,7 @@ class InterfaceController: WKInterfaceController {
             let row = scheduleTable.rowControllerAtIndex(i) as? ScheduleTableRow
             
             var size: CGFloat = 0.0
+            print("'\(item.blockName)'")
             if (item.blockName.characters.count <= 1) {
                 size = 22.0
             } else {
