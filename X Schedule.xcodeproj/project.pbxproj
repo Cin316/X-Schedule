@@ -27,7 +27,6 @@
 		E14E799F1CC705F700FE1DB7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E799E1CC705F700FE1DB7 /* InterfaceController.swift */; };
 		E14E79A11CC705F700FE1DB7 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E79A01CC705F700FE1DB7 /* ExtensionDelegate.swift */; };
 		E14E79A31CC705F700FE1DB7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E79A21CC705F700FE1DB7 /* NotificationController.swift */; };
-		E14E79A51CC705F700FE1DB7 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E79A41CC705F700FE1DB7 /* ComplicationController.swift */; };
 		E14E79A71CC705F700FE1DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14E79A61CC705F700FE1DB7 /* Assets.xcassets */; };
 		E14E79AB1CC705F700FE1DB7 /* X Schedule Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E14E798B1CC705F700FE1DB7 /* X Schedule Watch.app */; };
 		E14E79B71CC7112200FE1DB7 /* SubstitutionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0E2021B29B771006643C0 /* SubstitutionManager.swift */; };
@@ -182,7 +181,6 @@
 		E14E799E1CC705F700FE1DB7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		E14E79A01CC705F700FE1DB7 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		E14E79A21CC705F700FE1DB7 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		E14E79A41CC705F700FE1DB7 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		E14E79A61CC705F700FE1DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E14E79A81CC705F700FE1DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E14E79CB1CC7112200FE1DB7 /* XScheduleKitWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XScheduleKitWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,7 +341,6 @@
 				E14E799E1CC705F700FE1DB7 /* InterfaceController.swift */,
 				E14E79A01CC705F700FE1DB7 /* ExtensionDelegate.swift */,
 				E14E79A21CC705F700FE1DB7 /* NotificationController.swift */,
-				E14E79A41CC705F700FE1DB7 /* ComplicationController.swift */,
 				E14E79A61CC705F700FE1DB7 /* Assets.xcassets */,
 				E14E79A81CC705F700FE1DB7 /* Info.plist */,
 				E14E799C1CC705F700FE1DB7 /* Supporting Files */,
@@ -771,7 +768,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E14E79A31CC705F700FE1DB7 /* NotificationController.swift in Sources */,
-				E14E79A51CC705F700FE1DB7 /* ComplicationController.swift in Sources */,
 				E14E79A11CC705F700FE1DB7 /* ExtensionDelegate.swift in Sources */,
 				E14E799F1CC705F700FE1DB7 /* InterfaceController.swift in Sources */,
 				E14E79D51CC717EA00FE1DB7 /* ScheduleTableRow.swift in Sources */,
