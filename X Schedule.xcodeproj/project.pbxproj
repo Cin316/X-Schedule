@@ -482,7 +482,7 @@
 				E14E79941CC705F700FE1DB7 /* Frameworks */,
 				E14E79951CC705F700FE1DB7 /* Resources */,
 				E1D020E61D467A0900D3361D /* Embed Frameworks */,
-				E1D020E71D48007900D3361D /* ShellScript */,
+				E160E2EB1D58F757002C4C2C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -687,6 +687,19 @@
 			shellPath = /bin/bash;
 			shellScript = ./buildNum.bash;
 		};
+		E160E2EB1D58F757002C4C2C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = ./buildNumWatch.bash;
+		};
 		E1841FB61ADF554D00C5DF3E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -725,19 +738,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = ./buildNum.bash;
-		};
-		E1D020E71D48007900D3361D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = ./buildNumWatch.bash;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1030,7 +1030,6 @@
 		E14E79AE1CC705F800FE1DB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
@@ -1052,7 +1051,6 @@
 		E14E79AF1CC705F800FE1DB7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
