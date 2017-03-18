@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class ScheduleParser: NSObject {
+open class ScheduleParser: NSObject {
     
-    public class func storeScheduleInString(schedule: Schedule) -> String {
+    open class func storeScheduleInString(_ schedule: Schedule) -> String {
         return ""
     }
-    public class func parseForSchedule(string: String, date: NSDate) -> Schedule {
+    open class func parseForSchedule(_ string: String, date: Date) -> Schedule {
         return Schedule()
     }
     

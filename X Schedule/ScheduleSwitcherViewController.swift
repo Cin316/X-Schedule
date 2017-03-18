@@ -11,8 +11,8 @@ import XScheduleKit
 
 class ScheduleSwitcherViewController: UINavigationController {
     
-    var currentOrientation: UIDeviceOrientation = UIDevice.currentDevice().orientation
-    var scheduleDate: NSDate = NSDate()
+    var currentOrientation: UIDeviceOrientation = UIDevice.current.orientation
+    var scheduleDate: Date = Date()
     var currentView: UIViewController?
     
     override func viewDidLoad() {
@@ -25,15 +25,15 @@ class ScheduleSwitcherViewController: UINavigationController {
     }
     private func registerAsOrientationListener() {
         //Register orientation change listener.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ScheduleSwitcherViewController.deviceOrientationDidChangeNotification), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ScheduleSwitcherViewController.deviceOrientationDidChangeNotification), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     private func updateCurrentOrientation() {
         //Store current orientation.
-        currentOrientation = UIDevice.currentDevice().orientation
+        currentOrientation = UIDevice.current.orientation
     }
     
     func deviceOrientationDidChangeNotification() {
-        let newOrientation = UIDevice.currentDevice().orientation
+        let newOrientation = UIDevice.current.orientation
         //Check if newOrientation is valid.
         if (newOrientation.isPortrait || newOrientation.isLandscape) {
             //Check if newOrientation is different from the currentOrientation.
@@ -52,24 +52,24 @@ class ScheduleSwitcherViewController: UINavigationController {
         updateCurrentView()
     }
     private func performSegueBasedOnOrientation() {
-        if (UIDevice.currentDevice().userInterfaceIdiom == .Phone) { //If on iPhone...
+        if (UIDevice.current.userInterfaceIdiom == .phone) { //If on iPhone...
             //Check if there is a view already.
             if (self.topViewController != nil) {
                 //Do nothing, because there is only one orientation.
             } else {
                 //Add a new iPhone view controller.
-                self.performSegueWithIdentifier("displayScheduleiPhone", sender: self)
+                self.performSegue(withIdentifier: "displayScheduleiPhone", sender: self)
             }
-        } else if (UIDevice.currentDevice().userInterfaceIdiom == .Pad) { //If on iPad...
+        } else if (UIDevice.current.userInterfaceIdiom == .pad) { //If on iPad...
             //Check orientation.
             if (UIDeviceOrientationIsLandscape(currentOrientation)) { //If orientation is landscape...
-                self.performSegueWithIdentifier("displayScheduleiPadLandscape", sender: self)
+                self.performSegue(withIdentifier: "displayScheduleiPadLandscape", sender: self)
             } else if (UIDeviceOrientationIsPortrait(currentOrientation)) { //If orientation is portrait...
-                self.performSegueWithIdentifier("displayScheduleiPadPortrait", sender: self)
+                self.performSegue(withIdentifier: "displayScheduleiPadPortrait", sender: self)
             }
         }
     }
-    private func loadScheduleDateIntoViewController(viewController: UIViewController?) {
+    private func loadScheduleDateIntoViewController(_ viewController: UIViewController?) {
         //Take date from current view controller and store it.
         if let top = viewController {
             if let topData = top as? ScheduleViewController {
@@ -96,8 +96,9 @@ class ScheduleSwitcherViewController: UINavigationController {
 
 class NoAnimationSegue: UIStoryboardSegue {
     override func perform() {
-        let destination = destinationViewController 
-        if let source = sourceViewController as? UINavigationController {
+        // TODO Remove this.
+        //let destination = destination
+        if let source = source as? UINavigationController {
             //Transition with no animation.  Sets new view as root view controller.
             source.setViewControllers([destination], animated: false)
         }

@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class ScheduleViewController: UIViewController {
+open class ScheduleViewController: UIViewController {
     
     private let daysPerView: Int = 1
-    public func numberOfDaysPerView() -> Int {
+    open func numberOfDaysPerView() -> Int {
         return daysPerView
     }
     
-    public var initialized: Bool = false
+    open var initialized: Bool = false
     
-    public var scheduleDate: NSDate = NSDate() {
+    open var scheduleDate: Date = Date() {
         didSet {
             if (oldValue != scheduleDate) {
                 refreshScheduleIfReady()
@@ -25,7 +25,7 @@ public class ScheduleViewController: UIViewController {
         }
     }
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         initialized = true
     }
@@ -36,42 +36,42 @@ public class ScheduleViewController: UIViewController {
         }
     }
     
-    public func refreshSchedule() {
+    open func refreshSchedule() {
     
     }
     
-    public func parseStringForSchedule(string: String) -> Schedule {
+    open func parseStringForSchedule(_ string: String) -> Schedule {
         let schedule: Schedule = XScheduleParser.parseForSchedule(string, date: scheduleDate)
         
         return schedule
     }
     
-    public func displayAlertWithText(message: String) {
+    open func displayAlertWithText(_ message: String) {
         let alert = createAlertWithText(message)
         displayAlert(alert)
     }
-    public func createAlertWithText(message: String) -> UIAlertController {
+    open func createAlertWithText(_ message: String) -> UIAlertController {
         //Creates an alert with provided text and an "OK" button that closes the alert.
-        let alert: UIAlertController = UIAlertController(title: message, message: nil, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction) in
-            alert.dismissViewControllerAnimated(true, completion: {})
+        let alert: UIAlertController = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
+            alert.dismiss(animated: true, completion: {})
         }))
         
         return alert
     }
-    public func displayAlert(alert: UIAlertController) {
-        presentViewController(alert, animated: true, completion: nil)
+    open func displayAlert(_ alert: UIAlertController) {
+        present(alert, animated: true, completion: nil)
     }
     
-    public func onBackButtonPress(sender: AnyObject) {
-        scheduleDate = scheduleDate.dateByAddingTimeInterval(Double(-24*60*60*numberOfDaysPerView()))
+    open func onBackButtonPress(_ sender: AnyObject) {
+        scheduleDate = scheduleDate.addingTimeInterval(Double(-24*60*60*numberOfDaysPerView()))
     }
-    public func onForwardButtonPress(sender: AnyObject) {
-        scheduleDate = scheduleDate.dateByAddingTimeInterval(Double(24*60*60*numberOfDaysPerView()))
+    open func onForwardButtonPress(_ sender: AnyObject) {
+        scheduleDate = scheduleDate.addingTimeInterval(Double(24*60*60*numberOfDaysPerView()))
     }
     
-    public func onTodayButtonPress(sender: AnyObject) {
-        scheduleDate = NSDate()
+    open func onTodayButtonPress(_ sender: AnyObject) {
+        scheduleDate = Date()
     }
     
 }

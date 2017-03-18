@@ -8,16 +8,16 @@
 
 import Foundation
 
-public class ScheduleDownloader {
+open class ScheduleDownloader {
 
-    public class func downloadSchedule(date: NSDate, completionHandler: String -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
-        return  NSURLSessionTask()
+    open class func downloadSchedule(_ date: Date, completionHandler: @escaping (String) -> Void, errorHandler: @escaping (String) -> Void) -> URLSessionTask {
+        return  URLSessionTask()
     }
-    public class func downloadSchedule(completionHandler: String -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
-        return downloadSchedule(NSDate(), completionHandler: completionHandler, errorHandler: errorHandler)
+    open class func downloadSchedule(_ completionHandler: @escaping (String) -> Void, errorHandler: @escaping (String) -> Void) -> URLSessionTask {
+        return downloadSchedule(Date(), completionHandler: completionHandler, errorHandler: errorHandler)
     }
     
-    public class func downloadSchedule(date: NSDate, completionHandler: String -> Void) -> NSURLSessionTask {
+    open class func downloadSchedule(_ date: Date, completionHandler: @escaping (String) -> Void) -> URLSessionTask {
         return downloadSchedule(date, completionHandler: completionHandler, errorHandler: { (output: String) in })
     }
 }

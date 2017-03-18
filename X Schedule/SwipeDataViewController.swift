@@ -11,24 +11,24 @@ import XScheduleKit
 
 class SwipeDataViewController: DataViewController {
     
-    override func onBackButtonPress(sender: AnyObject) {
+    override func onBackButtonPress(_ sender: AnyObject) {
         super.onBackButtonPress(sender)
-        pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.Reverse, withDate: scheduleDate)
+        pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.reverse, withDate: scheduleDate)
     }
-    override func onForwardButtonPress(sender: AnyObject) {
+    override func onForwardButtonPress(_ sender: AnyObject) {
         super.onForwardButtonPress(sender)
-        pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.Forward, withDate: scheduleDate)
+        pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.forward, withDate: scheduleDate)
     }
-    override func onTodayButtonPress(sender: AnyObject) {
-        let previousDate: NSDate = scheduleDate
+    override func onTodayButtonPress(_ sender: AnyObject) {
+        let previousDate: Date = scheduleDate
         super.onTodayButtonPress(sender)
         //Find which direction to flip in.
         switch (previousDate.compare(scheduleDate)) {
-            case .OrderedAscending:
-                pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.Forward, withDate: scheduleDate)
-            case .OrderedDescending:
-                pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.Reverse, withDate: scheduleDate)
-            case .OrderedSame:
+            case .orderedAscending:
+                pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.forward, withDate: scheduleDate)
+            case .orderedDescending:
+                pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.reverse, withDate: scheduleDate)
+            case .orderedSame:
                 break //Do nothing.
         }
         

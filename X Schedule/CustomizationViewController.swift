@@ -22,16 +22,16 @@ class CustomizationViewController: UITableViewController {
         
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // Return the number of sections, always 1.
         return 1
     }
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section, the number of items in the schedule.
         return substitutions.count
     }
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CustomizationCell", forIndexPath: indexPath) 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomizationCell", for: indexPath) 
         let item = substitutions[indexPath.row]
         
         // Configure the cell.
@@ -45,32 +45,32 @@ class CustomizationViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //Fixes background color on iPad.
         cell.backgroundColor = internalCellColor
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == .Delete) {
-            substitutions.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            substitutions.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
             SubstitutionManager.saveSubstitutions(substitutions)
         }
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let substitution: (block: String, className: String) = substitutions[indexPath.row]
         selectedItem = substitution
         selectedNum = indexPath.row
         
-        self.performSegueWithIdentifier("subDetail", sender: self)
+        self.performSegue(withIdentifier: "subDetail", sender: self)
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let newSub = segue.destinationViewController as? NewSubViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let newSub = segue.destination as? NewSubViewController {
             if (segue.identifier == "subDetail") {
                 newSub.editSubstitution(selectedItem)
             } else if (segue.identifier == "newSub") {
@@ -79,16 +79,16 @@ class CustomizationViewController: UITableViewController {
         }
     }
     
-    func addSubstitution(sub: (block: String, className: String)) {
+    func addSubstitution(_ sub: (block: String, className: String)) {
         substitutions.append(sub)
         substitutionsChanged()
     }
-    func updateSubstitution(sub: (block: String, className: String)) {
+    func updateSubstitution(_ sub: (block: String, className: String)) {
         substitutions[selectedNum] = sub
         substitutionsChanged()
     }
     private func substitutionsChanged() {
-        substitutions.sortInPlace({ $0.block < $1.block })
+        substitutions.sort(by: { $0.block < $1.block })
         SubstitutionManager.saveSubstitutions(substitutions)
         self.tableView.reloadData()
     }

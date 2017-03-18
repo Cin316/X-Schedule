@@ -12,7 +12,7 @@ class LegalViewController: UIViewController {
 
     @IBOutlet weak var mainTextView: UITextView!
     
-    private var licensePath = NSBundle.mainBundle().pathForResource("LICENSE", ofType: "txt")
+    private var licensePath = Bundle.main.path(forResource: "LICENSE", ofType: "txt")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class LegalViewController: UIViewController {
     }
     func loadLegalText() {
         if let path = licensePath {
-            let licenseText = try? String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+            let licenseText = try? String(contentsOfFile: path, encoding: String.Encoding.utf8)
             if let license = licenseText {
                 mainTextView.text = license
             }

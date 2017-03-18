@@ -15,8 +15,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var scheduleTable: WKInterfaceTable!
     @IBOutlet var titleLabel: WKInterfaceLabel!
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         let testSchedule = Schedule()
         testSchedule.title = "Loading"
@@ -28,12 +28,12 @@ class InterfaceController: WKInterfaceController {
         })
     }
     
-    func displaySchedule(schedule: Schedule) {
+    func displaySchedule(_ schedule: Schedule) {
         titleLabel.setText(schedule.title)
         scheduleTable.setNumberOfRows(schedule.items.count, withRowType: "scheduleTableRow")
         for i in 0..<schedule.items.count {
             let item = schedule.items[i]
-            let row = scheduleTable.rowControllerAtIndex(i) as? ScheduleTableRow
+            let row = scheduleTable.rowController(at: i) as? ScheduleTableRow
             
             var size: CGFloat = 0.0
             if (item.blockName.characters.count <= 1) {
@@ -41,9 +41,9 @@ class InterfaceController: WKInterfaceController {
             } else {
                 size = 16.0
             }
-            let font = UIFont.boldSystemFontOfSize(size)
+            let font = UIFont.boldSystemFont(ofSize: size)
             let fontAttrs = [NSFontAttributeName : font]
-            row?.classLabel.setAttributedText(NSAttributedString(string: item.blockName.uppercaseString, attributes: fontAttrs))
+            row?.classLabel.setAttributedText(NSAttributedString(string: item.blockName.uppercased(), attributes: fontAttrs))
             
             row?.startTime.setText(timeTextForNSDate(item.startTime))
             row?.endTime.setText(timeTextForNSDate(item.endTime))
@@ -52,12 +52,12 @@ class InterfaceController: WKInterfaceController {
             titleLabel.setText("No classes")
         }
     }
-    private func timeTextForNSDate(time: NSDate?) -> String {
+    private func timeTextForNSDate(_ time: Date?) -> String {
         var timeText: String = ""
-        let dateFormat: NSDateFormatter = NSDateFormatter()
+        let dateFormat: DateFormatter = DateFormatter()
         dateFormat.dateFormat = "h:mm"
         if let realTime = time {
-            timeText = dateFormat.stringFromDate(realTime)
+            timeText = dateFormat.string(from: realTime)
         } else {
             timeText = "?:??"
         }
