@@ -96,8 +96,6 @@ class ScheduleSwitcherViewController: UINavigationController {
 
 class NoAnimationSegue: UIStoryboardSegue {
     override func perform() {
-        // TODO Remove this.
-        //let destination = destination
         if let source = source as? UINavigationController {
             //Transition with no animation.  Sets new view as root view controller.
             source.setViewControllers([destination], animated: false)

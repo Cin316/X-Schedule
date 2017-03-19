@@ -42,10 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             pageView.pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.forward, withDate: pageView.scheduleDate)
         }
     }
-    func setScheduleDateToToday() {
-        let scheduleViewController: ScheduleViewController = getScheduleViewController()!
-        scheduleViewController.scheduleDate = Date()
-    }
     private func getScheduleSwitcherViewController() -> ScheduleSwitcherViewController? {
         var returnController: ScheduleSwitcherViewController?
         let tabBarController: UITabBarController = self.window!.rootViewController! as! UITabBarController
