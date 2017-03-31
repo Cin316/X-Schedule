@@ -63,5 +63,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return returnController
     }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // Add code here for background app refresh.
+        // Call the completion handler when I'm done.
+        // TODO Change ScheduleManager implementation to allow specifying a download method.
+        //XScheduleManager.getScheduleF, completionHandler: <#T##(Schedule) -> Void#>, errorHandler: <#T##(String) -> Void#>, method: &<#T##DownloadMethod#>
+    }
 
 }
