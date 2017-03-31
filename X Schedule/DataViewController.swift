@@ -31,9 +31,8 @@ class DataViewController: ScheduleViewController {
     }
     
     override func refreshSchedule() {
-        var method: DownloadMethod = DownloadMethod.download
-        
         // Download today's schedule from the St. X website.
+        let downloadResult: (DownloadMethod, URLSessionTask?) =
         XScheduleManager.getScheduleForDate(scheduleDate,
             completionHandler: { (schedule: Schedule) in
                 //Execute code in main thread.
@@ -47,9 +46,11 @@ class DataViewController: ScheduleViewController {
                     self.handleError(errorText)
                 }
             },
-            method: &method
+            method: .auto
         )
-        if (method==DownloadMethod.download) {
+        let methodUsed: DownloadMethod = downloadResult.0
+        
+        if (methodUsed == .download) {
             startLoading()
         }
         

@@ -116,10 +116,8 @@ class WeekDataViewController: ScheduleViewController {
     }
     
     private func refreshScheduleNum(_ num: Int) {
-        var method: DownloadMethod = DownloadMethod.download
-        
         // Download today's schedule from the St. X website.
-        let newTask: URLSessionTask? = XScheduleManager.getScheduleForDate(downloadDateForNum(num),
+        let downloadResult = XScheduleManager.getScheduleForDate(downloadDateForNum(num),
             completionHandler: { (schedule: Schedule) in
                 DispatchQueue.main.async {
                     self.handleCompletionOfDownload(schedule, num: num)
@@ -129,10 +127,13 @@ class WeekDataViewController: ScheduleViewController {
                 DispatchQueue.main.async {
                     self.handleError(errorText, num: num)
                 }
-            }, method: &method
+            }, method: .download
         )
         
-        downloadMethods[num-1] = method
+        let newTask: URLSessionTask? = downloadResult.1
+        let methodUsed: DownloadMethod = downloadResult.0
+        
+        downloadMethods[num-1] = methodUsed
         
         if (newTask != nil) {
             tasks.append(newTask!)
