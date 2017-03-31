@@ -36,17 +36,18 @@ class InterfaceController: WKInterfaceController {
             let row = scheduleTable.rowController(at: i) as? ScheduleTableRow
             
             var size: CGFloat = 0.0
-            if (item.blockName.characters.count <= 1) {
+            if (item.primaryText().characters.count <= 1) {
                 size = 22.0
             } else {
                 size = 16.0
             }
             let font = UIFont.boldSystemFont(ofSize: size)
             let fontAttrs = [NSFontAttributeName : font]
-            row?.classLabel.setAttributedText(NSAttributedString(string: item.blockName.uppercased(), attributes: fontAttrs))
+            row?.classLabel.setAttributedText(NSAttributedString(string: item.primaryText().uppercased(), attributes: fontAttrs))
             
-            row?.startTime.setText(timeTextForNSDate(item.startTime))
-            row?.endTime.setText(timeTextForNSDate(item.endTime))
+            // TODO Fix this. Times are broken on the watchOS app with Schedule class changes.
+            //row?.startTime.setText(timeTextForNSDate(item.startTime))
+            //row?.endTime.setText(timeTextForNSDate(item.endTime))
         }
         if (schedule.title=="" && schedule.items.count==0) {
             titleLabel.setText("No classes")

@@ -30,9 +30,11 @@ open class SubstitutionManager {
     open class func substituteItemsInSchedule(_ schedule: Schedule, substitutions: [(block: String, className: String)]) -> Schedule {
         let outputSchedule: Schedule = schedule
         for item in outputSchedule.items {
-            for sub in substitutions {
-                if trimWhitespaceFrom(item.blockName.uppercased()) == trimWhitespaceFrom(sub.block.uppercased()) {
-                    item.blockName = sub.className
+            if let spanItem = item as? TimeSpanScheduleItem {
+                for sub in substitutions {
+                    if trimWhitespaceFrom(spanItem.blockName.uppercased()) == trimWhitespaceFrom(sub.block.uppercased()) {
+                        spanItem.blockName = sub.className
+                    }
                 }
             }
         }

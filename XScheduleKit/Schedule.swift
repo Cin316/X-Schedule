@@ -11,6 +11,7 @@ import Foundation
 open class Schedule {
     open var items: [ScheduleItem] = []
     open var title: String = ""
+    open var subtitle: String = ""
     open var date: Date = Date()
     
     public init() {
@@ -23,9 +24,20 @@ open class Schedule {
         self.items = items
         self.title = title
     }
+    public init(items: [ScheduleItem], title: String, subtitle: String) {
+        self.items = items
+        self.title = title
+        self.subtitle = subtitle
+    }
 }
 
-open class ScheduleItem {
+public protocol ScheduleItem {
+    func primaryText() -> String
+    func secondaryText() -> String
+    func isHappeningAt(time: Date) -> Bool
+}
+
+open class TimeSpanScheduleItem: ScheduleItem {
     open var blockName: String = ""
     open var startTime: Date?
     open var endTime: Date?
@@ -41,5 +53,42 @@ open class ScheduleItem {
         self.blockName = blockName
         self.startTime = startTime
         self.endTime = endTime
+    }
+    
+    public func primaryText() -> String {
+        return blockName
+    }
+    
+    public func secondaryText() -> String {
+        let startString = timeTextForNSDate(startTime as Date?)
+        let endString = timeTextForNSDate(endTime as Date?)
+        let outputText = "\(startString) - \(endString)"
+        
+        return outputText
+    }
+    private func timeTextForNSDate(_ time: Date?) -> String {
+        var timeText: String = ""
+        let dateFormat: DateFormatter = DateFormatter()
+        dateFormat.dateFormat = "h:mm"
+        if let realTime = time {
+            timeText = dateFormat.string(from: realTime)
+        } else {
+            timeText = "?:??"
+        }
+        
+        return timeText
+    }
+    
+    // Note: may have some issues with days getting highlighted on the wrong day.
+    public func isHappeningAt(time: Date) -> Bool {
+        //Determine if the given time is between the start and end of a ScheduleItem.
+        var happeningNow: Bool = false
+        if (startTime != nil && endTime != nil) {
+            let afterStart: Bool = time.compare(startTime! as Date) != ComparisonResult.orderedAscending
+            let beforeEnd: Bool = time.compare(endTime! as Date) != ComparisonResult.orderedDescending
+            happeningNow = afterStart && beforeEnd
+        }
+        
+        return happeningNow
     }
 }

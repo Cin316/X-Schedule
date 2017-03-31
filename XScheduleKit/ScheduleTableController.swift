@@ -31,42 +31,22 @@ open class ScheduleTableController: UITableViewController {
         
         // Configure the cell.
         if let subjectLabel = cell.viewWithTag(101) as? UILabel {
-            subjectLabel.text = item.blockName.uppercased()
+            subjectLabel.text = item.primaryText().uppercased()
         }
         if let timeLabel = cell.viewWithTag(102) as? UILabel {
-            timeLabel.text = timeTextForScheduleItem(item)
+            timeLabel.text = item.secondaryText()
         }
         
         return cell
-    }
-    private func timeTextForScheduleItem(_ item: ScheduleItem) -> String {
-        let startString = timeTextForNSDate(item.startTime as Date?)
-        let endString = timeTextForNSDate(item.endTime as Date?)
-        let outputText = "\(startString) - \(endString)"
-        
-        return outputText
-    }
-    private func timeTextForNSDate(_ time: Date?) -> String {
-        var timeText: String = ""
-        let dateFormat: DateFormatter = DateFormatter()
-        dateFormat.dateFormat = "h:mm"
-        if let realTime = time {
-            timeText = dateFormat.string(from: realTime)
-        } else {
-            timeText = "?:??"
-        }
-        
-        return timeText
     }
     
     open override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //Correctly colors the schedule table cells.
         let item = schedule.items[indexPath.row]
-        let calendar: Calendar = Calendar.current
-        //Highlight the cell if the schedule is for today and the class is happening now.
-        let isNow: Bool = calendar.isDateInToday(schedule.date as Date) && isSceduleItemHappeningNow(item)
+
+        let shouldBeHighlighted: Bool = item.isHappeningAt(time: Date())
         
-        if (isNow) {
+        if (shouldBeHighlighted) {
             //Color is higlighted.
             cell.backgroundColor = highlightedColor()
         } else {
@@ -75,17 +55,6 @@ open class ScheduleTableController: UITableViewController {
             cell.backgroundColor = cellColor()
         }
         
-    }
-    private func isSceduleItemHappeningNow(_ item: ScheduleItem) -> Bool {
-        //Determine if right now is between the start and end of a ScheduleItem.
-        var happeningNow: Bool = false
-        if (item.startTime != nil && item.endTime != nil) {
-            let afterStart: Bool = Date().compare(item.startTime! as Date) != ComparisonResult.orderedAscending
-            let beforeEnd: Bool = Date().compare(item.endTime! as Date) != ComparisonResult.orderedDescending
-            happeningNow = afterStart && beforeEnd
-        }
-        
-        return happeningNow
     }
     
     open func cellColor() -> UIColor {

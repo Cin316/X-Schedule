@@ -25,7 +25,9 @@ open class XScheduleParser: ScheduleParser {
     private class func stringForItemsArray(_ items: [ScheduleItem]) -> String {
         var output: String = ""
         for item in items {
-            output += "\(item.blockName) \(timeStringForDate(item.startTime as Date?))-\(timeStringForDate(item.endTime as Date?))&lt;br&gt;"
+            if let spanItem = item as? TimeSpanScheduleItem {
+                output += "\(spanItem.blockName) \(timeStringForDate(spanItem.startTime as Date?))-\(timeStringForDate(spanItem.endTime as Date?))&lt;br&gt;"
+            }
         }
         
         return output
@@ -94,14 +96,14 @@ open class XScheduleParser: ScheduleParser {
                 //Only add a timeless ScheduleItem if it has a description.
                 if (tokens != []) {
                     //Make schedule item and add to schedule.
-                    let item: ScheduleItem = ScheduleItem(blockName: stringFromTokens(tokens))
+                    let item: TimeSpanScheduleItem = TimeSpanScheduleItem(blockName: stringFromTokens(tokens))
                     schedule.items.append(item)
                 }
             } else {
                 //Analyze time token.
                 let times: (start: Date?, end: Date?) = parseArrayForTimes(&tokens, index: timeTokenIndex!, onDate: schedule.date as Date)
                 //Make schedule item and add to schedule.
-                let item: ScheduleItem = ScheduleItem(blockName: stringFromTokens(tokens), startTime: times.start, endTime: times.end)
+                let item: TimeSpanScheduleItem = TimeSpanScheduleItem(blockName: stringFromTokens(tokens), startTime: times.start, endTime: times.end)
                 schedule.items.append(item)
             }
         }
