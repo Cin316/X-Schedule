@@ -12,7 +12,6 @@ import Foundation
 class ScheduleTableRow: NSObject {
     
     @IBOutlet weak var classLabel: WKInterfaceLabel!
-    @IBOutlet var startTime: WKInterfaceLabel!
-    @IBOutlet var endTime: WKInterfaceLabel!
+    @IBOutlet var timeLabel: WKInterfaceLabel!
     
 }

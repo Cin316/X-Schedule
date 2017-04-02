@@ -45,25 +45,12 @@ class InterfaceController: WKInterfaceController {
             let fontAttrs = [NSFontAttributeName : font]
             row?.classLabel.setAttributedText(NSAttributedString(string: item.primaryText().uppercased(), attributes: fontAttrs))
             
-            // TODO Fix this. Times are broken on the watchOS app with Schedule class changes.
-            //row?.startTime.setText(timeTextForNSDate(item.startTime))
-            //row?.endTime.setText(timeTextForNSDate(item.endTime))
+            row?.timeLabel.setText(item.secondaryText())
+            
         }
         if (schedule.title=="" && schedule.items.count==0) {
             titleLabel.setText("No classes")
         }
-    }
-    private func timeTextForNSDate(_ time: Date?) -> String {
-        var timeText: String = ""
-        let dateFormat: DateFormatter = DateFormatter()
-        dateFormat.dateFormat = "h:mm"
-        if let realTime = time {
-            timeText = dateFormat.string(from: realTime)
-        } else {
-            timeText = "?:??"
-        }
-        
-        return timeText
     }
 
     override func willActivate() {
