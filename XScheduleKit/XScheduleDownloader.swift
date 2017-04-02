@@ -26,8 +26,8 @@ open class XScheduleDownloader: ScheduleDownloader {
             { ( data: Data?, response: URLResponse?, error: Error?) -> Void in
                 //Convert output to a string.
                 var output: String
-                if (data != nil) {
-                    output = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as! String
+                if let data = data {
+                    output = String(data: data, encoding: String.Encoding.utf8)!
                 } else {
                     output = ""
                 }

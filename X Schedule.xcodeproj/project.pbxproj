@@ -707,7 +707,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = ./buildNumWatch.bash;
+			shellScript = "./buildNumWatch.bash || echo \"Failed\"";
 		};
 		E1841FB61ADF554D00C5DF3E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
