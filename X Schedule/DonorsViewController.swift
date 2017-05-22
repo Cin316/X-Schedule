@@ -26,6 +26,7 @@ class DonorsViewController: UIViewController {
         
         displayStoredFiles()
         updateStoredDonors()
+        fixTextClippingBug()
     }
     private func displayStoredFiles() {
         //Read path from editedDonors.txt and display it if it exists.
@@ -93,6 +94,10 @@ class DonorsViewController: UIViewController {
         let exists: Bool = manager.fileExists(atPath: filePath)
         
         return exists
+    }
+    private func fixTextClippingBug() {
+        mainTextView.isScrollEnabled = false
+        mainTextView.isScrollEnabled = true
     }
     
 }
