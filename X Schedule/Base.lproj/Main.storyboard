@@ -359,7 +359,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.89411764705882346" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DzP-zV-1pO" firstAttribute="leading" secondItem="roZ-Bu-rTH" secondAttribute="leadingMargin" constant="-16" id="3w7-xq-Rdw"/>
                             <constraint firstItem="QX3-Ta-afe" firstAttribute="top" secondItem="DzP-zV-1pO" secondAttribute="bottom" id="GsY-T1-FcA"/>
@@ -389,7 +389,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ge-V1-fqI">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
-                                <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.81568627450980391" green="0.89411764705882346" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">The images in this project are licensed under the Creative Commons Attribution License 4.0 unless otherwise noted. The text of the license is located at http://creativecommons.org/licenses/by/4.0/.
 
 The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC-BY 4.0.</string>
@@ -398,7 +398,7 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.89411764705882346" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1Ge-V1-fqI" firstAttribute="leading" secondItem="lhG-fa-zU3" secondAttribute="leadingMargin" constant="-16" id="0gk-Dm-MDw"/>
                             <constraint firstItem="n4y-h3-UJd" firstAttribute="top" secondItem="1Ge-V1-fqI" secondAttribute="bottom" constant="-69" id="4lE-hJ-N4B"/>
