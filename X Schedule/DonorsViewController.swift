@@ -17,6 +17,10 @@ class DonorsViewController: UIViewController {
     
     private var onlineDonorsURL: URL = URL(string: "https://raw.githubusercontent.com/Cin316/X-Schedule/develop/donors.txt")!
     
+    override func viewDidAppear(_ animated: Bool) {
+        mainTextView.flashScrollIndicators()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

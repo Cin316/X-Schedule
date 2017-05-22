@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="ipad9_7" orientation="landscape">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,11 +21,11 @@
                         <viewControllerLayoutGuide type="bottom" id="SHt-LO-oNQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ohP-oA-heh">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7z-aj-o82">
-                                <rect key="frame" x="354" y="56" width="316" height="69"/>
+                                <rect key="frame" x="46" y="37" width="228" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="iXb-3t-nz6">
                                         <variation key="widthClass=compact" constant="73"/>
@@ -56,7 +56,7 @@
                                 </variation>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcx-Nt-lHH">
-                                <rect key="frame" x="20" y="183" width="984" height="571"/>
+                                <rect key="frame" x="16" y="118" width="288" height="436"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -68,7 +68,7 @@
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, Janurary 30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64X-Ui-5fQ">
-                                <rect key="frame" x="20" y="28" width="984" height="35"/>
+                                <rect key="frame" x="16" y="18" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cjO-Zd-fFr"/>
                                     <constraint firstAttribute="height" constant="35" id="fSy-C0-bXV"/>
@@ -94,11 +94,11 @@
                                 </variation>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TZG-lt-W8K">
-                                <rect key="frame" x="494" y="138" width="37" height="37"/>
+                                <rect key="frame" x="142" y="291" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMG-so-slP">
-                                <rect key="frame" x="316" y="69" width="44" height="44"/>
+                                <rect key="frame" x="0.0" y="52" width="44" height="44"/>
                                 <state key="normal" image="backButton">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -107,14 +107,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jco-4z-jy7">
-                                <rect key="frame" x="664" y="69" width="44" height="44"/>
+                                <rect key="frame" x="276" y="52" width="44" height="44"/>
                                 <state key="normal" image="forwardButton"/>
                                 <connections>
                                     <action selector="onForwardButtonPress:" destination="Gma-nl-gFO" eventType="touchUpInside" id="C5L-Rj-aCe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Le-KT-W9Q">
-                                <rect key="frame" x="402" y="238" width="220" height="65"/>
+                                <rect key="frame" x="50" y="159" width="220" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="EGb-NL-Tzs"/>
                                     <constraint firstAttribute="height" constant="65" id="h16-Ub-LBw"/>
@@ -124,7 +124,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ne-xz-1FJ">
-                                <rect key="frame" x="958" y="145" width="46" height="30"/>
+                                <rect key="frame" x="262" y="80" width="42" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Rwh-lG-3ge"/>
                                     <constraint firstAttribute="width" constant="46" id="hcr-aC-0S9"/>
@@ -197,13 +197,13 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Ygb-wX-rfv"/>
+                                <exclude reference="IFd-cl-Jcn"/>
+                                <exclude reference="gDV-9e-Vrq"/>
+                                <exclude reference="i56-n5-ZIr"/>
                                 <exclude reference="JEr-tF-Elq"/>
                                 <exclude reference="X4o-6w-hTa"/>
                                 <exclude reference="jKG-5c-mAx"/>
                                 <exclude reference="k94-cw-Ofv"/>
-                                <exclude reference="IFd-cl-Jcn"/>
-                                <exclude reference="gDV-9e-Vrq"/>
-                                <exclude reference="i56-n5-ZIr"/>
                                 <exclude reference="50f-uc-wPd"/>
                                 <exclude reference="5kh-VT-eMN"/>
                                 <exclude reference="6WF-rt-DRK"/>
@@ -215,6 +215,10 @@
                                 <include reference="AFb-Hn-omw"/>
                                 <include reference="kLX-hq-fyd"/>
                                 <include reference="mPn-af-3Tc"/>
+                                <include reference="Wyn-0E-tAL"/>
+                                <include reference="cmf-zg-waV"/>
+                                <include reference="rGg-a4-H3A"/>
+                                <include reference="yJQ-Ku-QtQ"/>
                                 <exclude reference="Sfc-dB-8W2"/>
                                 <include reference="tR0-EF-3ag"/>
                                 <include reference="Oxj-mC-i9O"/>
@@ -223,10 +227,6 @@
                                 <exclude reference="lrN-Sl-5iQ"/>
                                 <include reference="oDS-bw-WiF"/>
                                 <include reference="xx3-uU-Rnv"/>
-                                <include reference="Wyn-0E-tAL"/>
-                                <include reference="cmf-zg-waV"/>
-                                <include reference="rGg-a4-H3A"/>
-                                <include reference="yJQ-Ku-QtQ"/>
                                 <include reference="yNA-bO-hEx"/>
                                 <include reference="6WF-rt-DRK"/>
                                 <include reference="c7M-zD-VHg"/>
@@ -237,6 +237,9 @@
                             <mask key="constraints">
                                 <include reference="Ygb-wX-rfv"/>
                                 <exclude reference="kLX-hq-fyd"/>
+                                <include reference="IFd-cl-Jcn"/>
+                                <exclude reference="cmf-zg-waV"/>
+                                <include reference="gDV-9e-Vrq"/>
                                 <exclude reference="tR0-EF-3ag"/>
                                 <exclude reference="JEr-tF-Elq"/>
                                 <exclude reference="Oxj-mC-i9O"/>
@@ -244,9 +247,6 @@
                                 <include reference="jKG-5c-mAx"/>
                                 <include reference="k94-cw-Ofv"/>
                                 <exclude reference="xx3-uU-Rnv"/>
-                                <include reference="IFd-cl-Jcn"/>
-                                <exclude reference="cmf-zg-waV"/>
-                                <include reference="gDV-9e-Vrq"/>
                                 <include reference="50f-uc-wPd"/>
                                 <exclude reference="6sd-bp-cto"/>
                                 <exclude reference="yNA-bO-hEx"/>
@@ -272,26 +272,26 @@
             <objects>
                 <tableViewController id="qEg-fp-2sb" customClass="ColoredScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="U1X-SY-klC">
-                        <rect key="frame" x="0.0" y="0.0" width="984" height="571"/>
+                        <rect key="frame" x="0.0" y="0.0" width="288" height="436"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.813995361328125" green="0.89592456817626953" blue="0.99735766649246216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScheduleTableCell" rowHeight="60" id="SjG-QM-bfL">
-                                <rect key="frame" x="0.0" y="22" width="984" height="60"/>
+                                <rect key="frame" x="0.0" y="22" width="288" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SjG-QM-bfL" id="SRs-QD-JCm">
-                                    <rect key="frame" x="0.0" y="0.0" width="984" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="288" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLEX 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jB8-BB-2im">
-                                            <rect key="frame" x="8" y="13" width="346" height="32"/>
+                                            <rect key="frame" x="8" y="13" width="474" height="32"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 12:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qt8-IP-8tC">
-                                            <rect key="frame" x="374" y="14" width="346" height="31"/>
+                                            <rect key="frame" x="502" y="14" width="474" height="31"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -348,11 +348,11 @@
                         <viewControllerLayoutGuide type="bottom" id="QX3-Ta-afe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="roZ-Bu-rTH">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzP-zV-1pO">
-                                <rect key="frame" x="4" y="0.0" width="1016" height="719"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -384,11 +384,11 @@
                         <viewControllerLayoutGuide type="bottom" id="n4y-h3-UJd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lhG-fa-zU3">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ge-V1-fqI">
-                                <rect key="frame" x="4" y="0.0" width="1016" height="719"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">The images in this project are licensed under the Creative Commons Attribution License 4.0 unless otherwise noted. The text of the license is located at http://creativecommons.org/licenses/by/4.0/.
 
@@ -426,17 +426,17 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         <viewControllerLayoutGuide type="bottom" id="7I0-Lt-bTk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RDN-NG-ajT">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The following people have generously donated to help support X Schedule:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cQ-C7-s6d">
-                                <rect key="frame" x="13" y="72" width="998" height="21"/>
+                                <rect key="frame" x="9" y="72" width="302" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="  Donors  " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jsq-LD-IkQ">
-                                <rect key="frame" x="4" y="110" width="1016" height="609"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="409"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
@@ -469,11 +469,11 @@ The GitHub logo and icons are (c) 2015 GitHub, Inc and are not licensed under CC
                         <viewControllerLayoutGuide type="bottom" id="937-ZM-W63"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EtJ-Iu-wwT">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GvE-6u-cRr">
-                                <rect key="frame" x="4" y="64" width="1016" height="655"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" red="0.77647058820000003" green="0.86666666670000003" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment content="X Schedule is created and maintained by Nicholas Reichert.">
@@ -534,11 +534,11 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                         <viewControllerLayoutGuide type="bottom" id="yBU-SF-Kgp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="E94-8B-n7t">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconiTunes" translatesAutoresizingMaskIntoConstraints="NO" id="CGr-J2-22j">
-                                <rect key="frame" x="267" y="79" width="490" height="490"/>
+                                <rect key="frame" x="66" y="79" width="188" height="188"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="500" id="03d-bi-RMJ"/>
                                     <constraint firstAttribute="width" secondItem="CGr-J2-22j" secondAttribute="height" multiplier="1:1" id="V2M-Yt-oq7"/>
@@ -558,7 +558,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clV-qp-RFO">
-                                <rect key="frame" x="400" y="577" width="224" height="47"/>
+                                <rect key="frame" x="48" y="275" width="224" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="224" id="gvr-zF-sj0"/>
                                 </constraints>
@@ -567,7 +567,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2015 Nicholas Reichert.  Available under the MIT License." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytx-K1-59s">
-                                <rect key="frame" x="369" y="655" width="286" height="56"/>
+                                <rect key="frame" x="17" y="455" width="286" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="5Yo-4T-hAw"/>
                                     <constraint firstAttribute="width" constant="286" id="MTk-F4-Bml"/>
@@ -577,7 +577,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Nicholas Reichert." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtB-eS-AGY">
-                                <rect key="frame" x="374" y="624" width="276" height="30"/>
+                                <rect key="frame" x="22" y="322" width="276" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ac0-15-gfO"/>
                                     <constraint firstAttribute="width" constant="276" id="etZ-qU-KoZ"/>
@@ -618,21 +618,21 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
             <objects>
                 <tableViewController title="About Menu" id="HOs-ex-LyZ" customClass="AboutViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DoG-bm-dRA">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.77630078792572021" green="0.86567175388336182" blue="0.99451255798339844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Information" id="syG-yf-jhv">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gev-rg-wcK" style="IBUITableViewCellStyleDefault" id="mxC-Ly-p2f">
-                                        <rect key="frame" x="0.0" y="55.5" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="mxC-Ly-p2f" id="qsd-Lp-tce">
-                                            <rect key="frame" x="0.0" y="0.0" width="830" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gev-rg-wcK">
-                                                    <rect key="frame" x="176" y="0.0" width="654" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -646,21 +646,21 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="Vb5-rm-BeN" detailTextLabel="Yia-Hx-e8b" style="IBUITableViewCellStyleValue1" id="V23-Bd-1Iz">
-                                        <rect key="frame" x="0.0" y="99.5" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="V23-Bd-1Iz" id="g9h-Wv-jEh">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="App Version" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vb5-rm-BeN">
-                                                    <rect key="frame" x="176" y="12" width="88" height="19.5"/>
+                                                    <rect key="frame" x="15" y="12" width="88" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yia-Hx-e8b">
-                                                    <rect key="frame" x="838" y="12" width="10" height="19.5"/>
+                                                    <rect key="frame" x="295" y="12" width="10" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -671,14 +671,14 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="9lv-c7-ujX" style="IBUITableViewCellStyleDefault" id="nwt-Xl-PB5">
-                                        <rect key="frame" x="0.0" y="143.5" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nwt-Xl-PB5" id="0hj-gq-1R0">
-                                            <rect key="frame" x="0.0" y="0.0" width="830" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Licensing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9lv-c7-ujX">
-                                                    <rect key="frame" x="176" y="0.0" width="654" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -692,14 +692,14 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="FcF-1m-Op6" style="IBUITableViewCellStyleDefault" id="kYM-bb-31N">
-                                        <rect key="frame" x="0.0" y="187.5" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="kYM-bb-31N" id="gUU-Xo-y8M">
-                                            <rect key="frame" x="0.0" y="0.0" width="830" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Image Licensing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FcF-1m-Op6">
-                                                    <rect key="frame" x="176" y="0.0" width="654" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -713,14 +713,14 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="jOJ-H8-9PS" style="IBUITableViewCellStyleDefault" id="Txs-w3-2HA">
-                                        <rect key="frame" x="0.0" y="231.5" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="231.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="Txs-w3-2HA" id="hxo-M9-oLu">
-                                            <rect key="frame" x="0.0" y="0.0" width="830" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Donors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jOJ-H8-9PS">
-                                                    <rect key="frame" x="176" y="0.0" width="654" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -734,14 +734,14 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="M1v-8k-D6g" style="IBUITableViewCellStyleDefault" id="ZmR-uq-Gvh">
-                                        <rect key="frame" x="0.0" y="275.5" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="275.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="ZmR-uq-Gvh" id="Rob-Bn-7cJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="830" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M1v-8k-D6g">
-                                                    <rect key="frame" x="176" y="0.0" width="654" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -759,21 +759,21 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                             <tableViewSection headerTitle="Links" footerTitle="X Schedule is not endorsed by or affiliated with St. Xavier High School." id="mwb-ib-Edy">
                                 <cells>
                                     <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="05Z-n8-llP" imageView="qdv-qR-WN4" style="IBUITableViewCellStyleDefault" id="ToM-ob-dHZ">
-                                        <rect key="frame" x="0.0" y="375" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="375" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="ToM-ob-dHZ" id="Fid-oG-SnE">
-                                            <rect key="frame" x="0.0" y="0.0" width="830" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="GitHub" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="05Z-n8-llP">
-                                                    <rect key="frame" x="231" y="0.0" width="599" height="43.5"/>
+                                                    <rect key="frame" x="70" y="0.0" width="215" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="GitHub" id="qdv-qR-WN4">
-                                                    <rect key="frame" x="176" y="5" width="40" height="33"/>
+                                                    <rect key="frame" x="15" y="5" width="40" height="33"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -781,14 +781,14 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell tag="201" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="8dw-by-yk1" style="IBUITableViewCellStyleDefault" id="Xho-8t-700">
-                                        <rect key="frame" x="0.0" y="419" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="419" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="Xho-8t-700" id="5Lb-aY-RQr">
-                                            <rect key="frame" x="0.0" y="0.0" width="830" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="St. Xavier Website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8dw-by-yk1">
-                                                    <rect key="frame" x="176" y="0.0" width="654" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -863,11 +863,11 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                         <viewControllerLayoutGuide type="bottom" id="1KM-yp-XGC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eap-pn-UhR">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday Schedule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8S-w1-vTy">
-                                <rect key="frame" x="354" y="56" width="316" height="69"/>
+                                <rect key="frame" x="46" y="37" width="228" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="Ubl-D6-EOG"/>
                                     <constraint firstAttribute="width" constant="316" id="gXp-VG-eNp"/>
@@ -898,7 +898,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 </variation>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dkd-YP-ooV">
-                                <rect key="frame" x="20" y="183" width="984" height="571"/>
+                                <rect key="frame" x="16" y="117" width="288" height="437"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -910,7 +910,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, Janurary 30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E66-Ux-urS">
-                                <rect key="frame" x="20" y="28" width="984" height="35"/>
+                                <rect key="frame" x="16" y="18" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="EZy-2y-2gU"/>
                                     <constraint firstAttribute="height" constant="21" id="gff-Ff-hg5"/>
@@ -936,11 +936,11 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 </variation>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jv5-CN-QTn">
-                                <rect key="frame" x="494" y="138" width="37" height="37"/>
+                                <rect key="frame" x="142" y="291" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mh0-JI-FfB">
-                                <rect key="frame" x="316" y="68.5" width="44" height="44"/>
+                                <rect key="frame" x="0.0" y="51.5" width="44" height="44"/>
                                 <state key="normal" image="backButton">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -949,7 +949,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUx-ad-0kf">
-                                <rect key="frame" x="664" y="68.5" width="44" height="44"/>
+                                <rect key="frame" x="276" y="51.5" width="44" height="44"/>
                                 <state key="normal" image="forwardButton"/>
                                 <connections>
                                     <action selector="onForwardButtonPress:" destination="bA9-gW-icy" eventType="touchUpInside" id="mDd-yz-pnv"/>
@@ -997,12 +997,12 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="3B0-tS-MYM"/>
+                                <exclude reference="NRS-vE-cHQ"/>
+                                <exclude reference="h6N-5h-1k8"/>
                                 <exclude reference="dXt-8e-qSP"/>
                                 <exclude reference="jon-AM-VXv"/>
                                 <exclude reference="r4M-cN-m81"/>
                                 <exclude reference="uTP-yX-LsK"/>
-                                <exclude reference="NRS-vE-cHQ"/>
-                                <exclude reference="h6N-5h-1k8"/>
                                 <exclude reference="1uk-Hw-VaQ"/>
                                 <exclude reference="9Fb-Vf-m0y"/>
                                 <exclude reference="hm1-dk-GAk"/>
@@ -1013,6 +1013,10 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <include reference="EF9-HE-OAL"/>
                                 <include reference="dMq-mb-5hf"/>
                                 <include reference="sja-eu-Crk"/>
+                                <include reference="17s-zt-M98"/>
+                                <include reference="2pG-AI-T67"/>
+                                <include reference="UHC-Pa-y7e"/>
+                                <include reference="xAV-FJ-fKk"/>
                                 <include reference="437-48-2po"/>
                                 <exclude reference="DXg-Ge-3tZ"/>
                                 <include reference="IBh-ap-6hY"/>
@@ -1021,10 +1025,6 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <include reference="oMr-Te-yJz"/>
                                 <include reference="oSa-m4-IrV"/>
                                 <include reference="r4M-cN-m81"/>
-                                <include reference="17s-zt-M98"/>
-                                <include reference="2pG-AI-T67"/>
-                                <include reference="UHC-Pa-y7e"/>
-                                <include reference="xAV-FJ-fKk"/>
                                 <include reference="hlD-Ym-7Cl"/>
                                 <include reference="0fE-CX-Qov"/>
                                 <include reference="hm1-dk-GAk"/>
@@ -1035,6 +1035,9 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                             <mask key="constraints">
                                 <include reference="3B0-tS-MYM"/>
                                 <exclude reference="dMq-mb-5hf"/>
+                                <include reference="NRS-vE-cHQ"/>
+                                <include reference="h6N-5h-1k8"/>
+                                <exclude reference="xAV-FJ-fKk"/>
                                 <exclude reference="437-48-2po"/>
                                 <exclude reference="IBh-ap-6hY"/>
                                 <exclude reference="V2c-ZJ-DpU"/>
@@ -1042,9 +1045,6 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <exclude reference="jon-AM-VXv"/>
                                 <exclude reference="oMr-Te-yJz"/>
                                 <include reference="uTP-yX-LsK"/>
-                                <include reference="NRS-vE-cHQ"/>
-                                <include reference="h6N-5h-1k8"/>
-                                <exclude reference="xAV-FJ-fKk"/>
                                 <exclude reference="hlD-Ym-7Cl"/>
                                 <exclude reference="0fE-CX-Qov"/>
                                 <include reference="1uk-Hw-VaQ"/>
@@ -1068,7 +1068,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
             <objects>
                 <tableViewController id="c0X-ph-YfU" customClass="SettingsViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="oCg-2H-hDF">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.77630078792572021" green="0.86567175388336182" blue="0.99451255798339844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
@@ -1076,20 +1076,20 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <string key="footerTitle">Substitutions are a list of word pairs which will be replaced into each schedule.  You can use this to input your classes into the schedules.</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="s3r-So-AcZ">
-                                        <rect key="frame" x="0.0" y="55.5" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s3r-So-AcZ" id="XGA-jW-TtM">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kq3-He-wCG">
-                                                    <rect key="frame" x="960" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="256" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="substitutionSwitchToggle:" destination="c0X-ph-YfU" eventType="valueChanged" id="pgL-ed-Vwx"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Enable Substitutions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMb-ke-U1Z">
-                                                    <rect key="frame" x="15" y="0.0" width="937" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="233" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1106,14 +1106,14 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ij0-a3-UYM" style="IBUITableViewCellStyleDefault" id="biT-WG-74L">
-                                        <rect key="frame" x="0.0" y="99.5" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="biT-WG-74L" id="cwi-5v-Oo7">
-                                            <rect key="frame" x="0.0" y="0.0" width="830" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Edit Substitutions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ij0-a3-UYM">
-                                                    <rect key="frame" x="176" y="0.0" width="654" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1131,14 +1131,14 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                             <tableViewSection headerTitle="Cache" footerTitle="Clear the cache if you are having problems." id="fwc-J7-4Ne">
                                 <cells>
                                     <tableViewCell tag="501" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="7gP-6z-iOp" style="IBUITableViewCellStyleDefault" id="amD-S1-m4T">
-                                        <rect key="frame" x="0.0" y="219" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="251" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="amD-S1-m4T" id="FA5-Sd-gzd">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Clear Cache" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7gP-6z-iOp">
-                                                    <rect key="frame" x="176" y="0.0" width="672" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1170,26 +1170,26 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
             <objects>
                 <tableViewController id="AFl-QS-Wc8" customClass="CustomizationViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FeQ-vO-LOO">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.77630078792572021" green="0.86567175388336182" blue="0.99451255798339844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomizationCell" textLabel="We6-RI-GYf" detailTextLabel="eDc-fs-0h8" style="IBUITableViewCellStyleValue1" id="71z-gC-B8q">
-                                <rect key="frame" x="0.0" y="22" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="71z-gC-B8q" id="Thw-KK-94i">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" tag="501" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="We6-RI-GYf">
-                                            <rect key="frame" x="176" y="12" width="31.5" height="19.5"/>
+                                            <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" tag="502" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eDc-fs-0h8">
-                                            <rect key="frame" x="806.5" y="12" width="41.5" height="19.5"/>
+                                            <rect key="frame" x="263.5" y="12" width="41.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1226,21 +1226,21 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
             <objects>
                 <tableViewController id="wOS-b6-j1r" customClass="NewSubViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bkV-0W-epi">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.77630078792572021" green="0.86567175388336182" blue="0.99451255798339844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Block Name" id="iGP-mS-nJU">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="gZm-4L-e9w">
-                                        <rect key="frame" x="0.0" y="55.5" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gZm-4L-e9w" id="NPz-aQ-DNM">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="A" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zZ5-aO-t9V">
-                                                    <rect key="frame" x="8" y="7" width="1008" height="30"/>
+                                                    <rect key="frame" x="8" y="7" width="304" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -1262,14 +1262,14 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                             <tableViewSection headerTitle="Class Name" footerTitle="The entered block name will automatically be replaced with the class name when a schedule is displayed." id="ocP-au-bIj">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="nL3-9k-8q2">
-                                        <rect key="frame" x="0.0" y="155" width="1024" height="44"/>
+                                        <rect key="frame" x="0.0" y="155" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nL3-9k-8q2" id="Id1-CR-lz4">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Fine Arts" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHL-yc-IvE">
-                                                    <rect key="frame" x="8" y="7" width="1008" height="30"/>
+                                                    <rect key="frame" x="8" y="7" width="304" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -1335,17 +1335,17 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                         <viewControllerLayoutGuide type="bottom" id="jfd-ji-83Q"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="u70-oR-BaW">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jZ-Mw-eao">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <segue destination="xPD-YH-zR3" kind="embed" id="kYh-Cx-67J"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfD-Oe-Ik5">
-                                <rect key="frame" x="402" y="62" width="220" height="65"/>
+                                <rect key="frame" x="50" y="62" width="220" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="F98-BW-bDT"/>
                                     <constraint firstAttribute="height" constant="65" id="ZT2-x7-QBi"/>
@@ -1378,26 +1378,26 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
             <objects>
                 <tableViewController id="xPD-YH-zR3" customClass="ColoredScheduleTableController" customModule="XScheduleKit" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="EL4-Bd-hbP">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.81399536130000005" green="0.89592456819999999" blue="0.99735766650000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScheduleTableCell" rowHeight="30" id="6KX-WY-9zk">
-                                <rect key="frame" x="0.0" y="22" width="1024" height="30"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6KX-WY-9zk" id="ZnN-4j-SkO">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="29.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="29.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 - 12:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nD-rQ-NxA">
-                                            <rect key="frame" x="394" y="2" width="366" height="25"/>
+                                            <rect key="frame" x="522" y="2" width="494" height="25"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLEX 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6U-vK-7a8">
-                                            <rect key="frame" x="8" y="5" width="366" height="21"/>
+                                            <rect key="frame" x="8" y="5" width="494" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1443,11 +1443,11 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                         <viewControllerLayoutGuide type="bottom" id="VXr-kc-eM7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sD0-Ab-Xe0">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="April 13 - April 17" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfE-Vt-axm">
-                                <rect key="frame" x="354" y="15.5" width="316" height="69"/>
+                                <rect key="frame" x="46" y="37" width="228" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="316" id="Iuq-6s-sAR"/>
                                     <constraint firstAttribute="height" constant="69" id="WV7-Mg-mFr"/>
@@ -1537,8 +1537,8 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                     <segue destination="iXd-71-7Tc" kind="embed" id="vuT-py-pOR"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEM-Nx-vI8">
-                                <rect key="frame" x="423" y="116" width="178" height="64"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEM-Nx-vI8">
+                                <rect key="frame" x="423" y="18" width="178" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="NhU-9m-HaB"/>
                                     <constraint firstAttribute="height" constant="21" id="ewI-4K-3Ia"/>
@@ -1569,7 +1569,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 </variation>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LiP-m0-IIA">
-                                <rect key="frame" x="494" y="81.5" width="37" height="37"/>
+                                <rect key="frame" x="142" y="291" width="37" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="7vk-OH-nBy"/>
                                     <constraint firstAttribute="width" constant="37" id="vw2-D0-sEy"/>
@@ -1589,14 +1589,14 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 </variation>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-RZ-oVs">
-                                <rect key="frame" x="678" y="28" width="44" height="44"/>
+                                <rect key="frame" x="276" y="28" width="44" height="91"/>
                                 <state key="normal" image="forwardButton"/>
                                 <connections>
                                     <action selector="onForwardButtonPress:" destination="58n-Ck-sFa" eventType="touchUpInside" id="i3i-Pp-C4G"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKh-pn-kCv">
-                                <rect key="frame" x="447.5" y="248" width="129" height="30"/>
+                                <rect key="frame" x="50" y="159" width="220" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="4Kk-vy-6HI"/>
                                     <constraint firstAttribute="height" constant="30" id="F5Q-pm-IUV"/>
@@ -1852,7 +1852,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hat-cx-nw1">
-                                <rect key="frame" x="302" y="28" width="44" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="44" height="91"/>
                                 <state key="normal" image="backButton">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -2003,31 +2003,9 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <exclude reference="8Cq-Na-xip"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9pg-G6-IuW"/>
-                                <exclude reference="rnj-Tv-hKt"/>
+                                <exclude reference="Ugi-yJ-60s"/>
                                 <exclude reference="6EH-gD-G52"/>
                                 <exclude reference="uzb-XW-klj"/>
-                                <exclude reference="MsE-74-iGM"/>
-                                <exclude reference="WnA-mX-bWk"/>
-                                <exclude reference="Ugi-yJ-60s"/>
-                                <exclude reference="S5i-vW-2u4"/>
-                                <exclude reference="VCx-zF-PUR"/>
-                                <exclude reference="ank-qu-X0g"/>
-                                <exclude reference="BYi-4o-vXx"/>
-                                <exclude reference="1nT-NB-K40"/>
-                                <exclude reference="HQ9-9l-irx"/>
-                                <exclude reference="rcW-AJ-0dR"/>
-                                <exclude reference="zbT-8t-oAe"/>
-                                <exclude reference="ag2-jw-EUf"/>
-                                <exclude reference="gnt-Ci-3Tw"/>
-                                <exclude reference="wWp-oG-FZW"/>
-                                <exclude reference="BU6-ke-WHN"/>
-                                <exclude reference="EHv-Ma-vc6"/>
-                                <exclude reference="JqU-8a-F0d"/>
-                                <exclude reference="MRb-Aq-0m6"/>
-                                <exclude reference="jhE-ew-BhD"/>
-                                <exclude reference="kcf-13-Qgq"/>
-                                <exclude reference="x6F-1O-T8g"/>
                                 <exclude reference="1FU-xC-ZnY"/>
                                 <exclude reference="C7b-2a-naa"/>
                                 <exclude reference="FOI-Fy-XC6"/>
@@ -2039,18 +2017,31 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <exclude reference="pTC-4t-Prq"/>
                                 <exclude reference="vfi-2V-0Tb"/>
                                 <exclude reference="yH9-GR-Ky9"/>
+                                <exclude reference="BU6-ke-WHN"/>
+                                <exclude reference="EHv-Ma-vc6"/>
+                                <exclude reference="JqU-8a-F0d"/>
+                                <exclude reference="MRb-Aq-0m6"/>
+                                <exclude reference="jhE-ew-BhD"/>
+                                <exclude reference="kcf-13-Qgq"/>
+                                <exclude reference="x6F-1O-T8g"/>
+                                <exclude reference="BYi-4o-vXx"/>
+                                <exclude reference="1nT-NB-K40"/>
+                                <exclude reference="HQ9-9l-irx"/>
+                                <exclude reference="rcW-AJ-0dR"/>
+                                <exclude reference="S5i-vW-2u4"/>
+                                <exclude reference="VCx-zF-PUR"/>
+                                <exclude reference="ank-qu-X0g"/>
+                                <exclude reference="ag2-jw-EUf"/>
+                                <exclude reference="gnt-Ci-3Tw"/>
+                                <exclude reference="wWp-oG-FZW"/>
+                                <exclude reference="zbT-8t-oAe"/>
                                 <exclude reference="NFQ-aN-3bd"/>
                                 <exclude reference="Tec-bW-W3c"/>
                                 <exclude reference="aex-sF-At3"/>
                                 <exclude reference="gHZ-0O-Inh"/>
-                                <exclude reference="Fd4-aK-Wh3"/>
-                                <exclude reference="I9d-qd-IM4"/>
-                                <exclude reference="LgU-Kr-rL9"/>
-                                <exclude reference="WGi-Ec-QTz"/>
-                                <exclude reference="dPZ-za-KBF"/>
-                                <exclude reference="ehj-p1-ovT"/>
-                                <exclude reference="pEI-ae-fXx"/>
-                                <exclude reference="tnS-Ts-EuT"/>
+                                <exclude reference="WnA-mX-bWk"/>
+                                <exclude reference="9pg-G6-IuW"/>
+                                <exclude reference="rnj-Tv-hKt"/>
                                 <exclude reference="1qF-JK-jVL"/>
                                 <exclude reference="61G-Cx-LO6"/>
                                 <exclude reference="aEY-e9-2ox"/>
@@ -2065,16 +2056,25 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <exclude reference="dzb-n7-ynV"/>
                                 <exclude reference="em4-t0-Cdg"/>
                                 <exclude reference="f7O-5S-ima"/>
+                                <exclude reference="MsE-74-iGM"/>
+                                <exclude reference="Fd4-aK-Wh3"/>
+                                <exclude reference="I9d-qd-IM4"/>
+                                <exclude reference="LgU-Kr-rL9"/>
+                                <exclude reference="WGi-Ec-QTz"/>
+                                <exclude reference="dPZ-za-KBF"/>
+                                <exclude reference="ehj-p1-ovT"/>
+                                <exclude reference="pEI-ae-fXx"/>
+                                <exclude reference="tnS-Ts-EuT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
-                                <include reference="P7i-fv-Phq"/>
                                 <include reference="7We-le-MJZ"/>
                                 <include reference="1nT-NB-K40"/>
                                 <include reference="BRn-Tj-AJ8"/>
                                 <include reference="QOd-6c-fDE"/>
                                 <include reference="vao-gB-fgA"/>
+                                <include reference="P7i-fv-Phq"/>
                                 <include reference="vps-Me-gHb"/>
                                 <include reference="r6p-db-6VZ"/>
                                 <include reference="vRM-3O-h5H"/>
@@ -2098,37 +2098,9 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <include reference="8Cq-Na-xip"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9pg-G6-IuW"/>
-                                <include reference="rnj-Tv-hKt"/>
+                                <include reference="Ugi-yJ-60s"/>
                                 <include reference="6EH-gD-G52"/>
                                 <include reference="uzb-XW-klj"/>
-                                <include reference="MsE-74-iGM"/>
-                                <include reference="WnA-mX-bWk"/>
-                                <include reference="Ugi-yJ-60s"/>
-                                <exclude reference="P7i-fv-Phq"/>
-                                <include reference="S5i-vW-2u4"/>
-                                <include reference="VCx-zF-PUR"/>
-                                <exclude reference="ank-qu-X0g"/>
-                                <exclude reference="7We-le-MJZ"/>
-                                <include reference="BYi-4o-vXx"/>
-                                <exclude reference="BRn-Tj-AJ8"/>
-                                <exclude reference="HQ9-9l-irx"/>
-                                <exclude reference="QOd-6c-fDE"/>
-                                <include reference="rcW-AJ-0dR"/>
-                                <exclude reference="vao-gB-fgA"/>
-                                <exclude reference="KNX-e7-Fk4"/>
-                                <include reference="zbT-8t-oAe"/>
-                                <include reference="ag2-jw-EUf"/>
-                                <include reference="gnt-Ci-3Tw"/>
-                                <exclude reference="vps-Me-gHb"/>
-                                <include reference="wWp-oG-FZW"/>
-                                <include reference="BU6-ke-WHN"/>
-                                <include reference="EHv-Ma-vc6"/>
-                                <include reference="JqU-8a-F0d"/>
-                                <include reference="MRb-Aq-0m6"/>
-                                <include reference="jhE-ew-BhD"/>
-                                <include reference="kcf-13-Qgq"/>
-                                <include reference="x6F-1O-T8g"/>
                                 <include reference="1FU-xC-ZnY"/>
                                 <include reference="C7b-2a-naa"/>
                                 <include reference="FOI-Fy-XC6"/>
@@ -2140,18 +2112,37 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <include reference="pTC-4t-Prq"/>
                                 <include reference="vfi-2V-0Tb"/>
                                 <include reference="yH9-GR-Ky9"/>
+                                <include reference="BU6-ke-WHN"/>
+                                <include reference="EHv-Ma-vc6"/>
+                                <include reference="JqU-8a-F0d"/>
+                                <include reference="MRb-Aq-0m6"/>
+                                <include reference="jhE-ew-BhD"/>
+                                <include reference="kcf-13-Qgq"/>
+                                <include reference="x6F-1O-T8g"/>
+                                <exclude reference="7We-le-MJZ"/>
+                                <include reference="BYi-4o-vXx"/>
+                                <exclude reference="BRn-Tj-AJ8"/>
+                                <exclude reference="HQ9-9l-irx"/>
+                                <exclude reference="QOd-6c-fDE"/>
+                                <include reference="rcW-AJ-0dR"/>
+                                <exclude reference="vao-gB-fgA"/>
+                                <exclude reference="P7i-fv-Phq"/>
+                                <include reference="S5i-vW-2u4"/>
+                                <include reference="VCx-zF-PUR"/>
+                                <exclude reference="ank-qu-X0g"/>
+                                <include reference="ag2-jw-EUf"/>
+                                <include reference="gnt-Ci-3Tw"/>
+                                <exclude reference="vps-Me-gHb"/>
+                                <include reference="wWp-oG-FZW"/>
+                                <exclude reference="KNX-e7-Fk4"/>
+                                <include reference="zbT-8t-oAe"/>
                                 <include reference="NFQ-aN-3bd"/>
                                 <include reference="Tec-bW-W3c"/>
                                 <exclude reference="aex-sF-At3"/>
                                 <include reference="gHZ-0O-Inh"/>
-                                <include reference="Fd4-aK-Wh3"/>
-                                <include reference="I9d-qd-IM4"/>
-                                <include reference="LgU-Kr-rL9"/>
-                                <include reference="WGi-Ec-QTz"/>
-                                <include reference="dPZ-za-KBF"/>
-                                <exclude reference="ehj-p1-ovT"/>
-                                <include reference="pEI-ae-fXx"/>
-                                <include reference="tnS-Ts-EuT"/>
+                                <include reference="WnA-mX-bWk"/>
+                                <include reference="9pg-G6-IuW"/>
+                                <include reference="rnj-Tv-hKt"/>
                                 <include reference="1qF-JK-jVL"/>
                                 <include reference="61G-Cx-LO6"/>
                                 <include reference="aEY-e9-2ox"/>
@@ -2166,6 +2157,15 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <include reference="dzb-n7-ynV"/>
                                 <include reference="em4-t0-Cdg"/>
                                 <include reference="f7O-5S-ima"/>
+                                <include reference="MsE-74-iGM"/>
+                                <include reference="Fd4-aK-Wh3"/>
+                                <include reference="I9d-qd-IM4"/>
+                                <include reference="LgU-Kr-rL9"/>
+                                <include reference="WGi-Ec-QTz"/>
+                                <include reference="dPZ-za-KBF"/>
+                                <exclude reference="ehj-p1-ovT"/>
+                                <include reference="pEI-ae-fXx"/>
+                                <include reference="tnS-Ts-EuT"/>
                             </mask>
                         </variation>
                     </view>
@@ -2207,7 +2207,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLEX 1" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M13-QE-CZJ">
-                                            <rect key="frame" x="8" y="6.5" width="54.5" height="21"/>
+                                            <rect key="frame" x="8" y="5.5" width="55.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="56" id="cY3-Vn-SQT"/>
                                             </constraints>
@@ -2226,7 +2226,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="10:00 - 12:00" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQf-Cw-F1U">
-                                            <rect key="frame" x="70.5" y="2" width="48.5" height="25"/>
+                                            <rect key="frame" x="83.5" y="2" width="55" height="25"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
