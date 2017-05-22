@@ -79,7 +79,6 @@ open class TimeSpanScheduleItem: ScheduleItem {
         return timeText
     }
     
-    // Note: may have some issues with days getting highlighted on the wrong day.
     public func isHappeningAt(time: Date) -> Bool {
         //Determine if the given time is between the start and end of a ScheduleItem.
         var happeningNow: Bool = false
@@ -90,5 +89,67 @@ open class TimeSpanScheduleItem: ScheduleItem {
         }
         
         return happeningNow
+    }
+}
+
+open class TimePointScheduleItem: ScheduleItem {
+    open var blockName: String = ""
+    open var time: Date?
+    
+    public init(blockName: String) {
+        self.blockName = blockName
+    }
+    public init(time: Date?) {
+        self.time = time
+    }
+    public init(blockName: String, time: Date) {
+        self.blockName = blockName
+        self.time = time
+    }
+    
+    public func primaryText() -> String {
+        return blockName
+    }
+    
+    public func secondaryText() -> String {
+        let timeString = timeTextForNSDate(time as Date?)
+        
+        return timeString
+    }
+    private func timeTextForNSDate(_ time: Date?) -> String {
+        var timeText: String = ""
+        let dateFormat: DateFormatter = DateFormatter()
+        dateFormat.dateFormat = "h:mm"
+        if let realTime = time {
+            timeText = dateFormat.string(from: realTime)
+        } else {
+            timeText = "?:??"
+        }
+        
+        return timeText
+    }
+    
+    public func isHappeningAt(time: Date) -> Bool {
+        return false
+    }
+}
+
+open class DescriptionScheduleItem: ScheduleItem {
+    open var blockName: String = ""
+    
+    public init(blockName: String) {
+        self.blockName = blockName
+    }
+    
+    public func primaryText() -> String {
+        return blockName
+    }
+    
+    public func secondaryText() -> String {
+        return ""
+    }
+    
+    public func isHappeningAt(time: Date) -> Bool {
+        return false
     }
 }
