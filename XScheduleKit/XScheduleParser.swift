@@ -26,8 +26,14 @@ open class XScheduleParser: ScheduleParser {
         var output: String = ""
         for item in items {
             if let spanItem = item as? TimeSpanScheduleItem {
-                output += "\(spanItem.blockName) \(timeStringForDate(spanItem.startTime as Date?))-\(timeStringForDate(spanItem.endTime as Date?))&lt;br&gt;"
+                output += "\(spanItem.blockName) \(timeStringForDate(spanItem.startTime as Date?))-\(timeStringForDate(spanItem.endTime as Date?))"
+            } else if let spanItem = item as? TimePointScheduleItem {
+                output += "\(spanItem.blockName) \(timeStringForDate(spanItem.time as Date?))"
+            } else if let spanItem = item as? DescriptionScheduleItem {
+                output += "\(spanItem.blockName)"
             }
+            // Always finish each item with a line break tag <br>.
+            output += "&lt;br&gt;"
         }
         
         return output
@@ -86,24 +92,33 @@ open class XScheduleParser: ScheduleParser {
         let lines: [String] = separateLines(scheduleString)
         
         for line in lines {
-            
             //Split each line into tokens.
             var tokens: [String] = separateLineIntoTokens(line)
-            //Identify index of time token.
-            let timeTokenIndex: Int? = indexOfTimeTokenInArray(tokens)
             
-            if (timeTokenIndex == nil) {
+            //Identify index of time token.
+            let singleTimeTokenIndex: Int? = indexOfSingleTimeTokenInArray(tokens)
+            let doubleTimeTokenIndex: Int? = indexOfDoubleTimeTokenInArray(tokens)
+            
+            if (singleTimeTokenIndex == nil && doubleTimeTokenIndex == nil) {
                 //Only add a timeless ScheduleItem if it has a description.
                 if (tokens != []) {
                     //Make schedule item and add to schedule.
-                    let item: TimeSpanScheduleItem = TimeSpanScheduleItem(blockName: stringFromTokens(tokens))
+                    let item: DescriptionScheduleItem = DescriptionScheduleItem(blockName: stringFromTokens(tokens))
                     schedule.items.append(item)
                 }
-            } else {
+            } else if ( doubleTimeTokenIndex != nil) {
                 //Analyze time token.
-                let times: (start: Date?, end: Date?) = parseArrayForTimes(&tokens, index: timeTokenIndex!, onDate: schedule.date as Date)
+                let times: (start: Date?, end: Date?) = parseTokensForDoubleTimes(&tokens, index: doubleTimeTokenIndex!, onDate: schedule.date as Date)
+                
                 //Make schedule item and add to schedule.
                 let item: TimeSpanScheduleItem = TimeSpanScheduleItem(blockName: stringFromTokens(tokens), startTime: times.start, endTime: times.end)
+                schedule.items.append(item)
+            } else { // singleTimeTokenIndex != nil
+                //Analyze time token.
+                let time: Date? = parseTokensForSingleTime(&tokens, index: singleTimeTokenIndex!, onDate: schedule.date as Date)
+                
+                //Make schedule item and add to schedule.
+                let item: TimePointScheduleItem = TimePointScheduleItem(blockName: stringFromTokens(tokens), time: time)
                 schedule.items.append(item)
             }
         }
@@ -150,36 +165,52 @@ open class XScheduleParser: ScheduleParser {
         return tokens
     }
     
-    private class func indexOfTimeTokenInArray(_ tokens: [String]) -> Int? {
+    private class func indexOfDoubleTimeTokenInArray(_ tokens: [String]) -> Int? {
         //Search through array for time token and return it's id.
-        var timeTokenNum: Int?
-        for (i, token) in tokens.enumerated() {
-            if (isStringTimeToken(token)) {
-                timeTokenNum = i
-                break
-            }
-        }
         
-        return timeTokenNum
+        return tokens.index(where: { isStringDoubleTimeToken($0) } )
     }
-    private class func isStringTimeToken(_ string: String) -> Bool {
+    private class func isStringDoubleTimeToken(_ string: String) -> Bool {
         let hasNums: Bool = string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil
         let hasQuestionMark: Bool = string.range(of: "?") != nil
         let hasDash: Bool = string.range(of: "-") != nil
-        let isTimeToken: Bool = (hasQuestionMark || hasNums) && hasDash
+        let hasColon: Bool = string.range(of: ":") != nil
+        let isTimeToken: Bool = (hasQuestionMark || hasNums) && hasDash && hasColon
+        
+        return isTimeToken
+    }
+    private class func indexOfSingleTimeTokenInArray(_ tokens: [String]) -> Int? {
+        //Search through array for time token and return it's id.
+        
+        return tokens.index(where: { isStringSingleTimeToken($0) } )
+    }
+    private class func isStringSingleTimeToken(_ string: String) -> Bool {
+        let hasNums: Bool = string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil
+        let hasQuestionMark: Bool = string.range(of: "?") != nil
+        let hasDash: Bool = string.range(of: "-") != nil
+        let hasColon: Bool = string.range(of: ":") != nil
+        let isTimeToken: Bool = (hasQuestionMark || hasNums) && !hasDash && hasColon
         
         return isTimeToken
     }
     
-    private class func analyzeTimeToken(_ timeToken: String) -> (Date?, Date?) {
+    private class func analyzeDoubleTimeToken(_ timeToken: String) -> (Date?, Date?) {
         //Analyze time token.
-        let times: (start: String, end: String) = splitTimeToken(timeToken)
+        let times: (start: String, end: String) = splitDoubleTimeToken(timeToken)
         let dateFormatter: DateFormatter = setUpParsingDateFormatter()
         
         let startTime: Date? = dateFormatter.date(from: times.start)
         let endTime: Date? = dateFormatter.date(from: times.end)
         
         return (startTime, endTime)
+    }
+    private class func analyzeSingleTimeToken(_ timeToken: String) -> Date? {
+        //Analyze time token.
+        let dateFormatter: DateFormatter = setUpParsingDateFormatter()
+        
+        let time: Date? = dateFormatter.date(from: timeToken)
+        
+        return time
     }
     
     private class func stringFromTokens(_ tokensArray: [String]) -> String {
@@ -201,7 +232,7 @@ open class XScheduleParser: ScheduleParser {
         
         return dateFormatter
     }
-    private class func splitTimeToken(_ string: String) -> (String, String) {
+    private class func splitDoubleTimeToken(_ string: String) -> (String, String) {
         let array: [String] = string.components(separatedBy: "-")
         let tuple: (String, String) = (array.first!, array.last!)
         
@@ -239,7 +270,8 @@ open class XScheduleParser: ScheduleParser {
         assignAMPM(&time)
     }
     
-    private class func parseArrayForTimes(_ tokens: inout [String], index timeTokenIndex: Int, onDate date: Date) -> (Date?, Date?) {
+    // Search through a tokens array with a double time token and extract the start and end times from it.
+    private class func parseTokensForDoubleTimes(_ tokens: inout [String], index timeTokenIndex: Int, onDate date: Date) -> (Date?, Date?) {
         //Throw out any tokens after time token.
         removeArrayItemsAfterIndex(timeTokenIndex, array: &tokens)
         
@@ -247,13 +279,30 @@ open class XScheduleParser: ScheduleParser {
         let timeToken: String = tokens.remove(at: timeTokenIndex)
         
         //Analyze time token.
-        var times: (start: Date?, end: Date?) = analyzeTimeToken(timeToken)
+        var times: (start: Date?, end: Date?) = analyzeDoubleTimeToken(timeToken)
         
         //Put time tokens on the schedule date.
         addDateInfoToTime(&times.start, onDate: date)
         addDateInfoToTime(&times.end, onDate: date)
         
         return times
+    }
+    
+    // Search through a tokens array with a single time token and extract the time from it.
+    private class func parseTokensForSingleTime(_ tokens: inout [String], index timeTokenIndex: Int, onDate date: Date) -> Date? {
+        //Throw out any tokens after time token.
+        removeArrayItemsAfterIndex(timeTokenIndex, array: &tokens)
+        
+        //Remove time token and transfer to string.
+        let timeToken: String = tokens.remove(at: timeTokenIndex)
+        
+        //Analyze time token.
+        var time: Date? = analyzeSingleTimeToken(timeToken)
+        
+        //Put time tokens on the schedule date.
+        addDateInfoToTime(&time, onDate: date)
+        
+        return time
     }
 }
 
