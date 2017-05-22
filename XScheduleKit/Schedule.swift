@@ -102,7 +102,7 @@ open class TimePointScheduleItem: ScheduleItem {
     public init(time: Date?) {
         self.time = time
     }
-    public init(blockName: String, time: Date) {
+    public init(blockName: String, time: Date?) {
         self.blockName = blockName
         self.time = time
     }
