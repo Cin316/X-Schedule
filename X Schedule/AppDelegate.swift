@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setUpTabBarDelegate()
-        
         CacheManager.buildCache()
+        requestAuthorizationForNotifications()
         
         return true
     }
@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabBarDelegate = MainTabBarDelegate()
             tabBar.delegate = tabBarDelegate
         }
+    }
+    // Note: I do not use UserNotifications methods because they are not backwards-compatible with older versions of iOS
+    private func requestAuthorizationForNotifications() {
+        UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert], categories: nil))
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -65,10 +69,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        // Add code here for background app refresh.
-        // Call the completion handler when I'm done.
-        // TODO Change ScheduleManager implementation to allow specifying a download method.
+        // Code for background app refresh.
         //XScheduleManager.getScheduleF, completionHandler: <#T##(Schedule) -> Void#>, errorHandler: <#T##(String) -> Void#>, method: &<#T##DownloadMethod#>
+        sendNotification(dayWord: "Today", scheduleTitle: "Morning Assembly A Day")
+        // TODO Now that background app refresh and notifications work properly, detect if days are unusual and fire notifications.
+        completionHandler(.newData) // TODO Call this completionHandler correctly.
+    }
+    private func sendNotification(dayWord: String, scheduleTitle: String) {
+        let notification = UILocalNotification()
+        notification.alertBody = "\(dayWord)'s schedule is: \(scheduleTitle)."
+        if #available(iOS 8.2, *) {
+            notification.alertTitle = "Unusual Schedule"
+        } else {
+            notification.alertBody = "Unusual Schedule\n" + (notification.alertBody ?? "")
+        }
+        notification.fireDate = Date()
+        
+        UIApplication.shared.scheduleLocalNotification(notification)
     }
 
 }
