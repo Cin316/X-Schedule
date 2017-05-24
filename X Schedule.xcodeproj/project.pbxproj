@@ -463,6 +463,7 @@
 			buildPhases = (
 				E14E79891CC705F700FE1DB7 /* Resources */,
 				E14E79B11CC705F800FE1DB7 /* Embed App Extensions */,
+				E1C1527F1ED5D61B00409B52 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -707,7 +708,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "./buildNumWatch.bash || echo \"Failed\"";
+			shellScript = ./buildNum.bash;
 		};
 		E1841FB61ADF554D00C5DF3E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -736,6 +737,19 @@
 			shellScript = ./buildNum.bash;
 		};
 		E1B6F8301B6BD01400E2F4AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = ./buildNum.bash;
+		};
+		E1C1527F1ED5D61B00409B52 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
