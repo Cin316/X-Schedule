@@ -10,48 +10,27 @@ import UIKit
 import XScheduleKit
 
 class ScheduleSwitcherViewController: UINavigationController {
-    
-    var currentOrientation: UIDeviceOrientation = UIDevice.current.orientation
+
     var scheduleDate: Date = Date()
-    var currentView: UIViewController?
+    var currentView: UIViewController? // Publically accessible property
+    var oldOrientation: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        updateCurrentOrientation()
         switchToOrientationView()
-        
-        registerAsOrientationListener()
-    }
-    private func registerAsOrientationListener() {
-        //Register orientation change listener.
-        NotificationCenter.default.addObserver(self, selector: #selector(ScheduleSwitcherViewController.deviceOrientationDidChangeNotification), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-    }
-    private func updateCurrentOrientation() {
-        //Store current orientation.
-        currentOrientation = UIDevice.current.orientation
     }
     
-    func deviceOrientationDidChangeNotification() {
-        let newOrientation = UIDevice.current.orientation
-        //Check if newOrientation is valid.
-        if (newOrientation.isPortrait || newOrientation.isLandscape) {
-            //Check if newOrientation is different from the currentOrientation.
-            if (newOrientation != currentOrientation) {
-                //Update current orientation and update UI.
-                updateCurrentOrientation()
-                switchToOrientationView()
-            }
-        }
+    override func viewWillLayoutSubviews() {
+        switchToOrientationView()
     }
     
     func switchToOrientationView() {
         loadScheduleDateIntoViewController(self.topViewController)
-        performSegueBasedOnOrientation()
+        performSegueBasedOnAspectRatio()
         storeScheduleDate()
         updateCurrentView()
     }
-    private func performSegueBasedOnOrientation() {
+    private func performSegueBasedOnAspectRatio() {
         if (UIDevice.current.userInterfaceIdiom == .phone) { //If on iPhone...
             //Check if there is a view already.
             if (self.topViewController != nil) {
@@ -61,13 +40,30 @@ class ScheduleSwitcherViewController: UINavigationController {
                 self.performSegue(withIdentifier: "displayScheduleiPhone", sender: self)
             }
         } else if (UIDevice.current.userInterfaceIdiom == .pad) { //If on iPad...
-            //Check orientation.
-            if (UIDeviceOrientationIsLandscape(currentOrientation)) { //If orientation is landscape...
-                self.performSegue(withIdentifier: "displayScheduleiPadLandscape", sender: self)
-            } else if (UIDeviceOrientationIsPortrait(currentOrientation)) { //If orientation is portrait...
-                self.performSegue(withIdentifier: "displayScheduleiPadPortrait", sender: self)
+            // If the current orientation is different from the old orientation, preform a switch.
+            let newOrientation = getNewOrientation()
+            if (oldOrientation != newOrientation) {
+                self.performSegue(withIdentifier: newOrientation, sender: self)
+                oldOrientation = newOrientation
             }
         }
+    }
+    private func getNewOrientation() -> String {
+        // Determine what the current orientation should be.
+        var newOrientation: String = ""
+        if (aspectRatio() < 0.85) { // 0.85 is the cutoff between portrait and landscape.
+            newOrientation = "displayScheduleiPadPortrait"
+        } else {
+            newOrientation = "displayScheduleiPadLandscape"
+        }
+        
+        return newOrientation
+    }
+    private func aspectRatio() -> CGFloat {
+        let frame = UIApplication.shared.delegate!.window!!.frame
+        let aspectRatio: CGFloat = frame.width / frame.height
+        
+        return aspectRatio
     }
     private func loadScheduleDateIntoViewController(_ viewController: UIViewController?) {
         //Take date from current view controller and store it.
