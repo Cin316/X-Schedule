@@ -14,6 +14,7 @@ class UnusualScheduleNotificationManager {
     // Note: I do not use UserNotifications methods because they are not backwards-compatible with older versions of iOS
     class func requestAuthorizationForNotifications() {
         UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert], categories: nil))
+        UIApplication.shared.setMinimumBackgroundFetchInterval(60*30) // Minimum fetch interval: 30 minutes.  This method must be called for background fetch to work
     }
     
     // TODO Prevent sending repeated notifications.
