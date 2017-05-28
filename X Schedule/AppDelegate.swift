@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setUpTabBarDelegate()
         CacheManager.buildCache()
         UnusualScheduleNotificationManager.requestAuthorizationForNotifications()
+        UnusualScheduleNotificationManager.setUpBackgroundFetch()
+        UnusualScheduleNotificationManager.loadScheduleTitles()
         
         return true
     }
