@@ -11,6 +11,8 @@ import XScheduleKit
 
 class UnusualScheduleNotificationManager {
     
+    static let notifiedDatesKey = "notifiedDates"
+    
     private static let usualSchedules: [String] = [
         "",
         "A Day",
@@ -49,8 +51,6 @@ class UnusualScheduleNotificationManager {
         UIApplication.shared.setMinimumBackgroundFetchInterval(60*30) // Minimum fetch interval: 30 minutes.  This method must be called for background fetch to work.
     }
     
-    // TODO Prevent sending repeated notifications.
-    
     class func backgroundAppRefresh(_ completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if (currentHour() < 10) { // 12AM-10AM: Look for today's schedule.
             lookForUnusualSchedule(onDate: Date(), dayWord: "Today", completionHandler: completionHandler)
@@ -72,7 +72,7 @@ class UnusualScheduleNotificationManager {
     private class func lookForUnusualSchedule(onDate date: Date, dayWord: String, completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         XScheduleManager.getScheduleForDate(date, completionHandler: { (schedule: Schedule) in
             if (isUnusual(schedule: schedule)) {
-                sendNotification(dayWord: dayWord, scheduleTitle: schedule.title)
+                sendNotificationIfUnique(dayWord: dayWord, scheduleTitle: schedule.title, date: schedule.date)
             }
             completionHandler(.newData)
         }, errorHandler: { (string: String) in
@@ -96,6 +96,13 @@ class UnusualScheduleNotificationManager {
         return false // TODO Implement manual trigger support
     }
     
+    // Only sends a notification if a notification for that date hasn't been sent before.
+    private class func sendNotificationIfUnique(dayWord: String, scheduleTitle: String, date: Date) {
+        if !notificationHasBeenSentForDate(date) {
+            sendNotification(dayWord: dayWord, scheduleTitle: scheduleTitle)
+            recordNotificationSentInCache(date: date)
+        }
+    }
     private class func sendNotification(dayWord: String, scheduleTitle: String) {
         let notification = UILocalNotification()
         notification.alertBody = "\(dayWord)'s schedule is: \(scheduleTitle)."
@@ -107,6 +114,49 @@ class UnusualScheduleNotificationManager {
         notification.fireDate = Date()
         
         UIApplication.shared.scheduleLocalNotification(notification)
+    }
+    
+    private class func notificationHasBeenSentForDate(_ date: Date) -> Bool {
+        let notifiedDates = getNotifiedDates()
+        let dateString = dateToISOString(date)
+        
+        return notifiedDates.contains(dateString)
+    }
+    private class func getNotifiedDates() -> [String] {
+        let defaults = UserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
+        let notifiedDates = defaults.object(forKey: notifiedDatesKey) as AnyObject?
+        
+        var output: [String] = [] // If notifiedDates can't be loaded from UserDefaults, output is by default empty
+        if let dates = notifiedDates as? [String] {
+            output = dates
+        }
+        
+        return output
+    }
+    private class func loadDateFromISOString(_ string: String) -> Date {
+        return setUpParsingDateFormatter().date(from: string)!
+    }
+    
+    private class func recordNotificationSentInCache(date: Date) {
+        let defaults = UserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
+        var notifiedDates = getNotifiedDates()
+        notifiedDates.append(dateToISOString(date))
+        defaults.set(notifiedDates, forKey: notifiedDatesKey)
+    }
+    private class func storeNotifiedDates(_ notifiedDates: [String]) {
+        let defaults = UserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
+        defaults.set(notifiedDates, forKey: notifiedDatesKey)
+    }
+    private class func dateToISOString(_ date: Date) -> String {
+        return setUpParsingDateFormatter().string(from: date)
+    }
+    
+    private class func setUpParsingDateFormatter() -> DateFormatter {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        return dateFormatter
     }
     
 }
