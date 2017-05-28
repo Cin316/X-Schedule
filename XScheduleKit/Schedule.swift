@@ -37,7 +37,11 @@ public protocol ScheduleItem {
     func isHappeningAt(time: Date) -> Bool
 }
 
-open class TimeSpanScheduleItem: ScheduleItem {
+public protocol SubstitutableScheduleItem: ScheduleItem {
+    var blockName: String { get }
+}
+
+open class TimeSpanScheduleItem: SubstitutableScheduleItem {
     open var blockName: String = ""
     open var startTime: Date?
     open var endTime: Date?
@@ -92,7 +96,7 @@ open class TimeSpanScheduleItem: ScheduleItem {
     }
 }
 
-open class TimePointScheduleItem: ScheduleItem {
+open class TimePointScheduleItem: SubstitutableScheduleItem {
     open var blockName: String = ""
     open var time: Date?
     
@@ -134,7 +138,7 @@ open class TimePointScheduleItem: ScheduleItem {
     }
 }
 
-open class DescriptionScheduleItem: ScheduleItem {
+open class DescriptionScheduleItem: SubstitutableScheduleItem {
     open var blockName: String = ""
     
     public init(blockName: String) {
