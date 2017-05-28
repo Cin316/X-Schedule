@@ -38,7 +38,7 @@ public protocol ScheduleItem {
 }
 
 public protocol SubstitutableScheduleItem: ScheduleItem {
-    var blockName: String { get }
+    var blockName: String { get set }
 }
 
 open class TimeSpanScheduleItem: SubstitutableScheduleItem {
