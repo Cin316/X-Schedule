@@ -11,6 +11,8 @@ import XScheduleKitWatch
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
+    // TODO Stop using deprecated methods here.
+    
     var schedule: Schedule!
     
     override init() {
@@ -21,12 +23,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     // MARK: - Timeline Configuration
-    
-    func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
-        handler([.Forward, .Backward])
+    func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
+        handler([.forward, .backward])
     }
     
-    func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
+    func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         if (schedule.items.count > 0) {
             handler(schedule.items.first?.startTime)
         } else {
@@ -34,7 +35,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         }
     }
     
-    func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
+    func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         if (schedule.items.count > 0) {
             handler(schedule.items.last?.endTime)
         } else {
@@ -42,20 +43,19 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         }
     }
     
-    func getPrivacyBehaviorForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationPrivacyBehavior) -> Void) {
-        handler(.ShowOnLockScreen)
+    func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
+        handler(.showOnLockScreen)
     }
     
     // MARK: - Timeline Population
     
     // TODO Support ALL the edge cases.
-    
-    func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
+    func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        handler(getTimelineEntryForDate(complication, date: NSDate()))
+        handler(getTimelineEntryForDate(complication, date: Date()))
     }
     
-    func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
+    func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries prior to the given date
         var templates: [CLKComplicationTimelineEntry] = []
         let array = scheduleToArray(schedule)
@@ -63,7 +63,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         //Find first item.
         for _ in array {
-            if (date.compare(array[index].time) == .OrderedDescending) {
+            if (date.compare(array[index].time) == .orderedDescending) {
                 break;
             }
             index -= 1
@@ -77,7 +77,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler(templates)
     }
     
-    func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
+    func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries after to the given date
         var templates: [CLKComplicationTimelineEntry] = []
         let array = scheduleToArray(schedule)
@@ -85,7 +85,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         //Find first item.
         for item in array {
-            if (date.compare(item.time) == .OrderedAscending) {
+            if (date.compare(item.time) == .orderedAscending) {
                 break;
             }
             index += 1
@@ -99,8 +99,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler(templates)
     }
     
-    private func scheduleToArray(schedule: Schedule) -> [(blockName: String, time: NSDate)] {
-        var array: [(blockName: String, time: NSDate)] = []
+    private func scheduleToArray(_ schedule: Schedule) -> [(blockName: String, time: Date)] {
+        var array: [(blockName: String, time: Date)] = []
         for item in schedule.items {
             array.append((blockName: item.blockName, time: item.startTime!))
             array.append((blockName: item.blockName, time: item.endTime!))
@@ -110,13 +110,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     
-    private func getTimelineEntryForDate(complication: CLKComplication, date: NSDate) -> CLKComplicationTimelineEntry? {
+    private func getTimelineEntryForDate(_ complication: CLKComplication, date: Date) -> CLKComplicationTimelineEntry? {
         let template = getComplicationTemplateForDate(complication, date: date)
         let timelineEntry = CLKComplicationTimelineEntry(date: getStartTimeForTime(date), complicationTemplate: template!)
         
         return timelineEntry
     }
-    private func getStartTimeForTime(date: NSDate) -> NSDate {
+    private func getStartTimeForTime(_ date: Date) -> Date {
         for item in schedule.items {
             if (date.compare(item.startTime!) == .OrderedAscending || date.compare(item.startTime!) == .OrderedSame) {
                 return item.startTime!
@@ -128,13 +128,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         return date
     }
     
-    private func getComplicationTemplateForDate(complication: CLKComplication, date: NSDate) -> CLKComplicationTemplate? {
+    private func getComplicationTemplateForDate(_ complication: CLKComplication, date: Date) -> CLKComplicationTemplate? {
         var bell: String
-        var time: NSDate
+        var time: Date
         
         (bell, time) = getTimeAndBellForDate(date)
         
-        if (complication.family == .ModularSmall) {
+        if (complication.family == .modularSmall) {
             let template = CLKComplicationTemplateModularSmallStackText()
             let bellProvider = CLKSimpleTextProvider(text: bell)
             let timeProvider = CLKTimeTextProvider(date: time)
@@ -148,9 +148,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         }
     }
     
-    private func getTimeAndBellForDate(date: NSDate) -> (bell: String, time: NSDate) {
+    private func getTimeAndBellForDate(_ date: Date) -> (bell: String, time: Date) {
         var bell: String?
-        var time: NSDate?
+        var time: Date?
         
         for item in schedule.items {
             if (date.compare(item.startTime!) == .OrderedAscending || date.compare(item.startTime!) == .OrderedSame) {
@@ -173,22 +173,22 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 self.schedule = schedule
                 if let complications = CLKComplicationServer.sharedInstance().activeComplications {
                     for complication in complications {
-                        CLKComplicationServer.sharedInstance().reloadTimelineForComplication(complication)
+                        CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
                     }
                 }
             }
         })
     }
     
-    func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
+    func getNextRequestedUpdateDate(handler: @escaping (Date?) -> Void) {
         // Call the handler with the date when you would next like to be given the opportunity to update your complication content
         // Update content every 8 hours.
-        handler(NSDate().dateByAddingTimeInterval(8*60*60))
+        handler(Date().addingTimeInterval(8*60*60))
     }
     
     // MARK: - Placeholder Templates
     
-    func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
+    func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
         handler(nil)
     }
