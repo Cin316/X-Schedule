@@ -44,6 +44,7 @@
 		E1841FB51ADDFD4900C5DF3E /* ColoredScheduleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */; };
 		E18C80A71AEDBDDA00C60CE1 /* ScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C80A61AEDBDDA00C60CE1 /* ScheduleDownloader.swift */; };
 		E19965721B2E1F3A00E900FB /* NewSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19965711B2E1F3A00E900FB /* NewSubViewController.swift */; };
+		E1BC24FB1EDCD93F00DF4B5A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BC24FA1EDCD93F00DF4B5A /* ComplicationController.swift */; };
 		E1C152811ED5DEDA00409B52 /* UnusualScheduleNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C152801ED5DEDA00409B52 /* UnusualScheduleNotificationManager.swift */; };
 		E1C6BDB01AFEDC5600B444C8 /* XScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */; };
 		E1C6BDB21AFEDEEA00B444C8 /* ScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */; };
@@ -192,6 +193,7 @@
 		E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredScheduleTableController.swift; sourceTree = "<group>"; };
 		E18C80A61AEDBDDA00C60CE1 /* ScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDownloader.swift; sourceTree = "<group>"; };
 		E19965711B2E1F3A00E900FB /* NewSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSubViewController.swift; sourceTree = "<group>"; };
+		E1BC24FA1EDCD93F00DF4B5A /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		E1C152801ED5DEDA00409B52 /* UnusualScheduleNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnusualScheduleNotificationManager.swift; sourceTree = "<group>"; };
 		E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleParser.swift; sourceTree = "<group>"; };
 		E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParser.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			children = (
 				E14E79D41CC717EA00FE1DB7 /* ScheduleTableRow.swift */,
 				E14E799E1CC705F700FE1DB7 /* InterfaceController.swift */,
+				E1BC24FA1EDCD93F00DF4B5A /* ComplicationController.swift */,
 				E14E79A01CC705F700FE1DB7 /* ExtensionDelegate.swift */,
 				E14E79A21CC705F700FE1DB7 /* NotificationController.swift */,
 				E14E79A61CC705F700FE1DB7 /* Assets.xcassets */,
@@ -796,6 +799,7 @@
 			files = (
 				E14E79A31CC705F700FE1DB7 /* NotificationController.swift in Sources */,
 				E14E79A11CC705F700FE1DB7 /* ExtensionDelegate.swift in Sources */,
+				E1BC24FB1EDCD93F00DF4B5A /* ComplicationController.swift in Sources */,
 				E14E799F1CC705F700FE1DB7 /* InterfaceController.swift in Sources */,
 				E14E79D51CC717EA00FE1DB7 /* ScheduleTableRow.swift in Sources */,
 			);
