@@ -22,11 +22,11 @@ class InterfaceController: WKInterfaceController {
         testSchedule.title = "Loading"
         //TODO Add support for weekends/no classes.
         displaySchedule(testSchedule)
-        var method: DownloadMethod = DownloadMethod.Download
-        XScheduleManager.getScheduleForDate(NSDate().dateByAddingTimeInterval(16*24*60*60), completionHandler: { (schedule: Schedule) in
+        var method: DownloadMethod = DownloadMethod.download
+        (method, _) = XScheduleManager.getScheduleForDate(Date().addingTimeInterval(16*24*60*60) as Date, completionHandler: { (schedule: Schedule) in
             self.displaySchedule(schedule)
-        }, errorHandler: {_ in }, method: &method)
-        if (method == .Download) {
+        })
+        if (method == .download) {
             print("Downloaded")
         } else {
             print("Cached!")
