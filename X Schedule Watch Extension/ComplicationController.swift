@@ -14,12 +14,36 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // TODO Stop using deprecated methods here.
     
     var schedule: Schedule!
+    var scheduleTimes: [(blockName: String, time: Date)] = []
     
     override init() {
         super.init()
         XScheduleManager.getScheduleForToday( { (schedule: Schedule) in
             self.schedule = schedule
+            self.scheduleTimes = self.scheduleToArray(schedule)
         })
+    }
+    private func scheduleToArray(_ schedule: Schedule) -> [(blockName: String, time: Date)] {
+        var array: [(blockName: String, time: Date)] = []
+        for item in schedule.items {
+            if let spanItem = item as? TimeSpanScheduleItem {
+                if let time = spanItem.startTime {
+                    array.append((blockName: spanItem.blockName, time: time))
+                }
+                if let time = spanItem.endTime {
+                    array.append((blockName: spanItem.blockName, time: time))
+                }
+            } else if let pointItem = item as? TimePointScheduleItem {
+                if let time = pointItem.time {
+                    array.append((blockName: pointItem.blockName, time: time))
+                }
+            }
+        }
+        array.sort {
+            $0.time < $1.time
+        }
+        
+        return array
     }
     
     // MARK: - Timeline Configuration
@@ -28,16 +52,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        if (schedule.items.count > 0) {
-            handler(schedule.items.first?.startTime)
+        if (scheduleTimes.count > 0) {
+            handler(scheduleTimes.first?.time)
         } else {
             handler(nil)
         }
     }
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        if (schedule.items.count > 0) {
-            handler(schedule.items.last?.endTime)
+        if (scheduleTimes.count > 0) {
+            handler(scheduleTimes.last?.time)
         } else {
             handler(nil)
         }
@@ -59,19 +83,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         // Call the handler with the timeline entries prior to the given date
         var templates: [CLKComplicationTimelineEntry] = []
         let array = scheduleToArray(schedule)
-        var index: Int = array.count;
+        var index: Int = 0;
         
-        //Find first item.
-        for _ in array {
-            if (date.compare(array[index].time) == .orderedDescending) {
-                break;
-            }
-            index -= 1
-        }
-        
-        while templates.count <= limit && index >= 0 {
+        while templates.count <= limit && date <= array[index].time && index < array.count { // `date <= array[index].time` may be causing incorrect behavior.
             templates.append(getTimelineEntryForDate(complication, date: array[index].time)!)
-            index -= 1
+            index += 1
         }
         
         handler(templates)
@@ -85,7 +101,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         //Find first item.
         for item in array {
-            if (date.compare(item.time) == .orderedAscending) {
+            if (item.time < date) {
                 break;
             }
             index += 1
@@ -99,70 +115,75 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler(templates)
     }
     
-    private func scheduleToArray(_ schedule: Schedule) -> [(blockName: String, time: Date)] {
-        var array: [(blockName: String, time: Date)] = []
-        for item in schedule.items {
-            array.append((blockName: item.blockName, time: item.startTime!))
-            array.append((blockName: item.blockName, time: item.endTime!))
-        }
-        
-        return array
-    }
-    
-    
     private func getTimelineEntryForDate(_ complication: CLKComplication, date: Date) -> CLKComplicationTimelineEntry? {
         let template = getComplicationTemplateForDate(complication, date: date)
-        let timelineEntry = CLKComplicationTimelineEntry(date: getStartTimeForTime(date), complicationTemplate: template!)
-        
-        return timelineEntry
+        let startTime = getStartTimeForTime(date)
+        if template != nil && startTime != nil {
+            return CLKComplicationTimelineEntry(date: startTime!, complicationTemplate: template!)
+        } else {
+            return nil
+        }
     }
-    private func getStartTimeForTime(_ date: Date) -> Date {
-        for item in schedule.items {
-            if (date.compare(item.startTime!) == .OrderedAscending || date.compare(item.startTime!) == .OrderedSame) {
-                return item.startTime!
-            } else if (date.compare(item.endTime!) == .OrderedAscending || date.compare(item.endTime!) == .OrderedSame) {
-                return item.endTime!
+    private func getStartTimeForTime(_ date: Date) -> Date? {
+        if scheduleTimes.count > 0 {
+            if date < scheduleTimes.first!.time {
+                return date
+            }
+            for i in 1..<scheduleTimes.count {
+                let precedingItem = scheduleTimes[i-1]
+                let nextItem = scheduleTimes[i]
+                if (precedingItem.time <= date && date < nextItem.time) { // If date is between two times...
+                    return precedingItem.time
+                }
             }
         }
+        
         //If the date is after the schedule ends...
-        return date
+        // Return nil if the time is after the schedule is finished.
+        return nil
     }
     
     private func getComplicationTemplateForDate(_ complication: CLKComplication, date: Date) -> CLKComplicationTemplate? {
         var bell: String
         var time: Date
         
-        (bell, time) = getTimeAndBellForDate(date)
+        let timeAndBell = getTimeAndBellForDate(date)
         
-        if (complication.family == .modularSmall) {
-            let template = CLKComplicationTemplateModularSmallStackText()
-            let bellProvider = CLKSimpleTextProvider(text: bell)
-            let timeProvider = CLKTimeTextProvider(date: time)
-            template.line1TextProvider = bellProvider
-            template.highlightLine2 =  false //Highlight line 1.
-            template.line2TextProvider = timeProvider
-            
-            return template
+        if timeAndBell != nil {
+            if (complication.family == .modularSmall) {
+                (bell, time) = timeAndBell!
+                let template = CLKComplicationTemplateModularSmallStackText()
+                let bellProvider = CLKSimpleTextProvider(text: bell)
+                let timeProvider = CLKTimeTextProvider(date: time)
+                template.line1TextProvider = bellProvider
+                template.highlightLine2 =  false //Highlight line 1.
+                template.line2TextProvider = timeProvider
+                
+                return template
+            } else {
+                return nil
+            }
         } else {
             return nil
         }
     }
     
-    private func getTimeAndBellForDate(_ date: Date) -> (bell: String, time: Date) {
-        var bell: String?
-        var time: Date?
-        
-        for item in schedule.items {
-            if (date.compare(item.startTime!) == .OrderedAscending || date.compare(item.startTime!) == .OrderedSame) {
-                bell = item.blockName
-                time = item.startTime!
-            } else if (date.compare(item.endTime!) == .OrderedAscending || date.compare(item.endTime!) == .OrderedSame) {
-                bell = item.blockName
-                time = item.endTime!
+    private func getTimeAndBellForDate(_ date: Date) -> (bell: String, time: Date)? {
+        if scheduleTimes.count > 0 {
+            if date < scheduleTimes.first!.time {
+                return (scheduleTimes.first!.blockName, scheduleTimes.first!.time)
+            }
+            for i in 1..<scheduleTimes.count {
+                let precedingItem = scheduleTimes[i-1]
+                let nextItem = scheduleTimes[i]
+                if (precedingItem.time <= date && date < nextItem.time) { // If date is between two times...
+                    return (nextItem.blockName, nextItem.time)
+                }
             }
         }
         
-        return (bell!, time!)
+        // Return nil if the time is after the schedule is finished.
+        return nil
     }
     
     // MARK: - Update Scheduling
