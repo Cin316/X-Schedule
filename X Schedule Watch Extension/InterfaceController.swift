@@ -21,7 +21,7 @@ class InterfaceController: WKInterfaceController {
         let testSchedule = Schedule()
         testSchedule.title = "Loading"
         displaySchedule(testSchedule)
-        XScheduleManager.getScheduleForDate(Date().addingTimeInterval(16*24*60*60) as Date, completionHandler: { (schedule: Schedule) in
+        XScheduleManager.getScheduleForDate(Date(), completionHandler: { (schedule: Schedule) in
             self.displaySchedule(schedule)
         })
     }
