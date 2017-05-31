@@ -12,6 +12,7 @@ import XScheduleKit
 class SettingsViewController: UITableViewController {
     
     @IBOutlet weak var substitutionSwitch: UISwitch!
+    @IBOutlet weak var unusualScheduleNotificationsSwitch: UISwitch!
     
     private var internalCellColor: UIColor = UIColor(red: (225.0/255.0), green: (238.0/255.0), blue: (254.0/255.0), alpha: 1.0)
     
@@ -49,6 +50,10 @@ class SettingsViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         return appDelegate
+    }
+    
+    @IBAction func unusualScheduleNotificationsSwitchToggle(_ sender: Any) {
+        
     }
     
 }
