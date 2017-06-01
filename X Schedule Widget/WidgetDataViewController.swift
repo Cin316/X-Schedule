@@ -20,6 +20,9 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
         super.viewDidLoad()
         //Schedule date is 8 hours in the future so the schedule displays the next day's classes in the evenings.
         scheduleDate = Date().addingTimeInterval(60*60*8)
+        if #available(iOSApplicationExtension 10.0, *) {
+            extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        }
     }
     override func refreshSchedule() {
         // Download today's schedule from the St. X website.
@@ -41,7 +44,11 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
         //Display schedule items in table.
         if let tableController = childViewControllers[0] as? ScheduleTableController {
             tableController.displaySchedule(schedule)
-            correctlySizeWidget(tableController.tableView)
+            if #available(iOSApplicationExtension 10.0, *) {
+                
+            } else {
+                correctlySizeWidget(tableController.tableView)
+            }
             hideIfEmpty(tableController, schedule: schedule)
         }
     }
@@ -79,4 +86,16 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
         return UIEdgeInsetsMake(0, 0, -1, 0)
     }
+    
+    @available(iOSApplicationExtension 10.0, *)
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if let tableController = childViewControllers[0] as? ScheduleTableController {
+            if (activeDisplayMode == .expanded) {
+                correctlySizeWidget(tableController.tableView)
+            } else {
+                self.preferredContentSize = maxSize
+            }
+        }
+    }
+    
 }
