@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -339,6 +339,44 @@
             </objects>
             <point key="canvasLocation" x="786" y="-1000"/>
         </scene>
+        <!--Announcements-->
+        <scene sceneID="yAi-EY-K06">
+            <objects>
+                <viewController id="TwL-EZ-Fmb" customClass="AnnouncementsWebViewController" customModule="X_Schedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ed8-ZT-21P"/>
+                        <viewControllerLayoutGuide type="bottom" id="KMm-uN-qgy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x9E-zC-Wqs">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Announcements" id="wj2-M1-uIZ"/>
+                    <navigationItem key="navigationItem" title="Announcements" id="viW-nM-dhE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4F-lS-TwI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442" y="-354"/>
+        </scene>
+        <!--Announcements-->
+        <scene sceneID="Vf1-bl-kDT">
+            <objects>
+                <navigationController id="Usn-Ec-1X8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Announcements" id="jJI-rY-Rqq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uej-81-tqv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.88235294117647056" green="0.93333333333333335" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TwL-EZ-Fmb" kind="relationship" relationship="rootViewController" id="iN2-Ue-Wb6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yR9-8y-fXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="-354"/>
+        </scene>
         <!--Legal View Controller-->
         <scene sceneID="gFe-Tx-z5y">
             <objects>
@@ -625,7 +663,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                             <tableViewSection headerTitle="Information" id="syG-yf-jhv">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gev-rg-wcK" style="IBUITableViewCellStyleDefault" id="mxC-Ly-p2f">
-                                        <rect key="frame" x="0.0" y="56" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="mxC-Ly-p2f" id="qsd-Lp-tce">
                                             <rect key="frame" x="0.0" y="0.0" width="702" height="43"/>
@@ -646,7 +684,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="Vb5-rm-BeN" detailTextLabel="Yia-Hx-e8b" style="IBUITableViewCellStyleValue1" id="V23-Bd-1Iz">
-                                        <rect key="frame" x="0.0" y="100" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="V23-Bd-1Iz" id="g9h-Wv-jEh">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
@@ -671,7 +709,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         <color key="backgroundColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="9lv-c7-ujX" style="IBUITableViewCellStyleDefault" id="nwt-Xl-PB5">
-                                        <rect key="frame" x="0.0" y="144" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nwt-Xl-PB5" id="0hj-gq-1R0">
                                             <rect key="frame" x="0.0" y="0.0" width="702" height="43"/>
@@ -692,7 +730,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="FcF-1m-Op6" style="IBUITableViewCellStyleDefault" id="kYM-bb-31N">
-                                        <rect key="frame" x="0.0" y="188" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="kYM-bb-31N" id="gUU-Xo-y8M">
                                             <rect key="frame" x="0.0" y="0.0" width="702" height="43"/>
@@ -713,7 +751,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="jOJ-H8-9PS" style="IBUITableViewCellStyleDefault" id="Txs-w3-2HA">
-                                        <rect key="frame" x="0.0" y="232" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="231.5" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="Txs-w3-2HA" id="hxo-M9-oLu">
                                             <rect key="frame" x="0.0" y="0.0" width="702" height="43"/>
@@ -734,7 +772,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="M1v-8k-D6g" style="IBUITableViewCellStyleDefault" id="ZmR-uq-Gvh">
-                                        <rect key="frame" x="0.0" y="276" width="768" height="44"/>
+                                        <rect key="frame" x="0.0" y="275.5" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="ZmR-uq-Gvh" id="Rob-Bn-7cJ">
                                             <rect key="frame" x="0.0" y="0.0" width="702" height="43"/>
@@ -820,10 +858,10 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
             <objects>
                 <navigationController id="PMQ-eX-lqC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="ZQZ-tA-3nm"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W1P-MO-zPJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="W1P-MO-zPJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.88160133360000004" green="0.93318617339999999" blue="0.99637198449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.88235294117647056" green="0.93333333333333335" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="HOs-ex-LyZ" kind="relationship" relationship="rootViewController" id="SuR-oD-VQu"/>
@@ -846,6 +884,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                     </tabBar>
                     <connections>
                         <segue destination="KIL-La-wUR" kind="relationship" relationship="viewControllers" id="bDp-q8-CXt"/>
+                        <segue destination="Usn-Ec-1X8" kind="relationship" relationship="viewControllers" id="X9y-qY-noJ"/>
                         <segue destination="l9y-8Y-n4F" kind="relationship" relationship="viewControllers" id="Nnx-LF-wBP"/>
                         <segue destination="PMQ-eX-lqC" kind="relationship" relationship="viewControllers" id="din-X4-wFj"/>
                     </connections>
@@ -1079,7 +1118,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         <rect key="frame" x="0.0" y="56" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="s3r-So-AcZ" id="XGA-jW-TtM">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kq3-He-wCG">
@@ -1156,7 +1195,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                         <rect key="frame" x="0.0" y="355" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="Bwn-Po-YE9" id="I45-a1-LgE">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aX3-jL-gII">
