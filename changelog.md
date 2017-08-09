@@ -73,3 +73,14 @@ This files keeps track of all of the changes made betweem version of X Schedule.
 - Added Apple Watch app.
   - Shows the current day's schedule.
 
+# 1.3.0
+- Build number: 395?
+- Added support for new types of schedule items (i.e. classes with no end, or only one time).
+- Added announcements tab for homeroom announcements.
+- Added notifications if an unusual schedule is coming up.
+- Added support for Slide Over, Split Screen, and new screen sizes.
+- Adapted widget to iOS 10 look.
+- Fixed many UI bugs.
+- Restructured ScheduleItem class to support more types of schedules.
+- Updated code to Swift 3.
+
