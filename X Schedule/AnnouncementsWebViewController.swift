@@ -14,8 +14,7 @@ class AnnouncementsWebViewController: UIViewController, WKUIDelegate {
     var webView: WKWebView!
     
     func announcementsURL() -> String {
-        //return "https://www.stxavier.org/"
-        return "https://www.ets.org/Media/Tests/GRE/pdf/gre_research_validity_data.pdf"
+        return "https://www.stxavier.org/uploaded/announcements_x_schedule/current_announcements.pdf"
     }
     
     override func loadView() {
