@@ -52,6 +52,11 @@ class UnusualScheduleNotificationManager {
     }
     
     class func backgroundAppRefresh(_ completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if (getEnabled()) {
+            fetchAppropriateSchedule(completionHandler)
+        }
+    }
+    private class func fetchAppropriateSchedule(_ completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if (currentHour() < 10) { // 12AM-10AM: Look for today's schedule.
             lookForUnusualSchedule(onDate: Date(), dayWord: "Today", completionHandler: completionHandler)
         } else if (10 <= currentHour() && currentHour() < 17) { // 10AM-5PM: Don't look for unusual schedules.
@@ -158,5 +163,35 @@ class UnusualScheduleNotificationManager {
         
         return dateFormatter
     }
+    
+    // Enable switch methods.
+    
+    static let notificationSwitchKey: String = "unusualNotificationsEnabled"
+    
+    open class func setEnabled(_ bool: Bool) {
+        let defaults = UserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
+        defaults.set(bool, forKey: notificationSwitchKey)
+    }
+    open class func getEnabled() -> Bool {
+        setDefaultNotificationsSetting()
+        let defaults = UserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
+        let object: Bool = defaults.bool(forKey: notificationSwitchKey)
+        
+        return object
+    }
+    private class func setDefaultNotificationsSetting() {
+        if (!notificationsSettingExists()) {
+            setEnabled(true)
+        }
+    }
+    private class func notificationsSettingExists() -> Bool {
+        let defaults = UserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
+        if (defaults.object(forKey: notificationSwitchKey) == nil) {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     
 }

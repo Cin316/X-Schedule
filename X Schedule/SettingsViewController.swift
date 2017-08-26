@@ -18,6 +18,7 @@ class SettingsViewController: UITableViewController {
     
     override func viewDidLoad() {
         substitutionSwitch.setOn(SubstitutionManager.getEnabled(), animated: false)
+        unusualScheduleNotificationsSwitch.setOn(UnusualScheduleNotificationManager.getEnabled(), animated: false)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -53,7 +54,7 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func unusualScheduleNotificationsSwitchToggle(_ sender: Any) {
-        
+        UnusualScheduleNotificationManager.setEnabled(unusualScheduleNotificationsSwitch.isOn)
     }
     
 }
