@@ -74,7 +74,7 @@ This files keeps track of all of the changes made betweem version of X Schedule.
   - Shows the current day's schedule.
 
 # 1.3.0
-- Build number: 395?
+- Build number: 410
 - Added support for new types of schedule items (i.e. classes with no end, or only one time).
 - Added announcements tab for homeroom announcements.
 - Added notifications if an unusual schedule is coming up.
