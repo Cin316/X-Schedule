@@ -40,10 +40,13 @@
 		E14E79C01CC7112200FE1DB7 /* XScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFEEAC1A93918E003D3C57 /* XScheduleDownloader.swift */; };
 		E14E79C51CC7112200FE1DB7 /* XScheduleKit-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 45CB99211AE485A800937163 /* XScheduleKit-Swift.h */; };
 		E14E79D51CC717EA00FE1DB7 /* ScheduleTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14E79D41CC717EA00FE1DB7 /* ScheduleTableRow.swift */; };
+		E167F65F1F3A4420001B6840 /* AnnouncementsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E167F65E1F3A4420001B6840 /* AnnouncementsWebViewController.swift */; };
 		E16DCB6D1AB3BF610045F5A0 /* donors.txt in Resources */ = {isa = PBXBuildFile; fileRef = E16DCB6C1AB3BF610045F5A0 /* donors.txt */; };
 		E1841FB51ADDFD4900C5DF3E /* ColoredScheduleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */; };
 		E18C80A71AEDBDDA00C60CE1 /* ScheduleDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C80A61AEDBDDA00C60CE1 /* ScheduleDownloader.swift */; };
 		E19965721B2E1F3A00E900FB /* NewSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19965711B2E1F3A00E900FB /* NewSubViewController.swift */; };
+		E1BC24FB1EDCD93F00DF4B5A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BC24FA1EDCD93F00DF4B5A /* ComplicationController.swift */; };
+		E1C152811ED5DEDA00409B52 /* UnusualScheduleNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C152801ED5DEDA00409B52 /* UnusualScheduleNotificationManager.swift */; };
 		E1C6BDB01AFEDC5600B444C8 /* XScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */; };
 		E1C6BDB21AFEDEEA00B444C8 /* ScheduleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */; };
 		E1D020E21D467A0900D3361D /* XScheduleKitWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14E79CB1CC7112200FE1DB7 /* XScheduleKitWatch.framework */; };
@@ -186,11 +189,14 @@
 		E14E79CB1CC7112200FE1DB7 /* XScheduleKitWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XScheduleKitWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14E79CC1CC7112200FE1DB7 /* XScheduleKitWatch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "XScheduleKitWatch-Info.plist"; path = "/Users/nicholas/Xcode Projects/X Schedule/XScheduleKitWatch-Info.plist"; sourceTree = "<absolute>"; };
 		E14E79D41CC717EA00FE1DB7 /* ScheduleTableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableRow.swift; sourceTree = "<group>"; };
+		E167F65E1F3A4420001B6840 /* AnnouncementsWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementsWebViewController.swift; sourceTree = "<group>"; };
 		E16DCB6C1AB3BF610045F5A0 /* donors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = donors.txt; sourceTree = SOURCE_ROOT; };
 		E18039831AABF260006513B2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredScheduleTableController.swift; sourceTree = "<group>"; };
 		E18C80A61AEDBDDA00C60CE1 /* ScheduleDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDownloader.swift; sourceTree = "<group>"; };
 		E19965711B2E1F3A00E900FB /* NewSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSubViewController.swift; sourceTree = "<group>"; };
+		E1BC24FA1EDCD93F00DF4B5A /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		E1C152801ED5DEDA00409B52 /* UnusualScheduleNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnusualScheduleNotificationManager.swift; sourceTree = "<group>"; };
 		E1C6BDAF1AFEDC5600B444C8 /* XScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XScheduleParser.swift; sourceTree = "<group>"; };
 		E1C6BDB11AFEDEEA00B444C8 /* ScheduleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleParser.swift; sourceTree = "<group>"; };
 		E1C6DA2D1BC06F5A000F292A /* X Schedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "X Schedule.entitlements"; sourceTree = "<group>"; };
@@ -293,11 +299,13 @@
 			children = (
 				E1C6DA2D1BC06F5A000F292A /* X Schedule.entitlements */,
 				E138A80F1A8E8B1E00549F84 /* AppDelegate.swift */,
+				E1C152801ED5DEDA00409B52 /* UnusualScheduleNotificationManager.swift */,
 				E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */,
 				E1F960921B40B18A008493FD /* SwipeDataViewController.swift */,
 				E138A8311A8E970E00549F84 /* DataViewController.swift */,
 				E1DDD4E51AD06CBD0007ABC8 /* WeekDataViewController.swift */,
 				E138A8151A8E8B1E00549F84 /* Main.storyboard */,
+				E167F65E1F3A4420001B6840 /* AnnouncementsWebViewController.swift */,
 				E1D995831B56C0BE00002814 /* SchedulePageViewController.swift */,
 				E1F111911B3D7A3A00C5A772 /* DataPageViewController.swift */,
 				E116D1E21B27164C00C5DCA8 /* CustomizationViewController.swift */,
@@ -339,6 +347,7 @@
 			children = (
 				E14E79D41CC717EA00FE1DB7 /* ScheduleTableRow.swift */,
 				E14E799E1CC705F700FE1DB7 /* InterfaceController.swift */,
+				E1BC24FA1EDCD93F00DF4B5A /* ComplicationController.swift */,
 				E14E79A01CC705F700FE1DB7 /* ExtensionDelegate.swift */,
 				E14E79A21CC705F700FE1DB7 /* NotificationController.swift */,
 				E14E79A61CC705F700FE1DB7 /* Assets.xcassets */,
@@ -463,6 +472,7 @@
 			buildPhases = (
 				E14E79891CC705F700FE1DB7 /* Resources */,
 				E14E79B11CC705F800FE1DB7 /* Embed App Extensions */,
+				E1C1527F1ED5D61B00409B52 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -558,14 +568,18 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Nicholas Reichert";
 				TargetAttributes = {
 					E138A8091A8E8B1E00549F84 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = NK4953M888;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 						};
@@ -573,17 +587,21 @@
 					E14E798A1CC705F700FE1DB7 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = NK4953M888;
+						LastSwiftMigration = 0820;
 					};
 					E14E79961CC705F700FE1DB7 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = NK4953M888;
+						LastSwiftMigration = 0820;
 					};
 					E14E79B51CC7112200FE1DB7 = {
 						DevelopmentTeam = NK4953M888;
+						LastSwiftMigration = 0820;
 					};
 					E1DEBE981AD619B0004B2CC1 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = NK4953M888;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -593,6 +611,7 @@
 					E1DEBED91AD61FE2004B2CC1 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = NK4953M888;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -698,7 +717,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "";
+			shellScript = ./buildNum.bash;
 		};
 		E1841FB61ADF554D00C5DF3E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -739,6 +758,19 @@
 			shellPath = /bin/bash;
 			shellScript = ./buildNum.bash;
 		};
+		E1C1527F1ED5D61B00409B52 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = ./buildNum.bash;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -750,11 +782,13 @@
 				E1F111921B3D7A3A00C5A772 /* DataPageViewController.swift in Sources */,
 				E1F960931B40B18A008493FD /* SwipeDataViewController.swift in Sources */,
 				E1E3EE481AA8F18E00A00603 /* LegalViewController.swift in Sources */,
+				E1C152811ED5DEDA00409B52 /* UnusualScheduleNotificationManager.swift in Sources */,
 				E1E9856A1B32EF56000302DE /* SettingsViewController.swift in Sources */,
 				E1DDEAF81AB7C35200B6F37F /* ScheduleSwitcherViewController.swift in Sources */,
 				E116D1E31B27164C00C5DCA8 /* CustomizationViewController.swift in Sources */,
 				E19965721B2E1F3A00E900FB /* NewSubViewController.swift in Sources */,
 				E138A8321A8E970E00549F84 /* DataViewController.swift in Sources */,
+				E167F65F1F3A4420001B6840 /* AnnouncementsWebViewController.swift in Sources */,
 				E1451B1E1AD348D600A39564 /* DonorsViewController.swift in Sources */,
 				E1DDD4E61AD06CBD0007ABC8 /* WeekDataViewController.swift in Sources */,
 				E138A8101A8E8B1E00549F84 /* AppDelegate.swift in Sources */,
@@ -769,6 +803,7 @@
 			files = (
 				E14E79A31CC705F700FE1DB7 /* NotificationController.swift in Sources */,
 				E14E79A11CC705F700FE1DB7 /* ExtensionDelegate.swift in Sources */,
+				E1BC24FB1EDCD93F00DF4B5A /* ComplicationController.swift in Sources */,
 				E14E799F1CC705F700FE1DB7 /* InterfaceController.swift in Sources */,
 				E14E79D51CC717EA00FE1DB7 /* ScheduleTableRow.swift in Sources */,
 			);
@@ -883,8 +918,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -893,6 +930,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -927,8 +965,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -936,6 +976,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -945,6 +986,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -963,6 +1005,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -980,6 +1023,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -987,12 +1031,12 @@
 		E14E79AC1CC705F800FE1DB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = X_Schedule_Watch_Extension;
 				INFOPLIST_FILE = "X Schedule Watch/Info.plist";
@@ -1000,6 +1044,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -1008,13 +1053,13 @@
 		E14E79AD1CC705F800FE1DB7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = X_Schedule_Watch_Extension;
 				INFOPLIST_FILE = "X Schedule Watch/Info.plist";
@@ -1022,6 +1067,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -1030,11 +1076,11 @@
 		E14E79AE1CC705F800FE1DB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "X Schedule Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1043,6 +1089,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -1051,12 +1098,12 @@
 		E14E79AF1CC705F800FE1DB7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "X Schedule Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1065,6 +1112,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -1073,16 +1121,16 @@
 		E14E79C91CC7112200FE1DB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1095,25 +1143,27 @@
 				PRODUCT_NAME = XScheduleKitWatch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
 		};
 		E14E79CA1CC7112200FE1DB7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = "XScheduleKitWatch-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1122,8 +1172,10 @@
 				PRODUCT_NAME = XScheduleKitWatch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
@@ -1144,6 +1196,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1161,21 +1214,22 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		E1DEBEF41AD61FE3004B2CC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1187,6 +1241,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1195,16 +1250,16 @@
 		E1DEBEF51AD61FE3004B2CC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = XScheduleKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1212,6 +1267,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

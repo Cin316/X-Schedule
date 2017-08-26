@@ -15,8 +15,8 @@ class AboutViewController: UITableViewController {
     
     private var cellColor: UIColor = UIColor(red: (225.0/255.0), green: (238.0/255.0), blue: (254.0/255.0), alpha: 1.0)
     
-    var versionNumber: String = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
-    var buildNumber: String = NSBundle.mainBundle().infoDictionary!["CFBundleVersion"] as! String
+    var versionNumber: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+    var buildNumber: String = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +27,8 @@ class AboutViewController: UITableViewController {
         versionLabel.text = "\(versionNumber) (\(buildNumber))"
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedCell: UITableViewCell? = tableView.cellForRowAtIndexPath(indexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell: UITableViewCell? = tableView.cellForRow(at: indexPath)
         if let cell = selectedCell {
             if (cell.tag == 200) { //GitHub link
                 openURL("https://github.com/Cin316/X-Schedule")
@@ -36,14 +36,14 @@ class AboutViewController: UITableViewController {
                 openURL("https://www.stxavier.org/")
             }
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    private func openURL(url: String) {
-        let url: NSURL = NSURL(string: url)!
-        UIApplication.sharedApplication().openURL(url)
+    private func openURL(_ url: String) {
+        let url: URL = URL(string: url)!
+        UIApplication.shared.openURL(url)
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //Fix background color on iPad.
         cell.backgroundColor = cellColor
     }

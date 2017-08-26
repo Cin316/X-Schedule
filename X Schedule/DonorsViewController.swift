@@ -12,16 +12,21 @@ class DonorsViewController: UIViewController {
     
     @IBOutlet weak var mainTextView: UITextView!
     
-    private var donorsPath: String = NSBundle.mainBundle().pathForResource("donors", ofType: "txt")!
-    private var editedDonorsPath: String = NSURL(fileURLWithPath: DonorsViewController.documentsDirectory()).URLByAppendingPathComponent("editedDonors.txt").relativePath!
+    private var donorsPath: String = Bundle.main.path(forResource: "donors", ofType: "txt")!
+    private var editedDonorsPath: String = URL(fileURLWithPath: DonorsViewController.documentsDirectory()).appendingPathComponent("editedDonors.txt").relativePath
     
-    private var onlineDonorsURL: NSURL = NSURL(string: "https://raw.githubusercontent.com/Cin316/X-Schedule/develop/donors.txt")!
+    private var onlineDonorsURL: URL = URL(string: "https://raw.githubusercontent.com/Cin316/X-Schedule/develop/donors.txt")!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        mainTextView.flashScrollIndicators()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         displayStoredFiles()
         updateStoredDonors()
+        fixTextClippingBug()
     }
     private func displayStoredFiles() {
         //Read path from editedDonors.txt and display it if it exists.
@@ -36,17 +41,17 @@ class DonorsViewController: UIViewController {
         //Attempt to download donors from website and update saved donors.txt.
         let session = downloadSession()
         
-        let postSession = session.downloadTaskWithURL(onlineDonorsURL, completionHandler:
-            { (url: NSURL?, response: NSURLResponse?, error: NSError?) -> Void in
+        let postSession = session.downloadTask(with: onlineDonorsURL, completionHandler:
+            { (url: URL?, response: URLResponse?, error: Error?) -> Void in
                 //If the request was successful...
                 if let realURL = url {
                     //Get text of download.
-                    let fileText = try? String(contentsOfURL: realURL, encoding: NSUTF8StringEncoding)
+                    let fileText = try? String(contentsOf: realURL, encoding: String.Encoding.utf8)
                     if let realFileText = fileText {
                         //Save to editedDonors.txt.
                         self.saveEditedDonorsText(realFileText)
                         //Display in GUI
-                        dispatch_async(dispatch_get_main_queue()) {
+                        DispatchQueue.main.async {
                             self.displayStoredFiles()
                         }
                     }
@@ -56,39 +61,43 @@ class DonorsViewController: UIViewController {
         
         postSession.resume()
     }
-    private func downloadSession() -> NSURLSession {
-        let config: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session: NSURLSession = NSURLSession(configuration: config)
+    private func downloadSession() -> URLSession {
+        let config: URLSessionConfiguration = URLSessionConfiguration.default
+        let session: URLSession = URLSession(configuration: config)
         
         return session
     }
-    private func saveEditedDonorsText(downloadedText: String) {
+    private func saveEditedDonorsText(_ downloadedText: String) {
         do {
-            try downloadedText.writeToFile(self.editedDonorsPath, atomically: false, encoding: NSUTF8StringEncoding)
+            try downloadedText.write(toFile: self.editedDonorsPath, atomically: false, encoding: String.Encoding.utf8)
         } catch _ {
         }
     }
-    private func displayDonors(donorListText: String?) {
+    private func displayDonors(_ donorListText: String?) {
         //Displays the list of donors in a center aligned text view.
         if let donorList = donorListText {
             mainTextView.text = donorList
         }
     }
-    private func displayContentsOfFile(filePath: String) {
-        let fileContents: String? = try? String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding)
+    private func displayContentsOfFile(_ filePath: String) {
+        let fileContents: String? = try? String(contentsOfFile: filePath, encoding: String.Encoding.utf8)
         displayDonors(fileContents)
     }
     private class func documentsDirectory() -> String {
-        let directories: [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) 
+        let directories: [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true) 
         let documentsDirectory: String =  directories[0]
         
         return documentsDirectory
     }
-    private func fileExists(filePath: String) -> Bool {
-        let manager: NSFileManager = NSFileManager.defaultManager()
-        let exists: Bool = manager.fileExistsAtPath(filePath)
+    private func fileExists(_ filePath: String) -> Bool {
+        let manager: FileManager = FileManager.default
+        let exists: Bool = manager.fileExists(atPath: filePath)
         
         return exists
+    }
+    private func fixTextClippingBug() {
+        mainTextView.isScrollEnabled = false
+        mainTextView.isScrollEnabled = true
     }
     
 }

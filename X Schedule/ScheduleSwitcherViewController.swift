@@ -10,66 +10,62 @@ import UIKit
 import XScheduleKit
 
 class ScheduleSwitcherViewController: UINavigationController {
-    
-    var currentOrientation: UIDeviceOrientation = UIDevice.currentDevice().orientation
-    var scheduleDate: NSDate = NSDate()
-    var currentView: UIViewController?
+
+    var scheduleDate: Date = Date()
+    var currentView: UIViewController? // Publically accessible property
+    var oldOrientation: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        updateCurrentOrientation()
         switchToOrientationView()
-        
-        registerAsOrientationListener()
-    }
-    private func registerAsOrientationListener() {
-        //Register orientation change listener.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ScheduleSwitcherViewController.deviceOrientationDidChangeNotification), name: UIDeviceOrientationDidChangeNotification, object: nil)
-    }
-    private func updateCurrentOrientation() {
-        //Store current orientation.
-        currentOrientation = UIDevice.currentDevice().orientation
     }
     
-    func deviceOrientationDidChangeNotification() {
-        let newOrientation = UIDevice.currentDevice().orientation
-        //Check if newOrientation is valid.
-        if (newOrientation.isPortrait || newOrientation.isLandscape) {
-            //Check if newOrientation is different from the currentOrientation.
-            if (newOrientation != currentOrientation) {
-                //Update current orientation and update UI.
-                updateCurrentOrientation()
-                switchToOrientationView()
-            }
-        }
+    override func viewWillLayoutSubviews() {
+        switchToOrientationView()
     }
     
     func switchToOrientationView() {
         loadScheduleDateIntoViewController(self.topViewController)
-        performSegueBasedOnOrientation()
+        performSegueBasedOnAspectRatio()
         storeScheduleDate()
         updateCurrentView()
     }
-    private func performSegueBasedOnOrientation() {
-        if (UIDevice.currentDevice().userInterfaceIdiom == .Phone) { //If on iPhone...
+    private func performSegueBasedOnAspectRatio() {
+        if (UIDevice.current.userInterfaceIdiom == .phone) { //If on iPhone...
             //Check if there is a view already.
             if (self.topViewController != nil) {
                 //Do nothing, because there is only one orientation.
             } else {
                 //Add a new iPhone view controller.
-                self.performSegueWithIdentifier("displayScheduleiPhone", sender: self)
+                self.performSegue(withIdentifier: "displayScheduleiPhone", sender: self)
             }
-        } else if (UIDevice.currentDevice().userInterfaceIdiom == .Pad) { //If on iPad...
-            //Check orientation.
-            if (UIDeviceOrientationIsLandscape(currentOrientation)) { //If orientation is landscape...
-                self.performSegueWithIdentifier("displayScheduleiPadLandscape", sender: self)
-            } else if (UIDeviceOrientationIsPortrait(currentOrientation)) { //If orientation is portrait...
-                self.performSegueWithIdentifier("displayScheduleiPadPortrait", sender: self)
+        } else if (UIDevice.current.userInterfaceIdiom == .pad) { //If on iPad...
+            // If the current orientation is different from the old orientation, preform a switch.
+            let newOrientation = getNewOrientation()
+            if (oldOrientation != newOrientation) {
+                self.performSegue(withIdentifier: newOrientation, sender: self)
+                oldOrientation = newOrientation
             }
         }
     }
-    private func loadScheduleDateIntoViewController(viewController: UIViewController?) {
+    private func getNewOrientation() -> String {
+        // Determine what the current orientation should be.
+        var newOrientation: String = ""
+        if (aspectRatio() < 0.85) { // 0.85 is the cutoff between portrait and landscape.
+            newOrientation = "displayScheduleiPadPortrait"
+        } else {
+            newOrientation = "displayScheduleiPadLandscape"
+        }
+        
+        return newOrientation
+    }
+    private func aspectRatio() -> CGFloat {
+        let frame = UIApplication.shared.delegate!.window!!.frame
+        let aspectRatio: CGFloat = frame.width / frame.height
+        
+        return aspectRatio
+    }
+    private func loadScheduleDateIntoViewController(_ viewController: UIViewController?) {
         //Take date from current view controller and store it.
         if let top = viewController {
             if let topData = top as? ScheduleViewController {
@@ -96,8 +92,7 @@ class ScheduleSwitcherViewController: UINavigationController {
 
 class NoAnimationSegue: UIStoryboardSegue {
     override func perform() {
-        let destination = destinationViewController 
-        if let source = sourceViewController as? UINavigationController {
+        if let source = source as? UINavigationController {
             //Transition with no animation.  Sets new view as root view controller.
             source.setViewControllers([destination], animated: false)
         }

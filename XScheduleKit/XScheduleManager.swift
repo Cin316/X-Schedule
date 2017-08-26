@@ -8,21 +8,33 @@
 
 import Foundation
 
-public class XScheduleManager: ScheduleManager {
-    public override class func getScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void, inout method: DownloadMethod) -> NSURLSessionTask? {
-        var task: NSURLSessionTask?
+open class XScheduleManager: ScheduleManager {
+    @discardableResult
+    open override class func getScheduleForDate(_ date: Date, completionHandler: @escaping (Schedule) -> Void, errorHandler: @escaping (String) -> Void, method: DownloadMethod) -> (DownloadMethod, URLSessionTask?) {
+        var task: URLSessionTask?
+        let methodUsed: DownloadMethod = determineDownloadMethod(date: date, specifiedMethod: method)
         
-        if (CacheManager.scheduleExistsForDate(date)) {
+        if (methodUsed == .cache) {
             getCachedScheduleForDate(date, completionHandler: completionHandler, errorHandler: errorHandler)
-            method = DownloadMethod.Cache
-        } else {
+        } else { // (methodUsed == .download)
             task = downloadScheduleForDate(date, completionHandler: completionHandler, errorHandler: errorHandler)
-            method = DownloadMethod.Download
         }
         
-        return task
+        return (methodUsed, task)
     }
-    private class func getCachedScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) {
+    // Note: It may be worth adding a check to scheduleExistsForDate here if specifiedMethod == .cache .
+    private class func determineDownloadMethod(date: Date, specifiedMethod: DownloadMethod) -> DownloadMethod {
+        if (specifiedMethod == .auto) {
+            if (CacheManager.scheduleExistsForDate(date)) {
+                return .cache
+            } else {
+                return .download
+            }
+        } else {
+            return specifiedMethod
+        }
+    }
+    private class func getCachedScheduleForDate(_ date: Date, completionHandler: @escaping (Schedule) -> Void, errorHandler: @escaping (String) -> Void) {
         let schedule: Schedule? = CacheManager.loadScheduleForDate(date)
         if (schedule != nil) {
             completionHandler(substituteSchedule(schedule!))
@@ -30,8 +42,8 @@ public class XScheduleManager: ScheduleManager {
             errorHandler("Error loading schedule from cache.")
         }
     }
-    internal class func downloadScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
-        var task: NSURLSessionTask
+    private class func downloadScheduleForDate(_ date: Date, completionHandler: @escaping (Schedule) -> Void, errorHandler: @escaping (String) -> Void) -> URLSessionTask {
+        var task: URLSessionTask
         
         task = XScheduleDownloader.downloadSchedule(date, completionHandler: { (output: String) in
             var schedule: Schedule
@@ -42,7 +54,7 @@ public class XScheduleManager: ScheduleManager {
         
         return task
     }
-    private class func substituteSchedule(schedule: Schedule) -> Schedule {
+    private class func substituteSchedule(_ schedule: Schedule) -> Schedule {
         var displaySchedule: Schedule
         displaySchedule = SubstitutionManager.substituteItemsInScheduleIfEnabled(schedule, substitutions: SubstitutionManager.loadSubstitutions())
         

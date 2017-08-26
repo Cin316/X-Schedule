@@ -8,26 +8,26 @@
 
 import Foundation
 
-public class XScheduleDownloader: ScheduleDownloader {
+open class XScheduleDownloader: ScheduleDownloader {
     
     private static var scheduleCalenderID: String = "27"
-    private static var scheduleURL: NSURL = NSURL(string: "https://www.stxavier.org/cf_calendar/export.cfm")!
+    private static var scheduleURL: URL = URL(string: "https://www.stxavier.org/cf_calendar/export.cfm")!
     
-    public override class func downloadSchedule(date: NSDate, completionHandler: String -> Void, errorHandler: String -> Void) -> NSURLSessionTask {
+    open override class func downloadSchedule(_ date: Date, completionHandler: @escaping (String) -> Void, errorHandler: @escaping (String) -> Void) -> URLSessionTask {
         //Download today's schedule from the St. X website.
     
         //Create objects for network request.
-        let postData: NSData = requestDataForDate(date)
-        let request: NSURLRequest = scheduleWebRequest()
-        let session: NSURLSession = scheduleSession()
+        let postData: Data = requestDataForDate(date)
+        let request: URLRequest = scheduleWebRequest()
+        let session: URLSession = scheduleSession()
         
         //Create NSURLSessionUploadTask out of desired objects.
-        let postSession: NSURLSessionTask = session.uploadTaskWithRequest(request, fromData: postData, completionHandler:
-            { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+        let postSession: URLSessionTask = session.uploadTask(with: request, from: postData, completionHandler:
+            { ( data: Data?, response: URLResponse?, error: Error?) -> Void in
                 //Convert output to a string.
                 var output: String
-                if (data != nil) {
-                    output = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                if let data = data {
+                    output = String(data: data, encoding: String.Encoding.utf8)!
                 } else {
                     output = ""
                 }
@@ -47,42 +47,44 @@ public class XScheduleDownloader: ScheduleDownloader {
         
         return postSession
     }
-    private class func scheduleWebRequest() -> NSURLRequest {
+    private class func scheduleWebRequest() -> URLRequest {
         //Create a new NSURLRequest with the correct parameters to download schedule from St. X Website.
-        let request = NSMutableURLRequest(URL: scheduleURL)
-        request.HTTPMethod = "POST"
+        let request = NSMutableURLRequest(url: scheduleURL)
+        request.httpMethod = "POST"
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         
-        return request
+        return request as URLRequest
     }
-    private class func scheduleSession() -> NSURLSession {
+    private class func scheduleSession() -> URLSession {
         //Create a new NSURLSession with default settings.
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: config)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
         
         return session
     }
-    private class func requestDataForDate(date: NSDate) -> NSData {
+    private class func requestDataForDate(_ date: Date) -> Data {
         //Create NSData object to send in body of POST request.
         let escapedDate = uploadStringForDate(date)
-        let postString: NSString = "export_format=xml&start=\(escapedDate)&end=\(escapedDate)&calendarId=\(scheduleCalenderID)"
-        let postData: NSData = postString.dataUsingEncoding(NSUTF8StringEncoding)!
+        let postString: NSString = "export_format=xml&start=\(escapedDate)&end=\(escapedDate)&calendarId=\(scheduleCalenderID)" as NSString
+        let postData: Data = postString.data(using: String.Encoding.utf8.rawValue)!
         
         return postData
     }
-    private class func uploadStringForDate(date: NSDate) -> String {
+    private class func uploadStringForDate(_ date: Date) -> String {
         //Returns a correctly formatted string to upload in as a POST parameter.
-        let dateFormat: NSDateFormatter = NSDateFormatter()
+        let dateFormat: DateFormatter = DateFormatter()
         dateFormat.dateFormat = "MM/dd/yyyy"
-        dateFormat.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        let formattedDate: String = dateFormat.stringFromDate(date)
-        let escapedDate: String = formattedDate.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        dateFormat.locale = Locale(identifier: "en_US_POSIX")
+        let formattedDate: String = dateFormat.string(from: date)
+        let escapedDate: String = formattedDate.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         
         return escapedDate
     }
-    private class func errorShouldBeHandled(error: NSError) -> Bool {
+    private class func errorShouldBeHandled(_ error: Error) -> Bool {
+        let nsError: NSError = error as NSError
+        
         var ignoredError: Bool = false
-        ignoredError = ignoredError || (error.domain==NSURLErrorDomain && error.code==NSURLErrorCancelled)
+        ignoredError = ignoredError || (nsError.domain==NSURLErrorDomain && nsError.code==NSURLErrorCancelled)
         
         return !ignoredError
     }

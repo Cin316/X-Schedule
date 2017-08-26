@@ -9,25 +9,30 @@
 import Foundation
 
 public enum DownloadMethod {
-    case Download
-    case Cache
+    case download
+    case cache
+    case auto
 }
 
-public class ScheduleManager {
-    public class func getScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void, inout method: DownloadMethod) -> NSURLSessionTask? {
-        return nil
+open class ScheduleManager {
+    @discardableResult
+    open class func getScheduleForDate(_ date: Date, completionHandler: @escaping (Schedule) -> Void, errorHandler: @escaping (String) -> Void, method: DownloadMethod) -> (DownloadMethod, URLSessionTask?) {
+        return (method, nil)
     }
-    public class func getScheduleForDate(date: NSDate, completionHandler: Schedule -> Void, errorHandler: String -> Void) -> NSURLSessionTask? {
-        var unusedEnum: DownloadMethod = DownloadMethod.Download //Value doesn't matter, just provides a blank, unused DownloadMethod.
-        return getScheduleForDate(date, completionHandler: completionHandler, errorHandler: errorHandler, method: &unusedEnum)
+    @discardableResult
+    open class func getScheduleForDate(_ date: Date, completionHandler: @escaping (Schedule) -> Void, errorHandler: @escaping (String) -> Void) -> (DownloadMethod, URLSessionTask?) {
+        return getScheduleForDate(date, completionHandler: completionHandler, errorHandler: errorHandler, method: DownloadMethod.auto)
     }
-    public class func getScheduleForDate(date: NSDate, completionHandler: Schedule -> Void) -> NSURLSessionTask? {
+    @discardableResult
+    open class func getScheduleForDate(_ date: Date, completionHandler: @escaping (Schedule) -> Void) -> (DownloadMethod, URLSessionTask?) {
         return getScheduleForDate(date, completionHandler: completionHandler, errorHandler: { (output: String) in })
     }
-    public class func getScheduleForToday(completionHandler: Schedule -> Void, errorHandler: String -> Void) -> NSURLSessionTask? {
-        return getScheduleForDate(NSDate(), completionHandler: completionHandler, errorHandler: errorHandler)
+    @discardableResult
+    open class func getScheduleForToday(_ completionHandler: @escaping (Schedule) -> Void, errorHandler: @escaping (String) -> Void) -> (DownloadMethod, URLSessionTask?) {
+        return getScheduleForDate(Date(), completionHandler: completionHandler, errorHandler: errorHandler)
     }
-    public class func getScheduleForToday(completionHandler: Schedule -> Void) -> NSURLSessionTask? {
+    @discardableResult
+    open class func getScheduleForToday(_ completionHandler: @escaping (Schedule) -> Void) -> (DownloadMethod, URLSessionTask?) {
         return getScheduleForToday(completionHandler, errorHandler: { (output: String) in })
     }
 }

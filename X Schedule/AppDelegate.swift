@@ -15,10 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var tabBarDelegate: MainTabBarDelegate?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setUpTabBarDelegate()
-        
         CacheManager.buildCache()
+        UnusualScheduleNotificationManager.requestAuthorizationForNotifications()
+        UnusualScheduleNotificationManager.setUpBackgroundFetch()
+        UnusualScheduleNotificationManager.loadScheduleTitles()
         
         return true
     }
@@ -30,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         refreshSchedule()
     }
     
@@ -39,12 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         scheduleViewController.refreshSchedule()
         
         if let pageView = scheduleViewController as? SwipeDataViewController {
-            pageView.pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.Forward, withDate: pageView.scheduleDate)
+            pageView.pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.forward, withDate: pageView.scheduleDate)
         }
-    }
-    func setScheduleDateToToday() {
-        let scheduleViewController: ScheduleViewController = getScheduleViewController()!
-        scheduleViewController.scheduleDate = NSDate()
     }
     private func getScheduleSwitcherViewController() -> ScheduleSwitcherViewController? {
         var returnController: ScheduleSwitcherViewController?
@@ -66,6 +64,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         return returnController
+    }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        UnusualScheduleNotificationManager.backgroundAppRefresh(completionHandler)
     }
 
 }

@@ -20,10 +20,10 @@ class NewSubViewController: UITableViewController {
     
     var substitution: (block: String, className: String) = ("","")
     enum SubstitutionMethod {
-        case New
-        case Edit
+        case new
+        case edit
     }
-    var subMethod: SubstitutionMethod = .New
+    var subMethod: SubstitutionMethod = .new
     
     private var internalCellColor: UIColor = UIColor(red: (225.0/255.0), green: (238.0/255.0), blue: (254.0/255.0), alpha: 1.0)
     
@@ -38,9 +38,9 @@ class NewSubViewController: UITableViewController {
         blockName.becomeFirstResponder()
     }
     private func setUpTitle() {
-        if (subMethod == .New) {
+        if (subMethod == .new) {
             self.title = "New Substitution"
-        } else if (subMethod == .Edit) {
+        } else if (subMethod == .edit) {
             self.title = "Edit Substitution"
         }
     }
@@ -51,26 +51,26 @@ class NewSubViewController: UITableViewController {
     
     func newSubstitution() {
         substitution = ("","")
-        subMethod = .New
+        subMethod = .new
     }
-    func editSubstitution(sub: (block: String, className: String)) {
+    func editSubstitution(_ sub: (block: String, className: String)) {
         substitution = sub
-        subMethod = .Edit
+        subMethod = .edit
     }
     
-    @IBAction func saveButton(sender: AnyObject) {
+    @IBAction func saveButton(_ sender: AnyObject) {
         moveEditsToSub()
         
         if let subList = backOneViewController() as? CustomizationViewController {
-            if (subMethod == .New) {
+            if (subMethod == .new) {
                 subList.addSubstitution(substitution)
-            } else if (subMethod == .Edit) {
+            } else if (subMethod == .edit) {
                 subList.updateSubstitution(substitution)
             }
         }
         
         //Goes back to the substitutions view.
-        self.navigationController!.popViewControllerAnimated(true)
+        self.navigationController!.popViewController(animated: true)
     }
     private func backOneViewController() -> UIViewController? {
         var parent: UIViewController?
@@ -84,15 +84,15 @@ class NewSubViewController: UITableViewController {
         substitution.className = className.text!
     }
     
-    @IBAction func blockNameValueChanged(sender: AnyObject) {
+    @IBAction func blockNameValueChanged(_ sender: AnyObject) {
         if (blockName.text == "") {
-            saveButton.enabled = false
+            saveButton.isEnabled = false
         } else {
-            saveButton.enabled = true
+            saveButton.isEnabled = true
         }
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //Fixes background color on iPad.
         cell.backgroundColor = internalCellColor
     }
@@ -104,7 +104,7 @@ class BlockNameDelegate: NSObject, UITextFieldDelegate {
         self.parent = parent
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         parent.className.becomeFirstResponder()
         return true
     }
@@ -115,7 +115,7 @@ class ClassNameDelegate: NSObject, UITextFieldDelegate {
         self.parent = parent
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         parent.saveButton(self)
         return true
     }

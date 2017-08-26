@@ -15,54 +15,40 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var scheduleTable: WKInterfaceTable!
     @IBOutlet var titleLabel: WKInterfaceLabel!
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         let testSchedule = Schedule()
         testSchedule.title = "Loading"
-        //TODO Add support for weekends/no classes.
         displaySchedule(testSchedule)
-        
-        XScheduleManager.getScheduleForToday( { (schedule: Schedule) in
-            self.displaySchedule(schedule);
+        XScheduleManager.getScheduleForDate(Date(), completionHandler: { (schedule: Schedule) in
+            self.displaySchedule(schedule)
         })
     }
     
-    func displaySchedule(schedule: Schedule) {
+    func displaySchedule(_ schedule: Schedule) {
         titleLabel.setText(schedule.title)
         scheduleTable.setNumberOfRows(schedule.items.count, withRowType: "scheduleTableRow")
         for i in 0..<schedule.items.count {
             let item = schedule.items[i]
-            let row = scheduleTable.rowControllerAtIndex(i) as? ScheduleTableRow
+            let row = scheduleTable.rowController(at: i) as? ScheduleTableRow
             
             var size: CGFloat = 0.0
-            if (item.blockName.characters.count <= 1) {
+            if (item.primaryText().characters.count <= 1) {
                 size = 22.0
             } else {
                 size = 16.0
             }
-            let font = UIFont.boldSystemFontOfSize(size)
+            let font = UIFont.boldSystemFont(ofSize: size)
             let fontAttrs = [NSFontAttributeName : font]
-            row?.classLabel.setAttributedText(NSAttributedString(string: item.blockName.uppercaseString, attributes: fontAttrs))
+            row?.classLabel.setAttributedText(NSAttributedString(string: item.primaryText().uppercased(), attributes: fontAttrs))
             
-            row?.startTime.setText(timeTextForNSDate(item.startTime))
-            row?.endTime.setText(timeTextForNSDate(item.endTime))
+            row?.timeLabel.setText(item.secondaryText())
+            
         }
         if (schedule.title=="" && schedule.items.count==0) {
             titleLabel.setText("No classes")
         }
-    }
-    private func timeTextForNSDate(time: NSDate?) -> String {
-        var timeText: String = ""
-        let dateFormat: NSDateFormatter = NSDateFormatter()
-        dateFormat.dateFormat = "h:mm"
-        if let realTime = time {
-            timeText = dateFormat.stringFromDate(realTime)
-        } else {
-            timeText = "?:??"
-        }
-        
-        return timeText
     }
 
     override func willActivate() {

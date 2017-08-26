@@ -35,23 +35,23 @@ class WeekDataViewController: ScheduleViewController {
         return daysPerView
     }
     
-    var scheduleMonday: NSDate {
+    var scheduleMonday: Date {
         get {
-            let calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            let weekday: Int = calendar.component(.Weekday, fromDate: scheduleDate)
+            let calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+            let weekday: Int = (calendar as NSCalendar).component(.weekday, from: scheduleDate)
             let daysPastMonday: Int = weekday-2
             let seconds: Double = Double(-24*60*60*daysPastMonday)
-            return scheduleDate.dateByAddingTimeInterval(seconds)
+            return scheduleDate.addingTimeInterval(seconds)
         }
     }
     
-    var tasks: [NSURLSessionTask] = []
-    var downloadMethods: [DownloadMethod] = [DownloadMethod](count: 5, repeatedValue: DownloadMethod.Cache)
+    var tasks: [URLSessionTask] = []
+    var downloadMethods: [DownloadMethod] = [DownloadMethod](repeating: DownloadMethod.cache, count: 5)
     var downloadCount: Int {
         get {
             var num: Int = 0
             for method in downloadMethods {
-                if (method == DownloadMethod.Download) {
+                if (method == DownloadMethod.download) {
                     num += 1
                 }
             }
@@ -80,7 +80,7 @@ class WeekDataViewController: ScheduleViewController {
         let blankSchedule: Schedule = Schedule()
         for i in 0...4 {
             if let tableController = self.childViewControllers[i] as? ScheduleTableController {
-                if (downloadMethods[i] == DownloadMethod.Download) {
+                if (downloadMethods[i] == DownloadMethod.download) {
                     tableController.schedule = blankSchedule
                 }
             }
@@ -104,61 +104,62 @@ class WeekDataViewController: ScheduleViewController {
     }
     private func dateLabelText() -> String {
         //Display correctly formatted date label.
-        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d"
         
-        let mondayText: String = dateFormatter.stringFromDate(self.scheduleMonday)
-        let fridayText: String = dateFormatter.stringFromDate(self.scheduleMonday.dateByAddingTimeInterval(60*60*24*4))
+        let mondayText: String = dateFormatter.string(from: self.scheduleMonday)
+        let fridayText: String = dateFormatter.string(from: self.scheduleMonday.addingTimeInterval(60*60*24*4))
         
-        let year: Int = NSCalendar.currentCalendar().component(NSCalendarUnit.Year, fromDate: self.scheduleMonday)
+        let year: Int = (Calendar.current as NSCalendar).component(NSCalendar.Unit.year, from: self.scheduleMonday)
         
         return "\(mondayText) - \(fridayText), \(year)"
     }
     
-    private func refreshScheduleNum(num: Int) {
-        var method: DownloadMethod = DownloadMethod.Download
-        
+    private func refreshScheduleNum(_ num: Int) {
         // Download today's schedule from the St. X website.
-        let newTask: NSURLSessionTask? = XScheduleManager.getScheduleForDate(downloadDateForNum(num),
+        let downloadResult = XScheduleManager.getScheduleForDate(downloadDateForNum(num),
             completionHandler: { (schedule: Schedule) in
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self.handleCompletionOfDownload(schedule, num: num)
                 }
             },
             errorHandler: { (errorText: String) in
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self.handleError(errorText, num: num)
                 }
-            }, method: &method
+            }, method: .download
         )
         
-        downloadMethods[num-1] = method
+        let newTask: URLSessionTask? = downloadResult.1
+        let methodUsed: DownloadMethod = downloadResult.0
+        
+        downloadMethods[num-1] = methodUsed
         
         if (newTask != nil) {
             tasks.append(newTask!)
         }
     }
-    private func handleCompletionOfDownload(schedule: Schedule, num: Int) {
+    private func handleCompletionOfDownload(_ schedule: Schedule, num: Int) {
         displayScheduleInTable(schedule, num: num)
         displayTitleForSchedule(schedule, titleLabel: titleLabel(num))
         displayEmptyLabelForSchedule(schedule, emptyLabel: emptyLabel(num))
         markOneTaskAsFinished()
     }
-    private func displayScheduleInTable(schedule: Schedule, num: Int) {
+    private func displayScheduleInTable(_ schedule: Schedule, num: Int) {
         if let tableController = childViewControllers[num-1] as? ScheduleTableController {
             tableController.displaySchedule(schedule)
         }
     }
-    private func displayTitleForSchedule(schedule: Schedule, titleLabel: UILabel) {
+    private func displayTitleForSchedule(_ schedule: Schedule, titleLabel: UILabel) {
         //Display normal title.
         titleLabel.text = schedule.title
         
         //Add default weekend title if needed.
-        if (NSCalendar.currentCalendar().isDateInWeekend(scheduleMonday)) {
+        if (Calendar.current.isDateInWeekend(scheduleMonday)) {
             titleLabel.text = "Weekend"
         }
     }
-    private func displayEmptyLabelForSchedule(schedule: Schedule, emptyLabel: UILabel) {
+    private func displayEmptyLabelForSchedule(_ schedule: Schedule, emptyLabel: UILabel) {
         if (schedule.items.isEmpty) {
             emptyLabel.text = "No classes"
         } else {
@@ -166,7 +167,7 @@ class WeekDataViewController: ScheduleViewController {
         }
     }
     
-    private func titleLabel(num: Int) -> UILabel {
+    private func titleLabel(_ num: Int) -> UILabel {
         var titleLabel: UILabel!
         switch num {
         case 1:
@@ -185,7 +186,7 @@ class WeekDataViewController: ScheduleViewController {
         
         return titleLabel
     }
-    private func emptyLabel(num: Int) -> UILabel {
+    private func emptyLabel(_ num: Int) -> UILabel {
         var emptyLabel: UILabel!
         switch num {
         case 1:
@@ -204,8 +205,8 @@ class WeekDataViewController: ScheduleViewController {
         
         return emptyLabel
     }
-    private func downloadDateForNum(num: Int) -> NSDate {
-        let downloadDate: NSDate = scheduleMonday.dateByAddingTimeInterval(Double(24*60*60*(num-1)))
+    private func downloadDateForNum(_ num: Int) -> Date {
+        let downloadDate: Date = scheduleMonday.addingTimeInterval(Double(24*60*60*(num-1)))
         
         return downloadDate
     }
@@ -238,18 +239,18 @@ class WeekDataViewController: ScheduleViewController {
         clearTasks()
     }
     
-    private func handleError(errorText: String, num: Int) {
+    private func handleError(_ errorText: String, num: Int) {
         displayAlertWithText(errorText)
         markOneTaskAsFinished()
     }
     
     private func startLoading() {
         loadingIndicator.startAnimating()
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     private func stopLoading() {
         loadingIndicator.stopAnimating()
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
 }

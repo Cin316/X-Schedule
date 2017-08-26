@@ -31,52 +31,53 @@ class DataViewController: ScheduleViewController {
     }
     
     override func refreshSchedule() {
-        var method: DownloadMethod = DownloadMethod.Download
-        
         // Download today's schedule from the St. X website.
+        let downloadResult: (DownloadMethod, URLSessionTask?) =
         XScheduleManager.getScheduleForDate(scheduleDate,
             completionHandler: { (schedule: Schedule) in
                 //Execute code in main thread.
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self.handleCompletionOfDownload(schedule)
                     
                 }
             },
             errorHandler: { (errorText: String) in
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self.handleError(errorText)
                 }
             },
-            method: &method
+            method: .auto
         )
-        if (method==DownloadMethod.Download) {
+        let methodUsed: DownloadMethod = downloadResult.0
+        
+        if (methodUsed == .download) {
             startLoading()
         }
         
     }
     
-    private func handleCompletionOfDownload(schedule: Schedule) {
+    private func handleCompletionOfDownload(_ schedule: Schedule) {
         displayScheduleInTable(schedule)
         displayTitleForSchedule(schedule)
         displayDateLabelForDate(scheduleDate)
         displayEmptyLabelForSchedule(schedule)
         stopLoading()
     }
-    private func displayScheduleInTable(schedule: Schedule) {
+    private func displayScheduleInTable(_ schedule: Schedule) {
         if let tableController = tableController() {
             tableController.displaySchedule(schedule)
         }
     }
-    private func displayTitleForSchedule(schedule: Schedule) {
+    private func displayTitleForSchedule(_ schedule: Schedule) {
         //Display normal title.
         titleLabel.text = schedule.title
         
         //Add default weekend title if needed.
-        if (NSCalendar.currentCalendar().isDateInWeekend(scheduleDate)) {
+        if (Calendar.current.isDateInWeekend(scheduleDate)) {
             titleLabel.text = "Weekend"
         }
     }
-    private func displayEmptyLabelForSchedule(schedule: Schedule) {
+    private func displayEmptyLabelForSchedule(_ schedule: Schedule) {
         if let emptyText = emptyUILabel() {
             if (schedule.items.isEmpty) {
                 emptyText.text = "No classes"
@@ -86,13 +87,13 @@ class DataViewController: ScheduleViewController {
         }
     }
     
-    private func displayDateLabelForDate(date: NSDate) {
-        let dateFormatter = NSDateFormatter()
+    private func displayDateLabelForDate(_ date: Date) {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d, yyyy"
-        dateLabel.text = dateFormatter.stringFromDate(date)
+        dateLabel.text = dateFormatter.string(from: date)
     }
     
-    internal func handleError(errorText: String) {
+    internal func handleError(_ errorText: String) {
         displayAlertWithText(errorText)
         stopLoading()
         displayDateLabelForDate(scheduleDate)
@@ -101,11 +102,11 @@ class DataViewController: ScheduleViewController {
     
     private func startLoading() {
         loadingIndicator.startAnimating()
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     private func stopLoading() {
         loadingIndicator.stopAnimating()
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
 }
