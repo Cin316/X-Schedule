@@ -10,6 +10,8 @@ import Foundation
 
 open class XScheduleParser: ScheduleParser {
     
+    static let manualNotificationTriggerKeyword = "<!--send_notification-->"
+    
     open override class func storeScheduleInString(_ schedule: Schedule) -> String {
         var output: String = ""
         output += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
@@ -18,6 +20,7 @@ open class XScheduleParser: ScheduleParser {
         output += "<description>&lt;p&gt;"
         output += "\(stringForItemsArray(schedule.items))"
         output += "&lt;/p&gt;</description>\n"
+        output += "\(manualNotificationTrigger(schedule))\n"
         output += "</schedule>"
         
         return output
@@ -50,13 +53,21 @@ open class XScheduleParser: ScheduleParser {
         
         return output
     }
+    private class func manualNotificationTrigger(_ schedule: Schedule) -> String {
+        if (schedule.manuallyMarkedUnusual) {
+            return manualNotificationTriggerKeyword
+        } else {
+            return ""
+        }
+    }
     
     open override class func parseForSchedule(_ string: String, date: Date) -> Schedule {
         let schedule = Schedule()
         
         //Parse XML from inputted string.
         let delegate: XScheduleXMLParser = parsedXMLElements(string)
-
+        
+        storeManualNotificationTrigger(string, inSchedule: schedule)
         storeTitleString(delegate.titleString, inSchedule: schedule)
         storeDate(date, inSchedule: schedule)
         storeScheduleBody(delegate.descriptionString, inSchedule: schedule)
@@ -76,6 +87,11 @@ open class XScheduleParser: ScheduleParser {
         return xmlParser.delegate as! XScheduleXMLParser
     }
     
+    private class func storeManualNotificationTrigger(_ string: String, inSchedule schedule: Schedule) {
+        if (string.contains(manualNotificationTriggerKeyword)) {
+            schedule.manuallyMarkedUnusual = true
+        }
+    }
     private class func storeDate(_ date: Date, inSchedule schedule: Schedule) {
         schedule.date = date
     }

@@ -98,7 +98,7 @@ class UnusualScheduleNotificationManager {
         return occurances < 3
     }
     private class func hasManualTrigger(schedule: Schedule) -> Bool {
-        return false // TODO Implement manual trigger support
+        return schedule.manuallyMarkedUnusual
     }
     
     // Only sends a notification if a notification for that date hasn't been sent before.

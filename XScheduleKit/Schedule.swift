@@ -14,6 +14,8 @@ open class Schedule {
     open var subtitle: String = ""
     open var date: Date = Date()
     
+    open var manuallyMarkedUnusual: Bool = false
+    
     public init() {
         
     }
