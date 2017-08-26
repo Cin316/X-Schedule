@@ -364,7 +364,7 @@
             <objects>
                 <navigationController id="Usn-Ec-1X8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Announcements" image="announcementsTab" selectedImage="announcementsTab" id="jJI-rY-Rqq"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uej-81-tqv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uej-81-tqv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.88235294117647056" green="0.93333333333333335" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -604,7 +604,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2015 Nicholas Reichert.  Available under the MIT License." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytx-K1-59s">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2017 Nicholas Reichert.  Available under the MIT License." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytx-K1-59s">
                                 <rect key="frame" x="241" y="911" width="286" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="5Yo-4T-hAw"/>
@@ -858,7 +858,7 @@ Special thanks to Aaron Wright for helping me with resolving an issue I had with
             <objects>
                 <navigationController id="PMQ-eX-lqC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="ZQZ-tA-3nm"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="W1P-MO-zPJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W1P-MO-zPJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.88235294117647056" green="0.93333333333333335" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
