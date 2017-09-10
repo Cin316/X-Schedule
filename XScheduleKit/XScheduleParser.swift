@@ -71,6 +71,7 @@ open class XScheduleParser: ScheduleParser {
         storeTitleString(delegate.titleString, inSchedule: schedule)
         storeDate(date, inSchedule: schedule)
         storeScheduleBody(delegate.descriptionString, inSchedule: schedule)
+        removeCodeScheduleItems(inSchedule: schedule)
         
         //Return finished schedule.
         return schedule
@@ -85,6 +86,11 @@ open class XScheduleParser: ScheduleParser {
         xmlParser.parse()
 
         return xmlParser.delegate as! XScheduleXMLParser
+    }
+    
+    private class func removeCodeScheduleItems(inSchedule schedule: Schedule) {
+        // Removes all elements that contain the manualNotificationTriggerKeyword.
+        schedule.items = schedule.items.filter( { !$0.primaryText().contains(manualNotificationTriggerKeyword) } )
     }
     
     private class func storeManualNotificationTrigger(_ string: String, inSchedule schedule: Schedule) {
