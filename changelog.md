@@ -85,6 +85,6 @@ This files keeps track of all of the changes made betweem version of X Schedule.
 - Updated code to Swift 3.
 
 # 1.3.1
-- Build number: ~414
+- Build number: 415
 - Fixed bug where schedule notification trigger code would display.
 
