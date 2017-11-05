@@ -13,10 +13,13 @@ open class XScheduleManager: ScheduleManager {
     open override class func getScheduleForDate(_ date: Date, completionHandler: @escaping (Schedule) -> Void, errorHandler: @escaping (String) -> Void, method: DownloadMethod) -> (DownloadMethod, URLSessionTask?) {
         var task: URLSessionTask?
         let methodUsed: DownloadMethod = determineDownloadMethod(date: date, specifiedMethod: method)
+        NSLog("[XScheduleManager] Determining download method. Requested: \(method) Decided on: \(methodUsed)")
         
         if (methodUsed == .cache) {
+            NSLog("[XScheduleManager] Getting Schedule for date \(date) using CACHE method.")
             getCachedScheduleForDate(date, completionHandler: completionHandler, errorHandler: errorHandler)
         } else { // (methodUsed == .download)
+            NSLog("[XScheduleManager] Getting Schedule for date \(date) using DOWNLOAD method.")
             task = downloadScheduleForDate(date, completionHandler: completionHandler, errorHandler: errorHandler)
         }
         

@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var tabBarDelegate: MainTabBarDelegate?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        XLogger.redirectLogToFile()
+        NSLog("[AppDelegate] Entering application didFinishLaunchingWithOptions")
         setUpTabBarDelegate()
         CacheManager.buildCache()
         UnusualScheduleNotificationManager.requestAuthorizationForNotifications()
@@ -33,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        NSLog("[AppDelegate] Entering applicationWillEnterForeground")
         refreshSchedule()
     }
     
@@ -67,6 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        NSLog("[AppDelegate] Entering application performFetchWithCompletionHandler")
         UnusualScheduleNotificationManager.backgroundAppRefresh(completionHandler)
     }
 

@@ -20,6 +20,7 @@ open class CacheManager {
         return exists
     }
     open class func loadScheduleForDate(_ date: Date) -> Schedule? {
+        NSLog("[CacheManager] Loading cached schedule for date \(date)")
         var schedule: Schedule?
         let path: String = pathForDate(date)
         let contents: String? = try? String(contentsOfFile: path, encoding: String.Encoding.utf8)
@@ -56,6 +57,7 @@ open class CacheManager {
     }
     
     open class func buildCache() {
+        NSLog("[CacheManager] Building the cache...")
         buildCacheForLengthOfTime(numOfDays: defaultCacheLengthInDays)
     }
     open class func buildCacheForLengthOfTime(numOfDays days: Int) {
