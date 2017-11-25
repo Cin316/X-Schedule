@@ -58,10 +58,10 @@ open class CacheManager {
     
     open class func buildCache() {
         NSLog("[CacheManager] Building the cache...")
-        buildCacheForLengthOfTime(numOfDays: defaultCacheLengthInDays)
+        buildCacheForLengthOfTime(pastDays: defaultCacheLengthInDays, futureDays: defaultCacheLengthInDays)
     }
-    open class func buildCacheForLengthOfTime(numOfDays days: Int) {
-        for i in -days...days {
+    open class func buildCacheForLengthOfTime(pastDays: Int, futureDays: Int) {
+        for i in -pastDays...futureDays {
             let date: Date = dateDaysFromNow(numOfDays: i)
             XScheduleManager.getScheduleForDate(date, completionHandler: { (schedule: Schedule) in}, errorHandler: { (errorText: String) in}, method: .download)
         }
