@@ -61,6 +61,7 @@ open class CacheManager {
     }
     
     open class func refreshCache() {
+        NSLog("[CacheManager] Deciding what type of cache refresh to do...")
         if (cacheIsDueForFullRebuild()) {
             rebuildFullCache()
         } else {
