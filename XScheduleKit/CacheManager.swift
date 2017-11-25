@@ -10,8 +10,12 @@ import Foundation
 
 open class CacheManager {
     
-    open static let defaultCacheLengthInDays = 30
+    open static let defaultFullCacheLengthInDays = 30 // Note: This is +- 30 days, for a total of 61 days in the cache.
+    open static let miniRefreshPastDays = 3;
+    open static let miniRefreshFutureDays = 7;
     open static let scheduleCacheDirectoryName = "Schedules"
+    
+    static let lastRefreshTimeDefaultsKey = "lastRefreshTime"
     
     open class func scheduleExistsForDate(_ date: Date) -> Bool {
         let path: String = pathForDate(date)
@@ -56,9 +60,47 @@ open class CacheManager {
         }
     }
     
-    open class func buildCache() {
-        NSLog("[CacheManager] Building the cache...")
-        buildCacheForLengthOfTime(pastDays: defaultCacheLengthInDays, futureDays: defaultCacheLengthInDays)
+    open class func refreshCache() {
+        if (cacheIsDueForFullRebuild()) {
+            rebuildFullCache()
+        } else {
+            refreshMiniCache()
+        }
+    }
+    private class func cacheIsDueForFullRebuild() -> Bool {
+        NSLog("[CacheManager] Seconds since last full rebuild: \(secondsSinceLastRefresh())")
+        if (secondsSinceLastRefresh() >= 7*60*60*24) { // If it has been more than 1 week since the last full refresh.
+            return true
+        } else {
+            return false
+        }
+    }
+    private class func secondsSinceLastRefresh() -> Double {
+        let lastRefresh = getTimeOfLastRefresh()
+        let secondsSinceRefresh = -lastRefresh.timeIntervalSinceNow
+        
+        return secondsSinceRefresh
+    }
+    private class func getTimeOfLastRefresh() -> Date {
+        let defaults = UserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
+        let lastRefreshTime = defaults.object(forKey: lastRefreshTimeDefaultsKey) as? Date ?? Date.distantPast
+        
+        return lastRefreshTime
+    }
+    // Updates the last refresh time to be now.
+    private class func updateLastRefreshTime() {
+        let defaults = UserDefaults.init(suiteName: "group.com.cin316.X-Schedule")!
+        defaults.set(Date(), forKey: lastRefreshTimeDefaultsKey)
+    }
+    // Only refresh a few of the closest days most of the time to reduce server load.
+    open class func refreshMiniCache() {
+        NSLog("[CacheManager] Refreshing the mini cache...")
+        buildCacheForLengthOfTime(pastDays: miniRefreshPastDays, futureDays: miniRefreshFutureDays)
+    }
+    open class func rebuildFullCache() {
+        NSLog("[CacheManager] Rebuilding the full cache...")
+        buildCacheForLengthOfTime(pastDays: defaultFullCacheLengthInDays, futureDays: defaultFullCacheLengthInDays)
+        updateLastRefreshTime()
     }
     open class func buildCacheForLengthOfTime(pastDays: Int, futureDays: Int) {
         for i in -pastDays...futureDays {

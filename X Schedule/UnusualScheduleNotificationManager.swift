@@ -29,7 +29,7 @@ class UnusualScheduleNotificationManager {
         scheduleTitles = []
         
         // Load the past month and the next month of schedules.
-        let days = CacheManager.defaultCacheLengthInDays
+        let days = CacheManager.defaultFullCacheLengthInDays
         for i in -days...days {
             let date: Date = dateDaysFromNow(numOfDays: i)
             XScheduleManager.getScheduleForDate(date, completionHandler: { (schedule: Schedule) in

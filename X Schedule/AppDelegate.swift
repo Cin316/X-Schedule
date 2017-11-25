@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         XLogger.redirectLogToFile()
         NSLog("[AppDelegate] Entering application didFinishLaunchingWithOptions")
         setUpTabBarDelegate()
-        CacheManager.buildCache()
+        CacheManager.rebuildFullCache()
         UnusualScheduleNotificationManager.requestAuthorizationForNotifications()
         UnusualScheduleNotificationManager.setUpBackgroundFetch()
         UnusualScheduleNotificationManager.loadScheduleTitles()
