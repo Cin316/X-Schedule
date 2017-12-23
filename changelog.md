@@ -88,3 +88,8 @@ This files keeps track of all of the changes made betweem version of X Schedule.
 - Build number: 415
 - Fixed bug where schedule notification trigger code would display.
 
+# 1.3.2
+- Build number: 417?
+- Fixed major "No classes" bug where schedules would fail to load.
+- 
+
