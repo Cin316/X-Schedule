@@ -14,10 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var tabBarDelegate: MainTabBarDelegate?
+    
+    var applicationHasBeenActive: Bool = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        XLogger.redirectLogToFile()
+        NSLog("[AppDelegate] Entering application didFinishLaunchingWithOptions")
         setUpTabBarDelegate()
-        CacheManager.buildCache()
+        
         UnusualScheduleNotificationManager.requestAuthorizationForNotifications()
         UnusualScheduleNotificationManager.setUpBackgroundFetch()
         UnusualScheduleNotificationManager.loadScheduleTitles()
@@ -31,8 +35,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tabBar.delegate = tabBarDelegate
         }
     }
-
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        NSLog("[AppDelegate] Entering applicationDidBecomeActive")
+        possiblyRefreshCache()
+    }
+    // The first time that the application enters the foreground, refresh the schedule cache.
+    func possiblyRefreshCache() {
+        NSLog("[AppDelegate] Possibly refreshing the cache...")
+        if (!applicationHasBeenActive) {
+            NSLog("[AppDelegate] Will be refreshing the cache.")
+            applicationHasBeenActive = true
+            CacheManager.refreshCache()
+        }
+    }
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
+        NSLog("[AppDelegate] Entering applicationWillEnterForeground")
         refreshSchedule()
     }
     
@@ -67,6 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        NSLog("[AppDelegate] Entering application performFetchWithCompletionHandler")
         UnusualScheduleNotificationManager.backgroundAppRefresh(completionHandler)
     }
 

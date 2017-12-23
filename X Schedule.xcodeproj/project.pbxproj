@@ -18,6 +18,8 @@
 		E138A8191A8E8B1E00549F84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E138A8181A8E8B1E00549F84 /* Images.xcassets */; };
 		E138A81C1A8E8B1E00549F84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E138A81A1A8E8B1E00549F84 /* LaunchScreen.xib */; };
 		E138A8321A8E970E00549F84 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138A8311A8E970E00549F84 /* DataViewController.swift */; };
+		E1396AE11FAEC7DD007EE06B /* XLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1396AE01FAEC7DD007EE06B /* XLogger.swift */; };
+		E1396AE21FAEC7DD007EE06B /* XLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1396AE01FAEC7DD007EE06B /* XLogger.swift */; };
 		E13FCD6A1AF6CCD400696F3B /* MainTabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */; };
 		E13FCD6D1AF6EDBB00696F3B /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13FCD6C1AF6EDBB00696F3B /* ScheduleViewController.swift */; };
 		E1451B1E1AD348D600A39564 /* DonorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1451B1D1AD348D600A39564 /* DonorsViewController.swift */; };
@@ -172,6 +174,7 @@
 		E138A8181A8E8B1E00549F84 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E138A81B1A8E8B1E00549F84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E138A8311A8E970E00549F84 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		E1396AE01FAEC7DD007EE06B /* XLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XLogger.swift; sourceTree = "<group>"; };
 		E13FCD691AF6CCD400696F3B /* MainTabBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarDelegate.swift; sourceTree = "<group>"; };
 		E13FCD6C1AF6EDBB00696F3B /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		E1451B1D1AD348D600A39564 /* DonorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonorsViewController.swift; sourceTree = "<group>"; };
@@ -404,6 +407,7 @@
 				E18C80A61AEDBDDA00C60CE1 /* ScheduleDownloader.swift */,
 				E1ECC41C1B16531200AB5D64 /* XScheduleManager.swift */,
 				E1ECC41E1B16571300AB5D64 /* ScheduleManager.swift */,
+				E1396AE01FAEC7DD007EE06B /* XLogger.swift */,
 				E116D1E01B1A407C00C5DCA8 /* CacheManager.swift */,
 				E1EFEEB41A991766003D3C57 /* ScheduleTableController.swift */,
 				E1841FB41ADDFD4900C5DF3E /* ColoredScheduleTableController.swift */,
@@ -568,7 +572,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Nicholas Reichert";
 				TargetAttributes = {
 					E138A8091A8E8B1E00549F84 = {
@@ -821,6 +825,7 @@
 				E14E79BC1CC7112200FE1DB7 /* ScheduleDownloader.swift in Sources */,
 				E14E79BD1CC7112200FE1DB7 /* XScheduleParser.swift in Sources */,
 				E14E79BE1CC7112200FE1DB7 /* CacheManager.swift in Sources */,
+				E1396AE21FAEC7DD007EE06B /* XLogger.swift in Sources */,
 				E14E79C01CC7112200FE1DB7 /* XScheduleDownloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -847,6 +852,7 @@
 				E116D1E11B1A407C00C5DCA8 /* CacheManager.swift in Sources */,
 				E1DEBEFA1AD6237A004B2CC1 /* ScheduleTableController.swift in Sources */,
 				E1DEBEFC1AD62380004B2CC1 /* XScheduleDownloader.swift in Sources */,
+				E1396AE11FAEC7DD007EE06B /* XLogger.swift in Sources */,
 				E13FCD6D1AF6EDBB00696F3B /* ScheduleViewController.swift in Sources */,
 				E1841FB51ADDFD4900C5DF3E /* ColoredScheduleTableController.swift in Sources */,
 			);
@@ -913,14 +919,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -960,14 +972,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

@@ -31,8 +31,9 @@ class SettingsViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     private func clearCache() {
+        NSLog("[SettingsViewController] Manually cache clearing requested.")
         CacheManager.clearCache()
-        CacheManager.buildCache()
+        CacheManager.rebuildFullCache()
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

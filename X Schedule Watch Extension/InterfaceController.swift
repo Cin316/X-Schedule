@@ -34,7 +34,7 @@ class InterfaceController: WKInterfaceController {
             let row = scheduleTable.rowController(at: i) as? ScheduleTableRow
             
             var size: CGFloat = 0.0
-            if (item.primaryText().characters.count <= 1) {
+            if (item.primaryText().count <= 1) {
                 size = 22.0
             } else {
                 size = 16.0

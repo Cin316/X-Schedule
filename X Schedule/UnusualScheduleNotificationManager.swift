@@ -29,7 +29,7 @@ class UnusualScheduleNotificationManager {
         scheduleTitles = []
         
         // Load the past month and the next month of schedules.
-        let days = CacheManager.defaultCacheLengthInDays
+        let days = CacheManager.defaultFullCacheLengthInDays
         for i in -days...days {
             let date: Date = dateDaysFromNow(numOfDays: i)
             XScheduleManager.getScheduleForDate(date, completionHandler: { (schedule: Schedule) in
@@ -57,11 +57,15 @@ class UnusualScheduleNotificationManager {
         }
     }
     private class func fetchAppropriateSchedule(_ completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        NSLog("[UnusualScheduleNotificationManager] App woken for background app refresh.  Fetching schedule...")
         if (currentHour() < 10) { // 12AM-10AM: Look for today's schedule.
+            NSLog("[UnusualScheduleNotificationManager] Checking for unusual schedule TODAY")
             lookForUnusualSchedule(onDate: Date(), dayWord: "Today", completionHandler: completionHandler)
         } else if (10 <= currentHour() && currentHour() < 17) { // 10AM-5PM: Don't look for unusual schedules.
+            NSLog("[UnusualScheduleNotificationManager] Not checking for unusual schedule")
             completionHandler(.noData)
         } else { // 17 <= currentHour // 5PM-12PM: Look for tomorrow's schedule.
+            NSLog("[UnusualScheduleNotificationManager] Checking for unusual schedule TOMORROW")
             lookForUnusualSchedule(onDate: Date().addingTimeInterval(60*60*24), dayWord: "Tomorrow", completionHandler: completionHandler)
         }
     }

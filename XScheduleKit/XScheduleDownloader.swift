@@ -15,7 +15,8 @@ open class XScheduleDownloader: ScheduleDownloader {
     
     open override class func downloadSchedule(_ date: Date, completionHandler: @escaping (String) -> Void, errorHandler: @escaping (String) -> Void) -> URLSessionTask {
         //Download today's schedule from the St. X website.
-    
+        NSLog("[XScheduleDownloader] Sending new schedule download request to stxavier.org for date \(date)")
+        
         //Create objects for network request.
         let postData: Data = requestDataForDate(date)
         let request: URLRequest = scheduleWebRequest()
