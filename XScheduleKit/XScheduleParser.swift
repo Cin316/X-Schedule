@@ -162,7 +162,7 @@ open class XScheduleParser: ScheduleParser {
         //Remove p tags.
         if ((pRangeStart) != nil && (pRangeEnd) != nil) {
             let noPRange = (pRangeStart!.upperBound)..<(pRangeEnd!.lowerBound)
-            string = string.substring(with: noPRange)
+            string = String(string[noPRange])
         }
     }
     private class func replaceBRTagsWithNewlines(_ string: inout String) {

@@ -11,12 +11,12 @@ import XScheduleKit
 
 class SwipeDataViewController: DataViewController {
     
-    override func onBackButtonPress(_ sender: AnyObject) {
-        super.onBackButtonPress(sender)
+    @IBAction func onUIBackButtonPress(_ sender: Any) {
+        super.onBackButtonPress(sender as AnyObject)
         pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.reverse, withDate: scheduleDate)
     }
-    override func onForwardButtonPress(_ sender: AnyObject) {
-        super.onForwardButtonPress(sender)
+    @IBAction func onUIForwardButtonPress(_ sender: Any) {
+        super.onForwardButtonPress(sender as AnyObject)
         pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.forward, withDate: scheduleDate)
     }
     override func onTodayButtonPress(_ sender: AnyObject) {
