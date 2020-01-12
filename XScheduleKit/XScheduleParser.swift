@@ -333,22 +333,30 @@ class XScheduleXMLParser: NSObject, XMLParserDelegate {
     var descriptionString = ""
     var titleString = ""
     private var currentElement = ""
+    private var currentlyInDescription: Bool = false
 
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         currentElement = elementName
+        
+        if (elementName == "description") {
+            currentlyInDescription = true
+        }
     }
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        
+        if (elementName == "description") {
+            currentlyInDescription = false
+        }
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         switch currentElement {
         case "summary":
             titleString += string
-        case "description":
-            descriptionString += string
         default:
             break;
+        }
+        if (currentlyInDescription) {
+            descriptionString += string
         }
     }
 
