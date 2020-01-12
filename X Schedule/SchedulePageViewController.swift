@@ -27,8 +27,8 @@ class SchedulePageViewController: UIViewController {
         set {
             if (loaded) {
                 //Put schedule in tableController.
-                tableController!.schedule = newValue
                 DispatchQueue.main.async { // Can only do UI changes in the main thread
+                    self.tableController?.displaySchedule(newValue)
                     self.fillEmptyLabel()
                 }
             } else {
