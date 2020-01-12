@@ -148,21 +148,22 @@ open class XScheduleParser: ScheduleParser {
     
     private class func cleanUpDescriptionString(_ scheduleString: inout String) {
         trimWhitespaceFrom(&scheduleString)
-        removePTags(&scheduleString)
+        removeTags(&scheduleString, tag: "p")
+        removeTags(&scheduleString, tag: "div")
         replaceBRTagsWithNewlines(&scheduleString)
         trimWhitespaceFrom(&scheduleString)
     }
     private class func trimWhitespaceFrom(_ string: inout String) {
         string = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
-    private class func removePTags(_ string: inout String) {
-        //Find p tags.
-        let pRangeStart = string.range(of: "<p>")
-        let pRangeEnd = string.range(of: "</p>")
-        //Remove p tags.
-        if ((pRangeStart) != nil && (pRangeEnd) != nil) {
-            let noPRange = (pRangeStart!.upperBound)..<(pRangeEnd!.lowerBound)
-            string = String(string[noPRange])
+    private class func removeTags(_ string: inout String, tag: String) {
+        //Find tags.
+        let tagRangeStart = string.range(of: "<\(tag)>")
+        let tagRangeEnd = string.range(of: "</\(tag)>")
+        //Remove tag tags.
+        if ((tagRangeStart) != nil && (tagRangeEnd) != nil) {
+            let noTagRange = (tagRangeStart!.upperBound)..<(tagRangeEnd!.lowerBound)
+            string = String(string[noTagRange])
         }
     }
     private class func replaceBRTagsWithNewlines(_ string: inout String) {
