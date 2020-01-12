@@ -578,7 +578,7 @@
 					E138A8091A8E8B1E00549F84 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = H5722C83T3;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1110;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -596,16 +596,16 @@
 					E14E79961CC705F700FE1DB7 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = NK4953M888;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1110;
 					};
 					E14E79B51CC7112200FE1DB7 = {
 						DevelopmentTeam = NK4953M888;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1110;
 					};
 					E1DEBE981AD619B0004B2CC1 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = NK4953M888;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1110;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -615,7 +615,7 @@
 					E1DEBED91AD61FE2004B2CC1 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = NK4953M888;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -1032,7 +1032,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1051,7 +1051,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1117,7 +1117,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -1140,7 +1140,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -1171,7 +1171,7 @@
 				PRODUCT_NAME = XScheduleKitWatch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,4";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1201,7 +1201,7 @@
 				PRODUCT_NAME = XScheduleKitWatch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,4";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1226,7 +1226,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1244,7 +1244,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1271,7 +1271,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1297,7 +1297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cin316.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

@@ -79,7 +79,7 @@ class WeekDataViewController: ScheduleViewController {
         //Blank out every schedule.
         let blankSchedule: Schedule = Schedule()
         for i in 0...4 {
-            if let tableController = self.childViewControllers[i] as? ScheduleTableController {
+            if let tableController = self.children[i] as? ScheduleTableController {
                 if (downloadMethods[i] == DownloadMethod.download) {
                     tableController.schedule = blankSchedule
                 }
@@ -146,7 +146,7 @@ class WeekDataViewController: ScheduleViewController {
         markOneTaskAsFinished()
     }
     private func displayScheduleInTable(_ schedule: Schedule, num: Int) {
-        if let tableController = childViewControllers[num-1] as? ScheduleTableController {
+        if let tableController = children[num-1] as? ScheduleTableController {
             tableController.displaySchedule(schedule)
         }
     }

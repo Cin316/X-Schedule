@@ -190,7 +190,7 @@ open class XScheduleParser: ScheduleParser {
     private class func indexOfDoubleTimeTokenInArray(_ tokens: [String]) -> Int? {
         //Search through array for time token and return it's id.
         
-        return tokens.index(where: { isStringDoubleTimeToken($0) } )
+        return tokens.firstIndex(where: { isStringDoubleTimeToken($0) } )
     }
     private class func isStringDoubleTimeToken(_ string: String) -> Bool {
         let hasNums: Bool = string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil
@@ -204,7 +204,7 @@ open class XScheduleParser: ScheduleParser {
     private class func indexOfSingleTimeTokenInArray(_ tokens: [String]) -> Int? {
         //Search through array for time token and return it's id.
         
-        return tokens.index(where: { isStringSingleTimeToken($0) } )
+        return tokens.firstIndex(where: { isStringSingleTimeToken($0) } )
     }
     private class func isStringSingleTimeToken(_ string: String) -> Bool {
         let hasNums: Bool = string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil

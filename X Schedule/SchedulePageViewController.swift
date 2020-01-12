@@ -42,7 +42,7 @@ class SchedulePageViewController: UIViewController {
     
     override func viewDidLoad() {
         loaded = true
-        tableController = childViewControllers.first as! ScheduleTableController?
+        tableController = children.first as! ScheduleTableController?
         schedule = tempSchedule
         fillEmptyLabel()
     }
