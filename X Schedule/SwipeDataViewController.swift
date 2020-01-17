@@ -19,7 +19,7 @@ class SwipeDataViewController: DataViewController {
         super.onForwardButtonPress(sender as AnyObject)
         pageController().flipPageInDirection(UIPageViewController.NavigationDirection.forward, withDate: scheduleDate)
     }
-    override func onTodayButtonPress(_ sender: AnyObject) {
+    override func onTodayButtonPress(_ sender: Any) {
         let previousDate: Date = scheduleDate
         super.onTodayButtonPress(sender)
         //Find which direction to flip in.
