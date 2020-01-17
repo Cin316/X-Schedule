@@ -10,10 +10,10 @@ import Foundation
 
 open class CacheManager {
     
-    open static let defaultFullCacheLengthInDays = 30 // Note: This is +- 30 days, for a total of 61 days in the cache.
-    open static let miniRefreshPastDays = 3;
-    open static let miniRefreshFutureDays = 7;
-    open static let scheduleCacheDirectoryName = "Schedules"
+    public static let defaultFullCacheLengthInDays = 30 // Note: This is +- 30 days, for a total of 61 days in the cache.
+    public static let miniRefreshPastDays = 3;
+    public static let miniRefreshFutureDays = 7;
+    public static let scheduleCacheDirectoryName = "Schedules"
     
     static let lastRefreshTimeDefaultsKey = "lastRefreshTime"
     

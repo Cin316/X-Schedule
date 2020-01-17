@@ -27,8 +27,8 @@ class SchedulePageViewController: UIViewController {
         set {
             if (loaded) {
                 //Put schedule in tableController.
-                tableController!.schedule = newValue
                 DispatchQueue.main.async { // Can only do UI changes in the main thread
+                    self.tableController?.displaySchedule(newValue)
                     self.fillEmptyLabel()
                 }
             } else {
@@ -42,7 +42,7 @@ class SchedulePageViewController: UIViewController {
     
     override func viewDidLoad() {
         loaded = true
-        tableController = childViewControllers.first as! ScheduleTableController?
+        tableController = children.first as! ScheduleTableController?
         schedule = tempSchedule
         fillEmptyLabel()
     }

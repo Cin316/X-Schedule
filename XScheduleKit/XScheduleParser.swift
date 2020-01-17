@@ -148,21 +148,22 @@ open class XScheduleParser: ScheduleParser {
     
     private class func cleanUpDescriptionString(_ scheduleString: inout String) {
         trimWhitespaceFrom(&scheduleString)
-        removePTags(&scheduleString)
+        removeTags(&scheduleString, tag: "p")
+        removeTags(&scheduleString, tag: "div")
         replaceBRTagsWithNewlines(&scheduleString)
         trimWhitespaceFrom(&scheduleString)
     }
     private class func trimWhitespaceFrom(_ string: inout String) {
         string = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
-    private class func removePTags(_ string: inout String) {
-        //Find p tags.
-        let pRangeStart = string.range(of: "<p>")
-        let pRangeEnd = string.range(of: "</p>")
-        //Remove p tags.
-        if ((pRangeStart) != nil && (pRangeEnd) != nil) {
-            let noPRange = (pRangeStart!.upperBound)..<(pRangeEnd!.lowerBound)
-            string = string.substring(with: noPRange)
+    private class func removeTags(_ string: inout String, tag: String) {
+        //Find tags.
+        let tagRangeStart = string.range(of: "<\(tag)>")
+        let tagRangeEnd = string.range(of: "</\(tag)>")
+        //Remove tag tags.
+        if ((tagRangeStart) != nil && (tagRangeEnd) != nil) {
+            let noTagRange = (tagRangeStart!.upperBound)..<(tagRangeEnd!.lowerBound)
+            string = String(string[noTagRange])
         }
     }
     private class func replaceBRTagsWithNewlines(_ string: inout String) {
@@ -190,7 +191,7 @@ open class XScheduleParser: ScheduleParser {
     private class func indexOfDoubleTimeTokenInArray(_ tokens: [String]) -> Int? {
         //Search through array for time token and return it's id.
         
-        return tokens.index(where: { isStringDoubleTimeToken($0) } )
+        return tokens.firstIndex(where: { isStringDoubleTimeToken($0) } )
     }
     private class func isStringDoubleTimeToken(_ string: String) -> Bool {
         let hasNums: Bool = string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil
@@ -204,7 +205,7 @@ open class XScheduleParser: ScheduleParser {
     private class func indexOfSingleTimeTokenInArray(_ tokens: [String]) -> Int? {
         //Search through array for time token and return it's id.
         
-        return tokens.index(where: { isStringSingleTimeToken($0) } )
+        return tokens.firstIndex(where: { isStringSingleTimeToken($0) } )
     }
     private class func isStringSingleTimeToken(_ string: String) -> Bool {
         let hasNums: Bool = string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil
@@ -333,22 +334,30 @@ class XScheduleXMLParser: NSObject, XMLParserDelegate {
     var descriptionString = ""
     var titleString = ""
     private var currentElement = ""
+    private var currentlyInDescription: Bool = false
 
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         currentElement = elementName
+        
+        if (elementName == "description") {
+            currentlyInDescription = true
+        }
     }
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        
+        if (elementName == "description") {
+            currentlyInDescription = false
+        }
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         switch currentElement {
         case "summary":
             titleString += string
-        case "description":
-            descriptionString += string
         default:
             break;
+        }
+        if (currentlyInDescription) {
+            descriptionString += string
         }
     }
 

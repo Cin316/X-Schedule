@@ -23,10 +23,10 @@ class DataPageViewController: UIPageViewController {
         
         //Display a blank table.  This fixes a crash where this controller has no table.
         let initialContainerController = self.storyboard!.instantiateViewController(withIdentifier: DataPageViewControllerDataSource.scheduleIdentifier) as! SchedulePageViewController
-        self.setViewControllers([initialContainerController], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: {(bool: Bool) in})
+        self.setViewControllers([initialContainerController], direction: UIPageViewController.NavigationDirection.forward, animated: false, completion: {(bool: Bool) in})
     }
     
-    func flipPageInDirection(_ direction: UIPageViewControllerNavigationDirection, withDate date: Date) {
+    func flipPageInDirection(_ direction: UIPageViewController.NavigationDirection, withDate date: Date) {
         //Makes a new, blank ScheduleTableController.
         let newContainerController: SchedulePageViewController = self.storyboard!.instantiateViewController(withIdentifier: DataPageViewControllerDataSource.scheduleIdentifier) as! SchedulePageViewController
         
@@ -60,13 +60,13 @@ class DataPageViewControllerDataSource: NSObject, UIPageViewControllerDataSource
     fileprivate static let scheduleIdentifier = "ColoredScheduleTableViewController"
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return getNewViewController(pageViewController, viewController: viewController, direction: UIPageViewControllerNavigationDirection.reverse)
+        return getNewViewController(pageViewController, viewController: viewController, direction: UIPageViewController.NavigationDirection.reverse)
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return getNewViewController(pageViewController, viewController: viewController, direction: UIPageViewControllerNavigationDirection.forward)
+        return getNewViewController(pageViewController, viewController: viewController, direction: UIPageViewController.NavigationDirection.forward)
     }
     
-    func getNewViewController(_ pageViewController: UIPageViewController, viewController: UIViewController, direction: UIPageViewControllerNavigationDirection) -> UIViewController? {
+    func getNewViewController(_ pageViewController: UIPageViewController, viewController: UIViewController, direction: UIPageViewController.NavigationDirection) -> UIViewController? {
         //Makes a new, blank ScheduleTableController.
         let containerController: SchedulePageViewController = pageViewController.storyboard!.instantiateViewController(withIdentifier: DataPageViewControllerDataSource.scheduleIdentifier) as! SchedulePageViewController
         
@@ -87,9 +87,9 @@ class DataPageViewControllerDataSource: NSObject, UIPageViewControllerDataSource
         return containerController
     }
     
-    private func dateForNextSchedule(_ previousController: SchedulePageViewController, direction: UIPageViewControllerNavigationDirection) -> Date {
+    private func dateForNextSchedule(_ previousController: SchedulePageViewController, direction: UIPageViewController.NavigationDirection) -> Date {
         let oldDate: Date = previousController.schedule.date
-        let timeCoeff: Double = (direction == UIPageViewControllerNavigationDirection.forward) ? 1.0 : -1.0
+        let timeCoeff: Double = (direction == UIPageViewController.NavigationDirection.forward) ? 1.0 : -1.0
         let newDate: Date = oldDate.addingTimeInterval(timeCoeff*60*60*24)
         
         return newDate

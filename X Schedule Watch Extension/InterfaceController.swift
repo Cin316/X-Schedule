@@ -40,7 +40,7 @@ class InterfaceController: WKInterfaceController {
                 size = 16.0
             }
             let font = UIFont.boldSystemFont(ofSize: size)
-            let fontAttrs = [NSFontAttributeName : font]
+            let fontAttrs = [NSAttributedString.Key.font : font]
             row?.classLabel.setAttributedText(NSAttributedString(string: item.primaryText().uppercased(), attributes: fontAttrs))
             
             row?.timeLabel.setText(item.secondaryText())

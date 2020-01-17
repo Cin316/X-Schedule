@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var applicationHasBeenActive: Bool = false
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         XLogger.redirectLogToFile()
         NSLog("[AppDelegate] Entering application didFinishLaunchingWithOptions")
         setUpTabBarDelegate()
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         scheduleViewController.refreshSchedule()
         
         if let pageView = scheduleViewController as? SwipeDataViewController {
-            pageView.pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.forward, withDate: pageView.scheduleDate)
+            pageView.pageController().flipPageInDirection(UIPageViewController.NavigationDirection.forward, withDate: pageView.scheduleDate)
         }
     }
     private func getScheduleSwitcherViewController() -> ScheduleSwitcherViewController? {

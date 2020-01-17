@@ -42,7 +42,7 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
     
     private func displayScheduleInTable(_ schedule: Schedule) {
         //Display schedule items in table.
-        if let tableController = childViewControllers[0] as? ScheduleTableController {
+        if let tableController = children[0] as? ScheduleTableController {
             tableController.displaySchedule(schedule)
             if #available(iOSApplicationExtension 10.0, *) {
                 
@@ -84,12 +84,12 @@ class WidgetDataViewController: ScheduleViewController, NCWidgetProviding {
     }
     
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(0, 0, -1, 0)
+        return UIEdgeInsets.init(top: 0, left: 0, bottom: -1, right: 0)
     }
     
     @available(iOSApplicationExtension 10.0, *)
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        if let tableController = childViewControllers[0] as? ScheduleTableController {
+        if let tableController = children[0] as? ScheduleTableController {
             if (activeDisplayMode == .expanded) {
                 correctlySizeWidget(tableController.tableView)
             } else {

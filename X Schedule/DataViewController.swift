@@ -22,7 +22,7 @@ class DataViewController: ScheduleViewController {
     }
     
     func tableController() -> ScheduleTableController? {
-        return childViewControllers[0] as? ScheduleTableController
+        return children[0] as? ScheduleTableController
     }
     
     override func viewDidLoad() {

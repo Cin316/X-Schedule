@@ -63,14 +63,14 @@ open class ScheduleViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    open func onBackButtonPress(_ sender: AnyObject) {
+    @IBAction open func onBackButtonPress(_ sender: Any) {
         scheduleDate = scheduleDate.addingTimeInterval(Double(-24*60*60*numberOfDaysPerView()))
     }
-    open func onForwardButtonPress(_ sender: AnyObject) {
+    @IBAction open func onForwardButtonPress(_ sender: Any) {
         scheduleDate = scheduleDate.addingTimeInterval(Double(24*60*60*numberOfDaysPerView()))
     }
     
-    open func onTodayButtonPress(_ sender: AnyObject) {
+    @IBAction open func onTodayButtonPress(_ sender: Any) {
         scheduleDate = Date()
     }
     

@@ -11,23 +11,23 @@ import XScheduleKit
 
 class SwipeDataViewController: DataViewController {
     
-    override func onBackButtonPress(_ sender: AnyObject) {
-        super.onBackButtonPress(sender)
-        pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.reverse, withDate: scheduleDate)
+    @IBAction func onUIBackButtonPress(_ sender: Any) {
+        super.onBackButtonPress(sender as AnyObject)
+        pageController().flipPageInDirection(UIPageViewController.NavigationDirection.reverse, withDate: scheduleDate)
     }
-    override func onForwardButtonPress(_ sender: AnyObject) {
-        super.onForwardButtonPress(sender)
-        pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.forward, withDate: scheduleDate)
+    @IBAction func onUIForwardButtonPress(_ sender: Any) {
+        super.onForwardButtonPress(sender as AnyObject)
+        pageController().flipPageInDirection(UIPageViewController.NavigationDirection.forward, withDate: scheduleDate)
     }
-    override func onTodayButtonPress(_ sender: AnyObject) {
+    override func onTodayButtonPress(_ sender: Any) {
         let previousDate: Date = scheduleDate
         super.onTodayButtonPress(sender)
         //Find which direction to flip in.
         switch (previousDate.compare(scheduleDate)) {
             case .orderedAscending:
-                pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.forward, withDate: scheduleDate)
+                pageController().flipPageInDirection(UIPageViewController.NavigationDirection.forward, withDate: scheduleDate)
             case .orderedDescending:
-                pageController().flipPageInDirection(UIPageViewControllerNavigationDirection.reverse, withDate: scheduleDate)
+                pageController().flipPageInDirection(UIPageViewController.NavigationDirection.reverse, withDate: scheduleDate)
             case .orderedSame:
                 break //Do nothing.
         }
@@ -49,7 +49,7 @@ class SwipeDataViewController: DataViewController {
     
     func pageController() -> DataPageViewController {
         var controller: DataPageViewController
-        controller = self.childViewControllers.first as! DataPageViewController
+        controller = self.children.first as! DataPageViewController
         
         return controller
     }
